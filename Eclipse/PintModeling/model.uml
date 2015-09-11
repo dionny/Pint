@@ -1,323 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:java="http://www.eclipse.org/papyrus/JAVA/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
-  <uml:Model xmi:id="_mcZzgFgXEeWpTO4Y2E1OUw" name="RootElement">
-    <packageImport xmi:type="uml:PackageImport" xmi:id="_4gS2wFgXEeWUot0KYiZx9Q">
-      <importedPackage xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
-    </packageImport>
-    <packageImport xmi:type="uml:PackageImport" xmi:id="_8ccUgFgdEeWUdej6b-EfkQ">
-      <importedPackage xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
-    </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_EqossFgYEeWUot0KYiZx9Q" name="User">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_obn_oFgfEeWUdej6b-EfkQ">
-        <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-      </ownedComment>
-      <generalization xmi:type="uml:Generalization" xmi:id="_fNdGQFgnEeWUdej6b-EfkQ" general="_s7YTAFggEeWUdej6b-EfkQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_vFX60FgfEeWUdej6b-EfkQ" name="sessionKey" visibility="public">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_mcZzgFgXEeWpTO4Y2E1OUw" name="RootElement">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_4gS2wFgXEeWUot0KYiZx9Q">
+    <importedPackage xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_8ccUgFgdEeWUdej6b-EfkQ">
+    <importedPackage xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_EqossFgYEeWUot0KYiZx9Q" name="User">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_obn_oFgfEeWUdej6b-EfkQ">
+      <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
+    </ownedComment>
+    <generalization xmi:type="uml:Generalization" xmi:id="_fNdGQFgnEeWUdej6b-EfkQ" general="_s7YTAFggEeWUdej6b-EfkQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_vFX60FgfEeWUdej6b-EfkQ" name="sessionKey" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_AI5GMFggEeWUdej6b-EfkQ" name="emailAddress">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9tDgcFggEeWUdej6b-EfkQ" name="city">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_-ZQfIFggEeWUdej6b-EfkQ" name="state">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_TCdiUFgiEeWUdej6b-EfkQ" name="hashedPassword">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Tws5oVgoEeWUdej6b-EfkQ" name="usercontroller" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_TwsSkFgoEeWUdej6b-EfkQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_okjkEFgdEeWUdej6b-EfkQ" name="MobileLoginScreen">
+    <generalization xmi:type="uml:Generalization" xmi:id="_ubtZIFgnEeWUdej6b-EfkQ" general="_uYULEFggEeWUdej6b-EfkQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rk0QEFgdEeWUdej6b-EfkQ" name="emailAddress" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_xHM6kFgdEeWUdej6b-EfkQ" name="password">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_PGqzcFgoEeWUdej6b-EfkQ" name="usercontroller" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_PGi3oFgoEeWUdej6b-EfkQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_b6iuklgoEeWUdej6b-EfkQ" name="homescreen" type="_z062UFgjEeWUdej6b-EfkQ" association="_b6iHgFgoEeWUdej6b-EfkQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_300zsFgeEeWUdej6b-EfkQ" name="clickLogin">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_cqALsFgfEeWUdej6b-EfkQ" name="user" type="_EqossFgYEeWUot0KYiZx9Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__jr80FgeEeWUdej6b-EfkQ" name="setEmailAddress" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nXJ1cFggEeWUdej6b-EfkQ" name="emailAddress">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_AI5GMFggEeWUdej6b-EfkQ" name="emailAddress">
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AfL7wFgfEeWUdej6b-EfkQ" name="setPassword" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KSfo4FgfEeWUdej6b-EfkQ" name="password">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_9tDgcFggEeWUdej6b-EfkQ" name="city">
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_s7YTAFggEeWUdej6b-EfkQ" name="Entity"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uYULEFggEeWUdej6b-EfkQ" name="Screen">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_sQ9VoFgjEeWUdej6b-EfkQ" name="changeView">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_xBxZQFgjEeWUdej6b-EfkQ" name="screen" type="_uYULEFggEeWUdej6b-EfkQ"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Mu9ZYFghEeWUdej6b-EfkQ" name="UserController">
+    <generalization xmi:type="uml:Generalization" xmi:id="_lltBwFgnEeWUdej6b-EfkQ" general="_RiARoFghEeWUdej6b-EfkQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_PGragFgoEeWUdej6b-EfkQ" name="mobileloginscreen" type="_okjkEFgdEeWUdej6b-EfkQ" association="_PGi3oFgoEeWUdej6b-EfkQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Tws5oFgoEeWUdej6b-EfkQ" name="user" type="_EqossFgYEeWUot0KYiZx9Q" association="_TwsSkFgoEeWUdej6b-EfkQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YGIo0FgoEeWUdej6b-EfkQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YGM6QFgoEeWUdej6b-EfkQ" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_qSFgEFghEeWUdej6b-EfkQ" name="authenticate">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_sXUuQFghEeWUdej6b-EfkQ" name="emailAddress">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_-ZQfIFggEeWUdej6b-EfkQ" name="state">
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_t8c5AFghEeWUdej6b-EfkQ" name="password">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_TCdiUFgiEeWUdej6b-EfkQ" name="hashedPassword">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Tws5oVgoEeWUdej6b-EfkQ" name="usercontroller" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_TwsSkFgoEeWUdej6b-EfkQ"/>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_TDxNEFgmEeWUdej6b-EfkQ" name="User">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_TDxNEVgmEeWUdej6b-EfkQ">
-          <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-        </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TDxNElgmEeWUdej6b-EfkQ" name="sessionKey" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TDxNE1gmEeWUdej6b-EfkQ" name="emailAddress">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TDxNFFgmEeWUdej6b-EfkQ" name="latitude">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TDxNFVgmEeWUdej6b-EfkQ" name="longitude">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TDxNFlgmEeWUdej6b-EfkQ" name="city">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TDxNF1gmEeWUdej6b-EfkQ" name="state">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TDxNGFgmEeWUdej6b-EfkQ" name="hashedPassword">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-      </nestedClassifier>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_okjkEFgdEeWUdej6b-EfkQ" name="MobileLoginScreen">
-      <generalization xmi:type="uml:Generalization" xmi:id="_ubtZIFgnEeWUdej6b-EfkQ" general="_uYULEFggEeWUdej6b-EfkQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_rk0QEFgdEeWUdej6b-EfkQ" name="emailAddress" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_xHM6kFgdEeWUdej6b-EfkQ" name="password">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_PGqzcFgoEeWUdej6b-EfkQ" name="usercontroller" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_PGi3oFgoEeWUdej6b-EfkQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_b6iuklgoEeWUdej6b-EfkQ" name="homescreen" type="_z062UFgjEeWUdej6b-EfkQ" association="_b6iHgFgoEeWUdej6b-EfkQ"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_300zsFgeEeWUdej6b-EfkQ" name="clickLogin">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cqALsFgfEeWUdej6b-EfkQ" name="user" type="_EqossFgYEeWUot0KYiZx9Q" direction="return"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="__jr80FgeEeWUdej6b-EfkQ" name="setEmailAddress" visibility="public">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_nXJ1cFggEeWUdej6b-EfkQ" name="emailAddress">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_AfL7wFgfEeWUdej6b-EfkQ" name="setPassword" visibility="public">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KSfo4FgfEeWUdej6b-EfkQ" name="password">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-      </ownedOperation>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_s7YTAFggEeWUdej6b-EfkQ" name="Entity"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_uYULEFggEeWUdej6b-EfkQ" name="Screen">
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_sQ9VoFgjEeWUdej6b-EfkQ" name="changeView">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xBxZQFgjEeWUdej6b-EfkQ" name="screen" type="_uYULEFggEeWUdej6b-EfkQ"/>
-      </ownedOperation>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_Mu9ZYFghEeWUdej6b-EfkQ" name="UserController">
-      <generalization xmi:type="uml:Generalization" xmi:id="_lltBwFgnEeWUdej6b-EfkQ" general="_RiARoFghEeWUdej6b-EfkQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_PGragFgoEeWUdej6b-EfkQ" name="mobileloginscreen" type="_okjkEFgdEeWUdej6b-EfkQ" association="_PGi3oFgoEeWUdej6b-EfkQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Tws5oFgoEeWUdej6b-EfkQ" name="user" type="_EqossFgYEeWUot0KYiZx9Q" association="_TwsSkFgoEeWUdej6b-EfkQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YGIo0FgoEeWUdej6b-EfkQ" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YGM6QFgoEeWUdej6b-EfkQ" value="*"/>
-      </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_qSFgEFghEeWUdej6b-EfkQ" name="authenticate">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_sXUuQFghEeWUdej6b-EfkQ" name="emailAddress">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_t8c5AFghEeWUdej6b-EfkQ" name="password">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_y-MUkFghEeWUdej6b-EfkQ" name="user" type="_EqossFgYEeWUot0KYiZx9Q" direction="return"/>
-      </ownedOperation>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_RiARoFghEeWUdej6b-EfkQ" name="Controller"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_z062UFgjEeWUdej6b-EfkQ" name="HomeScreen">
-      <generalization xmi:type="uml:Generalization" xmi:id="_tn59oFgnEeWUdej6b-EfkQ" general="_uYULEFggEeWUdej6b-EfkQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_b6iuk1goEeWUdej6b-EfkQ" name="mobileloginscreen" type="_okjkEFgdEeWUdej6b-EfkQ" association="_b6iHgFgoEeWUdej6b-EfkQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_UFyDsFgmEeWUdej6b-EfkQ" name="HospitalUser">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_UFyqwFgmEeWUdej6b-EfkQ">
-        <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-      </ownedComment>
-      <generalization xmi:type="uml:Generalization" xmi:id="_eW3cgFgnEeWUdej6b-EfkQ" general="_EqossFgYEeWUot0KYiZx9Q"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_rA_bMFgmEeWUdej6b-EfkQ" name="hospitalId">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_wXovwFgmEeWUdej6b-EfkQ" name="role">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      </ownedAttribute>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_UFyqyFgmEeWUdej6b-EfkQ" name="User">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_UFyqyVgmEeWUdej6b-EfkQ">
-          <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-        </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UFyqylgmEeWUdej6b-EfkQ" name="sessionKey" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UFyqy1gmEeWUdej6b-EfkQ" name="emailAddress">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UFyqzFgmEeWUdej6b-EfkQ" name="latitude">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UFyqzVgmEeWUdej6b-EfkQ" name="longitude">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UFyqzlgmEeWUdej6b-EfkQ" name="city">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UFyqz1gmEeWUdej6b-EfkQ" name="state">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UFyq0FgmEeWUdej6b-EfkQ" name="hashedPassword">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-      </nestedClassifier>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_ZJnxAFgmEeWUdej6b-EfkQ" name="HospitalUser">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_ZJnxAVgmEeWUdej6b-EfkQ">
-          <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-        </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxAlgmEeWUdej6b-EfkQ" name="sessionKey" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxA1gmEeWUdej6b-EfkQ" name="emailAddress">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxBFgmEeWUdej6b-EfkQ" name="latitude">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxBVgmEeWUdej6b-EfkQ" name="longitude">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxBlgmEeWUdej6b-EfkQ" name="city">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxB1gmEeWUdej6b-EfkQ" name="state">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxCFgmEeWUdej6b-EfkQ" name="hashedPassword">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <nestedClassifier xmi:type="uml:Class" xmi:id="_ZJnxCVgmEeWUdej6b-EfkQ" name="User">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_ZJnxClgmEeWUdej6b-EfkQ">
-            <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-          </ownedComment>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxC1gmEeWUdej6b-EfkQ" name="sessionKey" visibility="public">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxDFgmEeWUdej6b-EfkQ" name="emailAddress">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxDVgmEeWUdej6b-EfkQ" name="latitude">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxDlgmEeWUdej6b-EfkQ" name="longitude">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxD1gmEeWUdej6b-EfkQ" name="city">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxEFgmEeWUdej6b-EfkQ" name="state">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJnxEVgmEeWUdej6b-EfkQ" name="hashedPassword">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-        </nestedClassifier>
-      </nestedClassifier>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_Zaih4FgmEeWUdej6b-EfkQ" name="NormalUser">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_Zaih4VgmEeWUdej6b-EfkQ">
-        <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-      </ownedComment>
-      <generalization xmi:type="uml:Generalization" xmi:id="_d0GGoFgnEeWUdej6b-EfkQ" general="_EqossFgYEeWUot0KYiZx9Q"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih5FgmEeWUdej6b-EfkQ" name="latitude">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih5VgmEeWUdej6b-EfkQ" name="longitude">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-      </ownedAttribute>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_Zaih6VgmEeWUdej6b-EfkQ" name="User">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_Zaih6lgmEeWUdej6b-EfkQ">
-          <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-        </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih61gmEeWUdej6b-EfkQ" name="sessionKey" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih7FgmEeWUdej6b-EfkQ" name="emailAddress">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih7VgmEeWUdej6b-EfkQ" name="latitude">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih7lgmEeWUdej6b-EfkQ" name="longitude">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih71gmEeWUdej6b-EfkQ" name="city">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih8FgmEeWUdej6b-EfkQ" name="state">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih8VgmEeWUdej6b-EfkQ" name="hashedPassword">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-      </nestedClassifier>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_PGi3oFgoEeWUdej6b-EfkQ" memberEnd="_PGqzcFgoEeWUdej6b-EfkQ _PGragFgoEeWUdej6b-EfkQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PGnwIFgoEeWUdej6b-EfkQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PGoXMFgoEeWUdej6b-EfkQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_TwsSkFgoEeWUdej6b-EfkQ" memberEnd="_Tws5oFgoEeWUdej6b-EfkQ _Tws5oVgoEeWUdej6b-EfkQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TwsSkVgoEeWUdej6b-EfkQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TwsSklgoEeWUdej6b-EfkQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_b6iHgFgoEeWUdej6b-EfkQ" memberEnd="_b6iuklgoEeWUdej6b-EfkQ _b6iuk1goEeWUdej6b-EfkQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b6iukFgoEeWUdej6b-EfkQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b6iukVgoEeWUdej6b-EfkQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-    </packagedElement>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BzYywFgYEeWUot0KYiZx9Q">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BzeSUFgYEeWUot0KYiZx9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
-      </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
-    </profileApplication>
-  </uml:Model>
-  <java:JavaClass xmi:id="_NGYJ8FgYEeWUot0KYiZx9Q" name="User" srcName="User" projectName="Users" base_Classifier="_EqossFgYEeWUot0KYiZx9Q"/>
-  <java:JavaClass xmi:id="_ecom8FgfEeWUdej6b-EfkQ" base_Classifier="_okjkEFgdEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_vlZCMFggEeWUdej6b-EfkQ" base_Classifier="_s7YTAFggEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_wNXoMFggEeWUdej6b-EfkQ" name="" author="Dionny&#x9;" base_Classifier="_uYULEFggEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_Qr2FsFghEeWUdej6b-EfkQ" base_Classifier="_Mu9ZYFghEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_TioFkFghEeWUdej6b-EfkQ" base_Classifier="_RiARoFghEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_z09SkFgjEeWUdej6b-EfkQ" base_Classifier="_z062UFgjEeWUdej6b-EfkQ"/>
-  <java:JavaMethod xmi:id="_DpPDoFgkEeWUdej6b-EfkQ" base_Operation="_sQ9VoFgjEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_F9hacFgkEeWUdej6b-EfkQ" base_Property="_rk0QEFgdEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_GdeF0FgkEeWUdej6b-EfkQ" base_Property="_xHM6kFgdEeWUdej6b-EfkQ"/>
-  <java:JavaMethod xmi:id="_G_ZHIFgkEeWUdej6b-EfkQ" base_Operation="_300zsFgeEeWUdej6b-EfkQ"/>
-  <java:JavaMethod xmi:id="_Hl6UkFgkEeWUdej6b-EfkQ" base_Operation="__jr80FgeEeWUdej6b-EfkQ"/>
-  <java:JavaMethod xmi:id="_IYkgkFgkEeWUdej6b-EfkQ" base_Operation="_AfL7wFgfEeWUdej6b-EfkQ"/>
-  <java:JavaMethod xmi:id="_I8dQwFgkEeWUdej6b-EfkQ" base_Operation="_qSFgEFghEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_J-WyoFgkEeWUdej6b-EfkQ" base_Property="_vFX60FgfEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_KjrGMFgkEeWUdej6b-EfkQ" base_Property="_AI5GMFggEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_MGyewFgkEeWUdej6b-EfkQ" base_Property="_9tDgcFggEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_Mmq4sFgkEeWUdej6b-EfkQ" base_Property="_-ZQfIFggEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_NEO-cFgkEeWUdej6b-EfkQ" base_Property="_TCdiUFgiEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_TD2soFgmEeWUdej6b-EfkQ" base_Property="_TDxNFlgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_TD4h0FgmEeWUdej6b-EfkQ" base_Property="_TDxNFVgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_TD5I4FgmEeWUdej6b-EfkQ" base_Property="_TDxNFFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_TD5v8FgmEeWUdej6b-EfkQ" base_Property="_TDxNE1gmEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_TD6-EFgmEeWUdej6b-EfkQ" name="User" srcName="User" projectName="Users" base_Classifier="_TDxNEFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_TD8MMFgmEeWUdej6b-EfkQ" base_Property="_TDxNF1gmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_TD-BYFgmEeWUdej6b-EfkQ" base_Property="_TDxNElgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_TD_PgFgmEeWUdej6b-EfkQ" base_Property="_TDxNGFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_UF5_gFgmEeWUdej6b-EfkQ" base_Property="_UFyqzFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_UF9C0FgmEeWUdej6b-EfkQ" base_Property="_UFyqylgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_UF_fEFgmEeWUdej6b-EfkQ" base_Property="_UFyq0FgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_UGAGIFgmEeWUdej6b-EfkQ" base_Property="_UFyqzlgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_UGBUQFgmEeWUdej6b-EfkQ" base_Property="_UFyqy1gmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_UGE-oFgmEeWUdej6b-EfkQ" base_Property="_UFyqz1gmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_UGGz0FgmEeWUdej6b-EfkQ" base_Property="_UFyqzVgmEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_UGIB8FgmEeWUdej6b-EfkQ" name="User" srcName="User" projectName="Users" base_Classifier="_UFyDsFgmEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_UGJQEFgmEeWUdej6b-EfkQ" name="User" srcName="User" projectName="Users" base_Classifier="_UFyqyFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJt3oFgmEeWUdej6b-EfkQ" base_Property="_ZJnxB1gmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJvFwFgmEeWUdej6b-EfkQ" base_Property="_ZJnxEVgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJwT4FgmEeWUdej6b-EfkQ" base_Property="_ZJnxBFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJyJEFgmEeWUdej6b-EfkQ" base_Property="_ZJnxA1gmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJzXMFgmEeWUdej6b-EfkQ" base_Property="_ZJnxEFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJ0lUFgmEeWUdej6b-EfkQ" base_Property="_ZJnxBlgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJ1zcFgmEeWUdej6b-EfkQ" base_Property="_ZJnxDlgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJ3BkFgmEeWUdej6b-EfkQ" base_Property="_ZJnxDVgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJ42wFgmEeWUdej6b-EfkQ" base_Property="_ZJnxD1gmEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_ZJ6E4FgmEeWUdej6b-EfkQ" name="User" srcName="User" projectName="Users" base_Classifier="_ZJnxAFgmEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_ZJ7TAFgmEeWUdej6b-EfkQ" name="User" srcName="User" projectName="Users" base_Classifier="_ZJnxCVgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJ8hIFgmEeWUdej6b-EfkQ" base_Property="_ZJnxAlgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJ9vQFgmEeWUdej6b-EfkQ" base_Property="_ZJnxC1gmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJ-WUFgmEeWUdej6b-EfkQ" base_Property="_ZJnxBVgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZJ_kcFgmEeWUdej6b-EfkQ" base_Property="_ZJnxCFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZKAykFgmEeWUdej6b-EfkQ" base_Property="_ZJnxDFgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZapPkFgmEeWUdej6b-EfkQ" base_Property="_Zaih8VgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZaqdsFgmEeWUdej6b-EfkQ" base_Property="_Zaih5FgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_Zarr0FgmEeWUdej6b-EfkQ" base_Property="_Zaih8FgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZathAFgmEeWUdej6b-EfkQ" base_Property="_Zaih7lgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZauIEFgmEeWUdej6b-EfkQ" base_Property="_Zaih7VgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZavWMFgmEeWUdej6b-EfkQ" base_Property="_Zaih71gmEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_Zav9QFgmEeWUdej6b-EfkQ" name="User" srcName="User" projectName="Users" base_Classifier="_Zaih4FgmEeWUdej6b-EfkQ"/>
-  <java:JavaClass xmi:id="_ZaxLYFgmEeWUdej6b-EfkQ" name="User" srcName="User" projectName="Users" base_Classifier="_Zaih6VgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_ZazAkFgmEeWUdej6b-EfkQ" base_Property="_Zaih61gmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_Za0OsFgmEeWUdej6b-EfkQ" base_Property="_Zaih5VgmEeWUdej6b-EfkQ"/>
-  <java:JavaProperty xmi:id="_Za2q8FgmEeWUdej6b-EfkQ" base_Property="_Zaih7FgmEeWUdej6b-EfkQ"/>
-</xmi:XMI>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_y-MUkFghEeWUdej6b-EfkQ" name="user" type="_EqossFgYEeWUot0KYiZx9Q" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RiARoFghEeWUdej6b-EfkQ" name="Controller"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_z062UFgjEeWUdej6b-EfkQ" name="HomeScreen">
+    <generalization xmi:type="uml:Generalization" xmi:id="_tn59oFgnEeWUdej6b-EfkQ" general="_uYULEFggEeWUdej6b-EfkQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_b6iuk1goEeWUdej6b-EfkQ" name="mobileloginscreen" type="_okjkEFgdEeWUdej6b-EfkQ" association="_b6iHgFgoEeWUdej6b-EfkQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UFyDsFgmEeWUdej6b-EfkQ" name="HospitalUser">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_UFyqwFgmEeWUdej6b-EfkQ">
+      <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
+    </ownedComment>
+    <generalization xmi:type="uml:Generalization" xmi:id="_eW3cgFgnEeWUdej6b-EfkQ" general="_EqossFgYEeWUot0KYiZx9Q"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rA_bMFgmEeWUdej6b-EfkQ" name="hospitalId">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_wXovwFgmEeWUdej6b-EfkQ" name="role">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Zaih4FgmEeWUdej6b-EfkQ" name="NormalUser">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_Zaih4VgmEeWUdej6b-EfkQ">
+      <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
+    </ownedComment>
+    <generalization xmi:type="uml:Generalization" xmi:id="_d0GGoFgnEeWUdej6b-EfkQ" general="_EqossFgYEeWUot0KYiZx9Q"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih5FgmEeWUdej6b-EfkQ" name="latitude">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Zaih5VgmEeWUdej6b-EfkQ" name="longitude">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PGi3oFgoEeWUdej6b-EfkQ" memberEnd="_PGqzcFgoEeWUdej6b-EfkQ _PGragFgoEeWUdej6b-EfkQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PGnwIFgoEeWUdej6b-EfkQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PGoXMFgoEeWUdej6b-EfkQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_TwsSkFgoEeWUdej6b-EfkQ" memberEnd="_Tws5oFgoEeWUdej6b-EfkQ _Tws5oVgoEeWUdej6b-EfkQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TwsSkVgoEeWUdej6b-EfkQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TwsSklgoEeWUdej6b-EfkQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_b6iHgFgoEeWUdej6b-EfkQ" memberEnd="_b6iuklgoEeWUdej6b-EfkQ _b6iuk1goEeWUdej6b-EfkQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b6iukFgoEeWUdej6b-EfkQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b6iukVgoEeWUdej6b-EfkQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BzYywFgYEeWUot0KYiZx9Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BzeSUFgYEeWUot0KYiZx9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
+  </profileApplication>
+</uml:Model>
