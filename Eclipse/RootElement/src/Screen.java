@@ -1,6 +1,6 @@
 
 
-public class Screen {
+public abstract class Screen {
 
 	/**
 	 * 
@@ -8,6 +8,11 @@ public class Screen {
 	 */
 	public void changeView(Screen screen) { 
 		// TODO Auto-generated method
-	 } 
+	 }
+
+	/**
+	 * 
+	 */
+	public abstract void refresh(); 
 
 }

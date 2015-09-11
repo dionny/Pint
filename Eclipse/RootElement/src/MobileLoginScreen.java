@@ -75,6 +75,12 @@ public class MobileLoginScreen extends Screen {
 	public User clickLogin() { 
 		// TODO Auto-generated method
 		return null;
+	 }
+	/**
+	 * 
+	 */
+	public void refresh() { 
+		// TODO Auto-generated method
 	 } 
 
 }
