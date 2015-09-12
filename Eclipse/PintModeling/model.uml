@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PintProfile="http://PintProfile/schemas/PintProfile/_5UusoFmREeWUdej6b-EfkQ/3" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://PintProfile/schemas/PintProfile/_5UusoFmREeWUdej6b-EfkQ/3 pint.profile.uml#_5UzlIFmREeWUdej6b-EfkQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PintProfile="http://PintProfile/schemas/PintProfile/_VxD4cFmUEeWUdej6b-EfkQ/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://PintProfile/schemas/PintProfile/_VxD4cFmUEeWUdej6b-EfkQ/5 pint.profile.uml#_VxD4cVmUEeWUdej6b-EfkQ">
   <uml:Model xmi:id="_mcZzgFgXEeWpTO4Y2E1OUw" name="Pint">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_OIFuMFmPEeWUdej6b-EfkQ">
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
@@ -568,6 +568,17 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LAR6oFmNEeWUdej6b-EfkQ" source="InstanceEnd" references="_hWa6YFmGEeWUdej6b-EfkQ _3mMvQFmGEeWUdej6b-EfkQ"/>
         </packagedElement>
       </packagedElement>
+      <packagedElement xmi:type="uml:Model" xmi:id="_Xn03sFmSEeWUdej6b-EfkQ" name="SequenceDiagram">
+        <packagedElement xmi:type="uml:Interaction" xmi:id="_Zoa2cFmSEeWUdej6b-EfkQ" name="Interaction1">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_FBn8IFmTEeWUdej6b-EfkQ" name=":Normal User"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_0T6MMFmTEeWUdej6b-EfkQ" name="PintReg" type="_YYQMMFgrEeWUdej6b-EfkQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_wJ3qIFmSEeWUdej6b-EfkQ" name="Normal User" represents="_FBn8IFmTEeWUdej6b-EfkQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_RdJosFmTEeWUdej6b-EfkQ" name="RegistrationScreen" represents="_0T6MMFmTEeWUdej6b-EfkQ"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Model" xmi:id="_g2rz8FmSEeWUdej6b-EfkQ" name="UseCaseDiagram">
+        <packagedElement xmi:type="uml:Actor" xmi:id="_j2ChAFmSEeWUdej6b-EfkQ" name="NormalUser"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_cYhOQFmMEeWUdej6b-EfkQ" memberEnd="_cYh1UlmMEeWUdej6b-EfkQ _cYh1U1mMEeWUdej6b-EfkQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cYh1UFmMEeWUdej6b-EfkQ" source="org.eclipse.papyrus">
@@ -590,15 +601,15 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_NACPEFmREeWUdej6b-EfkQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7QvtYFmREeWUdej6b-EfkQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7QvtYVmREeWUdej6b-EfkQ" key="Version" value="0.0.6"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7QvtYlmREeWUdej6b-EfkQ" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7QvtY1mREeWUdej6b-EfkQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7QvtZFmREeWUdej6b-EfkQ" key="Date" value="2015-09-12"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7QvtZVmREeWUdej6b-EfkQ" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Xw63YFmUEeWUdej6b-EfkQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63YVmUEeWUdej6b-EfkQ" key="Version" value="0.0.8"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63YlmUEeWUdej6b-EfkQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63Y1mUEeWUdej6b-EfkQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63ZFmUEeWUdej6b-EfkQ" key="Date" value="2015-09-12"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63ZVmUEeWUdej6b-EfkQ" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NACPEVmREeWUdej6b-EfkQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pint.profile.uml#_5UzlIFmREeWUdej6b-EfkQ"/>
+        <references xmi:type="ecore:EPackage" href="pint.profile.uml#_VxD4cVmUEeWUdej6b-EfkQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pint.profile.uml#_fHIMwFmQEeWUdej6b-EfkQ"/>
     </profileApplication>
@@ -624,4 +635,5 @@
   <PintProfile:Entity xmi:id="_-uwFUFmREeWUdej6b-EfkQ" base_InstanceSpecification="_hWa6YFmGEeWUdej6b-EfkQ"/>
   <PintProfile:Entity xmi:id="__T-5UFmREeWUdej6b-EfkQ" base_InstanceSpecification="_Feje0FmKEeWUdej6b-EfkQ"/>
   <PintProfile:Boundary xmi:id="_AK_Z0FmSEeWUdej6b-EfkQ" base_InstanceSpecification="_GaJrwFmHEeWUdej6b-EfkQ"/>
+  <PintProfile:Boundary xmi:id="_JUfDAFmUEeWUdej6b-EfkQ" base_Lifeline="_RdJosFmTEeWUdej6b-EfkQ"/>
 </xmi:XMI>
