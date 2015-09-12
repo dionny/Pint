@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PintProfile="http://PintProfile/schemas/PintProfile/_VxD4cFmUEeWUdej6b-EfkQ/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://PintProfile/schemas/PintProfile/_VxD4cFmUEeWUdej6b-EfkQ/5 pint.profile.uml#_VxD4cVmUEeWUdej6b-EfkQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PintObjectDiagramProfile="http://PintProfile/schemas/PintObjectDiagramProfile/_40ABUFmVEeWUdej6b-EfkQ/0" xmlns:PintProfile="http://PintProfile/schemas/PintProfile/_4z_aQFmVEeWUdej6b-EfkQ/7" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://PintProfile/schemas/PintObjectDiagramProfile/_40ABUFmVEeWUdej6b-EfkQ/0 pint.profile.uml#_40AoYVmVEeWUdej6b-EfkQ http://PintProfile/schemas/PintProfile/_4z_aQFmVEeWUdej6b-EfkQ/7 pint.profile.uml#_4z_aQVmVEeWUdej6b-EfkQ">
   <uml:Model xmi:id="_mcZzgFgXEeWpTO4Y2E1OUw" name="Pint">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_OIFuMFmPEeWUdej6b-EfkQ">
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
@@ -601,17 +601,30 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_NACPEFmREeWUdej6b-EfkQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Xw63YFmUEeWUdej6b-EfkQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63YVmUEeWUdej6b-EfkQ" key="Version" value="0.0.8"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63YlmUEeWUdej6b-EfkQ" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63Y1mUEeWUdej6b-EfkQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63ZFmUEeWUdej6b-EfkQ" key="Date" value="2015-09-12"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Xw63ZVmUEeWUdej6b-EfkQ" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__-_BUFmVEeWUdej6b-EfkQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-_BUVmVEeWUdej6b-EfkQ" key="Version" value="0.0.10"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-_BUlmVEeWUdej6b-EfkQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-_BU1mVEeWUdej6b-EfkQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-_BVFmVEeWUdej6b-EfkQ" key="Date" value="2015-09-12"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-_BVVmVEeWUdej6b-EfkQ" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NACPEVmREeWUdej6b-EfkQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pint.profile.uml#_VxD4cVmUEeWUdej6b-EfkQ"/>
+        <references xmi:type="ecore:EPackage" href="pint.profile.uml#_4z_aQVmVEeWUdej6b-EfkQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pint.profile.uml#_fHIMwFmQEeWUdej6b-EfkQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="__-3FgFmVEeWUdej6b-EfkQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__-5hwFmVEeWUdej6b-EfkQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-5hwVmVEeWUdej6b-EfkQ" key="Version" value="0.0.10"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-5hwlmVEeWUdej6b-EfkQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-5hw1mVEeWUdej6b-EfkQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-5hxFmVEeWUdej6b-EfkQ" key="Date" value="2015-09-12"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__-5hxVmVEeWUdej6b-EfkQ" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__-3skFmVEeWUdej6b-EfkQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pint.profile.uml#_40AoYVmVEeWUdej6b-EfkQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pint.profile.uml#_voFrYFmVEeWUdej6b-EfkQ"/>
     </profileApplication>
   </uml:Model>
   <PintProfile:Boundary xmi:id="_PMmNQFmREeWUdej6b-EfkQ" base_Class="_FeBaAFgvEeWUdej6b-EfkQ"/>
@@ -630,10 +643,9 @@
   <PintProfile:Entity xmi:id="_vZMQkFmREeWUdej6b-EfkQ" base_Class="_EqossFgYEeWUot0KYiZx9Q"/>
   <PintProfile:Entity xmi:id="_wLQmsFmREeWUdej6b-EfkQ" base_Class="_UFyDsFgmEeWUdej6b-EfkQ"/>
   <PintProfile:Entity xmi:id="_w9vMgFmREeWUdej6b-EfkQ" base_Class="_s7YTAFggEeWUdej6b-EfkQ"/>
-  <PintProfile:Boundary xmi:id="_9O5cIFmREeWUdej6b-EfkQ" base_InstanceSpecification="_p7HfUFmGEeWUdej6b-EfkQ"/>
-  <PintProfile:Control xmi:id="_-EpYYFmREeWUdej6b-EfkQ" base_InstanceSpecification="_3mMvQFmGEeWUdej6b-EfkQ"/>
-  <PintProfile:Entity xmi:id="_-uwFUFmREeWUdej6b-EfkQ" base_InstanceSpecification="_hWa6YFmGEeWUdej6b-EfkQ"/>
-  <PintProfile:Entity xmi:id="__T-5UFmREeWUdej6b-EfkQ" base_InstanceSpecification="_Feje0FmKEeWUdej6b-EfkQ"/>
-  <PintProfile:Boundary xmi:id="_AK_Z0FmSEeWUdej6b-EfkQ" base_InstanceSpecification="_GaJrwFmHEeWUdej6b-EfkQ"/>
-  <PintProfile:Boundary xmi:id="_JUfDAFmUEeWUdej6b-EfkQ" base_Lifeline="_RdJosFmTEeWUdej6b-EfkQ"/>
+  <PintObjectDiagramProfile:Boundary xmi:id="_G8ZfYFmWEeWUdej6b-EfkQ" base_Class="_YYQMMFgrEeWUdej6b-EfkQ" base_InstanceSpecification="_p7HfUFmGEeWUdej6b-EfkQ"/>
+  <PintObjectDiagramProfile:Control xmi:id="_P1OhQFmWEeWUdej6b-EfkQ" base_Class="_Mu9ZYFghEeWUdej6b-EfkQ" base_InstanceSpecification="_3mMvQFmGEeWUdej6b-EfkQ"/>
+  <PintObjectDiagramProfile:Entity xmi:id="_SsQ_0FmWEeWUdej6b-EfkQ" base_Class="_Zaih4FgmEeWUdej6b-EfkQ" base_InstanceSpecification="_hWa6YFmGEeWUdej6b-EfkQ"/>
+  <PintObjectDiagramProfile:Entity xmi:id="_Vtn4AFmWEeWUdej6b-EfkQ" base_Class="_O1MdYFgyEeWUdej6b-EfkQ" base_InstanceSpecification="_Feje0FmKEeWUdej6b-EfkQ"/>
+  <PintObjectDiagramProfile:Boundary xmi:id="_YIEhMFmWEeWUdej6b-EfkQ" base_Class="_z062UFgjEeWUdej6b-EfkQ" base_InstanceSpecification="_GaJrwFmHEeWUdej6b-EfkQ"/>
 </xmi:XMI>
