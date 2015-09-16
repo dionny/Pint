@@ -1042,16 +1042,6 @@
         <packagedElement xmi:type="uml:Actor" xmi:id="_j2ChAFmSEeWUdej6b-EfkQ" name="NormalUser"/>
         <packagedElement xmi:type="uml:Actor" xmi:id="_SyRRoFnMEeW6AJhG3McfEA" name="Coordinator"/>
         <packagedElement xmi:type="uml:Actor" xmi:id="_VpkO4FnMEeW6AJhG3McfEA" name="Manager"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_X9-hgFnMEeW6AJhG3McfEA" name="User Account Creation"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_Y1TLEFnMEeW6AJhG3McfEA" name="Manage Roles"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_ZqfGoFnMEeW6AJhG3McfEA" name="Create Campaign"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_aS-C8FnMEeW6AJhG3McfEA" name="Stop Campaign"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_a74dEFnMEeW6AJhG3McfEA" name="Send Notifications"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_bowxMFnMEeW6AJhG3McfEA" name="View Notifications"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_dNJVEFnMEeW6AJhG3McfEA" name="View Campaigns as User"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_eJ3cAFnMEeW6AJhG3McfEA" name="Create Role"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_e5ds8FnMEeW6AJhG3McfEA" name="Sanitize Inputs"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_fnJSUFnMEeW6AJhG3McfEA" name="Token Based Security"/>
         <packagedElement xmi:type="uml:Association" xmi:id="_tE-wcFnMEeW6AJhG3McfEA" memberEnd="_tE_XglnMEeW6AJhG3McfEA _tE_Xg1nMEeW6AJhG3McfEA">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tE_XgFnMEeW6AJhG3McfEA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tE_XgVnMEeW6AJhG3McfEA" key="nature" value="UML_Nature"/>
@@ -1149,6 +1139,22 @@
           </eAnnotations>
           <ownedEnd xmi:type="uml:Property" xmi:id="_1rhIc1nMEeW6AJhG3McfEA" name="view notifications" type="_bowxMFnMEeW6AJhG3McfEA" association="_1rhIcFnMEeW6AJhG3McfEA"/>
           <ownedEnd xmi:type="uml:Property" xmi:id="_1rhIdFnMEeW6AJhG3McfEA" name="normaluser" type="_j2ChAFmSEeWUdej6b-EfkQ" association="_1rhIcFnMEeW6AJhG3McfEA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_7BtYcFspEeW6AJhG3McfEA" name="WebApplication">
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_eJ3cAFnMEeW6AJhG3McfEA" name="Create Role"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_Y1TLEFnMEeW6AJhG3McfEA" name="Manage Roles"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_a74dEFnMEeW6AJhG3McfEA" name="Send Notifications"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_aS-C8FnMEeW6AJhG3McfEA" name="Stop Campaign"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_ZqfGoFnMEeW6AJhG3McfEA" name="Create Campaign"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_GVhPAFsqEeW6AJhG3McfEA" name="PhoneApplication">
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_X9-hgFnMEeW6AJhG3McfEA" name="User Account Creation"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_dNJVEFnMEeW6AJhG3McfEA" name="View Campaigns as User"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_bowxMFnMEeW6AJhG3McfEA" name="View Notifications"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_RaLPQFsqEeW6AJhG3McfEA" name="Security">
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_e5ds8FnMEeW6AJhG3McfEA" name="Sanitize Inputs"/>
+          <packagedElement xmi:type="uml:UseCase" xmi:id="_fnJSUFnMEeW6AJhG3McfEA" name="Token Based Security"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>
