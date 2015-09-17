@@ -13,15 +13,11 @@ public class User extends Entity {
 	/**
 	 * 
 	 */
-	public UserController usercontroller;
+	public String emailAddress;
 	/**
 	 * 
 	 */
 	public String city;
-	/**
-	 * 
-	 */
-	public String emailAddress;
 	/**
 	 * 
 	 */
@@ -30,6 +26,10 @@ public class User extends Entity {
 	 * 
 	 */
 	public String hashedPassword;
+	/**
+	 * 
+	 */
+	public UserController usercontroller;
 	/**
 	 * Getter of sessionKey
 	 */
@@ -43,16 +43,16 @@ public class User extends Entity {
 		 this.sessionKey = sessionKey; 
 	}
 	/**
-	 * Getter of usercontroller
+	 * Getter of emailAddress
 	 */
-	public UserController getUsercontroller() {
-	 	 return usercontroller; 
+	public String getEmailAddress() {
+	 	 return emailAddress; 
 	}
 	/**
-	 * Setter of usercontroller
+	 * Setter of emailAddress
 	 */
-	public void setUsercontroller(UserController usercontroller) { 
-		 this.usercontroller = usercontroller; 
+	public void setEmailAddress(String emailAddress) { 
+		 this.emailAddress = emailAddress; 
 	}
 	/**
 	 * Getter of city
@@ -65,18 +65,6 @@ public class User extends Entity {
 	 */
 	public void setCity(String city) { 
 		 this.city = city; 
-	}
-	/**
-	 * Getter of emailAddress
-	 */
-	public String getEmailAddress() {
-	 	 return emailAddress; 
-	}
-	/**
-	 * Setter of emailAddress
-	 */
-	public void setEmailAddress(String emailAddress) { 
-		 this.emailAddress = emailAddress; 
 	}
 	/**
 	 * Getter of state
@@ -101,6 +89,18 @@ public class User extends Entity {
 	 */
 	public void setHashedPassword(String hashedPassword) { 
 		 this.hashedPassword = hashedPassword; 
+	}
+	/**
+	 * Getter of usercontroller
+	 */
+	public UserController getUsercontroller() {
+	 	 return usercontroller; 
+	}
+	/**
+	 * Setter of usercontroller
+	 */
+	public void setUsercontroller(UserController usercontroller) { 
+		 this.usercontroller = usercontroller; 
 	} 
 
 }

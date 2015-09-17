@@ -2,7 +2,7 @@
 
 import java.util.List;
 
-public class ManagerDashboard {
+public class ManagerDashboard extends Screen {
 
 	/**
 	 * 
@@ -38,10 +38,10 @@ public class ManagerDashboard {
 	}
 	/**
 	 * 
-	 * @param Role 
 	 * @param User 
+	 * @param Role 
 	 */
-	public void changeRole(int Role, User User) { 
+	public void changeRole(User User, int Role) { 
 		// TODO Auto-generated method
 	 }
 	/**

@@ -1,6 +1,8 @@
 
 
-public class NotificationController {
+import java.util.List;
+
+public class NotificationController extends Controller {
 
 	/**
 	 * 
@@ -10,6 +12,7 @@ public class NotificationController {
 	 * 
 	 */
 	public NotificationScreen notificationscreen;
+	public List<Notification> notification;
 	/**
 	 * Getter of campaigncontroller
 	 */
@@ -35,6 +38,18 @@ public class NotificationController {
 		 this.notificationscreen = notificationscreen; 
 	}
 	/**
+	 * Getter of notification
+	 */
+	public List<Notification> getNotification() {
+	 	 return notification; 
+	}
+	/**
+	 * Setter of notification
+	 */
+	public void setNotification(List<Notification> notification) { 
+		 this.notification = notification; 
+	}
+	/**
 	 * 
 	 * @param Campaign 
 	 * @param message 
@@ -43,6 +58,19 @@ public class NotificationController {
 	public boolean checkRadius(Campaign Campaign, String message) { 
 		// TODO Auto-generated method
 		return false;
+	 }
+	/**
+	 * 
+	 */
+	public void getNotifications() { 
+		// TODO Auto-generated method
+	 }
+	/**
+	 * 
+	 * @param notification 
+	 */
+	public void sendNotification(Notification notification) { 
+		// TODO Auto-generated method
 	 } 
 
 }

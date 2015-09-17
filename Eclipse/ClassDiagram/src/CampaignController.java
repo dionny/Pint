@@ -5,6 +5,10 @@ public class CampaignController extends Controller {
 	/**
 	 * 
 	 */
+	public CoordinatorDashboard coordinatordashboard;
+	/**
+	 * 
+	 */
 	public Campaign campaign;
 	/**
 	 * 
@@ -15,9 +19,17 @@ public class CampaignController extends Controller {
 	 */
 	public HomeScreen homescreen;
 	/**
-	 * 
+	 * Getter of coordinatordashboard
 	 */
-	public CoordinatorDashboard coordinatordashboard;
+	public CoordinatorDashboard getCoordinatordashboard() {
+	 	 return coordinatordashboard; 
+	}
+	/**
+	 * Setter of coordinatordashboard
+	 */
+	public void setCoordinatordashboard(CoordinatorDashboard coordinatordashboard) { 
+		 this.coordinatordashboard = coordinatordashboard; 
+	}
 	/**
 	 * Getter of campaign
 	 */
@@ -55,33 +67,6 @@ public class CampaignController extends Controller {
 		 this.homescreen = homescreen; 
 	}
 	/**
-	 * Getter of coordinatordashboard
-	 */
-	public CoordinatorDashboard getCoordinatordashboard() {
-	 	 return coordinatordashboard; 
-	}
-	/**
-	 * Setter of coordinatordashboard
-	 */
-	public void setCoordinatordashboard(CoordinatorDashboard coordinatordashboard) { 
-		 this.coordinatordashboard = coordinatordashboard; 
-	}
-	/**
-	 * 
-	 * @param campaignId 
-	 */
-	public void stopCampaign(int campaignId) { 
-		// TODO Auto-generated method
-	 }
-	/**
-	 * 
-	 * @param message 
-	 * @param campaignId 
-	 */
-	public void sendNotifications(String message, int campaignId) { 
-		// TODO Auto-generated method
-	 }
-	/**
 	 * 
 	 * @param campaign 
 	 * @return 
@@ -92,11 +77,26 @@ public class CampaignController extends Controller {
 	 }
 	/**
 	 * 
+	 * @param campaignId 
+	 */
+	public void stopCampaign(int campaignId) { 
+		// TODO Auto-generated method
+	 }
+	/**
+	 * 
+	 * @param campaignId 
+	 * @param message 
+	 */
+	public void sendNotifications(int campaignId, String message) { 
+		// TODO Auto-generated method
+	 }
+	/**
+	 * 
 	 * @param latitude 
 	 * @param longitude 
 	 * @return 
 	 */
-	public Campaign getCampaigns(float latitude, float longitude) { 
+	public Campaign getCampaigns(String latitude, String longitude) { 
 		// TODO Auto-generated method
 		return null;
 	 } 

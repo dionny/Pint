@@ -11,7 +11,7 @@ public class HomeScreen extends Screen {
 	/**
 	 * 
 	 */
-	public CampaignController campaigncontroller;
+	public UserController usercontroller;
 	/**
 	 * 
 	 */
@@ -19,71 +19,71 @@ public class HomeScreen extends Screen {
 	/**
 	 * 
 	 */
-	public UserController usercontroller;
-
+	public CampaignController campaigncontroller;
+	/**
+	 * 
+	 */
+	public RegistrationScreen registrationscreen;
 	/**
 	 * Getter of mobileloginscreen
 	 */
 	public MobileLoginScreen getMobileloginscreen() {
 	 	 return mobileloginscreen; 
 	}
-
 	/**
 	 * Setter of mobileloginscreen
 	 */
 	public void setMobileloginscreen(MobileLoginScreen mobileloginscreen) { 
 		 this.mobileloginscreen = mobileloginscreen; 
 	}
-
-	/**
-	 * Getter of campaigncontroller
-	 */
-	public CampaignController getCampaigncontroller() {
-	 	 return campaigncontroller; 
-	}
-
-	/**
-	 * Setter of campaigncontroller
-	 */
-	public void setCampaigncontroller(CampaignController campaigncontroller) { 
-		 this.campaigncontroller = campaigncontroller; 
-	}
-
-	/**
-	 * Getter of campaigns
-	 */
-	public List<Campaign> getCampaigns() {
-	 	 return campaigns; 
-	}
-
-	/**
-	 * Setter of campaigns
-	 */
-	public void setCampaigns(List<Campaign> campaigns) { 
-		 this.campaigns = campaigns; 
-	}
-
 	/**
 	 * Getter of usercontroller
 	 */
 	public UserController getUsercontroller() {
 	 	 return usercontroller; 
 	}
-
 	/**
 	 * Setter of usercontroller
 	 */
 	public void setUsercontroller(UserController usercontroller) { 
 		 this.usercontroller = usercontroller; 
 	}
-
 	/**
-	 * 
+	 * Getter of campaigns
 	 */
-	public void viewNotifications() { 
-		// TODO Auto-generated method
-	 }
-
+	public List<Campaign> getCampaigns() {
+	 	 return campaigns; 
+	}
+	/**
+	 * Setter of campaigns
+	 */
+	public void setCampaigns(List<Campaign> campaigns) { 
+		 this.campaigns = campaigns; 
+	}
+	/**
+	 * Getter of campaigncontroller
+	 */
+	public CampaignController getCampaigncontroller() {
+	 	 return campaigncontroller; 
+	}
+	/**
+	 * Setter of campaigncontroller
+	 */
+	public void setCampaigncontroller(CampaignController campaigncontroller) { 
+		 this.campaigncontroller = campaigncontroller; 
+	}
+	/**
+	 * Getter of registrationscreen
+	 */
+	public RegistrationScreen getRegistrationscreen() {
+	 	 return registrationscreen; 
+	}
+	/**
+	 * Setter of registrationscreen
+	 */
+	public void setRegistrationscreen(RegistrationScreen registrationscreen) { 
+		 this.registrationscreen = registrationscreen; 
+	}
 	/**
 	 * 
 	 * @param sessionKey 
@@ -93,11 +93,10 @@ public class HomeScreen extends Screen {
 		// TODO Auto-generated method
 		return false;
 	 }
-
 	/**
 	 * 
 	 */
-	public void refresh() { 
+	public void viewNotifications() { 
 		// TODO Auto-generated method
 	 } 
 

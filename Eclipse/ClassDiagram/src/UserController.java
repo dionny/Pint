@@ -15,11 +15,11 @@ public class UserController extends Controller {
 	/**
 	 * 
 	 */
-	public RegistrationScreen registrationscreen;
+	public HomeScreen homescreen;
 	/**
 	 * 
 	 */
-	public HomeScreen homescreen;
+	public RegistrationScreen registrationscreen;
 	/**
 	 * 
 	 */
@@ -49,15 +49,17 @@ public class UserController extends Controller {
 		 this.user = user; 
 	}
 	/**
-	 * 
-	 * @param emailAddress 
-	 * @param password 
-	 * @return 
+	 * Getter of homescreen
 	 */
-	public User authenticate(String password, String emailAddress) { 
-		// TODO Auto-generated method
-		return null;
-	 }
+	public HomeScreen getHomescreen() {
+	 	 return homescreen; 
+	}
+	/**
+	 * Setter of homescreen
+	 */
+	public void setHomescreen(HomeScreen homescreen) { 
+		 this.homescreen = homescreen; 
+	}
 	/**
 	 * Getter of registrationscreen
 	 */
@@ -69,18 +71,6 @@ public class UserController extends Controller {
 	 */
 	public void setRegistrationscreen(RegistrationScreen registrationscreen) { 
 		 this.registrationscreen = registrationscreen; 
-	}
-	/**
-	 * Getter of homescreen
-	 */
-	public HomeScreen getHomescreen() {
-	 	 return homescreen; 
-	}
-	/**
-	 * Setter of homescreen
-	 */
-	public void setHomescreen(HomeScreen homescreen) { 
-		 this.homescreen = homescreen; 
 	}
 	/**
 	 * Getter of managerdashboard
@@ -96,14 +86,20 @@ public class UserController extends Controller {
 	}
 	/**
 	 * 
+	 * @param emailAddress 
+	 * @param password 
+	 * @return 
+	 */
+	public User authenticate(String emailAddress, String password) { 
+		// TODO Auto-generated method
+		return null;
+	 }
+	/**
+	 * 
 	 * @param sessionKey 
 	 * @return 
 	 */
 	public boolean endSession(String sessionKey) { 
-		// TODO Auto-generated method
-		return false;
-	 }
-	public boolean updateRoles(List<User> users) { 
 		// TODO Auto-generated method
 		return false;
 	 }
@@ -113,6 +109,10 @@ public class UserController extends Controller {
 	 * @return 
 	 */
 	public boolean registerUser(User user) { 
+		// TODO Auto-generated method
+		return false;
+	 }
+	public boolean updateRoles(List<User> users) { 
 		// TODO Auto-generated method
 		return false;
 	 } 

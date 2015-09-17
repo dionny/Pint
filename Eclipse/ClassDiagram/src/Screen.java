@@ -13,6 +13,15 @@ public abstract class Screen {
 	/**
 	 * 
 	 */
-	public abstract void refresh(); 
+	public void refresh() { 
+		// TODO Auto-generated method
+	 }
+
+	/**
+	 * 
+	 */
+	public void create() { 
+		// TODO Auto-generated method
+	 } 
 
 }
