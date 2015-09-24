@@ -25,6 +25,10 @@ public class HomeScreen extends Screen {
 	 */
 	public RegistrationScreen registrationscreen;
 	/**
+	 * 
+	 */
+	public List<BloodDrive> bloodDrives;
+	/**
 	 * Getter of mobileloginscreen
 	 */
 	public MobileLoginScreen getMobileloginscreen() {
@@ -97,6 +101,25 @@ public class HomeScreen extends Screen {
 	 * 
 	 */
 	public void viewNotifications() { 
+		// TODO Auto-generated method
+	 }
+	/**
+	 * Getter of bloodDrives
+	 */
+	public List<BloodDrive> getBloodDrives() {
+	 	 return bloodDrives; 
+	}
+	/**
+	 * Setter of bloodDrives
+	 */
+	public void setBloodDrives(List<BloodDrive> bloodDrives) { 
+		 this.bloodDrives = bloodDrives; 
+	}
+	/**
+	 * 
+	 * @param bloodDrive 
+	 */
+	public void tapBloodDrive(BloodDrive bloodDrive) { 
 		// TODO Auto-generated method
 	 } 
 

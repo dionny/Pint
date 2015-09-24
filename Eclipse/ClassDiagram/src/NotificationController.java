@@ -71,6 +71,16 @@ public class NotificationController extends Controller {
 	 */
 	public void sendNotification(Notification notification) { 
 		// TODO Auto-generated method
+	 }
+	/**
+	 * 
+	 * @param Campaign 
+	 * @param message 
+	 * @return 
+	 */
+	public boolean checkRadius(BloodDrive Campaign, String message) { 
+		// TODO Auto-generated method
+		return false;
 	 } 
 
 }

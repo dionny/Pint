@@ -22,6 +22,14 @@ public abstract class Screen {
 	 */
 	public void create() { 
 		// TODO Auto-generated method
+	 }
+
+	/**
+	 * 
+	 * @param message 
+	 */
+	public void displayError(String message) { 
+		// TODO Auto-generated method
 	 } 
 
 }

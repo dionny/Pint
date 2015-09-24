@@ -24,6 +24,7 @@ public class UserController extends Controller {
 	 * 
 	 */
 	public ManagerDashboard managerdashboard;
+	public LoginScreen loginscreen;
 	/**
 	 * Getter of mobileloginscreen
 	 */
@@ -115,6 +116,34 @@ public class UserController extends Controller {
 	public boolean updateRoles(List<User> users) { 
 		// TODO Auto-generated method
 		return false;
+	 }
+	/**
+	 * Getter of loginscreen
+	 */
+	public LoginScreen getLoginscreen() {
+	 	 return loginscreen; 
+	}
+	/**
+	 * Setter of loginscreen
+	 */
+	public void setLoginscreen(LoginScreen loginscreen) { 
+		 this.loginscreen = loginscreen; 
+	}
+	/**
+	 * 
+	 * @param user 
+	 */
+	public void sendLockoutEmail(User user) { 
+		// TODO Auto-generated method
+	 }
+	/**
+	 * 
+	 * @param emailAddress 
+	 * @return 
+	 */
+	public User getUser(String emailAddress) { 
+		// TODO Auto-generated method
+		return null;
 	 } 
 
 }

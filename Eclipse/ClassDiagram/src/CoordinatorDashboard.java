@@ -18,6 +18,10 @@ public class CoordinatorDashboard extends Screen {
 	 */
 	public NotificationController notificationcontroller;
 	/**
+	 * 
+	 */
+	public List<BloodDrive> bloodDrives;
+	/**
 	 * Getter of campaigns
 	 */
 	public List<Campaign> getCampaigns() {
@@ -88,7 +92,7 @@ public class CoordinatorDashboard extends Screen {
 	 }
 	/**
 	 * 
-	 * @param campaignId 
+	 * @param bloodDriveId 
 	 * @param message 
 	 */
 	public void sendNotifications(int campaignId, String message) { 
@@ -105,6 +109,46 @@ public class CoordinatorDashboard extends Screen {
 	 * 
 	 */
 	public void confirmNotification() { 
+		// TODO Auto-generated method
+	 }
+	/**
+	 * Getter of bloodDrives
+	 */
+	public List<BloodDrive> getBloodDrives() {
+	 	 return bloodDrives; 
+	}
+	/**
+	 * Setter of bloodDrives
+	 */
+	public void setBloodDrives(List<BloodDrive> bloodDrives) { 
+		 this.bloodDrives = bloodDrives; 
+	}
+	/**
+	 * 
+	 * @param title 
+	 * @param description 
+	 * @param startTime 
+	 * @param endTime 
+	 * @param nurses 
+	 * @param address 
+	 * @return 
+	 */
+	public BloodDrive createBloodDrive(String title, String description, long startTime, long endTime, Employee nurses, String address) { 
+		// TODO Auto-generated method
+		return null;
+	 }
+	/**
+	 * 
+	 * @param bloodDriveId 
+	 */
+	public void stopBloodDrive(int bloodDriveId) { 
+		// TODO Auto-generated method
+	 }
+	/**
+	 * 
+	 * @param bloodDrive 
+	 */
+	public void selectBloodDrive(BloodDrive bloodDrive) { 
 		// TODO Auto-generated method
 	 } 
 

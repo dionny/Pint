@@ -31,6 +31,18 @@ public class User extends Entity {
 	 */
 	public UserController usercontroller;
 	/**
+	 * 
+	 */
+	public int MaximumFailures = 4;
+	/**
+	 * 
+	 */
+	public int FailureCounter;
+	/**
+	 * 
+	 */
+	public long FirstFailureTimestamp;
+	/**
 	 * Getter of sessionKey
 	 */
 	public String getSessionKey() {
@@ -101,6 +113,42 @@ public class User extends Entity {
 	 */
 	public void setUsercontroller(UserController usercontroller) { 
 		 this.usercontroller = usercontroller; 
+	}
+	/**
+	 * Getter of MaximumFailures
+	 */
+	public int getMaximumFailures() {
+	 	 return MaximumFailures; 
+	}
+	/**
+	 * Setter of MaximumFailures
+	 */
+	public void setMaximumFailures(int MaximumFailures) { 
+		 this.MaximumFailures = MaximumFailures; 
+	}
+	/**
+	 * Getter of FailureCounter
+	 */
+	public int getFailureCounter() {
+	 	 return FailureCounter; 
+	}
+	/**
+	 * Setter of FailureCounter
+	 */
+	public void setFailureCounter(int FailureCounter) { 
+		 this.FailureCounter = FailureCounter; 
+	}
+	/**
+	 * Getter of FirstFailureTimestamp
+	 */
+	public long getFirstFailureTimestamp() {
+	 	 return FirstFailureTimestamp; 
+	}
+	/**
+	 * Setter of FirstFailureTimestamp
+	 */
+	public void setFirstFailureTimestamp(long FirstFailureTimestamp) { 
+		 this.FirstFailureTimestamp = FirstFailureTimestamp; 
 	} 
 
 }

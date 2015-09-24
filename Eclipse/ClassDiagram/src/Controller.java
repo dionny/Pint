@@ -4,6 +4,11 @@ public class Controller {
 
 	/**
 	 * 
+	 */
+	public static long sessionTimeout;
+
+	/**
+	 * 
 	 * @param query 
 	 * @return 
 	 */
@@ -31,6 +36,27 @@ public class Controller {
 	public boolean verifySession(int userId, String securityToken) { 
 		// TODO Auto-generated method
 		return false;
+	 }
+
+	/**
+	 * Getter of sessionTimeout
+	 */
+	public long getSessionTimeout() {
+	 	 return sessionTimeout; 
+	}
+
+	/**
+	 * Setter of sessionTimeout
+	 */
+	public void setSessionTimeout(long sessionTimeout) { 
+		 this.sessionTimeout = sessionTimeout; 
+	}
+
+	/**
+	 * 
+	 */
+	public void verifyTimer() { 
+		// TODO Auto-generated method
 	 } 
 
 }

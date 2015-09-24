@@ -55,6 +55,13 @@ public class NotificationScreen extends Screen {
 	 */
 	public void displayNotification(Notification displayNotification) { 
 		// TODO Auto-generated method
+	 }
+	/**
+	 * 
+	 * @param notification 
+	 */
+	public void selectNotification(Notification notification) { 
+		// TODO Auto-generated method
 	 } 
 
 }
