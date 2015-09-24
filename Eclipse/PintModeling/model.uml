@@ -173,6 +173,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LNWT8WGpEeW93Mk1RY2FJA" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LNWT8mGpEeW93Mk1RY2FJA" value="1"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Y6Wa8GJjEeWQT-kpDqtLRg" name="userController" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_Y6XCAGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y6Wa8WJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y6Wa8mJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_eKr1IFg8EeWUdej6b-EfkQ" name="createEmployee" visibility="public" concurrency="concurrent">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_uxtRwFg8EeWUdej6b-EfkQ" name="employee" type="_UFyDsFgmEeWUdej6b-EfkQ"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_zwwlsFg8EeWUdej6b-EfkQ" name="user" type="_UFyDsFgmEeWUdej6b-EfkQ" direction="return"/>
@@ -196,6 +200,14 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B4TqYWJdEeWQT-kpDqtLRg" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B4TqYmJdEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_bUGgkGJjEeWQT-kpDqtLRg" name="bloodDriveController" type="_J8TfAFg2EeWUdej6b-EfkQ" association="_bUHHoGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bUGgkWJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bUGgkmJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cIntwGJjEeWQT-kpDqtLRg" name="notificationController" type="_k13bEFg5EeWUdej6b-EfkQ" association="_cIoU0GJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cIntwWJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cIntwmJjEeWQT-kpDqtLRg" value="1"/>
           </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_XqGhMFg1EeWUdej6b-EfkQ" name="createBloodDrive">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_c49LsFg1EeWUdej6b-EfkQ" name="title">
@@ -240,6 +252,10 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_CmWg8Fg9EeWUdej6b-EfkQ" name="NotificationScreen">
           <generalization xmi:type="uml:Generalization" xmi:id="_44guEFm6EeW6AJhG3McfEA" general="_uYULEFggEeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_dXOO4GJjEeWQT-kpDqtLRg" name="notificationController" type="_k13bEFg5EeWUdej6b-EfkQ" association="_dXOO42JjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dXOO4WJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dXOO4mJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_NKZZQFnDEeW6AJhG3McfEA" name="displayNotification">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_TN_6cFnDEeW6AJhG3McfEA" name="displayNotification" type="_Q-NNoFm5EeW6AJhG3McfEA"/>
           </ownedOperation>
@@ -285,6 +301,10 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_rYxhVGGjEeW93Mk1RY2FJA" name="usercontroller" type="_Mu9ZYFghEeWUdej6b-EfkQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_rYxhVWGjEeW93Mk1RY2FJA" name="homescreen" type="_z062UFgjEeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ROPD0GJjEeWQT-kpDqtLRg" name="userController" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_ROPq4GJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ROPD0WJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ROPD0mJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_rYxhVmGjEeW93Mk1RY2FJA" name="clickLogin">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_rYxhV2GjEeW93Mk1RY2FJA" name="user" type="_EqossFgYEeWUot0KYiZx9Q" direction="return"/>
           </ownedOperation>
@@ -317,6 +337,10 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_bYcAQGJeEeWQT-kpDqtLRg" name="passwordConfirmation">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T6iSAGJjEeWQT-kpDqtLRg" name="userController" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_T6i5EGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T6iSAWJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T6iSAmJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_XNPVIFgsEeWUdej6b-EfkQ" name="submit" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_C-uigFguEeWUdej6b-EfkQ" name="success" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
@@ -345,6 +369,14 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_SgDM4GGmEeW93Mk1RY2FJA" name="BloodDriveDetailScreen">
           <generalization xmi:type="uml:Generalization" xmi:id="_SgDM4WGmEeW93Mk1RY2FJA" general="_uYULEFggEeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_JqMDkGJjEeWQT-kpDqtLRg" name="bloodDriveController" type="_J8TfAFg2EeWUdej6b-EfkQ" association="_JqMqoGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JqMDkWJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JqMDkmJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_NFcpgGJjEeWQT-kpDqtLRg" name="notificationController" type="_k13bEFg5EeWUdej6b-EfkQ" association="_NFeesGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NFcpgWJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NFcpgmJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_G98wwGGoEeW93Mk1RY2FJA" name="scrollToAndOpen" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_G98wwWGoEeW93Mk1RY2FJA" name="emailAddress">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -365,6 +397,18 @@
           <generalization xmi:type="uml:Generalization" xmi:id="_tn59oFgnEeWUdej6b-EfkQ" general="_uYULEFggEeWUdej6b-EfkQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_b6iuk1goEeWUdej6b-EfkQ" name="mobileloginscreen" type="_okjkEFgdEeWUdej6b-EfkQ" association="_b6iHgFgoEeWUdej6b-EfkQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_cYh1U1mMEeWUdej6b-EfkQ" name="registrationscreen" type="_YYQMMFgrEeWUdej6b-EfkQ" association="_cYhOQFmMEeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_YKlK4GJjEeWQT-kpDqtLRg" name="userController" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_YKlx8GJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YKlK4WJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YKlK4mJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_aEJ7oGJjEeWQT-kpDqtLRg" name="bloodDriveController" type="_J8TfAFg2EeWUdej6b-EfkQ" association="_aEKisGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aEJ7oWJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aEJ7omJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lBYLQGJwEeWQT-kpDqtLRg" name="notificationController" type="_k13bEFg5EeWUdej6b-EfkQ" association="_lBYLQ2JwEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lBYLQWJwEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lBYLQmJwEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_WLM7QFgqEeWUdej6b-EfkQ" name="clickLogout" concurrency="concurrent">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_n9GPkFgqEeWUdej6b-EfkQ" name="sessionKey">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -383,6 +427,10 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_Tws5oFgoEeWUdej6b-EfkQ" name="user" type="_EqossFgYEeWUot0KYiZx9Q" association="_TwsSkFgoEeWUdej6b-EfkQ">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YGIo0FgoEeWUdej6b-EfkQ" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YGM6QFgoEeWUdej6b-EfkQ" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_WK-_wGJlEeWQT-kpDqtLRg" name="bloodDriveController" type="_J8TfAFg2EeWUdej6b-EfkQ" association="_WLAN4GJlEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WK-_wWJlEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WK-_wmJlEeWQT-kpDqtLRg" value="1"/>
           </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_qSFgEFghEeWUdej6b-EfkQ" name="authenticate">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_sXUuQFghEeWUdej6b-EfkQ" name="emailAddress">
@@ -472,6 +520,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2-RGkFnIEeW6AJhG3McfEA" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2-SUsFnIEeW6AJhG3McfEA" value="*"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cMZO8GJtEeWQT-kpDqtLRg" name="userController" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_cMZ2AGJtEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cMZO8WJtEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cMZO8mJtEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_BqxqYFm6EeW6AJhG3McfEA" name="getNotifications"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_GiBzkFnCEeW6AJhG3McfEA" name="sendNotification">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_ME7bcFnCEeW6AJhG3McfEA" name="notification" type="_Q-NNoFm5EeW6AJhG3McfEA"/>
@@ -504,6 +556,10 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_dCnJgGGiEeW93Mk1RY2FJA" name="FirstFailureTimestamp" visibility="public">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vnmnQWJpEeWQT-kpDqtLRg" name="userNotification" type="_SldGsGJpEeWQT-kpDqtLRg" association="_vnmnQGJpEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vnmnQmJpEeWQT-kpDqtLRg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vnmnQ2JpEeWQT-kpDqtLRg" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_s7YTAFggEeWUdej6b-EfkQ" name="Entity">
@@ -688,6 +744,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V_Iyl2JZEeW93Mk1RY2FJA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V_IymGJZEeW93Mk1RY2FJA" value="*"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_fbYfAGJjEeWQT-kpDqtLRg" name="bloodDriveController" type="_J8TfAFg2EeWUdej6b-EfkQ" association="_fbZGEGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fbYfAWJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fbYfAmJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_V_IymWJZEeW93Mk1RY2FJA" name="displayNotification">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_V_IymmJZEeW93Mk1RY2FJA" name="displayNotification" type="_Q-NNoFm5EeW6AJhG3McfEA"/>
           </ownedOperation>
@@ -698,19 +758,590 @@
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_jLPAcGJZEeW93Mk1RY2FJA" name="addDonor"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_uCwuMGJaEeWmtPuLQZF05Q" client="_V_IykGJZEeW93Mk1RY2FJA" supplier="_J8TfAFg2EeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_ClQh4GJbEeWmtPuLQZF05Q" client="_SgDM4GGmEeW93Mk1RY2FJA" supplier="_J8TfAFg2EeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_MBCf0GJbEeWmtPuLQZF05Q" client="_SgDM4GGmEeW93Mk1RY2FJA" supplier="_k13bEFg5EeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_ZMmFsGJcEeWQT-kpDqtLRg" client="_rYxhUGGjEeW93Mk1RY2FJA" supplier="_Mu9ZYFghEeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_qIrzYGJcEeWQT-kpDqtLRg" client="_z062UFgjEeWUdej6b-EfkQ" supplier="_J8TfAFg2EeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_0o2mgGJcEeWQT-kpDqtLRg" client="_FeBaAFgvEeWUdej6b-EfkQ" supplier="_Mu9ZYFghEeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_3zjA4GJcEeWQT-kpDqtLRg" client="_8vi_QFg0EeWUdej6b-EfkQ" supplier="_J8TfAFg2EeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_FdoV0GJeEeWQT-kpDqtLRg" client="_CmWg8Fg9EeWUdej6b-EfkQ" supplier="_k13bEFg5EeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_JGQpYGJeEeWQT-kpDqtLRg" client="_8vi_QFg0EeWUdej6b-EfkQ" supplier="_k13bEFg5EeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_S-_pEGJeEeWQT-kpDqtLRg" client="_YYQMMFgrEeWUdej6b-EfkQ" supplier="_Mu9ZYFghEeWUdej6b-EfkQ"/>
-        <packagedElement xmi:type="uml:Dependency" xmi:id="_YlvPIGJeEeWQT-kpDqtLRg" client="_z062UFgjEeWUdej6b-EfkQ" supplier="_Mu9ZYFghEeWUdej6b-EfkQ"/>
+        <packagedElement xmi:type="uml:Association" xmi:id="_JqMqoGJjEeWQT-kpDqtLRg" memberEnd="_JqMqoWJjEeWQT-kpDqtLRg _JqMDkGJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_JqMqoWJjEeWQT-kpDqtLRg" name="bloodDriveDetailScreen" type="_SgDM4GGmEeW93Mk1RY2FJA" association="_JqMqoGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JqMqomJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JqMqo2JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_NFeesGJjEeWQT-kpDqtLRg" memberEnd="_NFeesWJjEeWQT-kpDqtLRg _NFcpgGJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_NFeesWJjEeWQT-kpDqtLRg" name="bloodDriveDetailScreen" type="_SgDM4GGmEeW93Mk1RY2FJA" association="_NFeesGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NFeesmJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NFees2JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_ROPq4GJjEeWQT-kpDqtLRg" memberEnd="_ROPq4WJjEeWQT-kpDqtLRg _ROPD0GJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_ROPq4WJjEeWQT-kpDqtLRg" name="loginScreen" type="_rYxhUGGjEeW93Mk1RY2FJA" association="_ROPq4GJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ROPq4mJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ROPq42JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_T6i5EGJjEeWQT-kpDqtLRg" memberEnd="_T6i5EWJjEeWQT-kpDqtLRg _T6iSAGJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_T6i5EWJjEeWQT-kpDqtLRg" name="registrationScreen" type="_YYQMMFgrEeWUdej6b-EfkQ" association="_T6i5EGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T6i5EmJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T6i5E2JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_YKlx8GJjEeWQT-kpDqtLRg" memberEnd="_YKlx8WJjEeWQT-kpDqtLRg _YKlK4GJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_YKlx8WJjEeWQT-kpDqtLRg" name="homeScreen" type="_z062UFgjEeWUdej6b-EfkQ" association="_YKlx8GJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YKlx8mJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YKlx82JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_Y6XCAGJjEeWQT-kpDqtLRg" memberEnd="_Y6XCAWJjEeWQT-kpDqtLRg _Y6Wa8GJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_Y6XCAWJjEeWQT-kpDqtLRg" name="managerDashboard" type="_FeBaAFgvEeWUdej6b-EfkQ" association="_Y6XCAGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y6XCAmJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y6XCA2JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_aEKisGJjEeWQT-kpDqtLRg" memberEnd="_aEKisWJjEeWQT-kpDqtLRg _aEJ7oGJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_aEKisWJjEeWQT-kpDqtLRg" name="homeScreen" type="_z062UFgjEeWUdej6b-EfkQ" association="_aEKisGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aEKismJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aEKis2JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_bUHHoGJjEeWQT-kpDqtLRg" memberEnd="_bUHHoWJjEeWQT-kpDqtLRg _bUGgkGJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_bUHHoWJjEeWQT-kpDqtLRg" name="coordinatorDashboard" type="_8vi_QFg0EeWUdej6b-EfkQ" association="_bUHHoGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bUHHomJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bUHHo2JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_cIoU0GJjEeWQT-kpDqtLRg" memberEnd="_cIoU0WJjEeWQT-kpDqtLRg _cIntwGJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_cIoU0WJjEeWQT-kpDqtLRg" name="coordinatorDashboard" type="_8vi_QFg0EeWUdej6b-EfkQ" association="_cIoU0GJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cIoU0mJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cIoU02JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_dXOO42JjEeWQT-kpDqtLRg" memberEnd="_dXOO5GJjEeWQT-kpDqtLRg _dXOO4GJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_dXOO5GJjEeWQT-kpDqtLRg" name="notificationScreen" type="_CmWg8Fg9EeWUdej6b-EfkQ" association="_dXOO42JjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dXOO5WJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dXOO5mJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_fbZGEGJjEeWQT-kpDqtLRg" memberEnd="_fbZGEWJjEeWQT-kpDqtLRg _fbYfAGJjEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_fbZGEWJjEeWQT-kpDqtLRg" name="nurseDashboard" type="_V_IykGJZEeW93Mk1RY2FJA" association="_fbZGEGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fbZGEmJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fbZGE2JjEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_WLAN4GJlEeWQT-kpDqtLRg" memberEnd="_WLAN4WJlEeWQT-kpDqtLRg _WK-_wGJlEeWQT-kpDqtLRg" navigableOwnedEnd="_WLAN4WJlEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_WLAN4WJlEeWQT-kpDqtLRg" name="userController" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_WLAN4GJlEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WLAN4mJlEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WLAN42JlEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SldGsGJpEeWQT-kpDqtLRg" name="UserNotification" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_dM0G8GJpEeWQT-kpDqtLRg" name="hasSeen">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_qJG-QGJpEeWQT-kpDqtLRg" name="sentTime">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vnkyEGJpEeWQT-kpDqtLRg" name="user" type="_EqossFgYEeWUot0KYiZx9Q" association="_vnmnQGJpEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vnkyEWJpEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vnkyEmJpEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_H5GcQGJqEeWQT-kpDqtLRg" name="notification" type="_Q-NNoFm5EeW6AJhG3McfEA" association="_H5HDUGJqEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H5GcQWJqEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H5GcQmJqEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_vnmnQGJpEeWQT-kpDqtLRg" memberEnd="_vnmnQWJpEeWQT-kpDqtLRg _vnkyEGJpEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_H5HDUGJqEeWQT-kpDqtLRg" memberEnd="_H5HDUWJqEeWQT-kpDqtLRg _H5GcQGJqEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_H5HDUWJqEeWQT-kpDqtLRg" name="userNotification" type="_SldGsGJpEeWQT-kpDqtLRg" association="_H5HDUGJqEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H5HDUmJqEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H5HDU2JqEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_cMZ2AGJtEeWQT-kpDqtLRg" memberEnd="_cMZ2AWJtEeWQT-kpDqtLRg _cMZO8GJtEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_cMZ2AWJtEeWQT-kpDqtLRg" name="notificationController" type="_k13bEFg5EeWUdej6b-EfkQ" association="_cMZ2AGJtEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cMZ2AmJtEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cMZ2A2JtEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_lBYLQ2JwEeWQT-kpDqtLRg" memberEnd="_lBYyUGJwEeWQT-kpDqtLRg _lBYLQGJwEeWQT-kpDqtLRg">
+          <name xsi:nil="true"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_lBYyUGJwEeWQT-kpDqtLRg" name="homeScreen" type="_z062UFgjEeWUdej6b-EfkQ" association="_lBYLQ2JwEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lBYyUWJwEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lBYyUmJwEeWQT-kpDqtLRg" value="1"/>
+          </ownedEnd>
+        </packagedElement>
       </packagedElement>
-      <packagedElement xmi:type="uml:Model" xmi:id="_WjjNsFmGEeWUdej6b-EfkQ" name="ObjectDiagram"/>
+      <packagedElement xmi:type="uml:Model" xmi:id="_WjjNsFmGEeWUdej6b-EfkQ" name="ObjectDiagram">
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_INh_sGJgEeWQT-kpDqtLRg" name="Dweep" classifier="_Zaih4FgmEeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_QeTjEGJgEeWQT-kpDqtLRg" definingFeature="_vFX60FgfEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_cpXxwGJgEeWQT-kpDqtLRg" name="sessionKey"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_eOxCQGJgEeWQT-kpDqtLRg" definingFeature="_AI5GMFggEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_eOxCQWJgEeWQT-kpDqtLRg" name="emailAddress" value="dweep@fiu.edu"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_hp9WwGJgEeWQT-kpDqtLRg" definingFeature="_TCdiUFgiEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_hp9WwWJgEeWQT-kpDqtLRg" name="value" value="a123144d311dd"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_vGhCgGJgEeWQT-kpDqtLRg" definingFeature="_L4jRQGGiEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralInteger" xmi:id="_3-K_sGJgEeWQT-kpDqtLRg" name="value" value="4"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_4wPV0GJgEeWQT-kpDqtLRg" definingFeature="_ZmvfkGGiEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralInteger" xmi:id="_4wPV0WJgEeWQT-kpDqtLRg" name="value" value="3"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="__3IgAGJgEeWQT-kpDqtLRg" definingFeature="_9tDgcFggEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="__3IgAWJgEeWQT-kpDqtLRg" name="emailAddress" value="Miami"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_Dr388GJhEeWQT-kpDqtLRg" definingFeature="_-ZQfIFggEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_Dr388WJhEeWQT-kpDqtLRg" name="value" value="Florida"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_poF1gWJhEeWQT-kpDqtLRg" definingFeature="_Tws5oVgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_poGckGJhEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_L6RhwGJhEeWQT-kpDqtLRg" name="LoginScreen" classifier="_rYxhUGGjEeW93Mk1RY2FJA">
+          <slot xmi:type="uml:Slot" xmi:id="_P87e4GJhEeWQT-kpDqtLRg" definingFeature="_rYxhUmGjEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralString" xmi:id="_P87e4WJhEeWQT-kpDqtLRg" name="emailAddress" value="dweep@fiu.edu"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_UZV_0GJhEeWQT-kpDqtLRg" definingFeature="_rYxhU2GjEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralString" xmi:id="_UZV_0WJhEeWQT-kpDqtLRg" name="emailAddress" value="peewd123"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_jIoz42JjEeWQT-kpDqtLRg" definingFeature="_ROPD0GJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_jIpa8GJjEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Y35OwGJhEeWQT-kpDqtLRg" name="UserCtrl" classifier="_Mu9ZYFghEeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_poFOcGJhEeWQT-kpDqtLRg" definingFeature="_Tws5oFgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_poF1gGJhEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_INh_sGJgEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="__qTZYGJqEeWQT-kpDqtLRg" definingFeature="_Tws5oFgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="__qTZYWJqEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_0eSREGJjEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_A7f7g2JrEeWQT-kpDqtLRg" definingFeature="_WK-_wGJlEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_A7gikGJrEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_msxdcWJtEeWQT-kpDqtLRg" definingFeature="_Tws5oFgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_msxdcmJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_0eSREGJjEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_i2KtY2JvEeWQT-kpDqtLRg" definingFeature="_WK-_wGJlEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_i2LUcGJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_kFEwgmJvEeWQT-kpDqtLRg" definingFeature="_Tws5oFgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_kFFXkGJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_BPi8EGJvEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_L1WyQWJxEeWQT-kpDqtLRg" definingFeature="_Tws5oFgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_L1WyQmJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_0eSREGJjEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_poCLIGJhEeWQT-kpDqtLRg" name="InstanceSpecification1" classifier="_TwsSkFgoEeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_poEnYGJhEeWQT-kpDqtLRg" source="InstanceEnd" references="_INh_sGJgEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_jIoM0GJjEeWQT-kpDqtLRg" name="InstanceSpecification2" classifier="_ROPq4GJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jIoz4GJjEeWQT-kpDqtLRg" source="InstanceEnd" references="_L6RhwGJhEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_jIoz4WJjEeWQT-kpDqtLRg" definingFeature="_ROPq4WJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_jIoz4mJjEeWQT-kpDqtLRg" name="InstanceValue1" type="_rYxhUGGjEeW93Mk1RY2FJA" instance="_L6RhwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_0eSREGJjEeWQT-kpDqtLRg" name="Dionny" classifier="_Zaih4FgmEeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_0eSREWJjEeWQT-kpDqtLRg" definingFeature="_vFX60FgfEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_0eSREmJjEeWQT-kpDqtLRg" name="sessionKey" value="67686783rjhbhjsdfgj"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_0eSRE2JjEeWQT-kpDqtLRg" definingFeature="_AI5GMFggEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_0eSRFGJjEeWQT-kpDqtLRg" name="emailAddress" value="dionny@fiu.edu"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_0eSRFWJjEeWQT-kpDqtLRg" definingFeature="_TCdiUFgiEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_0eSRFmJjEeWQT-kpDqtLRg" name="value" value="a123144d311dd"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_0eSRF2JjEeWQT-kpDqtLRg" definingFeature="_L4jRQGGiEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralInteger" xmi:id="_0eSRGGJjEeWQT-kpDqtLRg" name="value" value="4"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_0eSRGWJjEeWQT-kpDqtLRg" definingFeature="_ZmvfkGGiEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralInteger" xmi:id="_0eSRGmJjEeWQT-kpDqtLRg" name="value"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_0eSRG2JjEeWQT-kpDqtLRg" definingFeature="_9tDgcFggEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_0eSRHGJjEeWQT-kpDqtLRg" name="emailAddress" value="Miami"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_0eSRHWJjEeWQT-kpDqtLRg" definingFeature="_-ZQfIFggEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_0eSRHmJjEeWQT-kpDqtLRg" name="value" value="Florida"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_0eS4IGJjEeWQT-kpDqtLRg" definingFeature="_Tws5oVgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_0eS4IWJjEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="__qTZYmJqEeWQT-kpDqtLRg" definingFeature="_Tws5oVgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="__qTZY2JqEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_lIAfEWJtEeWQT-kpDqtLRg" definingFeature="_vnmnQWJpEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_lIAfEmJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_SldGsGJpEeWQT-kpDqtLRg" instance="_vND48GJsEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_msxdc2JtEeWQT-kpDqtLRg" definingFeature="_Tws5oVgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_msxddGJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_L1WyQ2JxEeWQT-kpDqtLRg" definingFeature="_Tws5oVgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_L1XZUGJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_O0HM8WJyEeWQT-kpDqtLRg" definingFeature="_vnmnQWJpEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_O0HM8mJyEeWQT-kpDqtLRg" name="InstanceValue1" type="_SldGsGJpEeWQT-kpDqtLRg" instance="_vND48GJsEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_9Zi74GJjEeWQT-kpDqtLRg" name="FIU_MMC" classifier="_O1MdYFgyEeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_9Zi74WJjEeWQT-kpDqtLRg" definingFeature="_mdlOgFgzEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_9Zi74mJjEeWQT-kpDqtLRg" name="value" value="FIU-MMC Blood Drive"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_9Zi772JjEeWQT-kpDqtLRg" definingFeature="_Tws5oVgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_9Zi78GJjEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_LQJfUGJkEeWQT-kpDqtLRg" definingFeature="_MfpUMGGnEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralString" xmi:id="_LQJfUWJkEeWQT-kpDqtLRg" name="Address" value="1234 fiu way"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_9vTUAGJkEeWQT-kpDqtLRg" definingFeature="_lo1QdFg2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_9vTUAWJkEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_hxSJ8GJkEeWQT-kpDqtLRg" name="BloodDriveCtrl" classifier="_J8TfAFg2EeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_hxSJ8WJkEeWQT-kpDqtLRg" definingFeature="_Tws5oFgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_hxSJ8mJkEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_INh_sGJgEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_9vSs8mJkEeWQT-kpDqtLRg" definingFeature="_lo1Qc1g2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_9vSs82JkEeWQT-kpDqtLRg" name="InstanceValue1" type="_O1MdYFgyEeWUdej6b-EfkQ" instance="_9Zi74GJjEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_lCe7UmJsEeWQT-kpDqtLRg" definingFeature="_lo1Qc1g2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_lCe7U2JsEeWQT-kpDqtLRg" name="InstanceValue1" type="_O1MdYFgyEeWUdej6b-EfkQ" instance="_hWjgUGJlEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_hqAcQWJvEeWQT-kpDqtLRg" definingFeature="_lo1Qc1g2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_hqAcQmJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_O1MdYFgyEeWUdej6b-EfkQ" instance="_hWjgUGJlEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_hbdYAmJxEeWQT-kpDqtLRg" definingFeature="_Q7dsslg6EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_hbdYA2JxEeWQT-kpDqtLRg" name="InstanceValue1" type="_k13bEFg5EeWUdej6b-EfkQ" instance="_8eZlcGJnEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_jfd3IWJxEeWQT-kpDqtLRg" definingFeature="_lo1Qc1g2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_jfd3ImJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_O1MdYFgyEeWUdej6b-EfkQ" instance="_hWjgUGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_l8jQgGJkEeWQT-kpDqtLRg" name="HomeScreen" classifier="_z062UFgjEeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_l8jQgWJkEeWQT-kpDqtLRg" definingFeature="_Tws5oFgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_l8jQgmJkEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_INh_sGJgEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_-wTeAmJkEeWQT-kpDqtLRg" definingFeature="_aEJ7oGJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_-wTeA2JkEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_WYG8ImJtEeWQT-kpDqtLRg" definingFeature="_YKlK4GJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_WYG8I2JtEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_n3ljYmJwEeWQT-kpDqtLRg" definingFeature="_lBYLQGJwEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_n3ljY2JwEeWQT-kpDqtLRg" name="InstanceValue1" type="_k13bEFg5EeWUdej6b-EfkQ" instance="_8eZlcGJnEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_VoGes2JxEeWQT-kpDqtLRg" definingFeature="_YKlK4GJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_VoGetGJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_7KjfUGJkEeWQT-kpDqtLRg" name="InstanceSpecification3" classifier="_TwsSkFgoEeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7KkGYGJkEeWQT-kpDqtLRg" source="InstanceEnd" references="_0eSREGJjEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_9vSs8GJkEeWQT-kpDqtLRg" name="InstanceSpecification4" classifier="_lo1QcFg2EeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9vSs8WJkEeWQT-kpDqtLRg" source="InstanceEnd" references="_9Zi74GJjEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_-wS28GJkEeWQT-kpDqtLRg" name="InstanceSpecification5" classifier="_aEKisGJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-wS28WJkEeWQT-kpDqtLRg" source="InstanceEnd" references="_l8jQgGJkEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_-wTeAGJkEeWQT-kpDqtLRg" definingFeature="_aEKisWJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_-wTeAWJkEeWQT-kpDqtLRg" name="InstanceValue1" type="_z062UFgjEeWUdej6b-EfkQ" instance="_l8jQgGJkEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_hWjgUGJlEeWQT-kpDqtLRg" name="FIU_MMC2" classifier="_O1MdYFgyEeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_hWjgUWJlEeWQT-kpDqtLRg" definingFeature="_mdlOgFgzEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_hWjgUmJlEeWQT-kpDqtLRg" name="value" value="FIU-MMC Blood Drive"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_hWjgU2JlEeWQT-kpDqtLRg" definingFeature="_Tws5oVgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_hWjgVGJlEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_hWjgVWJlEeWQT-kpDqtLRg" definingFeature="_MfpUMGGnEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralString" xmi:id="_hWjgVmJlEeWQT-kpDqtLRg" name="Address" value="1234 fiu way"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_hWjgV2JlEeWQT-kpDqtLRg" definingFeature="_lo1QdFg2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_hWjgWGJlEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_3Hxw8GJlEeWQT-kpDqtLRg" definingFeature="_rSRFgFgzEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralInteger" xmi:id="_GmycoGJmEeWQT-kpDqtLRg" name="value" value="1442962800"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_JzSN0GJmEeWQT-kpDqtLRg" definingFeature="_oWDMAFgzEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_JzSN0WJmEeWQT-kpDqtLRg" name="value" value="We need blood due to the high frequency of accidents in the area."/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_NtYr4GJmEeWQT-kpDqtLRg" definingFeature="_Sg8IQGGnEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralInteger" xmi:id="_RTIDgGJmEeWQT-kpDqtLRg" name="value" value="6"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_SFhw0GJmEeWQT-kpDqtLRg" definingFeature="_MfpUMGGnEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralString" xmi:id="_SFhw0WJmEeWQT-kpDqtLRg" name="Address" value="1234 fiu way"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_koVksWJmEeWQT-kpDqtLRg" definingFeature="_fLfC0GJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_koVksmJmEeWQT-kpDqtLRg" name="InstanceValue1" type="_D17m8GJYEeW93Mk1RY2FJA" instance="_XIVjYGJmEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_lCe7VGJsEeWQT-kpDqtLRg" definingFeature="_lo1QdFg2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_lCfiYGJsEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_dhiyE2JvEeWQT-kpDqtLRg" definingFeature="_fLfC0GJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_dhjZIGJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_D17m8GJYEeW93Mk1RY2FJA" instance="_XIVjYGJmEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_hqAcQ2JvEeWQT-kpDqtLRg" definingFeature="_lo1QdFg2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_hqAcRGJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_jfd3I2JxEeWQT-kpDqtLRg" definingFeature="_lo1QdFg2EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_jfd3JGJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_rhUrMGJlEeWQT-kpDqtLRg" name="DetailScreen" classifier="_SgDM4GGmEeW93Mk1RY2FJA">
+          <slot xmi:type="uml:Slot" xmi:id="_rhUrMWJlEeWQT-kpDqtLRg" definingFeature="_Tws5oFgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_rhUrMmJlEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_INh_sGJgEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_rhUrM2JlEeWQT-kpDqtLRg" definingFeature="_aEJ7oGJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_rhUrNGJlEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_l5hRAmJsEeWQT-kpDqtLRg" definingFeature="_JqMDkGJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_l5hRA2JsEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_grwrUWJvEeWQT-kpDqtLRg" definingFeature="_JqMDkGJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_grwrUmJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_sgscgGJwEeWQT-kpDqtLRg" definingFeature="_NFcpgGJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_sgscgWJwEeWQT-kpDqtLRg" name="InstanceValue1" type="_k13bEFg5EeWUdej6b-EfkQ" instance="_8eZlcGJnEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_3UKmIGJwEeWQT-kpDqtLRg" definingFeature="_JqMDkGJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_3UKmIWJwEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_0ZiCAGJlEeWQT-kpDqtLRg" name="InstanceSpecification7" classifier="_JqMqoGJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0ZiCAWJlEeWQT-kpDqtLRg" source="InstanceEnd" references="_rhUrMGJlEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_0ZiCAmJlEeWQT-kpDqtLRg" definingFeature="_JqMqoWJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_0ZiCA2JlEeWQT-kpDqtLRg" name="InstanceValue1" type="_SgDM4GGmEeW93Mk1RY2FJA" instance="_rhUrMGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_1PBfkGJlEeWQT-kpDqtLRg" name="InstanceSpecification8" classifier="_lo1QcFg2EeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1PBfkWJlEeWQT-kpDqtLRg" source="InstanceEnd" references="_hWjgUGJlEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_XIVjYGJmEeWQT-kpDqtLRg" name="FIU MMC" classifier="_D17m8GJYEeW93Mk1RY2FJA">
+          <slot xmi:type="uml:Slot" xmi:id="_pFtH4GJmEeWQT-kpDqtLRg" definingFeature="_D17m82JYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralInteger" xmi:id="_vUPGsGJmEeWQT-kpDqtLRg" name="value"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_tqndgGJmEeWQT-kpDqtLRg" definingFeature="_D17m9GJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralString" xmi:id="_tqndgWJmEeWQT-kpDqtLRg" name="Address" value="FIU MMC"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_koUWkGJmEeWQT-kpDqtLRg" name="InstanceSpecification9" classifier="_fLfp4GJYEeW93Mk1RY2FJA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_koU9oGJmEeWQT-kpDqtLRg" source="InstanceEnd" references="_hWjgUGJlEeWQT-kpDqtLRg _XIVjYGJmEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_koU9oWJmEeWQT-kpDqtLRg" definingFeature="_fLfp4WJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_koVksGJmEeWQT-kpDqtLRg" name="InstanceValue1" type="_O1MdYFgyEeWUdej6b-EfkQ" instance="_hWjgUGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_8eZlcGJnEeWQT-kpDqtLRg" name="NotificationCtrl" classifier="_k13bEFg5EeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_emyNwWJtEeWQT-kpDqtLRg" definingFeature="_cMZO8GJtEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_emyNwmJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_uDGKwmJtEeWQT-kpDqtLRg" definingFeature="_0L2CQ1nIEeW6AJhG3McfEA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_uDGKw2JtEeWQT-kpDqtLRg" name="InstanceValue1" type="_Q-NNoFm5EeW6AJhG3McfEA" instance="_M8UwcGJoEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_M45582JxEeWQT-kpDqtLRg" definingFeature="_cMZO8GJtEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_M4559GJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_hbdYAGJxEeWQT-kpDqtLRg" definingFeature="_Q7dssVg6EeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_hbdYAWJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_J8TfAFg2EeWUdej6b-EfkQ" instance="_hxSJ8GJkEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_BaC0gmJyEeWQT-kpDqtLRg" definingFeature="_0L2CQ1nIEeW6AJhG3McfEA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_BaDbkGJyEeWQT-kpDqtLRg" name="InstanceValue1" type="_Q-NNoFm5EeW6AJhG3McfEA" instance="_M8UwcGJoEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_M8UwcGJoEeWQT-kpDqtLRg" name="Notification" classifier="_Q-NNoFm5EeW6AJhG3McfEA">
+          <slot xmi:type="uml:Slot" xmi:id="_rv_R8GJoEeWQT-kpDqtLRg" definingFeature="_VqgksFm5EeW6AJhG3McfEA">
+            <value xmi:type="uml:LiteralString" xmi:id="_rv_R8WJoEeWQT-kpDqtLRg" name="sessionKey" value="The Pizza is Here!!"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_70LuUGJoEeWQT-kpDqtLRg" definingFeature="_j8buwGGnEeW93Mk1RY2FJA">
+            <value xmi:type="uml:LiteralString" xmi:id="_70LuUWJoEeWQT-kpDqtLRg" name="value" value="We are excited to announce our collaboration with Papa Johns...&#xA;"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_w3s5AWJwEeWQT-kpDqtLRg" definingFeature="_vnT8EGJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_w3s5AmJwEeWQT-kpDqtLRg" name="InstanceValue1" type="_O1MdYFgyEeWUdej6b-EfkQ" instance="_hWjgUGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="__qSyUGJqEeWQT-kpDqtLRg" name="InstanceSpecification10" classifier="_TwsSkFgoEeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__qSyUWJqEeWQT-kpDqtLRg" source="InstanceEnd" references="_0eSREGJjEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_A7fUcGJrEeWQT-kpDqtLRg" name="InstanceSpecification11" classifier="_WLAN4GJlEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_A7f7gGJrEeWQT-kpDqtLRg" source="InstanceEnd" references="_Y35OwGJhEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_A7f7gWJrEeWQT-kpDqtLRg" definingFeature="_WLAN4WJlEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_A7f7gmJrEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_lCe7UGJsEeWQT-kpDqtLRg" name="InstanceSpecification12" classifier="_lo1QcFg2EeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lCe7UWJsEeWQT-kpDqtLRg" source="InstanceEnd" references="_hWjgUGJlEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_l5gp8GJsEeWQT-kpDqtLRg" name="InstanceSpecification13" classifier="_JqMqoGJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_l5gp8WJsEeWQT-kpDqtLRg" source="InstanceEnd" references="_rhUrMGJlEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_l5hRAGJsEeWQT-kpDqtLRg" definingFeature="_JqMqoWJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_l5hRAWJsEeWQT-kpDqtLRg" name="InstanceValue1" type="_SgDM4GGmEeW93Mk1RY2FJA" instance="_rhUrMGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_vND48GJsEeWQT-kpDqtLRg" name="UserNotification" classifier="_SldGsGJpEeWQT-kpDqtLRg">
+          <slot xmi:type="uml:Slot" xmi:id="_39xgoGJsEeWQT-kpDqtLRg" definingFeature="_dM0G8GJpEeWQT-kpDqtLRg">
+            <value xmi:type="uml:LiteralString" xmi:id="_39xgoWJsEeWQT-kpDqtLRg" name="value" value="TRUE"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_Ch9REGJtEeWQT-kpDqtLRg" definingFeature="_qJG-QGJpEeWQT-kpDqtLRg">
+            <value xmi:type="uml:LiteralString" xmi:id="_Ch9REWJtEeWQT-kpDqtLRg" name="value" value="1442962800"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_faPrBGJtEeWQT-kpDqtLRg" definingFeature="_H5GcQGJqEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_faQSEGJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_Q-NNoFm5EeW6AJhG3McfEA" instance="_M8UwcGJoEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_lIAfE2JtEeWQT-kpDqtLRg" definingFeature="_vnkyEGJpEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_lIAfFGJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_0eSREGJjEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_yz4R02JwEeWQT-kpDqtLRg" definingFeature="_H5GcQGJqEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_yz4R1GJwEeWQT-kpDqtLRg" name="InstanceValue1" type="_Q-NNoFm5EeW6AJhG3McfEA" instance="_M8UwcGJoEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_O0HM82JyEeWQT-kpDqtLRg" definingFeature="_vnkyEGJpEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_O0H0AGJyEeWQT-kpDqtLRg" name="InstanceValue1" type="_EqossFgYEeWUot0KYiZx9Q" instance="_0eSREGJjEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_WYGVEGJtEeWQT-kpDqtLRg" name="InstanceSpecification14" classifier="_YKlx8GJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WYGVEWJtEeWQT-kpDqtLRg" source="InstanceEnd" references="_l8jQgGJkEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_WYG8IGJtEeWQT-kpDqtLRg" definingFeature="_YKlx8WJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_WYG8IWJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_z062UFgjEeWUdej6b-EfkQ" instance="_l8jQgGJkEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_emw_oGJtEeWQT-kpDqtLRg" name="InstanceSpecification15" classifier="_cMZ2AGJtEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_emxmsGJtEeWQT-kpDqtLRg" source="InstanceEnd" references="_8eZlcGJnEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_emxmsWJtEeWQT-kpDqtLRg" definingFeature="_cMZ2AWJtEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_emyNwGJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_k13bEFg5EeWUdej6b-EfkQ" instance="_8eZlcGJnEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_faPrAGJtEeWQT-kpDqtLRg" name="InstanceSpecification16" classifier="_H5HDUGJqEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_faPrAWJtEeWQT-kpDqtLRg" source="InstanceEnd" references="_vND48GJsEeWQT-kpDqtLRg _M8UwcGJoEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_faPrAmJtEeWQT-kpDqtLRg" definingFeature="_H5HDUWJqEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_faPrA2JtEeWQT-kpDqtLRg" name="InstanceValue1" type="_SldGsGJpEeWQT-kpDqtLRg" instance="_vND48GJsEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_lH_4AGJtEeWQT-kpDqtLRg" name="InstanceSpecification17" classifier="_vnmnQGJpEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lIAfEGJtEeWQT-kpDqtLRg" source="InstanceEnd" references="_vND48GJsEeWQT-kpDqtLRg _0eSREGJjEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_msw2YGJtEeWQT-kpDqtLRg" name="InstanceSpecification18" classifier="_TwsSkFgoEeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_msxdcGJtEeWQT-kpDqtLRg" source="InstanceEnd" references="_0eSREGJjEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_uDGKwGJtEeWQT-kpDqtLRg" name="InstanceSpecification19" classifier="_0L2CQFnIEeW6AJhG3McfEA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uDGKwWJtEeWQT-kpDqtLRg" source="InstanceEnd" references="_M8UwcGJoEeWQT-kpDqtLRg _8eZlcGJnEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_uDGx0GJtEeWQT-kpDqtLRg" definingFeature="_0L2pUFnIEeW6AJhG3McfEA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_uDGx0WJtEeWQT-kpDqtLRg" name="InstanceValue1" type="_k13bEFg5EeWUdej6b-EfkQ" instance="_8eZlcGJnEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_BPi8EGJvEeWQT-kpDqtLRg" name="Marry" classifier="_UFyDsFgmEeWUdej6b-EfkQ">
+          <slot xmi:type="uml:Slot" xmi:id="_JtW14GJvEeWQT-kpDqtLRg" definingFeature="_RdX54FmNEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_JtW14WJvEeWQT-kpDqtLRg" name="value" value="Marry"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_Ll0zYGJvEeWQT-kpDqtLRg" definingFeature="_UMOFwFmNEeWUdej6b-EfkQ">
+            <value xmi:type="uml:LiteralString" xmi:id="_Ll0zYWJvEeWQT-kpDqtLRg" name="value" value="Jane"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_bocic2JvEeWQT-kpDqtLRg" definingFeature="_PkvXcGJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_bocidGJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_D17m8GJYEeW93Mk1RY2FJA" instance="_XIVjYGJmEeWQT-kpDqtLRg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_kFFXkWJvEeWQT-kpDqtLRg" definingFeature="_Tws5oVgoEeWUdej6b-EfkQ">
+            <value xmi:type="uml:InstanceValue" xmi:id="_kFFXkmJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_bob7YGJvEeWQT-kpDqtLRg" name="InstanceSpecification20" classifier="_Pkv-gGJYEeW93Mk1RY2FJA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bocicGJvEeWQT-kpDqtLRg" source="InstanceEnd" references="_BPi8EGJvEeWQT-kpDqtLRg _XIVjYGJmEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_bocicWJvEeWQT-kpDqtLRg" definingFeature="_Pkv-gWJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_bocicmJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_UFyDsFgmEeWUdej6b-EfkQ" instance="_BPi8EGJvEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_dhiLAGJvEeWQT-kpDqtLRg" name="InstanceSpecification21" classifier="_fLfp4GJYEeW93Mk1RY2FJA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dhiyEGJvEeWQT-kpDqtLRg" source="InstanceEnd" references="_hWjgUGJlEeWQT-kpDqtLRg _XIVjYGJmEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_dhiyEWJvEeWQT-kpDqtLRg" definingFeature="_fLfp4WJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_dhiyEmJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_O1MdYFgyEeWUdej6b-EfkQ" instance="_hWjgUGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_grwEQGJvEeWQT-kpDqtLRg" name="InstanceSpecification22" classifier="_JqMqoGJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_grwEQWJvEeWQT-kpDqtLRg" source="InstanceEnd" references="_rhUrMGJlEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_grwEQmJvEeWQT-kpDqtLRg" definingFeature="_JqMqoWJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_grwrUGJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_SgDM4GGmEeW93Mk1RY2FJA" instance="_rhUrMGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_hp_1MGJvEeWQT-kpDqtLRg" name="InstanceSpecification23" classifier="_lo1QcFg2EeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hqAcQGJvEeWQT-kpDqtLRg" source="InstanceEnd" references="_hWjgUGJlEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_i2KGUGJvEeWQT-kpDqtLRg" name="InstanceSpecification24" classifier="_WLAN4GJlEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_i2KtYGJvEeWQT-kpDqtLRg" source="InstanceEnd" references="_Y35OwGJhEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_i2KtYWJvEeWQT-kpDqtLRg" definingFeature="_WLAN4WJlEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_i2KtYmJvEeWQT-kpDqtLRg" name="InstanceValue1" type="_Mu9ZYFghEeWUdej6b-EfkQ" instance="_Y35OwGJhEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_kFEwgGJvEeWQT-kpDqtLRg" name="InstanceSpecification25" classifier="_TwsSkFgoEeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kFEwgWJvEeWQT-kpDqtLRg" source="InstanceEnd" references="_BPi8EGJvEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_n3kVQGJwEeWQT-kpDqtLRg" name="InstanceSpecification26" classifier="_lBYLQ2JwEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_n3k8UGJwEeWQT-kpDqtLRg" source="InstanceEnd" references="_l8jQgGJkEeWQT-kpDqtLRg _8eZlcGJnEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_n3ljYGJwEeWQT-kpDqtLRg" definingFeature="_lBYyUGJwEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_n3ljYWJwEeWQT-kpDqtLRg" name="InstanceValue1" type="_z062UFgjEeWUdej6b-EfkQ" instance="_l8jQgGJkEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_sgrOYGJwEeWQT-kpDqtLRg" name="InstanceSpecification27" classifier="_NFeesGJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sgr1cGJwEeWQT-kpDqtLRg" source="InstanceEnd" references="_rhUrMGJlEeWQT-kpDqtLRg _8eZlcGJnEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_sgr1cWJwEeWQT-kpDqtLRg" definingFeature="_NFeesWJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_sgr1cmJwEeWQT-kpDqtLRg" name="InstanceValue1" type="_SgDM4GGmEeW93Mk1RY2FJA" instance="_rhUrMGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_w3sR8GJwEeWQT-kpDqtLRg" name="InstanceSpecification28" classifier="_vnUjIGJYEeW93Mk1RY2FJA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_w3sR8WJwEeWQT-kpDqtLRg" source="InstanceEnd" references="_M8UwcGJoEeWQT-kpDqtLRg _hWjgUGJlEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_w3sR8mJwEeWQT-kpDqtLRg" definingFeature="_vnUjIWJYEeW93Mk1RY2FJA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_w3s5AGJwEeWQT-kpDqtLRg" name="InstanceValue1" type="_Q-NNoFm5EeW6AJhG3McfEA" instance="_M8UwcGJoEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_yz3qwGJwEeWQT-kpDqtLRg" name="InstanceSpecification29" classifier="_H5HDUGJqEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yz4R0GJwEeWQT-kpDqtLRg" source="InstanceEnd" references="_vND48GJsEeWQT-kpDqtLRg _M8UwcGJoEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_yz4R0WJwEeWQT-kpDqtLRg" definingFeature="_H5HDUWJqEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_yz4R0mJwEeWQT-kpDqtLRg" name="InstanceValue1" type="_SldGsGJpEeWQT-kpDqtLRg" instance="_vND48GJsEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_3UJ_EGJwEeWQT-kpDqtLRg" name="InstanceSpecification30" classifier="_JqMqoGJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3UJ_EWJwEeWQT-kpDqtLRg" source="InstanceEnd" references="_rhUrMGJlEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_3UJ_EmJwEeWQT-kpDqtLRg" definingFeature="_JqMqoWJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_3UJ_E2JwEeWQT-kpDqtLRg" name="InstanceValue1" type="_SgDM4GGmEeW93Mk1RY2FJA" instance="_rhUrMGJlEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_L1WLMGJxEeWQT-kpDqtLRg" name="InstanceSpecification31" classifier="_TwsSkFgoEeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_L1WyQGJxEeWQT-kpDqtLRg" source="InstanceEnd" references="_0eSREGJjEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_M45S4GJxEeWQT-kpDqtLRg" name="InstanceSpecification32" classifier="_cMZ2AGJtEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M4558GJxEeWQT-kpDqtLRg" source="InstanceEnd" references="_8eZlcGJnEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_M4558WJxEeWQT-kpDqtLRg" definingFeature="_cMZ2AWJtEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_M4558mJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_k13bEFg5EeWUdej6b-EfkQ" instance="_8eZlcGJnEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_VoFQkGJxEeWQT-kpDqtLRg" name="InstanceSpecification33" classifier="_YKlx8GJjEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VoGesGJxEeWQT-kpDqtLRg" source="InstanceEnd" references="_l8jQgGJkEeWQT-kpDqtLRg _Y35OwGJhEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_VoGesWJxEeWQT-kpDqtLRg" definingFeature="_YKlx8WJjEeWQT-kpDqtLRg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_VoGesmJxEeWQT-kpDqtLRg" name="InstanceValue1" type="_z062UFgjEeWUdej6b-EfkQ" instance="_l8jQgGJkEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_hbcw8GJxEeWQT-kpDqtLRg" name="InstanceSpecification34" classifier="_Q7dFoFg6EeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hbcw8WJxEeWQT-kpDqtLRg" source="InstanceEnd" references="_hxSJ8GJkEeWQT-kpDqtLRg _8eZlcGJnEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_jfdQEGJxEeWQT-kpDqtLRg" name="InstanceSpecification35" classifier="_lo1QcFg2EeWUdej6b-EfkQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jfd3IGJxEeWQT-kpDqtLRg" source="InstanceEnd" references="_hWjgUGJlEeWQT-kpDqtLRg _hxSJ8GJkEeWQT-kpDqtLRg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_BaC0gGJyEeWQT-kpDqtLRg" name="InstanceSpecification36" classifier="_0L2CQFnIEeW6AJhG3McfEA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BaC0gWJyEeWQT-kpDqtLRg" source="InstanceEnd" references="_M8UwcGJoEeWQT-kpDqtLRg _8eZlcGJnEeWQT-kpDqtLRg"/>
+          <slot xmi:type="uml:Slot" xmi:id="_BaDbkWJyEeWQT-kpDqtLRg" definingFeature="_0L2pUFnIEeW6AJhG3McfEA">
+            <value xmi:type="uml:InstanceValue" xmi:id="_BaDbkmJyEeWQT-kpDqtLRg" name="InstanceValue1" type="_k13bEFg5EeWUdej6b-EfkQ" instance="_8eZlcGJnEeWQT-kpDqtLRg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_O0Gl4GJyEeWQT-kpDqtLRg" name="InstanceSpecification37" classifier="_vnmnQGJpEeWQT-kpDqtLRg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_O0HM8GJyEeWQT-kpDqtLRg" source="InstanceEnd" references="_vND48GJsEeWQT-kpDqtLRg _0eSREGJjEeWQT-kpDqtLRg"/>
+        </packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Model" xmi:id="_Xn03sFmSEeWUdej6b-EfkQ" name="SequenceDiagram">
         <packagedElement xmi:type="uml:Interaction" xmi:id="_8dQg0FmyEeW6AJhG3McfEA" name="Shared">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_Lv2zEFmxEeW6AJhG3McfEA" name=":Coordinator"/>
