@@ -565,6 +565,11 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedAttribute>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_g--p8Fm2EeW6AJhG3McfEA" name="stop"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_2eLQsGf_EeWT06E6kX1fjg" name="get" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_2eLQsWf_EeWT06E6kX1fjg" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_Q-NNoFm5EeW6AJhG3McfEA" name="Notification">
           <generalization xmi:type="uml:Generalization" xmi:id="_TCqYsFm5EeW6AJhG3McfEA" general="_s7YTAFggEeWUdej6b-EfkQ"/>
@@ -1637,11 +1642,11 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Interaction" xmi:id="_sj-t4Gf-EeWT06E6kX1fjg" name="06_ViewLocalBloodDrives">
           <lifeline xmi:type="uml:Lifeline" xmi:id="_1jsa4Gf-EeWT06E6kX1fjg" name="Lifeline" represents="_VCHfsGf2EeWL7PjAahme5A" coveredBy="_AreAkGf_EeWT06E6kX1fjg _ArfOsWf_EeWT06E6kX1fjg _ArfOsGf_EeWT06E6kX1fjg _Kkt9oGf_EeWT06E6kX1fjg"/>
-          <lifeline xmi:type="uml:Lifeline" xmi:id="_3puTQGf-EeWT06E6kX1fjg" name="Lifeline0" represents="_y2vq0Fm4EeW6AJhG3McfEA" coveredBy="_CVAxQWf_EeWT06E6kX1fjg _CVAxQGf_EeWT06E6kX1fjg _KkuksGf_EeWT06E6kX1fjg _RKDS4Gf_EeWT06E6kX1fjg"/>
-          <lifeline xmi:type="uml:Lifeline" xmi:id="_6Saz0Gf-EeWT06E6kX1fjg" name="Lifeline1" represents="_Xb3uQFmxEeW6AJhG3McfEA" coveredBy="_NzfmwWf_EeWT06E6kX1fjg _NzfmwGf_EeWT06E6kX1fjg _RKEhAGf_EeWT06E6kX1fjg _hDAIkGf_EeWT06E6kX1fjg _ra4iYGf_EeWT06E6kX1fjg"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_3puTQGf-EeWT06E6kX1fjg" name="Lifeline0" represents="_y2vq0Fm4EeW6AJhG3McfEA" coveredBy="_CVAxQWf_EeWT06E6kX1fjg _CVAxQGf_EeWT06E6kX1fjg _KkuksGf_EeWT06E6kX1fjg _RKDS4Gf_EeWT06E6kX1fjg _KaZHgGgAEeWT06E6kX1fjg"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_6Saz0Gf-EeWT06E6kX1fjg" name="Lifeline1" represents="_Xb3uQFmxEeW6AJhG3McfEA" coveredBy="_NzfmwWf_EeWT06E6kX1fjg _NzfmwGf_EeWT06E6kX1fjg _RKEhAGf_EeWT06E6kX1fjg _hDAIkGf_EeWT06E6kX1fjg _ra4iYGf_EeWT06E6kX1fjg _6sg5YGf_EeWT06E6kX1fjg _B-Sd4GgAEeWT06E6kX1fjg _KaYgcGgAEeWT06E6kX1fjg"/>
           <lifeline xmi:type="uml:Lifeline" xmi:id="_7IsUgGf-EeWT06E6kX1fjg" name="Lifeline2" represents="_X1bxsFmZEeWUdej6b-EfkQ" coveredBy="_cnYR0Gf_EeWT06E6kX1fjg _cnXqwGf_EeWT06E6kX1fjg _hDAvoGf_EeWT06E6kX1fjg _ra3UQGf_EeWT06E6kX1fjg"/>
-          <lifeline xmi:type="uml:Lifeline" xmi:id="_9IEyUGf-EeWT06E6kX1fjg" name="Lifeline3" represents="_b2gtkFmxEeW6AJhG3McfEA"/>
-          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ra4iYGf_EeWT06E6kX1fjg" name="MessageRecv" covered="_6Saz0Gf-EeWT06E6kX1fjg" message="_ra2GIGf_EeWT06E6kX1fjg"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_9IEyUGf-EeWT06E6kX1fjg" name="Lifeline3" represents="_b2gtkFmxEeW6AJhG3McfEA" coveredBy="_yAFUwGf_EeWT06E6kX1fjg _yAEtsGf_EeWT06E6kX1fjg _6siHgGf_EeWT06E6kX1fjg _B-R20GgAEeWT06E6kX1fjg"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_KaZHgGgAEeWT06E6kX1fjg" name="MessageRecv1" covered="_3puTQGf-EeWT06E6kX1fjg" message="_KaXSUGgAEeWT06E6kX1fjg"/>
           <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_AreAkGf_EeWT06E6kX1fjg" name="ActionExecSpecStart" covered="_1jsa4Gf-EeWT06E6kX1fjg" execution="_ArfOsGf_EeWT06E6kX1fjg"/>
           <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_ArfOsGf_EeWT06E6kX1fjg" name="ActionExecSpec" covered="_1jsa4Gf-EeWT06E6kX1fjg" finish="_ArfOsWf_EeWT06E6kX1fjg" start="_AreAkGf_EeWT06E6kX1fjg" action="_G31gYGf4EeWL7PjAahme5A"/>
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Kkt9oGf_EeWT06E6kX1fjg" name="viewBloodDrives_MessageSend" covered="_1jsa4Gf-EeWT06E6kX1fjg" message="_KksIcGf_EeWT06E6kX1fjg"/>
@@ -1655,6 +1660,14 @@
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hDAvoGf_EeWT06E6kX1fjg" name="getUser_MessageRecv" covered="_7IsUgGf-EeWT06E6kX1fjg" message="_hC-6cGf_EeWT06E6kX1fjg"/>
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ra3UQGf_EeWT06E6kX1fjg" name="MessageSend" covered="_7IsUgGf-EeWT06E6kX1fjg" message="_ra2GIGf_EeWT06E6kX1fjg"/>
           <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_cnYR0Gf_EeWT06E6kX1fjg" name="ActionExecSpec2Finish" covered="_7IsUgGf-EeWT06E6kX1fjg" execution="_cnXqwGf_EeWT06E6kX1fjg"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ra4iYGf_EeWT06E6kX1fjg" name="MessageRecv" covered="_6Saz0Gf-EeWT06E6kX1fjg" message="_ra2GIGf_EeWT06E6kX1fjg"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6sg5YGf_EeWT06E6kX1fjg" name="get_MessageSend" covered="_6Saz0Gf-EeWT06E6kX1fjg" message="_6sfEMGf_EeWT06E6kX1fjg"/>
+          <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_yAEtsGf_EeWT06E6kX1fjg" name="ActionExecSpec3" covered="_9IEyUGf-EeWT06E6kX1fjg" finish="_yAFUwGf_EeWT06E6kX1fjg" start="_6siHgGf_EeWT06E6kX1fjg" action="_G31gYGf4EeWL7PjAahme5A"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6siHgGf_EeWT06E6kX1fjg" name="get_MessageRecv" covered="_9IEyUGf-EeWT06E6kX1fjg" message="_6sfEMGf_EeWT06E6kX1fjg"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_B-R20GgAEeWT06E6kX1fjg" name="MessageSend0" covered="_9IEyUGf-EeWT06E6kX1fjg" message="_B-QosGgAEeWT06E6kX1fjg"/>
+          <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_yAFUwGf_EeWT06E6kX1fjg" name="ActionExecSpec3Finish" covered="_9IEyUGf-EeWT06E6kX1fjg" execution="_yAEtsGf_EeWT06E6kX1fjg"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_B-Sd4GgAEeWT06E6kX1fjg" name="MessageRecv0" covered="_6Saz0Gf-EeWT06E6kX1fjg" message="_B-QosGgAEeWT06E6kX1fjg"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_KaYgcGgAEeWT06E6kX1fjg" name="MessageSend1" covered="_6Saz0Gf-EeWT06E6kX1fjg" message="_KaXSUGgAEeWT06E6kX1fjg"/>
           <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_NzfmwWf_EeWT06E6kX1fjg" name="ActionExecSpec1Finish" covered="_6Saz0Gf-EeWT06E6kX1fjg" execution="_NzfmwGf_EeWT06E6kX1fjg"/>
           <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_CVAxQWf_EeWT06E6kX1fjg" name="ActionExecSpec0Finish" covered="_3puTQGf-EeWT06E6kX1fjg" execution="_CVAxQGf_EeWT06E6kX1fjg"/>
           <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_ArfOsWf_EeWT06E6kX1fjg" name="ActionExecSpecFinish" covered="_1jsa4Gf-EeWT06E6kX1fjg" execution="_ArfOsGf_EeWT06E6kX1fjg"/>
@@ -1662,6 +1675,9 @@
           <message xmi:type="uml:Message" xmi:id="_RKCEwGf_EeWT06E6kX1fjg" name="getBloodDrives_Message" receiveEvent="_RKEhAGf_EeWT06E6kX1fjg" sendEvent="_RKDS4Gf_EeWT06E6kX1fjg" signature="_lzypoFg-EeWUdej6b-EfkQ"/>
           <message xmi:type="uml:Message" xmi:id="_hC-6cGf_EeWT06E6kX1fjg" name="getUser_Message" receiveEvent="_hDAvoGf_EeWT06E6kX1fjg" sendEvent="_hDAIkGf_EeWT06E6kX1fjg" signature="_YZ9WkGJWEeW93Mk1RY2FJA"/>
           <message xmi:type="uml:Message" xmi:id="_ra2GIGf_EeWT06E6kX1fjg" name="user" messageSort="reply" receiveEvent="_ra4iYGf_EeWT06E6kX1fjg" sendEvent="_ra3UQGf_EeWT06E6kX1fjg"/>
+          <message xmi:type="uml:Message" xmi:id="_6sfEMGf_EeWT06E6kX1fjg" name="get_Message" receiveEvent="_6siHgGf_EeWT06E6kX1fjg" sendEvent="_6sg5YGf_EeWT06E6kX1fjg" signature="_2eLQsGf_EeWT06E6kX1fjg"/>
+          <message xmi:type="uml:Message" xmi:id="_B-QosGgAEeWT06E6kX1fjg" name="bloodDrives" messageSort="reply" receiveEvent="_B-Sd4GgAEeWT06E6kX1fjg" sendEvent="_B-R20GgAEeWT06E6kX1fjg"/>
+          <message xmi:type="uml:Message" xmi:id="_KaXSUGgAEeWT06E6kX1fjg" name="bloodDrives" messageSort="reply" receiveEvent="_KaZHgGgAEeWT06E6kX1fjg" sendEvent="_KaYgcGgAEeWT06E6kX1fjg"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>
