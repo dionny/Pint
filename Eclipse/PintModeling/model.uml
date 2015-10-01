@@ -250,6 +250,32 @@
           <ownedOperation xmi:type="uml:Operation" xmi:id="_9ITpoGJdEeWQT-kpDqtLRg" name="clickConfirmNotification" visibility="public"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="__L-xkGJdEeWQT-kpDqtLRg" name="clickCancelNotification" visibility="public"/>
         </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_V_IykGJZEeW93Mk1RY2FJA" name="NurseDashboard">
+          <generalization xmi:type="uml:Generalization" xmi:id="_V_IykWJZEeW93Mk1RY2FJA" general="_uYULEFggEeWUdej6b-EfkQ"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_P9F7IGJaEeWgyvCQxuOsBA" general="_uYULEFggEeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_V_IylWJZEeW93Mk1RY2FJA" name="notificationcontroller" type="_k13bEFg5EeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_V_IylmJZEeW93Mk1RY2FJA" name="notification" type="_Q-NNoFm5EeW6AJhG3McfEA" aggregation="shared">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V_Iyl2JZEeW93Mk1RY2FJA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V_IymGJZEeW93Mk1RY2FJA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_fbYfAGJjEeWQT-kpDqtLRg" name="bloodDriveController" type="_J8TfAFg2EeWUdej6b-EfkQ" association="_fbZGEGJjEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fbYfAWJjEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fbYfAmJjEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_rhflIGJ3EeWQT-kpDqtLRg" name="userController" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_rhgMMGJ3EeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rhflIWJ3EeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rhflImJ3EeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_V_IymWJZEeW93Mk1RY2FJA" name="displayNotification">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_V_IymmJZEeW93Mk1RY2FJA" name="displayNotification" type="_Q-NNoFm5EeW6AJhG3McfEA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_V_Iym2JZEeW93Mk1RY2FJA" name="enterEmail">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ijBJ4GJZEeW93Mk1RY2FJA" name="emailAddress">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_jLPAcGJZEeW93Mk1RY2FJA" name="addDonor"/>
+        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_CmWg8Fg9EeWUdej6b-EfkQ" name="NotificationScreen">
           <generalization xmi:type="uml:Generalization" xmi:id="_44guEFm6EeW6AJhG3McfEA" general="_uYULEFggEeWUdej6b-EfkQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_dXOO4GJjEeWQT-kpDqtLRg" name="notificationController" type="_k13bEFg5EeWUdej6b-EfkQ" association="_dXOO42JjEeWQT-kpDqtLRg">
@@ -287,7 +313,7 @@
             </ownedParameter>
           </ownedOperation>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_okjkEFgdEeWUdej6b-EfkQ" name="MobileLoginScreen" visibility="public">
+        <packagedElement xmi:type="uml:Class" xmi:id="_okjkEFgdEeWUdej6b-EfkQ" name="MobileLoginScreen">
           <generalization xmi:type="uml:Generalization" xmi:id="_AtqbQGGkEeW93Mk1RY2FJA" general="_rYxhUGGjEeW93Mk1RY2FJA"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_b6iuklgoEeWUdej6b-EfkQ" name="homescreen" type="_z062UFgjEeWUdej6b-EfkQ" association="_b6iHgFgoEeWUdej6b-EfkQ"/>
         </packagedElement>
@@ -658,6 +684,34 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vnT8EmJYEeW93Mk1RY2FJA" value="1"/>
           </ownedAttribute>
         </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_D17m8GJYEeW93Mk1RY2FJA" name="Hospital">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_D17m8WJYEeW93Mk1RY2FJA">
+            <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_D17m8mJYEeW93Mk1RY2FJA" general="_EqossFgYEeWUot0KYiZx9Q"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_D17m82JYEeW93Mk1RY2FJA" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_D17m9GJYEeW93Mk1RY2FJA" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SldGsGJpEeWQT-kpDqtLRg" name="UserNotification">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_dM0G8GJpEeWQT-kpDqtLRg" name="hasSeen">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_qJG-QGJpEeWQT-kpDqtLRg" name="sentTime">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vnkyEGJpEeWQT-kpDqtLRg" name="user" type="_EqossFgYEeWUot0KYiZx9Q" association="_vnmnQGJpEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vnkyEWJpEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vnkyEmJpEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_H5GcQGJqEeWQT-kpDqtLRg" name="notification" type="_Q-NNoFm5EeW6AJhG3McfEA" association="_H5HDUGJqEeWQT-kpDqtLRg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H5GcQWJqEeWQT-kpDqtLRg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H5GcQmJqEeWQT-kpDqtLRg" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_TwsSkFgoEeWUdej6b-EfkQ" memberEnd="_Tws5oFgoEeWUdej6b-EfkQ _Tws5oVgoEeWUdej6b-EfkQ">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TwsSkVgoEeWUdej6b-EfkQ" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TwsSklgoEeWUdej6b-EfkQ" key="nature" value="UML_Nature"/>
@@ -696,18 +750,6 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lZVMg2JVEeW93Mk1RY2FJA" value="1"/>
           </ownedEnd>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_D17m8GJYEeW93Mk1RY2FJA" name="Hospital">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_D17m8WJYEeW93Mk1RY2FJA">
-            <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
-          </ownedComment>
-          <generalization xmi:type="uml:Generalization" xmi:id="_D17m8mJYEeW93Mk1RY2FJA" general="_EqossFgYEeWUot0KYiZx9Q"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_D17m82JYEeW93Mk1RY2FJA" name="id">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_D17m9GJYEeW93Mk1RY2FJA" name="name">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          </ownedAttribute>
-        </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_Pkv-gGJYEeW93Mk1RY2FJA" memberEnd="_Pkv-gWJYEeW93Mk1RY2FJA _PkvXcGJYEeW93Mk1RY2FJA" navigableOwnedEnd="_Pkv-gWJYEeW93Mk1RY2FJA">
           <name xsi:nil="true"/>
           <ownedEnd xmi:type="uml:Property" xmi:id="_Pkv-gWJYEeW93Mk1RY2FJA" name="employee" type="_UFyDsFgmEeWUdej6b-EfkQ" association="_Pkv-gGJYEeW93Mk1RY2FJA">
@@ -735,32 +777,6 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vnUjImJYEeW93Mk1RY2FJA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vnUjI2JYEeW93Mk1RY2FJA" value="*"/>
           </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_V_IykGJZEeW93Mk1RY2FJA" name="NurseDashboard">
-          <generalization xmi:type="uml:Generalization" xmi:id="_V_IykWJZEeW93Mk1RY2FJA" general="_uYULEFggEeWUdej6b-EfkQ"/>
-          <generalization xmi:type="uml:Generalization" xmi:id="_P9F7IGJaEeWgyvCQxuOsBA" general="_uYULEFggEeWUdej6b-EfkQ"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_V_IylWJZEeW93Mk1RY2FJA" name="notificationcontroller" type="_k13bEFg5EeWUdej6b-EfkQ"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_V_IylmJZEeW93Mk1RY2FJA" name="notification" type="_Q-NNoFm5EeW6AJhG3McfEA" aggregation="shared">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V_Iyl2JZEeW93Mk1RY2FJA"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V_IymGJZEeW93Mk1RY2FJA" value="*"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_fbYfAGJjEeWQT-kpDqtLRg" name="bloodDriveController" type="_J8TfAFg2EeWUdej6b-EfkQ" association="_fbZGEGJjEeWQT-kpDqtLRg">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fbYfAWJjEeWQT-kpDqtLRg" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fbYfAmJjEeWQT-kpDqtLRg" value="1"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_rhflIGJ3EeWQT-kpDqtLRg" name="userController" type="_Mu9ZYFghEeWUdej6b-EfkQ" association="_rhgMMGJ3EeWQT-kpDqtLRg">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rhflIWJ3EeWQT-kpDqtLRg" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rhflImJ3EeWQT-kpDqtLRg" value="1"/>
-          </ownedAttribute>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_V_IymWJZEeW93Mk1RY2FJA" name="displayNotification">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_V_IymmJZEeW93Mk1RY2FJA" name="displayNotification" type="_Q-NNoFm5EeW6AJhG3McfEA"/>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_V_Iym2JZEeW93Mk1RY2FJA" name="enterEmail">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ijBJ4GJZEeW93Mk1RY2FJA" name="emailAddress">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedParameter>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_jLPAcGJZEeW93Mk1RY2FJA" name="addDonor"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_JqMqoGJjEeWQT-kpDqtLRg" memberEnd="_JqMqoWJjEeWQT-kpDqtLRg _JqMDkGJjEeWQT-kpDqtLRg">
           <name xsi:nil="true"/>
@@ -845,22 +861,6 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WLAN4mJlEeWQT-kpDqtLRg" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WLAN42JlEeWQT-kpDqtLRg" value="1"/>
           </ownedEnd>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_SldGsGJpEeWQT-kpDqtLRg" name="UserNotification" visibility="public">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_dM0G8GJpEeWQT-kpDqtLRg" name="hasSeen">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_qJG-QGJpEeWQT-kpDqtLRg" name="sentTime">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_vnkyEGJpEeWQT-kpDqtLRg" name="user" type="_EqossFgYEeWUot0KYiZx9Q" association="_vnmnQGJpEeWQT-kpDqtLRg">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vnkyEWJpEeWQT-kpDqtLRg" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vnkyEmJpEeWQT-kpDqtLRg" value="1"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_H5GcQGJqEeWQT-kpDqtLRg" name="notification" type="_Q-NNoFm5EeW6AJhG3McfEA" association="_H5HDUGJqEeWQT-kpDqtLRg">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H5GcQWJqEeWQT-kpDqtLRg" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H5GcQmJqEeWQT-kpDqtLRg" value="1"/>
-          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_vnmnQGJpEeWQT-kpDqtLRg" memberEnd="_vnmnQWJpEeWQT-kpDqtLRg _vnkyEGJpEeWQT-kpDqtLRg">
           <name xsi:nil="true"/>
@@ -1798,4 +1798,7 @@
   <PintProfile:Boundary xmi:id="_UVdhQGGkEeW93Mk1RY2FJA" base_Class="_rYxhUGGjEeW93Mk1RY2FJA"/>
   <PintProfile:Boundary xmi:id="_Ed_K4GGnEeW93Mk1RY2FJA" base_Class="_SgDM4GGmEeW93Mk1RY2FJA"/>
   <PintProfile:Boundary xmi:id="_OdujgGJBEeW93Mk1RY2FJA" base_Class="_uYULEFggEeWUdej6b-EfkQ"/>
+  <PintProfile:Boundary xmi:id="_Bf9rgGfyEeWL7PjAahme5A" base_Class="_V_IykGJZEeW93Mk1RY2FJA"/>
+  <PintProfile:Entity xmi:id="_CveyoGfyEeWL7PjAahme5A" base_Class="_D17m8GJYEeW93Mk1RY2FJA"/>
+  <PintProfile:Entity xmi:id="_DWa20GfyEeWL7PjAahme5A" base_Class="_SldGsGJpEeWQT-kpDqtLRg"/>
 </xmi:XMI>
