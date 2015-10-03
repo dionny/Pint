@@ -5,12 +5,85 @@
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Model" xmi:id="_g2rz8FmSEeWUdej6b-EfkQ" name="UseCaseModel">
-      <packagedElement xmi:type="uml:Actor" xmi:id="_j2ChAFmSEeWUdej6b-EfkQ" name="Donor"/>
-      <packagedElement xmi:type="uml:Actor" xmi:id="_SyRRoFnMEeW6AJhG3McfEA" name="Coordinator"/>
-      <packagedElement xmi:type="uml:Actor" xmi:id="_VpkO4FnMEeW6AJhG3McfEA" name="Manager"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_j2ChAFmSEeWUdej6b-EfkQ" name="Donor">
+        <generalization xmi:type="uml:Generalization" xmi:id="_m43CMGl_EeWT06E6kX1fjg" general="_j7QooGl_EeWT06E6kX1fjg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_SyRRoFnMEeW6AJhG3McfEA" name="Coordinator">
+        <generalization xmi:type="uml:Generalization" xmi:id="_lWWtoGl_EeWT06E6kX1fjg" general="_j7QooGl_EeWT06E6kX1fjg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_VpkO4FnMEeW6AJhG3McfEA" name="Manager">
+        <generalization xmi:type="uml:Generalization" xmi:id="_mM57IGl_EeWT06E6kX1fjg" general="_j7QooGl_EeWT06E6kX1fjg"/>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_7BtYcFspEeW6AJhG3McfEA" name="WebApplication"/>
       <packagedElement xmi:type="uml:Package" xmi:id="_GVhPAFsqEeW6AJhG3McfEA" name="PhoneApplication"/>
-      <packagedElement xmi:type="uml:Package" xmi:id="_RaLPQFsqEeW6AJhG3McfEA" name="Security"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_RaLPQFsqEeW6AJhG3McfEA" name="Security">
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_dVeAYGl_EeWT06E6kX1fjg" name="Log In Time Out">
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_dVeAYWl_EeWT06E6kX1fjg" name="Log In"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_j7QooGl_EeWT06E6kX1fjg" name="User"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_v72ssGl_EeWT06E6kX1fjg" name="A_user_log in" memberEnd="_v72ssWl_EeWT06E6kX1fjg _v73Twml_EeWT06E6kX1fjg">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_v72ssWl_EeWT06E6kX1fjg" name="user" type="_j7QooGl_EeWT06E6kX1fjg" association="_v72ssGl_EeWT06E6kX1fjg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v73TwGl_EeWT06E6kX1fjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v73TwWl_EeWT06E6kX1fjg" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_v73Twml_EeWT06E6kX1fjg" name="log in" type="_bdekAGl_EeWT06E6kX1fjg" association="_v72ssGl_EeWT06E6kX1fjg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v73Tw2l_EeWT06E6kX1fjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v73TxGl_EeWT06E6kX1fjg" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_8QJv4Gl_EeWgbvcXZbcQHA" name="A_user_log in time out" memberEnd="_8QJv4Wl_EeWgbvcXZbcQHA _8QJv5Gl_EeWgbvcXZbcQHA">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_8QJv4Wl_EeWgbvcXZbcQHA" name="user" type="_j7QooGl_EeWT06E6kX1fjg" association="_8QJv4Gl_EeWgbvcXZbcQHA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8QJv4ml_EeWgbvcXZbcQHA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8QJv42l_EeWgbvcXZbcQHA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_8QJv5Gl_EeWgbvcXZbcQHA" name="log in time out" type="_dVeAYGl_EeWT06E6kX1fjg" association="_8QJv4Gl_EeWgbvcXZbcQHA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8QJv5Wl_EeWgbvcXZbcQHA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8QJv5ml_EeWgbvcXZbcQHA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_ANfIIGmAEeWgbvcXZbcQHA" name="A_user_forgot password" memberEnd="_ANfIIWmAEeWgbvcXZbcQHA _ANfIJGmAEeWgbvcXZbcQHA">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_ANfIIWmAEeWgbvcXZbcQHA" name="user" type="_j7QooGl_EeWT06E6kX1fjg" association="_ANfIIGmAEeWgbvcXZbcQHA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ANfIImmAEeWgbvcXZbcQHA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ANfII2mAEeWgbvcXZbcQHA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_ANfIJGmAEeWgbvcXZbcQHA" name="forgot password" type="_-mSg0Gl_EeWgbvcXZbcQHA" association="_ANfIIGmAEeWgbvcXZbcQHA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ANfIJWmAEeWgbvcXZbcQHA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ANfIJmmAEeWgbvcXZbcQHA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Fwe2oGmAEeWgbvcXZbcQHA" name="Cross Platform">
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_C59VcGmAEeWgbvcXZbcQHA" name="Reset Password">
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_C59VcWmAEeWgbvcXZbcQHA" name="Log In"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_bdekAGl_EeWT06E6kX1fjg" name="Log In">
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_cn7k8Gl_EeWT06E6kX1fjg" name="Log In"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_-mSg0Gl_EeWgbvcXZbcQHA" name="Forgot Password">
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_-mSg0Wl_EeWgbvcXZbcQHA" name="Log In"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_WIb8gGmAEeWgbvcXZbcQHA" name="Log Out"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_TN6FEGmAEeWgbvcXZbcQHA" name="A_user_reset password" memberEnd="_TN6FEWmAEeWgbvcXZbcQHA _TN6FFGmAEeWgbvcXZbcQHA">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_TN6FEWmAEeWgbvcXZbcQHA" name="user" type="_j7QooGl_EeWT06E6kX1fjg" association="_TN6FEGmAEeWgbvcXZbcQHA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TN6FEmmAEeWgbvcXZbcQHA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TN6FE2mAEeWgbvcXZbcQHA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_TN6FFGmAEeWgbvcXZbcQHA" name="reset password" type="_C59VcGmAEeWgbvcXZbcQHA" association="_TN6FEGmAEeWgbvcXZbcQHA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TN6FFWmAEeWgbvcXZbcQHA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TN6FFmmAEeWgbvcXZbcQHA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_XYeoEGmAEeWgbvcXZbcQHA" name="A_user_log out" memberEnd="_XYeoEWmAEeWgbvcXZbcQHA _XYeoFGmAEeWgbvcXZbcQHA">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_XYeoEWmAEeWgbvcXZbcQHA" name="user" type="_j7QooGl_EeWT06E6kX1fjg" association="_XYeoEGmAEeWgbvcXZbcQHA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XYeoEmmAEeWgbvcXZbcQHA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XYeoE2mAEeWgbvcXZbcQHA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_XYeoFGmAEeWgbvcXZbcQHA" name="log out" type="_WIb8gGmAEeWgbvcXZbcQHA" association="_XYeoEGmAEeWgbvcXZbcQHA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XYeoFWmAEeWgbvcXZbcQHA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XYeoFmmAEeWgbvcXZbcQHA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_AkofUFmGEeWUdej6b-EfkQ" name="AnalysisModel">
       <packagedElement xmi:type="uml:Model" xmi:id="_I1m3AFmGEeWUdej6b-EfkQ" name="ClassDiagram">
