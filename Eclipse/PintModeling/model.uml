@@ -689,6 +689,7 @@
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_SldGsGJpEeWQT-kpDqtLRg" name="UserNotification">
+          <generalization xmi:type="uml:Generalization" xmi:id="_-Ge00Gl-EeWT06E6kX1fjg" general="_s7YTAFggEeWUdej6b-EfkQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_dM0G8GJpEeWQT-kpDqtLRg" name="hasSeen">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedAttribute>
