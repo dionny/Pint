@@ -2974,6 +2974,233 @@
         </packagedElement>
       </packagedElement>
     </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_TWeJMHXLEeWFjsR5Zis5xQ" name="DesignModel">
+      <packagedElement xmi:type="uml:Model" xmi:id="_hY47EHXLEeWFjsR5Zis5xQ" name="Package">
+        <packagedElement xmi:type="uml:Package" xmi:id="_mVszUHXLEeWFjsR5Zis5xQ" name="Client">
+          <packagedElement xmi:type="uml:Package" xmi:id="_oUPjoHXLEeWFjsR5Zis5xQ" name="Mobile">
+            <packagedElement xmi:type="uml:Package" xmi:id="_uszoMHXLEeWFjsR5Zis5xQ" name="View">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_J8MKoHXMEeWFjsR5Zis5xQ" client="_uszoMHXLEeWFjsR5Zis5xQ" supplier="_vHHloHXLEeWFjsR5Zis5xQ"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_vHHloHXLEeWFjsR5Zis5xQ" name="Model"/>
+            <packagedElement xmi:type="uml:Package" xmi:id="_xlz1oHXLEeWFjsR5Zis5xQ" name="Controller">
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_G2uOgHXMEeWFjsR5Zis5xQ" client="_xlz1oHXLEeWFjsR5Zis5xQ" supplier="_vHHloHXLEeWFjsR5Zis5xQ"/>
+              <packagedElement xmi:type="uml:Dependency" xmi:id="_IGo-QHXMEeWFjsR5Zis5xQ" client="_xlz1oHXLEeWFjsR5Zis5xQ" supplier="_uszoMHXLEeWFjsR5Zis5xQ"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_q18EUHXLEeWFjsR5Zis5xQ" name="Web"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_i1Ao4HXNEeWFjsR5Zis5xQ" client="_mVszUHXLEeWFjsR5Zis5xQ" supplier="_YdA6UHXNEeWFjsR5Zis5xQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_YdA6UHXNEeWFjsR5Zis5xQ" name="Presentation">
+          <packagedElement xmi:type="uml:Package" xmi:id="_a8emYHXNEeWFjsR5Zis5xQ" name="RequestHandlers">
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_iTvu4HXNEeWFjsR5Zis5xQ" client="_a8emYHXNEeWFjsR5Zis5xQ" supplier="_ccJpYHXNEeWFjsR5Zis5xQ"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_ccJpYHXNEeWFjsR5Zis5xQ" name="ViewModels"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_tABrYHXNEeWFjsR5Zis5xQ" client="_YdA6UHXNEeWFjsR5Zis5xQ" supplier="_k2sz0HXNEeWFjsR5Zis5xQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_k2sz0HXNEeWFjsR5Zis5xQ" name="BusinessLogic">
+          <packagedElement xmi:type="uml:Package" xmi:id="_mXSc0HXNEeWFjsR5Zis5xQ" name="Services">
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_y9HU4HXNEeWFjsR5Zis5xQ" client="_mXSc0HXNEeWFjsR5Zis5xQ" supplier="_wVB4UHXNEeWFjsR5Zis5xQ"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_wVB4UHXNEeWFjsR5Zis5xQ" name="Validators"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_MSpZwHXOEeWFjsR5Zis5xQ" client="_k2sz0HXNEeWFjsR5Zis5xQ" supplier="_0EvrUHXNEeWFjsR5Zis5xQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_0EvrUHXNEeWFjsR5Zis5xQ" name="Data">
+          <packagedElement xmi:type="uml:Package" xmi:id="_3Or3wHXNEeWFjsR5Zis5xQ" name="Repositories">
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_7b3C0HXNEeWFjsR5Zis5xQ" client="_3Or3wHXNEeWFjsR5Zis5xQ" supplier="_6mJi0HXNEeWFjsR5Zis5xQ"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_6mJi0HXNEeWFjsR5Zis5xQ" name="Models"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Model" xmi:id="_VwwoEHXQEeWFjsR5Zis5xQ" name="Class">
+        <packagedElement xmi:type="uml:Class" xmi:id="_lmACcHXQEeWFjsR5Zis5xQ" name="User">
+          <generalization xmi:type="uml:Generalization" xmi:id="_lmACcXXQEeWFjsR5Zis5xQ" general="_lmCesHXQEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACcnXQEeWFjsR5Zis5xQ" name="sessionKey" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACc3XQEeWFjsR5Zis5xQ" name="emailAddress">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACdHXQEeWFjsR5Zis5xQ" name="city">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACdXXQEeWFjsR5Zis5xQ" name="state">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACdnXQEeWFjsR5Zis5xQ" name="hashedPassword">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACd3XQEeWFjsR5Zis5xQ" name="usercontroller" type="_Mu9ZYFghEeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACeHXQEeWFjsR5Zis5xQ" name="MaximumFailures" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_lmACeXXQEeWFjsR5Zis5xQ" name="MaximumFailures" value="4"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACenXQEeWFjsR5Zis5xQ" name="FailureCounter" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACe3XQEeWFjsR5Zis5xQ" name="FirstFailureTimestamp" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACfHXQEeWFjsR5Zis5xQ" name="userNotification" type="_lmGwIHXQEeWFjsR5Zis5xQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmACfXXQEeWFjsR5Zis5xQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmACfnXQEeWFjsR5Zis5xQ" value="1"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmACf3XQEeWFjsR5Zis5xQ" name="get" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lmACgHXQEeWFjsR5Zis5xQ" name="role">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lmCesHXQEeWFjsR5Zis5xQ" name="Entity">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmCesXXQEeWFjsR5Zis5xQ" name="save"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmCesnXQEeWFjsR5Zis5xQ" name="create"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmCes3XQEeWFjsR5Zis5xQ" name="get" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lmCetHXQEeWFjsR5Zis5xQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmCetXXQEeWFjsR5Zis5xQ" name="update"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmCetnXQEeWFjsR5Zis5xQ" name="get" visibility="public"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lmDFwHXQEeWFjsR5Zis5xQ" name="Employee">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lmDFwXXQEeWFjsR5Zis5xQ">
+            <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_lmDFwnXQEeWFjsR5Zis5xQ" general="_lmACcHXQEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmDFw3XQEeWFjsR5Zis5xQ" name="role">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmDFxHXQEeWFjsR5Zis5xQ" name="firstName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmDFxXXQEeWFjsR5Zis5xQ" name="lastName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmDFxnXQEeWFjsR5Zis5xQ" name="hospital" type="_lmGJEHXQEeWFjsR5Zis5xQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmDFx3XQEeWFjsR5Zis5xQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmDFyHXQEeWFjsR5Zis5xQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmDFyXXQEeWFjsR5Zis5xQ" name="phoneNumber">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lmDs0HXQEeWFjsR5Zis5xQ" name="Donor">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lmDs0XXQEeWFjsR5Zis5xQ">
+            <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_lmDs0nXQEeWFjsR5Zis5xQ" general="_lmACcHXQEeWFjsR5Zis5xQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lmET4HXQEeWFjsR5Zis5xQ" name="BloodDrive">
+          <generalization xmi:type="uml:Generalization" xmi:id="_lmET4XXQEeWFjsR5Zis5xQ" general="_lmCesHXQEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET4nXQEeWFjsR5Zis5xQ" name="title">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET43XQEeWFjsR5Zis5xQ" name="description">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET5HXQEeWFjsR5Zis5xQ" name="startTime" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET5XXQEeWFjsR5Zis5xQ" name="endTime">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET5nXQEeWFjsR5Zis5xQ" name="nurses" type="_lmDFwHXQEeWFjsR5Zis5xQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmET53XQEeWFjsR5Zis5xQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmET6HXQEeWFjsR5Zis5xQ" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET6XXQEeWFjsR5Zis5xQ" name="blooddrivecontroller" type="_J8TfAFg2EeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET6nXQEeWFjsR5Zis5xQ" name="address">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET63XQEeWFjsR5Zis5xQ" name="numberOfDonors">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET7HXQEeWFjsR5Zis5xQ" name="donor" type="_lmDs0HXQEeWFjsR5Zis5xQ" aggregation="shared">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmET7XXQEeWFjsR5Zis5xQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmET7nXQEeWFjsR5Zis5xQ" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET73XQEeWFjsR5Zis5xQ" name="hospital" type="_lmGJEHXQEeWFjsR5Zis5xQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmET8HXQEeWFjsR5Zis5xQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmET8XXQEeWFjsR5Zis5xQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET8nXQEeWFjsR5Zis5xQ" name="employee" type="_lmDFwHXQEeWFjsR5Zis5xQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmET83XQEeWFjsR5Zis5xQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmET9HXQEeWFjsR5Zis5xQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmET9XXQEeWFjsR5Zis5xQ" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmET9nXQEeWFjsR5Zis5xQ" name="stop"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmET93XQEeWFjsR5Zis5xQ" name="get" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lmET-HXQEeWFjsR5Zis5xQ" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lmFiAHXQEeWFjsR5Zis5xQ" name="Notification">
+          <generalization xmi:type="uml:Generalization" xmi:id="_lmFiAXXQEeWFjsR5Zis5xQ" general="_lmCesHXQEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmFiAnXQEeWFjsR5Zis5xQ" name="title">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmFiA3XQEeWFjsR5Zis5xQ" name="shortDescription">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmFiBHXQEeWFjsR5Zis5xQ" name="longDescription">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmFiBXXQEeWFjsR5Zis5xQ" name="bloodDrive" type="_lmET4HXQEeWFjsR5Zis5xQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmFiBnXQEeWFjsR5Zis5xQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmFiB3XQEeWFjsR5Zis5xQ" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lmGJEHXQEeWFjsR5Zis5xQ" name="Hospital">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lmGJEXXQEeWFjsR5Zis5xQ">
+            <body>http://download.eclipse.org/mmt/qvto/updates/releases</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_lmGJEnXQEeWFjsR5Zis5xQ" general="_lmACcHXQEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmGJE3XQEeWFjsR5Zis5xQ" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmGJFHXQEeWFjsR5Zis5xQ" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lmGwIHXQEeWFjsR5Zis5xQ" name="UserNotification">
+          <generalization xmi:type="uml:Generalization" xmi:id="_lmGwIXXQEeWFjsR5Zis5xQ" general="_lmCesHXQEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmGwInXQEeWFjsR5Zis5xQ" name="hasSeen">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmGwI3XQEeWFjsR5Zis5xQ" name="sentTime">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmGwJHXQEeWFjsR5Zis5xQ" name="user" type="_lmACcHXQEeWFjsR5Zis5xQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmGwJXXQEeWFjsR5Zis5xQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmGwJnXQEeWFjsR5Zis5xQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lmGwJ3XQEeWFjsR5Zis5xQ" name="notification" type="_lmFiAHXQEeWFjsR5Zis5xQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lmGwKHXQEeWFjsR5Zis5xQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lmGwKXXQEeWFjsR5Zis5xQ" value="1"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmGwKnXQEeWFjsR5Zis5xQ" name="get" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lmGwK3XQEeWFjsR5Zis5xQ" name="bloodDriveId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lmGwLHXQEeWFjsR5Zis5xQ" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmGwLXXQEeWFjsR5Zis5xQ" name="get" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lmGwLnXQEeWFjsR5Zis5xQ" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_lmGwL3XQEeWFjsR5Zis5xQ" name="get" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lmGwMHXQEeWFjsR5Zis5xQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BzYywFgYEeWUot0KYiZx9Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BzeSUFgYEeWUot0KYiZx9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
