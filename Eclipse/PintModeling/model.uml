@@ -3306,13 +3306,27 @@
           <packagedElement xmi:type="uml:Class" xmi:id="_kwfgUHXcEeWnw8a1OBDdhw" name="EmployeeStrategy">
             <generalization xmi:type="uml:Generalization" xmi:id="_p1vi4HXcEeWnw8a1OBDdhw" general="_fuQyAHXbEeWnw8a1OBDdhw"/>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_x6ZV0HXcEeWnw8a1OBDdhw" name="MobileLoginScreen"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_zApzQHXcEeWnw8a1OBDdhw" name="HomeScreen"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_DgRAUHXdEeWnw8a1OBDdhw" name="DetailScreen"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_gEvQ8HXeEeWnw8a1OBDdhw" name="WebLoginScreen"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_jtv_AHXeEeWnw8a1OBDdhw" name="EmployeeScreen"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_pgwfcHXeEeWnw8a1OBDdhw" name="BloodDriveDetailScreen"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_qf6PUHXeEeWnw8a1OBDdhw" name="BloodDriveSummaryScreen"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_x6ZV0HXcEeWnw8a1OBDdhw" name="MobileLoginScreen">
+            <generalization xmi:type="uml:Generalization" xmi:id="_y9LyEHXoEeWnw8a1OBDdhw" general="_tohagHXoEeWnw8a1OBDdhw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_zApzQHXcEeWnw8a1OBDdhw" name="HomeScreen">
+            <generalization xmi:type="uml:Generalization" xmi:id="_ynIpkHXoEeWnw8a1OBDdhw" general="_tohagHXoEeWnw8a1OBDdhw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_DgRAUHXdEeWnw8a1OBDdhw" name="DetailScreen">
+            <generalization xmi:type="uml:Generalization" xmi:id="_yMIIkHXoEeWnw8a1OBDdhw" general="_tohagHXoEeWnw8a1OBDdhw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_gEvQ8HXeEeWnw8a1OBDdhw" name="WebLoginScreen">
+            <generalization xmi:type="uml:Generalization" xmi:id="_xwRTAHXoEeWnw8a1OBDdhw" general="_tohagHXoEeWnw8a1OBDdhw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_jtv_AHXeEeWnw8a1OBDdhw" name="EmployeeScreen">
+            <generalization xmi:type="uml:Generalization" xmi:id="_xWaBgHXoEeWnw8a1OBDdhw" general="_tohagHXoEeWnw8a1OBDdhw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_pgwfcHXeEeWnw8a1OBDdhw" name="BloodDriveDetailScreen">
+            <generalization xmi:type="uml:Generalization" xmi:id="_woQiEHXoEeWnw8a1OBDdhw" general="_tohagHXoEeWnw8a1OBDdhw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qf6PUHXeEeWnw8a1OBDdhw" name="BloodDriveSummaryScreen">
+            <generalization xmi:type="uml:Generalization" xmi:id="_xA5EgHXoEeWnw8a1OBDdhw" general="_tohagHXoEeWnw8a1OBDdhw"/>
+          </packagedElement>
           <packagedElement xmi:type="uml:Interface" xmi:id="_7vBp4HXiEeWnw8a1OBDdhw" name="Repository">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_AcxLYHXjEeWnw8a1OBDdhw" name="get">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_DYShUHXjEeWnw8a1OBDdhw" name="id">
@@ -3444,8 +3458,12 @@
           <packagedElement xmi:type="uml:Realization" xmi:id="_m4zzgHXjEeWnw8a1OBDdhw" client="_HuOkoHXUEeWFjsR5Zis5xQ" supplier="_7vBp4HXiEeWnw8a1OBDdhw"/>
           <packagedElement xmi:type="uml:Realization" xmi:id="_p1zJEHXjEeWnw8a1OBDdhw" client="_EaT80HXUEeWFjsR5Zis5xQ" supplier="_7vBp4HXiEeWnw8a1OBDdhw"/>
           <packagedElement xmi:type="uml:Realization" xmi:id="_qtBsAHXjEeWnw8a1OBDdhw" client="_Bzu8IHXUEeWFjsR5Zis5xQ" supplier="_7vBp4HXiEeWnw8a1OBDdhw"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_tohagHXoEeWnw8a1OBDdhw" name="Screen"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Model" xmi:id="_llAmIHXfEeWnw8a1OBDdhw" name="Data"/>
+        <packagedElement xmi:type="uml:Model" xmi:id="_KhWccHXoEeWnw8a1OBDdhw" name="BusinessLogic"/>
+        <packagedElement xmi:type="uml:Model" xmi:id="_VFX00HXoEeWnw8a1OBDdhw" name="Presentation"/>
+        <packagedElement xmi:type="uml:Model" xmi:id="_hmqyMHXoEeWnw8a1OBDdhw" name="Client"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BzYywFgYEeWUot0KYiZx9Q">
