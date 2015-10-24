@@ -3101,6 +3101,11 @@
           <packagedElement xmi:type="uml:Dependency" xmi:id="_fFy5QHXaEeWnw8a1OBDdhw" client="_ZeEbwHXaEeWnw8a1OBDdhw" supplier="_ms11EHXYEeWFjsR5Zis5xQ"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_gF9VwHXaEeWnw8a1OBDdhw" client="_ZeEbwHXaEeWnw8a1OBDdhw" supplier="_oQpKIHXYEeWFjsR5Zis5xQ"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_aVf9kHXbEeWnw8a1OBDdhw" client="_4Lw4IHXaEeWnw8a1OBDdhw" supplier="_ZeEbwHXaEeWnw8a1OBDdhw"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_1D-t0Hp6EeWBAtAlhmP3Vw" client="_ms11EHXYEeWFjsR5Zis5xQ" supplier="_rsXqIHXYEeWFjsR5Zis5xQ"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_TWmXwHp7EeWBAtAlhmP3Vw" client="_oQpKIHXYEeWFjsR5Zis5xQ" supplier="_ms11EHXYEeWFjsR5Zis5xQ"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_aBTVMHp7EeWBAtAlhmP3Vw" client="_ms11EHXYEeWFjsR5Zis5xQ" supplier="_qTdWcHXYEeWFjsR5Zis5xQ"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_TptEgHp8EeWBAtAlhmP3Vw" client="_FK4WZXpvEeWon9iWk6toFw" supplier="_FK4WZ3pvEeWon9iWk6toFw"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_LCwnYHp9EeWBAtAlhmP3Vw" client="_qTdWcHXYEeWFjsR5Zis5xQ" supplier="_rsXqIHXYEeWFjsR5Zis5xQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZ3pvEeWon9iWk6toFw" name="Validators">
           <packagedElement xmi:type="uml:Class" xmi:id="_kc0dwHXZEeWnw8a1OBDdhw" name="Validator" isAbstract="true"/>
@@ -3119,6 +3124,7 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_ZeEbwHXaEeWnw8a1OBDdhw" name="BusinessLogicFacade"/>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_FK4WaHpvEeWon9iWk6toFw" client="_FK4WZHpvEeWon9iWk6toFw" supplier="_FK49cHpvEeWon9iWk6toFw"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_X7EMAHp8EeWBAtAlhmP3Vw" client="_ZeEbwHXaEeWnw8a1OBDdhw" supplier="_FK4WZXpvEeWon9iWk6toFw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK49cHpvEeWon9iWk6toFw" name="Data">
         <packagedElement xmi:type="uml:Package" xmi:id="_FK49cXpvEeWon9iWk6toFw" name="Repositories">
@@ -3448,7 +3454,43 @@
         <packagedElement xmi:type="uml:Dependency" xmi:id="_A_RX8Hp3EeWBAtAlhmP3Vw" client="_sngZgHXUEeWFjsR5Zis5xQ" supplier="_FK49c3pvEeWon9iWk6toFw"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Model" xmi:id="_eNrh8HpuEeWon9iWk6toFw" name="Deployment"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="_eNrh8HpuEeWon9iWk6toFw" name="Deployment">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_qcHeoHp3EeWBAtAlhmP3Vw">
+        <body>&lt;&lt;jdbc>>&#xD;
+</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_qcIFsHp3EeWBAtAlhmP3Vw">
+        <body>&lt;&lt;http>>&#xD;
+</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Device" xmi:id="_qcIswXp3EeWBAtAlhmP3Vw" name="MobileClient : Nexus 5">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcIswnp3EeWBAtAlhmP3Vw" name="Pint.apk" fileName="Artifact1.file"/>
+        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qcIsw3p3EeWBAtAlhmP3Vw" name="Android"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Device" xmi:id="_qcJT0Hp3EeWBAtAlhmP3Vw" name="WebClient : Windows PC">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcJT0Xp3EeWBAtAlhmP3Vw" name="GoogleChrome" fileName="Artifact1.file"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Device" xmi:id="_qcJ64Hp3EeWBAtAlhmP3Vw" name="WebServer : Sun Fire X4170 Server">
+        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qcJ64Xp3EeWBAtAlhmP3Vw" name="SUSE Linux Enterprise 12"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_qcJ64np3EeWBAtAlhmP3Vw" name="Apache Tomcat 8.0">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcJ643p3EeWBAtAlhmP3Vw" name="Pint.war" fileName="Artifact1.file"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcJ65Hp3EeWBAtAlhmP3Vw" name="googlemap.lib" fileName="Artifact1.file"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcJ65Xp3EeWBAtAlhmP3Vw" name="HTML Pages" fileName="Artifact1.file"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_qcKh8Hp3EeWBAtAlhmP3Vw" client="_qcJ643p3EeWBAtAlhmP3Vw" supplier="_qcJ65Hp3EeWBAtAlhmP3Vw"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_qcKh8Xp3EeWBAtAlhmP3Vw" client="_qcJ65Xp3EeWBAtAlhmP3Vw" supplier="_qcJ643p3EeWBAtAlhmP3Vw"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_qcLJAXp3EeWBAtAlhmP3Vw" name="&lt;&lt;http>>" client="_qcJT0Xp3EeWBAtAlhmP3Vw" supplier="_qcJ64np3EeWBAtAlhmP3Vw"/>
+      <packagedElement xmi:type="uml:Device" xmi:id="_qcLwEHp3EeWBAtAlhmP3Vw" name="DBServer : Sun SPARC Server">
+        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qcLwEXp3EeWBAtAlhmP3Vw" name="SUSE Linux Enterprise 12"/>
+        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qcLwEnp3EeWBAtAlhmP3Vw" name="MySQL 5.6"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Artifact" xmi:id="_qcLwE3p3EeWBAtAlhmP3Vw" name="UserSchema" fileName="Artifact1.file"/>
+      <packagedElement xmi:type="uml:Artifact" xmi:id="_qcMXIHp3EeWBAtAlhmP3Vw" name="BloodDriveSchema" fileName="Artifact1.file"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_qcMXIXp3EeWBAtAlhmP3Vw" name="&lt;&lt;JDBC>>" client="_qcJ64np3EeWBAtAlhmP3Vw" supplier="_qcLwEnp3EeWBAtAlhmP3Vw"/>
+      <packagedElement xmi:type="uml:Artifact" xmi:id="_qcM-MHp3EeWBAtAlhmP3Vw" name="NotificationSchema" fileName="Artifact1.file"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_F-_k0Hp4EeWBAtAlhmP3Vw" client="_qcIswnp3EeWBAtAlhmP3Vw" supplier="_qcJ64np3EeWBAtAlhmP3Vw"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BzYywFgYEeWUot0KYiZx9Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BzeSUFgYEeWUot0KYiZx9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
