@@ -2997,6 +2997,22 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK3vUHpvEeWon9iWk6toFw" name="Presentation">
         <packagedElement xmi:type="uml:Package" xmi:id="_FK3vUXpvEeWon9iWk6toFw" name="ViewModels">
+          <packagedElement xmi:type="uml:Class" xmi:id="_UVDYgHqFEeWBAtAlhmP3Vw" name="ViewModel"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Ny89cHqFEeWBAtAlhmP3Vw" name="NotificationSummaryViewModel">
+            <generalization xmi:type="uml:Generalization" xmi:id="_txSiUHqFEeWBAtAlhmP3Vw" general="_UVDYgHqFEeWBAtAlhmP3Vw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_kcxqAHqFEeWBAtAlhmP3Vw" name="EmployeeViewModel">
+            <generalization xmi:type="uml:Generalization" xmi:id="_s7SHYHqFEeWBAtAlhmP3Vw" general="_UVDYgHqFEeWBAtAlhmP3Vw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Mqh80HqFEeWBAtAlhmP3Vw" name="BloodDriveSummaryViewModel">
+            <generalization xmi:type="uml:Generalization" xmi:id="_sE4q4HqFEeWBAtAlhmP3Vw" general="_UVDYgHqFEeWBAtAlhmP3Vw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_NZKkcHqFEeWBAtAlhmP3Vw" name="BloodDriveDetailViewModel">
+            <generalization xmi:type="uml:Generalization" xmi:id="_tZ8ZUHqFEeWBAtAlhmP3Vw" general="_UVDYgHqFEeWBAtAlhmP3Vw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Szdp8HqFEeWBAtAlhmP3Vw" name="NotificationDetailViewModel">
+            <generalization xmi:type="uml:Generalization" xmi:id="_ubG7YHqFEeWBAtAlhmP3Vw" general="_UVDYgHqFEeWBAtAlhmP3Vw"/>
+          </packagedElement>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_nS0IkHXbEeWnw8a1OBDdhw" client="_4Lw4IHXaEeWnw8a1OBDdhw" supplier="_crGjAHXbEeWnw8a1OBDdhw"/>
           <packagedElement xmi:type="uml:Association" xmi:id="_oInvMHXbEeWnw8a1OBDdhw" memberEnd="_oInvMXXbEeWnw8a1OBDdhw _oImhEHXbEeWnw8a1OBDdhw">
             <ownedEnd xmi:type="uml:Property" xmi:id="_oInvMXXbEeWnw8a1OBDdhw" name="requestFacade" type="_4Lw4IHXaEeWnw8a1OBDdhw" association="_oInvMHXbEeWnw8a1OBDdhw">
@@ -3015,7 +3031,7 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK3vU3pvEeWon9iWk6toFw" name="ViewStrategies">
           <packagedElement xmi:type="uml:Dependency" xmi:id="_FK3vVHpvEeWon9iWk6toFw" client="_FK3vU3pvEeWon9iWk6toFw" supplier="_FK3vUXpvEeWon9iWk6toFw"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_crGjAHXbEeWnw8a1OBDdhw" name="ViewModelFactory"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_crGjAHXbEeWnw8a1OBDdhw" name="ViewModelStrategyFactory"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_fuQyAHXbEeWnw8a1OBDdhw" name="ViewModelStrategy" isAbstract="true"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_ulj9cHXbEeWnw8a1OBDdhw" name="BloodDriveSummaryStrategy">
             <generalization xmi:type="uml:Generalization" xmi:id="_h0XGYHXcEeWnw8a1OBDdhw" general="_fuQyAHXbEeWnw8a1OBDdhw"/>
@@ -3033,13 +3049,15 @@
             <generalization xmi:type="uml:Generalization" xmi:id="_p1vi4HXcEeWnw8a1OBDdhw" general="_fuQyAHXbEeWnw8a1OBDdhw"/>
           </packagedElement>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_4Lw4IHXaEeWnw8a1OBDdhw" name="RequestFacade">
+        <packagedElement xmi:type="uml:Class" xmi:id="_4Lw4IHXaEeWnw8a1OBDdhw" name="RequestController">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_oImhEHXbEeWnw8a1OBDdhw" name="viewModelStrategy" type="_fuQyAHXbEeWnw8a1OBDdhw" association="_oInvMHXbEeWnw8a1OBDdhw">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oImhEXXbEeWnw8a1OBDdhw" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oImhEnXbEeWnw8a1OBDdhw" value="*"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_FK3vUnpvEeWon9iWk6toFw" client="_FK3vUHpvEeWon9iWk6toFw" supplier="_FK4WZHpvEeWon9iWk6toFw"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_BViagHqFEeWBAtAlhmP3Vw" client="_4Lw4IHXaEeWnw8a1OBDdhw" supplier="_FK3vU3pvEeWon9iWk6toFw"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_DUkTAHqFEeWBAtAlhmP3Vw" client="_4Lw4IHXaEeWnw8a1OBDdhw" supplier="_FK3vUXpvEeWon9iWk6toFw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZHpvEeWon9iWk6toFw" name="BusinessLogic">
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZXpvEeWon9iWk6toFw" name="Services">
