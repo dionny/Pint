@@ -2970,6 +2970,16 @@
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WYXpvEeWon9iWk6toFw" name="Mobile">
           <packagedElement xmi:type="uml:Class" xmi:id="_x6ZV0HXcEeWnw8a1OBDdhw" name="MobileLoginScreen">
             <generalization xmi:type="uml:Generalization" xmi:id="_JZNEEHqHEeWBAtAlhmP3Vw" general="_C_g-IHqHEeWBAtAlhmP3Vw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_Folu4HxYEeWyWrjZsspKIQ" name="setValues"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_8XxOUHxYEeWyWrjZsspKIQ" name="clickLogin"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_uAKPkHxYEeWyWrjZsspKIQ" name="setValues">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_ziw8gHxYEeWyWrjZsspKIQ" name="username">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_1DfvcHxYEeWyWrjZsspKIQ" name="password">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_zApzQHXcEeWnw8a1OBDdhw" name="HomeScreen">
             <generalization xmi:type="uml:Generalization" xmi:id="_IwEngHqHEeWBAtAlhmP3Vw" general="_C_g-IHqHEeWBAtAlhmP3Vw"/>
@@ -3134,6 +3144,14 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oImhEXXbEeWnw8a1OBDdhw" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oImhEnXbEeWnw8a1OBDdhw" value="*"/>
           </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_FnoQIHxZEeWyWrjZsspKIQ" name="authenticate">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hp_wgHxZEeWyWrjZsspKIQ" name="username">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Js41UHxZEeWyWrjZsspKIQ" name="password">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_FK3vUnpvEeWon9iWk6toFw" client="_FK3vUHpvEeWon9iWk6toFw" supplier="_FK4WZHpvEeWon9iWk6toFw"/>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_BViagHqFEeWBAtAlhmP3Vw" client="_4Lw4IHXaEeWnw8a1OBDdhw" supplier="_FK3vU3pvEeWon9iWk6toFw"/>
@@ -3214,6 +3232,12 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DFxkEXXaEeWnw8a1OBDdhw" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DFxkEnXaEeWnw8a1OBDdhw" value="1"/>
             </ownedAttribute>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_OT9uIHxZEeWyWrjZsspKIQ" name="getUser">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_Qdat8HxZEeWyWrjZsspKIQ" name="username">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_tOwLUHxZEeWyWrjZsspKIQ" name="user" type="_lmACcHXQEeWFjsR5Zis5xQ" direction="return"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_FK4WZnpvEeWon9iWk6toFw" client="_FK4WZXpvEeWon9iWk6toFw" supplier="_FK4WZ3pvEeWon9iWk6toFw"/>
           <packagedElement xmi:type="uml:Association" xmi:id="_DFyyMHXaEeWnw8a1OBDdhw" memberEnd="_DFyyMXXaEeWnw8a1OBDdhw _DFxkEHXaEeWnw8a1OBDdhw">
@@ -3270,7 +3294,17 @@
             <generalization xmi:type="uml:Generalization" xmi:id="_wR084HXZEeWnw8a1OBDdhw" general="_kc0dwHXZEeWnw8a1OBDdhw"/>
           </packagedElement>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_ZeEbwHXaEeWnw8a1OBDdhw" name="BusinessLogicFacade"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZeEbwHXaEeWnw8a1OBDdhw" name="BusinessLogicFacade">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_gmV5UHxZEeWyWrjZsspKIQ" name="authenticate">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_jvW4sHxZEeWyWrjZsspKIQ" name="username">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_kwdJUHxZEeWyWrjZsspKIQ" name="password">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_qvbCIHxZEeWyWrjZsspKIQ" name="user" type="_lmACcHXQEeWFjsR5Zis5xQ" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_FK4WaHpvEeWon9iWk6toFw" client="_FK4WZHpvEeWon9iWk6toFw" supplier="_FK49cHpvEeWon9iWk6toFw"/>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_X7EMAHp8EeWBAtAlhmP3Vw" client="_ZeEbwHXaEeWnw8a1OBDdhw" supplier="_FK4WZXpvEeWon9iWk6toFw"/>
         <packagedElement xmi:type="uml:StateMachine" xmi:id="_viZRkHqbEeWBAtAlhmP3Vw" name="BusinessLogic">
@@ -3700,6 +3734,53 @@
           <subvertex xmi:type="uml:State" xmi:id="_0F_9cHqMEeWBAtAlhmP3Vw" name="Authentication" submachine="_7qDIQHqNEeWBAtAlhmP3Vw"/>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_GGeq4HqOEeWBAtAlhmP3Vw" name=""/>
         </region>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Model" xmi:id="_WuzeYHxXEeWyWrjZsspKIQ" name="Interaction">
+        <packagedElement xmi:type="uml:Interaction" xmi:id="_bt848HxXEeWyWrjZsspKIQ" name="SD_02_LoginTimeout">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_sbU1MHxXEeWyWrjZsspKIQ" name="" type="_j2ChAFmSEeWUdej6b-EfkQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_vpuD0HxXEeWyWrjZsspKIQ" name="" type="_x6ZV0HXcEeWnw8a1OBDdhw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_wgf60HxXEeWyWrjZsspKIQ" name="" type="_4Lw4IHXaEeWnw8a1OBDdhw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_x5aOgHxXEeWyWrjZsspKIQ" name="" type="_ZeEbwHXaEeWnw8a1OBDdhw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_z-sgAHxXEeWyWrjZsspKIQ" name="" type="_rsXqIHXYEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_0-B2EHxXEeWyWrjZsspKIQ" name="" type="_sngZgHXUEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_2hHZcHxXEeWyWrjZsspKIQ" name="" type="_Bzu8IHXUEeWFjsR5Zis5xQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_3zmVAHxXEeWyWrjZsspKIQ" name="" type="_lmACcHXQEeWFjsR5Zis5xQ"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_ZpbnAHxYEeWyWrjZsspKIQ" name="actionSpec"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_sbUOIHxXEeWyWrjZsspKIQ" name="" represents="_sbU1MHxXEeWyWrjZsspKIQ" coveredBy="_DQ8iEHxYEeWyWrjZsspKIQ _DQ9wMXxYEeWyWrjZsspKIQ _DQ9wMHxYEeWyWrjZsspKIQ _3_jQ4HxYEeWyWrjZsspKIQ _8Yx68HxYEeWyWrjZsspKIQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_vptcwHxXEeWyWrjZsspKIQ" name="" represents="_vpuD0HxXEeWyWrjZsspKIQ" coveredBy="_AbAPsXxYEeWyWrjZsspKIQ _AbAPsHxYEeWyWrjZsspKIQ _3_j38HxYEeWyWrjZsspKIQ _5i2PoHxYEeWyWrjZsspKIQ _5i1okHxYEeWyWrjZsspKIQ _8YzJEHxYEeWyWrjZsspKIQ _Uu5KMHxZEeWyWrjZsspKIQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_wgfTwHxXEeWyWrjZsspKIQ" name="" represents="_wgf60HxXEeWyWrjZsspKIQ" coveredBy="_AnCEEHxZEeWyWrjZsspKIQ _AnBdAHxZEeWyWrjZsspKIQ _Uu6YUHxZEeWyWrjZsspKIQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_x5ZncHxXEeWyWrjZsspKIQ" name="" represents="_x5aOgHxXEeWyWrjZsspKIQ" coveredBy="_blVdkHxZEeWyWrjZsspKIQ _blXSwHxZEeWyWrjZsspKIQ _blWrsHxZEeWyWrjZsspKIQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_z-r48HxXEeWyWrjZsspKIQ" name="" represents="_z-sgAHxXEeWyWrjZsspKIQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_0-BPAHxXEeWyWrjZsspKIQ" name="" represents="_0-B2EHxXEeWyWrjZsspKIQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_2hGLUHxXEeWyWrjZsspKIQ" name="" represents="_2hHZcHxXEeWyWrjZsspKIQ"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="_3zlt8HxXEeWyWrjZsspKIQ" name="" represents="_3zmVAHxXEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_DQ8iEHxYEeWyWrjZsspKIQ" name="ActionExecSpec0Start" covered="_sbUOIHxXEeWyWrjZsspKIQ" execution="_DQ9wMHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_DQ9wMHxYEeWyWrjZsspKIQ" name="ActionExecSpec0" covered="_sbUOIHxXEeWyWrjZsspKIQ" finish="_DQ9wMXxYEeWyWrjZsspKIQ" start="_DQ8iEHxYEeWyWrjZsspKIQ" action="_TAlqwHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3_jQ4HxYEeWyWrjZsspKIQ" name="setValues_MessageSend" covered="_sbUOIHxXEeWyWrjZsspKIQ" message="_3_hbsHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_AbAPsHxYEeWyWrjZsspKIQ" name="ActionExecSpec" covered="_vptcwHxXEeWyWrjZsspKIQ" finish="_AbAPsXxYEeWyWrjZsspKIQ" start="_3_j38HxYEeWyWrjZsspKIQ" action="_TAlqwHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3_j38HxYEeWyWrjZsspKIQ" name="setValues_MessageRecv" covered="_vptcwHxXEeWyWrjZsspKIQ" message="_3_hbsHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_AbAPsXxYEeWyWrjZsspKIQ" name="ActionExecSpecFinish" covered="_vptcwHxXEeWyWrjZsspKIQ" execution="_AbAPsHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8Yx68HxYEeWyWrjZsspKIQ" name="clickLogin_MessageSend" covered="_sbUOIHxXEeWyWrjZsspKIQ" message="_8Yws0HxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_5i1okHxYEeWyWrjZsspKIQ" name="ActionExecSpec1" covered="_vptcwHxXEeWyWrjZsspKIQ" finish="_5i2PoHxYEeWyWrjZsspKIQ" start="_8YzJEHxYEeWyWrjZsspKIQ" action="_TAlqwHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8YzJEHxYEeWyWrjZsspKIQ" name="clickLogin_MessageRecv" covered="_vptcwHxXEeWyWrjZsspKIQ" message="_8Yws0HxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_blVdkHxZEeWyWrjZsspKIQ" name="ActionExecSpec3Start" covered="_x5ZncHxXEeWyWrjZsspKIQ" execution="_blWrsHxZEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_blWrsHxZEeWyWrjZsspKIQ" name="ActionExecSpec3" covered="_x5ZncHxXEeWyWrjZsspKIQ" finish="_blXSwHxZEeWyWrjZsspKIQ" start="_blVdkHxZEeWyWrjZsspKIQ" action="_TAlqwHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Uu5KMHxZEeWyWrjZsspKIQ" name="authenticate_MessageSend" covered="_vptcwHxXEeWyWrjZsspKIQ" message="_Uu3VAHxZEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_AnBdAHxZEeWyWrjZsspKIQ" name="ActionExecSpec2" covered="_wgfTwHxXEeWyWrjZsspKIQ" finish="_AnCEEHxZEeWyWrjZsspKIQ" start="_Uu6YUHxZEeWyWrjZsspKIQ" action="_TAlqwHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Uu6YUHxZEeWyWrjZsspKIQ" name="authenticate_MessageRecv" covered="_wgfTwHxXEeWyWrjZsspKIQ" message="_Uu3VAHxZEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_blXSwHxZEeWyWrjZsspKIQ" name="ActionExecSpec3Finish" covered="_x5ZncHxXEeWyWrjZsspKIQ" execution="_blWrsHxZEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_AnCEEHxZEeWyWrjZsspKIQ" name="ActionExecSpec2Finish" covered="_wgfTwHxXEeWyWrjZsspKIQ" execution="_AnBdAHxZEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_5i2PoHxYEeWyWrjZsspKIQ" name="ActionExecSpec1Finish" covered="_vptcwHxXEeWyWrjZsspKIQ" execution="_5i1okHxYEeWyWrjZsspKIQ"/>
+          <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_DQ9wMXxYEeWyWrjZsspKIQ" name="ActionExecSpec0Finish" covered="_sbUOIHxXEeWyWrjZsspKIQ" execution="_DQ9wMHxYEeWyWrjZsspKIQ"/>
+          <action xmi:type="uml:CallOperationAction" xmi:id="_TAlqwHxYEeWyWrjZsspKIQ" name="actionSpec" operation="_ZpbnAHxYEeWyWrjZsspKIQ">
+            <target xmi:type="uml:ValuePin" xmi:id="_c42wYHxYEeWyWrjZsspKIQ" name="actionSpec">
+              <value xmi:type="uml:LiteralString" xmi:id="_c42wYXxYEeWyWrjZsspKIQ" name="actionSpec" value="actionSpec"/>
+            </target>
+          </action>
+          <message xmi:type="uml:Message" xmi:id="_3_hbsHxYEeWyWrjZsspKIQ" name="setValues_Message" receiveEvent="_3_j38HxYEeWyWrjZsspKIQ" sendEvent="_3_jQ4HxYEeWyWrjZsspKIQ" signature="_uAKPkHxYEeWyWrjZsspKIQ"/>
+          <message xmi:type="uml:Message" xmi:id="_8Yws0HxYEeWyWrjZsspKIQ" name="clickLogin_Message" receiveEvent="_8YzJEHxYEeWyWrjZsspKIQ" sendEvent="_8Yx68HxYEeWyWrjZsspKIQ" signature="_8XxOUHxYEeWyWrjZsspKIQ"/>
+          <message xmi:type="uml:Message" xmi:id="_Uu3VAHxZEeWyWrjZsspKIQ" name="authenticate_Message" receiveEvent="_Uu6YUHxZEeWyWrjZsspKIQ" sendEvent="_Uu5KMHxZEeWyWrjZsspKIQ" signature="_FnoQIHxZEeWyWrjZsspKIQ"/>
+        </packagedElement>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_eNrh8HpuEeWon9iWk6toFw" name="Deployment">
