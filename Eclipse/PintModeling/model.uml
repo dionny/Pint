@@ -2996,7 +2996,78 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_FK4WY3pvEeWon9iWk6toFw" client="_FK4WYHpvEeWon9iWk6toFw" supplier="_FK3vUHpvEeWon9iWk6toFw"/>
         <packagedElement xmi:type="uml:StateMachine" xmi:id="_7qDIQHqNEeWBAtAlhmP3Vw" name="Client" submachineState="_0F_9cHqMEeWBAtAlhmP3Vw">
-          <region xmi:type="uml:Region" xmi:id="_8TGFQHqNEeWBAtAlhmP3Vw" name="Region1"/>
+          <region xmi:type="uml:Region" xmi:id="_8TGFQHqNEeWBAtAlhmP3Vw" name="Region1">
+            <transition xmi:type="uml:Transition" xmi:id="_vOcNIHxDEeWyWrjZsspKIQ" source="_W73aEHxDEeWyWrjZsspKIQ" target="_agpvcHxDEeWyWrjZsspKIQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_y6VQEHxDEeWyWrjZsspKIQ" name="userRequest(data)" guard="_4VNkYHxDEeWyWrjZsspKIQ" source="_agpvcHxDEeWyWrjZsspKIQ" target="_pJK4AHxDEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_4VNkYHxDEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_4VNkYXxDEeWyWrjZsspKIQ" name="urPass" value="success"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_8er7MHxDEeWyWrjZsspKIQ" name="callRequestController"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_AfT4AHxEEeWyWrjZsspKIQ" name="userRequest(data) " guard="_HXi7IHxEEeWyWrjZsspKIQ" source="_agpvcHxDEeWyWrjZsspKIQ" target="_rH6coHxDEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_HXi7IHxEEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_HXi7IXxEEeWyWrjZsspKIQ" name="urFail" value="!success"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_KEwIQHxEEeWyWrjZsspKIQ" name="showError"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_rH3j4HxEEeWyWrjZsspKIQ" name="fetch(data)" guard="_xwalMHxEEeWyWrjZsspKIQ" source="_pJK4AHxDEeWyWrjZsspKIQ" target="_sG7CkHxDEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_xwalMHxEEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_xwbMQHxEEeWyWrjZsspKIQ" name="data" value="dataAvailable"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_u16i8HxEEeWyWrjZsspKIQ" name="populateResponse"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_0WsD4HxEEeWyWrjZsspKIQ" source="_sG7CkHxDEeWyWrjZsspKIQ" target="_X_mH8HxDEeWyWrjZsspKIQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_066yUHxEEeWyWrjZsspKIQ" source="_rH6coHxDEeWyWrjZsspKIQ" target="_X_mH8HxDEeWyWrjZsspKIQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_1XmuUHxEEeWyWrjZsspKIQ" name="fetch(data) " guard="_7uOSIHxEEeWyWrjZsspKIQ" source="_pJK4AHxDEeWyWrjZsspKIQ" target="_rH6coHxDEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_7uOSIHxEEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_7uOSIXxEEeWyWrjZsspKIQ" value="!dataAvailable"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_4AxI8HxEEeWyWrjZsspKIQ" name="showError"/>
+            </transition>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_W73aEHxDEeWyWrjZsspKIQ" name=""/>
+            <subvertex xmi:type="uml:FinalState" xmi:id="_X_mH8HxDEeWyWrjZsspKIQ" name=""/>
+            <subvertex xmi:type="uml:State" xmi:id="_agpvcHxDEeWyWrjZsspKIQ" name="Ready"/>
+            <subvertex xmi:type="uml:State" xmi:id="_pJK4AHxDEeWyWrjZsspKIQ" name="Requesting"/>
+            <subvertex xmi:type="uml:State" xmi:id="_rH6coHxDEeWyWrjZsspKIQ" name="Error"/>
+            <subvertex xmi:type="uml:State" xmi:id="_sG7CkHxDEeWyWrjZsspKIQ" name="Have Data"/>
+          </region>
+        </packagedElement>
+        <packagedElement xmi:type="uml:StateMachine" xmi:id="_KqQMkHxFEeWyWrjZsspKIQ" name="Authentication">
+          <region xmi:type="uml:Region" xmi:id="_LnpB4HxFEeWyWrjZsspKIQ" name="Region1">
+            <transition xmi:type="uml:Transition" xmi:id="_Wi2yQHxFEeWyWrjZsspKIQ" name="fetch(user)" guard="_h7h6sHxFEeWyWrjZsspKIQ" source="_Ov3XEHxFEeWyWrjZsspKIQ" target="_QJYuwHxFEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_h7h6sHxFEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_h7h6sXxFEeWyWrjZsspKIQ" value="userExists"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_f7yQgHxFEeWyWrjZsspKIQ" name="populateData"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_W_AiwHxFEeWyWrjZsspKIQ" source="_NweWoHxFEeWyWrjZsspKIQ" target="_Ov3XEHxFEeWyWrjZsspKIQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_X5X5QHxFEeWyWrjZsspKIQ" name="fetch(user) " guard="_n2HCwHxFEeWyWrjZsspKIQ" source="_Ov3XEHxFEeWyWrjZsspKIQ" target="_T7wNIHxFEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_n2HCwHxFEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_n2HCwXxFEeWyWrjZsspKIQ" value="!userExists"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_lupnAHxFEeWyWrjZsspKIQ" name="showError"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_ZBsMMHxFEeWyWrjZsspKIQ" name="compareCredentials(user,pass)" guard="_v9Yr4HxFEeWyWrjZsspKIQ" source="_QJYuwHxFEeWyWrjZsspKIQ" target="_RuedQHxFEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_v9Yr4HxFEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_v9Yr4XxFEeWyWrjZsspKIQ" value="valuesMatch"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_sK4DkHxFEeWyWrjZsspKIQ" name="login"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_Zm2uwHxFEeWyWrjZsspKIQ" name="compareCredentials(user,pass) " guard="_2DHUAHxFEeWyWrjZsspKIQ" source="_QJYuwHxFEeWyWrjZsspKIQ" target="_T7wNIHxFEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_2DHUAHxFEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_2DHUAXxFEeWyWrjZsspKIQ" value="!valuesMatch"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_z09aYHxFEeWyWrjZsspKIQ" name="showError"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_a1XJQHxFEeWyWrjZsspKIQ" source="_RuedQHxFEeWyWrjZsspKIQ" target="_aICwQHxFEeWyWrjZsspKIQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_coQDMHxFEeWyWrjZsspKIQ" source="_T7wNIHxFEeWyWrjZsspKIQ" target="_aICwQHxFEeWyWrjZsspKIQ"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_NweWoHxFEeWyWrjZsspKIQ" name=" "/>
+            <subvertex xmi:type="uml:State" xmi:id="_Ov3XEHxFEeWyWrjZsspKIQ" name="Authenticating"/>
+            <subvertex xmi:type="uml:State" xmi:id="_QJYuwHxFEeWyWrjZsspKIQ" name="Have User Data"/>
+            <subvertex xmi:type="uml:State" xmi:id="_RuedQHxFEeWyWrjZsspKIQ" name="Authenticated"/>
+            <subvertex xmi:type="uml:State" xmi:id="_T7wNIHxFEeWyWrjZsspKIQ" name="Error"/>
+            <subvertex xmi:type="uml:FinalState" xmi:id="_aICwQHxFEeWyWrjZsspKIQ" name=" "/>
+          </region>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK3vUHpvEeWon9iWk6toFw" name="Presentation">
@@ -3067,6 +3138,56 @@
         <packagedElement xmi:type="uml:Dependency" xmi:id="_FK3vUnpvEeWon9iWk6toFw" client="_FK3vUHpvEeWon9iWk6toFw" supplier="_FK4WZHpvEeWon9iWk6toFw"/>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_BViagHqFEeWBAtAlhmP3Vw" client="_4Lw4IHXaEeWnw8a1OBDdhw" supplier="_FK3vU3pvEeWon9iWk6toFw"/>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_DUkTAHqFEeWBAtAlhmP3Vw" client="_4Lw4IHXaEeWnw8a1OBDdhw" supplier="_FK3vUXpvEeWon9iWk6toFw"/>
+        <packagedElement xmi:type="uml:StateMachine" xmi:id="_d7_8UHxAEeWyWrjZsspKIQ" name="Presentation">
+          <region xmi:type="uml:Region" xmi:id="_d7_8UXxAEeWyWrjZsspKIQ" name="Region1">
+            <transition xmi:type="uml:Transition" xmi:id="_d7_8UnxAEeWyWrjZsspKIQ" source="_d7_8bXxAEeWyWrjZsspKIQ" target="_d7_8bnxAEeWyWrjZsspKIQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_d7_8W3xAEeWyWrjZsspKIQ" source="_d7_8cXxAEeWyWrjZsspKIQ" target="_d7_8cnxAEeWyWrjZsspKIQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_d7_8YHxAEeWyWrjZsspKIQ" source="_d7_8c3xAEeWyWrjZsspKIQ" target="_d7_8cnxAEeWyWrjZsspKIQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_PhCSIHxBEeWyWrjZsspKIQ" name="callService(data)" guard="_5ngkoHxBEeWyWrjZsspKIQ" source="_d7_8bnxAEeWyWrjZsspKIQ" target="_d7_8b3xAEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_5ngkoHxBEeWyWrjZsspKIQ" name="cSpass">
+                <specification xmi:type="uml:LiteralString" xmi:id="_5ngkoXxBEeWyWrjZsspKIQ" name="csPass" value="success"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_8f8KUHxBEeWyWrjZsspKIQ" name="receiveData"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_mbOV8HxBEeWyWrjZsspKIQ" name="callStrategy(data)" guard="_NqRIUHxCEeWyWrjZsspKIQ" source="_d7_8b3xAEeWyWrjZsspKIQ" target="_d7_8cHxAEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_NqRIUHxCEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_NqRIUXxCEeWyWrjZsspKIQ" name="cstrPass" value="success"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_QQZdEHxCEeWyWrjZsspKIQ" name="returnData"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_m7kp8HxBEeWyWrjZsspKIQ" name="callService(data) " guard="_FbB2AHxCEeWyWrjZsspKIQ" source="_d7_8bnxAEeWyWrjZsspKIQ" target="_d7_8cXxAEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_FbB2AHxCEeWyWrjZsspKIQ" name="csFail">
+                <specification xmi:type="uml:LiteralString" xmi:id="_FbB2AXxCEeWyWrjZsspKIQ" name="csFail" value="!success"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_HyyXkHxCEeWyWrjZsspKIQ" name="showError"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_nt2bcHxBEeWyWrjZsspKIQ" name="callStrategy(data) " guard="_aV2qIHxCEeWyWrjZsspKIQ" source="_d7_8b3xAEeWyWrjZsspKIQ" target="_d7_8cXxAEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_aV2qIHxCEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_aV2qIXxCEeWyWrjZsspKIQ" name="cstrFail" value="!success"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_cb5woHxCEeWyWrjZsspKIQ" name="showError"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_oGWbAHxBEeWyWrjZsspKIQ" name="returnData(data)" guard="_i53SkHxCEeWyWrjZsspKIQ" source="_d7_8cHxAEeWyWrjZsspKIQ" target="_d7_8c3xAEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_i53SkHxCEeWyWrjZsspKIQ">
+                <specification xmi:type="uml:LiteralString" xmi:id="_i53SkXxCEeWyWrjZsspKIQ" name="retPass" value="success"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_lQS-cHxCEeWyWrjZsspKIQ" name="return"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_uf3FUHxCEeWyWrjZsspKIQ" name="returnData(data) " guard="_44BzAHxCEeWyWrjZsspKIQ" source="_d7_8cHxAEeWyWrjZsspKIQ" target="_d7_8cXxAEeWyWrjZsspKIQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_44BzAHxCEeWyWrjZsspKIQ" name="retFail">
+                <specification xmi:type="uml:LiteralString" xmi:id="_44BzAXxCEeWyWrjZsspKIQ" name="retFail" value="!success"/>
+              </ownedRule>
+              <effect xmi:type="uml:Activity" xmi:id="_zKMGcHxCEeWyWrjZsspKIQ" name="showError"/>
+            </transition>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_d7_8bXxAEeWyWrjZsspKIQ" name=""/>
+            <subvertex xmi:type="uml:State" xmi:id="_d7_8bnxAEeWyWrjZsspKIQ" name="Handling Request"/>
+            <subvertex xmi:type="uml:State" xmi:id="_d7_8b3xAEeWyWrjZsspKIQ" name="Received Data"/>
+            <subvertex xmi:type="uml:State" xmi:id="_d7_8cHxAEeWyWrjZsspKIQ" name="Created View Model"/>
+            <subvertex xmi:type="uml:State" xmi:id="_d7_8cXxAEeWyWrjZsspKIQ" name="Error"/>
+            <subvertex xmi:type="uml:FinalState" xmi:id="_d7_8cnxAEeWyWrjZsspKIQ"/>
+            <subvertex xmi:type="uml:State" xmi:id="_d7_8c3xAEeWyWrjZsspKIQ" name="Returned Data"/>
+          </region>
+        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZHpvEeWon9iWk6toFw" name="BusinessLogic">
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZXpvEeWon9iWk6toFw" name="Services">
@@ -3696,4 +3817,7 @@
   <ActionLanguage:TextualRepresentation xmi:id="_4b6h4HqZEeWBAtAlhmP3Vw" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
   <ActionLanguage:TextualRepresentation xmi:id="_9Nh2wHqZEeWBAtAlhmP3Vw" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
   <ActionLanguage:TextualRepresentation xmi:id="_ps5BUHqcEeWBAtAlhmP3Vw" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_Iqw94HxBEeWyWrjZsspKIQ" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_shOY8HxDEeWyWrjZsspKIQ" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_BBOSQHxEEeWyWrjZsspKIQ" language="org.eclipse.papyrus.uml.textedit.transition.xtext.UmlTransition"/>
 </xmi:XMI>
