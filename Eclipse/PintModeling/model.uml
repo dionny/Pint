@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:PintProfile="http://PintProfile/schemas/PintProfile/_Rnq0kFzeEeWzeImkbjXUIQ/9" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g http://PintProfile/schemas/PintProfile/_Rnq0kFzeEeWzeImkbjXUIQ/9 pint.profile.uml#_Rnq0kVzeEeWzeImkbjXUIQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PintProfile="http://PintProfile/schemas/PintProfile/_Rnq0kFzeEeWzeImkbjXUIQ/9" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://PintProfile/schemas/PintProfile/_Rnq0kFzeEeWzeImkbjXUIQ/9 pint.profile.uml#_Rnq0kVzeEeWzeImkbjXUIQ">
   <uml:Model xmi:id="_mcZzgFgXEeWpTO4Y2E1OUw" name="Pint">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_OIFuMFmPEeWUdej6b-EfkQ">
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
@@ -4001,10 +4001,4 @@
   <PintProfile:Boundary xmi:id="_Bf9rgGfyEeWL7PjAahme5A" base_Class="_V_IykGJZEeW93Mk1RY2FJA"/>
   <PintProfile:Entity xmi:id="_CveyoGfyEeWL7PjAahme5A" base_Class="_D17m8GJYEeW93Mk1RY2FJA"/>
   <PintProfile:Entity xmi:id="_DWa20GfyEeWL7PjAahme5A" base_Class="_SldGsGJpEeWQT-kpDqtLRg"/>
-  <ActionLanguage:TextualRepresentation xmi:id="_4b6h4HqZEeWBAtAlhmP3Vw" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
-  <ActionLanguage:TextualRepresentation xmi:id="_9Nh2wHqZEeWBAtAlhmP3Vw" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
-  <ActionLanguage:TextualRepresentation xmi:id="_ps5BUHqcEeWBAtAlhmP3Vw" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
-  <ActionLanguage:TextualRepresentation xmi:id="_Iqw94HxBEeWyWrjZsspKIQ" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
-  <ActionLanguage:TextualRepresentation xmi:id="_shOY8HxDEeWyWrjZsspKIQ" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
-  <ActionLanguage:TextualRepresentation xmi:id="_BBOSQHxEEeWyWrjZsspKIQ" language="org.eclipse.papyrus.uml.textedit.transition.xtext.UmlTransition"/>
 </xmi:XMI>
