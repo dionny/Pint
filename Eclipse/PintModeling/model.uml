@@ -3115,6 +3115,9 @@
           <packagedElement xmi:type="uml:Dependency" xmi:id="_DWbc8HXfEeWnw8a1OBDdhw" client="_DgRAUHXdEeWnw8a1OBDdhw" supplier="_4Lw4IHXaEeWnw8a1OBDdhw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK3vU3pvEeWon9iWk6toFw" name="ViewStrategies">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HjcN8H1IEeWTsOFe1ufovw">
+            <body>Strategy design pattern</body>
+          </ownedComment>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_FK3vVHpvEeWon9iWk6toFw" client="_FK3vU3pvEeWon9iWk6toFw" supplier="_FK3vUXpvEeWon9iWk6toFw"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_fuQyAHXbEeWnw8a1OBDdhw" name="ViewModelStrategy" isAbstract="true">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_8uYaoH0gEeWAeO7XtpU2zw" name="createViewModel">
@@ -3189,6 +3192,9 @@
         <packagedElement xmi:type="uml:Dependency" xmi:id="_DUkTAHqFEeWBAtAlhmP3Vw" client="_4Lw4IHXaEeWnw8a1OBDdhw" supplier="_FK3vUXpvEeWon9iWk6toFw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZHpvEeWon9iWk6toFw" name="BusinessLogic">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_eUqYcH1HEeWTsOFe1ufovw">
+          <body>Facade design pattern</body>
+        </ownedComment>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZXpvEeWon9iWk6toFw" name="Services">
           <packagedElement xmi:type="uml:Class" xmi:id="_ms11EHXYEeWFjsR5Zis5xQ" name="BloodDriveService">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_Np7fUHXaEeWnw8a1OBDdhw" name="validator" type="_kc0dwHXZEeWnw8a1OBDdhw" association="_Np8GYHXaEeWnw8a1OBDdhw">
@@ -3321,7 +3327,12 @@
           <packagedElement xmi:type="uml:Dependency" xmi:id="_LCwnYHp9EeWBAtAlhmP3Vw" client="_qTdWcHXYEeWFjsR5Zis5xQ" supplier="_rsXqIHXYEeWFjsR5Zis5xQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZ3pvEeWon9iWk6toFw" name="Validators">
-          <packagedElement xmi:type="uml:Class" xmi:id="_kc0dwHXZEeWnw8a1OBDdhw" name="Validator" isAbstract="true"/>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_P-yfEH1HEeWTsOFe1ufovw">
+            <body>Template Method Design Pattern</body>
+          </ownedComment>
+          <packagedElement xmi:type="uml:Class" xmi:id="_kc0dwHXZEeWnw8a1OBDdhw" name="Validator" isAbstract="true">
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_WB0_kH1HEeWTsOFe1ufovw" name="validate" isAbstract="true"/>
+          </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_mJ3OYHXZEeWnw8a1OBDdhw" name="BloodDriveValidator">
             <generalization xmi:type="uml:Generalization" xmi:id="_y3TxYHXZEeWnw8a1OBDdhw" general="_kc0dwHXZEeWnw8a1OBDdhw"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_fY8uAwzuWQwHx8CHAFGkQF" name="validate">
@@ -3345,9 +3356,11 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_oyQM8HXZEeWnw8a1OBDdhw" name="NotificationValidator">
             <generalization xmi:type="uml:Generalization" xmi:id="_xxupYHXZEeWnw8a1OBDdhw" general="_kc0dwHXZEeWnw8a1OBDdhw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_ZFSJgH1HEeWTsOFe1ufovw" name="validate"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_qTNCUHXZEeWnw8a1OBDdhw" name="HospitalValidator">
             <generalization xmi:type="uml:Generalization" xmi:id="_wR084HXZEeWnw8a1OBDdhw" general="_kc0dwHXZEeWnw8a1OBDdhw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_aptwsH1HEeWTsOFe1ufovw" name="validate"/>
           </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_ZeEbwHXaEeWnw8a1OBDdhw" name="BusinessLogicFacade">
@@ -3414,6 +3427,12 @@
         <packagedElement xmi:type="uml:Dependency" xmi:id="_X7EMAHp8EeWBAtAlhmP3Vw" client="_ZeEbwHXaEeWnw8a1OBDdhw" supplier="_FK4WZXpvEeWon9iWk6toFw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK49cHpvEeWon9iWk6toFw" name="Data">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_1iBP4H1HEeWTsOFe1ufovw">
+          <body>Facade design pattern</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_7wXBcH1HEeWTsOFe1ufovw">
+          <body>Singleton design pattern</body>
+        </ownedComment>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK49cXpvEeWon9iWk6toFw" name="Repositories">
           <packagedElement xmi:type="uml:Dependency" xmi:id="_FK49cnpvEeWon9iWk6toFw" client="_FK49cXpvEeWon9iWk6toFw" supplier="_FK49c3pvEeWon9iWk6toFw"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_HuOkoHXUEeWFjsR5Zis5xQ" name="BloodDriveRepository">
@@ -3710,6 +3729,7 @@
           </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_sngZgHXUEeWFjsR5Zis5xQ" name="DataFacade">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_-t37cH1HEeWTsOFe1ufovw" name="Instance" isStatic="true" type="_sngZgHXUEeWFjsR5Zis5xQ"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_3g-foHXjEeWnw8a1OBDdhw" name="getBloodDriveByLocation">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_iTA3oHXkEeWnw8a1OBDdhw" name="city">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -3823,6 +3843,21 @@
         <packagedElement xmi:type="uml:Dependency" xmi:id="_A_RX8Hp3EeWBAtAlhmP3Vw" client="_sngZgHXUEeWFjsR5Zis5xQ" supplier="_FK49c3pvEeWon9iWk6toFw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Model" xmi:id="_WuzeYHxXEeWyWrjZsspKIQ" name="Interaction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_LRoW8H1IEeWTsOFe1ufovw">
+          <body>Strategy design pattern</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_NJGO4H1IEeWTsOFe1ufovw">
+          <body>Facade design pattern</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PAkt4H1IEeWTsOFe1ufovw">
+          <body>Template method design pattern</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_R07E0H1IEeWTsOFe1ufovw">
+          <body>Facade design pattern</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_TT0rwH1IEeWTsOFe1ufovw">
+          <body>Singleton design pattern</body>
+        </ownedComment>
         <packagedElement xmi:type="uml:Interaction" xmi:id="_bt848HxXEeWyWrjZsspKIQ" name="SD_02_LoginTimeout">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_sbU1MHxXEeWyWrjZsspKIQ" name="" type="_j2ChAFmSEeWUdej6b-EfkQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_vpuD0HxXEeWyWrjZsspKIQ" name="" type="_x6ZV0HXcEeWnw8a1OBDdhw"/>
@@ -4918,36 +4953,6 @@
   <PintProfile:Boundary xmi:id="_Bf9rgGfyEeWL7PjAahme5A" base_Class="_V_IykGJZEeW93Mk1RY2FJA"/>
   <PintProfile:Entity xmi:id="_CveyoGfyEeWL7PjAahme5A" base_Class="_D17m8GJYEeW93Mk1RY2FJA"/>
   <PintProfile:Entity xmi:id="_DWa20GfyEeWL7PjAahme5A" base_Class="_SldGsGJpEeWQT-kpDqtLRg"/>
-  <PintArchitectureClass:Presentation xmi:id="_Sc1BEH1CEeWTsOFe1ufovw" base_Class="_UVDYgHqFEeWBAtAlhmP3Vw"/>
-  <PintArchitectureClass:Presentation xmi:id="_U4XPYH1CEeWTsOFe1ufovw" base_Class="_Ny89cHqFEeWBAtAlhmP3Vw"/>
-  <PintArchitectureClass:Presentation xmi:id="_Wz6WEH1CEeWTsOFe1ufovw" base_Class="_kcxqAHqFEeWBAtAlhmP3Vw"/>
-  <PintArchitectureClass:Presentation xmi:id="_XsiAIH1CEeWTsOFe1ufovw" base_Class="_Mqh80HqFEeWBAtAlhmP3Vw"/>
-  <PintArchitectureClass:Presentation xmi:id="_YjxKIH1CEeWTsOFe1ufovw" base_Class="_NZKkcHqFEeWBAtAlhmP3Vw"/>
-  <PintArchitectureClass:Presentation xmi:id="_ZZDzYH1CEeWTsOFe1ufovw" base_Class="_Szdp8HqFEeWBAtAlhmP3Vw"/>
-  <PintArchitectureClass:Presentation xmi:id="_far-oH1CEeWTsOFe1ufovw" base_Class="_kwfgUHXcEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_i4Hu0H1CEeWTsOFe1ufovw" base_Class="_ms11EHXYEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_jpruoH1CEeWTsOFe1ufovw" base_Class="_oQpKIHXYEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_kcxYcH1CEeWTsOFe1ufovw" base_Class="_qTdWcHXYEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_lN_aAH1CEeWTsOFe1ufovw" base_Class="_rsXqIHXYEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_molvwH1CEeWTsOFe1ufovw" base_Class="_kc0dwHXZEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_nUvEEH1CEeWTsOFe1ufovw" base_Class="_mJ3OYHXZEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_oAJYkH1CEeWTsOFe1ufovw" base_Class="_n0gyUHXZEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_orPkAH1CEeWTsOFe1ufovw" base_Class="_oyQM8HXZEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_pU8BQH1CEeWTsOFe1ufovw" base_Class="_qTNCUHXZEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:BusinessLogic xmi:id="_qYqvIH1CEeWTsOFe1ufovw" base_Class="_ZeEbwHXaEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Repository xmi:id="_ruPa8H1CEeWTsOFe1ufovw" base_Class="_HuOkoHXUEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Repository xmi:id="_sesAcH1CEeWTsOFe1ufovw" base_Class="_Bzu8IHXUEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Repository xmi:id="_tKhLsH1CEeWTsOFe1ufovw" base_Class="_EaT80HXUEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Repository xmi:id="_tzq2YH1CEeWTsOFe1ufovw" base_Class="_RhE-wHXUEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Repository xmi:id="_uoPt8H1CEeWTsOFe1ufovw" base_Class="_p335oHxaEeWyWrjZsspKIQ"/>
-  <PintArchitectureClass:Data xmi:id="_veKCQH1CEeWTsOFe1ufovw" base_Class="_lmACcHXQEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Data xmi:id="_wLtEwH1CEeWTsOFe1ufovw" base_Class="_lmDFwHXQEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Data xmi:id="_xlilgH1CEeWTsOFe1ufovw" base_Class="_lmDs0HXQEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Data xmi:id="_zMLMIH1CEeWTsOFe1ufovw" base_Class="_lmET4HXQEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Data xmi:id="_z8w7kH1CEeWTsOFe1ufovw" base_Class="_lmFiAHXQEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Data xmi:id="_1K8l8H1CEeWTsOFe1ufovw" base_Class="_lmGJEHXQEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Data xmi:id="_2EEmUH1CEeWTsOFe1ufovw" base_Class="_lmGwIHXQEeWFjsR5Zis5xQ"/>
-  <PintArchitectureClass:Data xmi:id="_2vzq8H1CEeWTsOFe1ufovw" base_Class="_sngZgHXUEeWFjsR5Zis5xQ"/>
   <PintArchitectureLifeline:Client xmi:id="_9akSwH1CEeWTsOFe1ufovw" base_Lifeline="_vptcwHxXEeWyWrjZsspKIQ"/>
   <PintArchitectureLifeline:Presentation xmi:id="_-6WDcH1CEeWTsOFe1ufovw" base_Lifeline="_wgfTwHxXEeWyWrjZsspKIQ"/>
   <PintArchitectureLifeline:BusinessLogic xmi:id="_AKAUgH1DEeWTsOFe1ufovw" base_Lifeline="_x5ZncHxXEeWyWrjZsspKIQ"/>
@@ -5020,22 +5025,52 @@
   <PintArchitectureLifeline:BusinessLogic xmi:id="_xzfQAH1EEeWTsOFe1ufovw" base_Lifeline="_PKrikH08EeWAeO7XtpU2zw"/>
   <PintArchitectureLifeline:Data xmi:id="_yociEH1EEeWTsOFe1ufovw" base_Lifeline="_D6hc8H08EeWAeO7XtpU2zw"/>
   <PintArchitectureLifeline:Repository xmi:id="_zermgH1EEeWTsOFe1ufovw" base_Lifeline="_NSLI0H08EeWAeO7XtpU2zw"/>
-  <PintArchitectureClass:Client xmi:id="_Hz2v4H1FEeWTsOFe1ufovw" base_Class="_x6ZV0HXcEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Client xmi:id="_RP7owH1FEeWTsOFe1ufovw" base_Class="_C_g-IHqHEeWBAtAlhmP3Vw"/>
-  <PintArchitectureClass:Client xmi:id="_WAcxcH1FEeWTsOFe1ufovw" base_Class="_zApzQHXcEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Client xmi:id="_YE7xsH1FEeWTsOFe1ufovw" base_Class="_DgRAUHXdEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Client xmi:id="_b3oAMH1FEeWTsOFe1ufovw" base_Class="_pgwfcHXeEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Client xmi:id="_c9vTsH1FEeWTsOFe1ufovw" base_Class="_qf6PUHXeEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Client xmi:id="_fMN9cH1FEeWTsOFe1ufovw" base_Class="_jtv_AHXeEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Client xmi:id="_f6ZSEH1FEeWTsOFe1ufovw" base_Class="_gEvQ8HXeEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Presentation xmi:id="_gsak4H1FEeWTsOFe1ufovw" base_Class="_4Lw4IHXaEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Client xmi:id="_h-LHsH1FEeWTsOFe1ufovw" base_Class="_f9bWwH0rEeWAeO7XtpU2zw"/>
-  <PintArchitectureClass:Client xmi:id="_imJGoH1FEeWTsOFe1ufovw" base_Class="_rYWy4H00EeWAeO7XtpU2zw"/>
-  <PintArchitectureClass:Client xmi:id="_jQ4swH1FEeWTsOFe1ufovw" base_Class="_euZgAHqHEeWBAtAlhmP3Vw"/>
-  <PintArchitectureClass:Client xmi:id="_j8Ov0H1FEeWTsOFe1ufovw" base_Class="_eqMNQH0rEeWAeO7XtpU2zw"/>
-  <PintArchitectureClass:Presentation xmi:id="_lZTKwH1FEeWTsOFe1ufovw" base_Class="_fuQyAHXbEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Presentation xmi:id="_mHu-EH1FEeWTsOFe1ufovw" base_Class="_P5ElgHXcEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Presentation xmi:id="_myrYgH1FEeWTsOFe1ufovw" base_Class="_Oa5XUHXcEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Presentation xmi:id="_nuUhYH1FEeWTsOFe1ufovw" base_Class="_9pdacHXbEeWnw8a1OBDdhw"/>
-  <PintArchitectureClass:Presentation xmi:id="_odvzMH1FEeWTsOFe1ufovw" base_Class="_ulj9cHXbEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Client xmi:id="_RAXGQH1GEeWTsOFe1ufovw" base_Class="_C_g-IHqHEeWBAtAlhmP3Vw"/>
+  <PintArchitectureClass:Client xmi:id="_WiUS8H1GEeWTsOFe1ufovw" base_Class="_x6ZV0HXcEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Client xmi:id="_XQ2z8H1GEeWTsOFe1ufovw" base_Class="_zApzQHXcEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Client xmi:id="_X9_mwH1GEeWTsOFe1ufovw" base_Class="_DgRAUHXdEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Client xmi:id="_bRXcAH1GEeWTsOFe1ufovw" base_Class="_eqMNQH0rEeWAeO7XtpU2zw"/>
+  <PintArchitectureClass:Client xmi:id="_cXHjIH1GEeWTsOFe1ufovw" base_Class="_rYWy4H00EeWAeO7XtpU2zw"/>
+  <PintArchitectureClass:Client xmi:id="_dZHysH1GEeWTsOFe1ufovw" base_Class="_f9bWwH0rEeWAeO7XtpU2zw"/>
+  <PintArchitectureClass:Client xmi:id="_eK84QH1GEeWTsOFe1ufovw" base_Class="_euZgAHqHEeWBAtAlhmP3Vw"/>
+  <PintArchitectureClass:Client xmi:id="_e3kGoH1GEeWTsOFe1ufovw" base_Class="_gEvQ8HXeEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Client xmi:id="_fmGAkH1GEeWTsOFe1ufovw" base_Class="_jtv_AHXeEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Client xmi:id="_gi0ukH1GEeWTsOFe1ufovw" base_Class="_qf6PUHXeEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Client xmi:id="_hQcCgH1GEeWTsOFe1ufovw" base_Class="_pgwfcHXeEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Presentation xmi:id="_pkXnkH1GEeWTsOFe1ufovw" base_Class="_4Lw4IHXaEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Presentation xmi:id="_vCBjEH1GEeWTsOFe1ufovw" base_Class="_UVDYgHqFEeWBAtAlhmP3Vw"/>
+  <PintArchitectureClass:Presentation xmi:id="_wRN6EH1GEeWTsOFe1ufovw" base_Class="_Mqh80HqFEeWBAtAlhmP3Vw"/>
+  <PintArchitectureClass:Presentation xmi:id="_xe2x4H1GEeWTsOFe1ufovw" base_Class="_kcxqAHqFEeWBAtAlhmP3Vw"/>
+  <PintArchitectureClass:Presentation xmi:id="_yvmoEH1GEeWTsOFe1ufovw" base_Class="_Szdp8HqFEeWBAtAlhmP3Vw"/>
+  <PintArchitectureClass:Presentation xmi:id="_zaXcUH1GEeWTsOFe1ufovw" base_Class="_Ny89cHqFEeWBAtAlhmP3Vw"/>
+  <PintArchitectureClass:Presentation xmi:id="_0MAUoH1GEeWTsOFe1ufovw" base_Class="_NZKkcHqFEeWBAtAlhmP3Vw"/>
+  <PintArchitectureClass:Presentation xmi:id="_58fFgH1GEeWTsOFe1ufovw" base_Class="_kwfgUHXcEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Presentation xmi:id="_6-Tu4H1GEeWTsOFe1ufovw" base_Class="_ulj9cHXbEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Presentation xmi:id="_7pcWkH1GEeWTsOFe1ufovw" base_Class="_9pdacHXbEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Presentation xmi:id="_8SfTkH1GEeWTsOFe1ufovw" base_Class="_Oa5XUHXcEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Presentation xmi:id="_87nwIH1GEeWTsOFe1ufovw" base_Class="_P5ElgHXcEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Presentation xmi:id="_9nCEoH1GEeWTsOFe1ufovw" base_Class="_fuQyAHXbEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_A2UEEH1HEeWTsOFe1ufovw" base_Class="_ZeEbwHXaEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_EaRTAH1HEeWTsOFe1ufovw" base_Class="_ms11EHXYEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_F7U2EH1HEeWTsOFe1ufovw" base_Class="_oQpKIHXYEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_GmghEH1HEeWTsOFe1ufovw" base_Class="_qTdWcHXYEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_H7glIH1HEeWTsOFe1ufovw" base_Class="_rsXqIHXYEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_LuqtsH1HEeWTsOFe1ufovw" base_Class="_mJ3OYHXZEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_MdPq8H1HEeWTsOFe1ufovw" base_Class="_oyQM8HXZEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_NF9QwH1HEeWTsOFe1ufovw" base_Class="_qTNCUHXZEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_N-rogH1HEeWTsOFe1ufovw" base_Class="_n0gyUHXZEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:BusinessLogic xmi:id="_UAL38H1HEeWTsOFe1ufovw" base_Class="_kc0dwHXZEeWnw8a1OBDdhw"/>
+  <PintArchitectureClass:Repository xmi:id="_jgK0AH1HEeWTsOFe1ufovw" base_Class="_p335oHxaEeWyWrjZsspKIQ"/>
+  <PintArchitectureClass:Repository xmi:id="_kOZzAH1HEeWTsOFe1ufovw" base_Class="_RhE-wHXUEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Repository xmi:id="_k1-JUH1HEeWTsOFe1ufovw" base_Class="_HuOkoHXUEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Repository xmi:id="_lem2oH1HEeWTsOFe1ufovw" base_Class="_EaT80HXUEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Repository xmi:id="_mU7aoH1HEeWTsOFe1ufovw" base_Class="_Bzu8IHXUEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Data xmi:id="_tBNscH1HEeWTsOFe1ufovw" base_Class="_lmACcHXQEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Data xmi:id="_tzCK8H1HEeWTsOFe1ufovw" base_Class="_lmDFwHXQEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Data xmi:id="_udCKMH1HEeWTsOFe1ufovw" base_Class="_lmDs0HXQEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Data xmi:id="_vxnXgH1HEeWTsOFe1ufovw" base_Class="_lmGwIHXQEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Data xmi:id="_xE_D4H1HEeWTsOFe1ufovw" base_Class="_lmFiAHXQEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Data xmi:id="_x2bH4H1HEeWTsOFe1ufovw" base_Class="_lmET4HXQEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Data xmi:id="_ykNa8H1HEeWTsOFe1ufovw" base_Class="_lmGJEHXQEeWFjsR5Zis5xQ"/>
+  <PintArchitectureClass:Data xmi:id="_05qPYH1HEeWTsOFe1ufovw" base_Class="_sngZgHXUEeWFjsR5Zis5xQ"/>
 </xmi:XMI>
