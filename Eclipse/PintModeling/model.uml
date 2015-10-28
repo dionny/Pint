@@ -3434,6 +3434,9 @@
           <body>Singleton design pattern</body>
         </ownedComment>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK49cXpvEeWon9iWk6toFw" name="Repositories">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4L-NUH1KEeWTsOFe1ufovw">
+            <body>Third party library</body>
+          </ownedComment>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_FK49cnpvEeWon9iWk6toFw" client="_FK49cXpvEeWon9iWk6toFw" supplier="_FK49c3pvEeWon9iWk6toFw"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_HuOkoHXUEeWFjsR5Zis5xQ" name="BloodDriveRepository">
             <generalization xmi:type="uml:Generalization" xmi:id="_uVDPkHxaEeWyWrjZsspKIQ" general="_p335oHxaEeWyWrjZsspKIQ"/>
@@ -3571,6 +3574,34 @@
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_iZVAYH1KEeWTsOFe1ufovw" name="JDBCDriver">
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_lTuU8H1KEeWTsOFe1ufovw" name="query">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_n61hIH1KEeWTsOFe1ufovw" name="queryString">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_o-k2EH1KEeWTsOFe1ufovw" name="update">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_rLDUsH1KEeWTsOFe1ufovw" name="updateString">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_smKn0H1KEeWTsOFe1ufovw" name="delete">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_u_zYsH1KEeWTsOFe1ufovw" name="queryString">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_v0V0AH1KEeWTsOFe1ufovw" name="insert">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_xr_5MH1KEeWTsOFe1ufovw" name="insertString">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_y145cH1KEeWTsOFe1ufovw" name="connect">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_1bgQ0H1KEeWTsOFe1ufovw" name="connectionString">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_3Tcp4H1KEeWTsOFe1ufovw" client="_p335oHxaEeWyWrjZsspKIQ" supplier="_iZVAYH1KEeWTsOFe1ufovw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK49c3pvEeWon9iWk6toFw" name="Models">
           <packagedElement xmi:type="uml:Class" xmi:id="_lmACcHXQEeWFjsR5Zis5xQ" name="User">
@@ -4801,6 +4832,71 @@
           <message xmi:type="uml:Message" xmi:id="_MT-JQH0-EeWAeO7XtpU2zw" name="scrollToAndOpen_Message" receiveEvent="_MT-wUX0-EeWAeO7XtpU2zw" sendEvent="_MT-wUH0-EeWAeO7XtpU2zw" signature="_hBjQIZs969MAQygqxvcYaZ"/>
         </packagedElement>
       </packagedElement>
+      <packagedElement xmi:type="uml:StateMachine" xmi:id="_QQcvcH1KEeWTsOFe1ufovw" name="Processed View">
+        <region xmi:type="uml:Region" xmi:id="_QQcvcX1KEeWTsOFe1ufovw" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvcn1KEeWTsOFe1ufovw" source="_QQcvl31KEeWTsOFe1ufovw" target="_QQcvmH1KEeWTsOFe1ufovw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvc31KEeWTsOFe1ufovw" name="handleReq(request)" guard="_QQcvdH1KEeWTsOFe1ufovw" source="_QQcvmH1KEeWTsOFe1ufovw" target="_QQcvmX1KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcvdH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcvdX1KEeWTsOFe1ufovw" value="valid"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcvdn1KEeWTsOFe1ufovw" name="request"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvd31KEeWTsOFe1ufovw" name="identifyUser(request)" guard="_QQcveH1KEeWTsOFe1ufovw" source="_QQcvmX1KEeWTsOFe1ufovw" target="_QQcvmn1KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcveH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcveX1KEeWTsOFe1ufovw" value="success"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcven1KEeWTsOFe1ufovw" name="identify"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcve31KEeWTsOFe1ufovw" name="processView(data)" guard="_QQcvfH1KEeWTsOFe1ufovw" source="_QQcvmn1KEeWTsOFe1ufovw" target="_QQcvm31KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcvfH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcvfX1KEeWTsOFe1ufovw" value="success"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcvfn1KEeWTsOFe1ufovw" name="display"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvf31KEeWTsOFe1ufovw" name="goBack() " guard="_QQcvgH1KEeWTsOFe1ufovw" source="_QQcvm31KEeWTsOFe1ufovw" target="_QQcvmH1KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcvgH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcvgX1KEeWTsOFe1ufovw" value="success"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcvgn1KEeWTsOFe1ufovw" name="gotoReady"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvg31KEeWTsOFe1ufovw" name="handleReq(request ) " guard="_QQcvhH1KEeWTsOFe1ufovw" source="_QQcvmH1KEeWTsOFe1ufovw" target="_QQcvnH1KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcvhH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcvhX1KEeWTsOFe1ufovw" value="!valid"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcvhn1KEeWTsOFe1ufovw" name="showError"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvh31KEeWTsOFe1ufovw" name=" identifyUser(request) " guard="_QQcviH1KEeWTsOFe1ufovw" source="_QQcvmX1KEeWTsOFe1ufovw" target="_QQcvnH1KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcviH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcviX1KEeWTsOFe1ufovw" value="!success"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcvin1KEeWTsOFe1ufovw" name="showError"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvi31KEeWTsOFe1ufovw" name="  goBack()  " guard="_QQcvjH1KEeWTsOFe1ufovw" source="_QQcvnH1KEeWTsOFe1ufovw" target="_QQcvmH1KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcvjH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcvjX1KEeWTsOFe1ufovw" value="sucess"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcvjn1KEeWTsOFe1ufovw" name="gotoReady"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvj31KEeWTsOFe1ufovw" name="processView(data) " guard="_QQcvkH1KEeWTsOFe1ufovw" source="_QQcvmn1KEeWTsOFe1ufovw" target="_QQcvnH1KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcvkH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcvkX1KEeWTsOFe1ufovw" value="!success"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcvkn1KEeWTsOFe1ufovw" name="showError"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QQcvk31KEeWTsOFe1ufovw" name=" goBack() " guard="_QQcvlH1KEeWTsOFe1ufovw" source="_QQcvm31KEeWTsOFe1ufovw" target="_QQcvnH1KEeWTsOFe1ufovw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQcvlH1KEeWTsOFe1ufovw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_QQcvlX1KEeWTsOFe1ufovw" value="!success"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_QQcvln1KEeWTsOFe1ufovw" name="showError"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_QQcvl31KEeWTsOFe1ufovw" name=""/>
+          <subvertex xmi:type="uml:State" xmi:id="_QQcvmH1KEeWTsOFe1ufovw" name="Ready"/>
+          <subvertex xmi:type="uml:State" xmi:id="_QQcvmX1KEeWTsOFe1ufovw" name="Requesting"/>
+          <subvertex xmi:type="uml:State" xmi:id="_QQcvmn1KEeWTsOFe1ufovw" name="User Identified"/>
+          <subvertex xmi:type="uml:State" xmi:id="_QQcvm31KEeWTsOFe1ufovw" name="View Processed"/>
+          <subvertex xmi:type="uml:State" xmi:id="_QQcvnH1KEeWTsOFe1ufovw" name="Error"/>
+        </region>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_eNrh8HpuEeWon9iWk6toFw" name="Deployment">
       <ownedComment xmi:type="uml:Comment" xmi:id="_qcHeoHp3EeWBAtAlhmP3Vw">
@@ -4841,7 +4937,7 @@
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BzYywFgYEeWUot0KYiZx9Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BzeSUFgYEeWUot0KYiZx9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_sJNM8IDyEeGqdId9TXdXhQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
     </profileApplication>
