@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PintArchitectureClass="http://PintProfile/schemas/PintArchitectureClass/_osJqUH0_EeWAeO7XtpU2zw/2" xmlns:PintArchitectureLifeline="http://PintProfile/schemas/PintArchitectureLifeline/_osKRYH0_EeWAeO7XtpU2zw/0" xmlns:PintProfile="http://PintProfile/schemas/PintProfile/_osH1I30_EeWAeO7XtpU2zw/12" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://PintProfile/schemas/PintArchitectureClass/_osJqUH0_EeWAeO7XtpU2zw/2 pint.profile.uml#_osJqUX0_EeWAeO7XtpU2zw http://PintProfile/schemas/PintArchitectureLifeline/_osKRYH0_EeWAeO7XtpU2zw/0 pint.profile.uml#_osK4cH0_EeWAeO7XtpU2zw http://PintProfile/schemas/PintProfile/_osH1I30_EeWAeO7XtpU2zw/12 pint.profile.uml#_osIcMH0_EeWAeO7XtpU2zw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:PintArchitectureClass="http://PintProfile/schemas/PintArchitectureClass/_osJqUH0_EeWAeO7XtpU2zw/2" xmlns:PintArchitectureLifeline="http://PintProfile/schemas/PintArchitectureLifeline/_osKRYH0_EeWAeO7XtpU2zw/0" xmlns:PintProfile="http://PintProfile/schemas/PintProfile/_osH1I30_EeWAeO7XtpU2zw/12" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g http://PintProfile/schemas/PintArchitectureClass/_osJqUH0_EeWAeO7XtpU2zw/2 pint.profile.uml#_osJqUX0_EeWAeO7XtpU2zw http://PintProfile/schemas/PintArchitectureLifeline/_osKRYH0_EeWAeO7XtpU2zw/0 pint.profile.uml#_osK4cH0_EeWAeO7XtpU2zw http://PintProfile/schemas/PintProfile/_osH1I30_EeWAeO7XtpU2zw/12 pint.profile.uml#_osIcMH0_EeWAeO7XtpU2zw">
   <uml:Model xmi:id="_mcZzgFgXEeWpTO4Y2E1OUw" name="Pint">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_OIFuMFmPEeWUdej6b-EfkQ">
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
@@ -2983,6 +2983,12 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_zApzQHXcEeWnw8a1OBDdhw" name="HomeScreen">
             <generalization xmi:type="uml:Generalization" xmi:id="_IwEngHqHEeWBAtAlhmP3Vw" general="_C_g-IHqHEeWBAtAlhmP3Vw"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_nnqEwIDfEeWBubgn1-Zesg" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_o96GAIDfEeWBubgn1-Zesg" name="location">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_ldUkYH0fEeWAeO7XtpU2zw" name="viewBloodDrives"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_v-WrcH0lEeWAeO7XtpU2zw" name="selectBloodDrive"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_wq99AH0pEeWAeO7XtpU2zw" name="viewNotifications"/>
@@ -3104,7 +3110,7 @@
             </transition>
             <transition xmi:type="uml:Transition" xmi:id="_MOEZX32xEeWNuf1v1CSXIw" name="  goBack()  " guard="_MOEZYH2xEeWNuf1v1CSXIw" source="_MOEZdH2xEeWNuf1v1CSXIw" target="_MOEZcX2xEeWNuf1v1CSXIw">
               <ownedRule xmi:type="uml:Constraint" xmi:id="_MOEZYH2xEeWNuf1v1CSXIw">
-                <specification xmi:type="uml:LiteralString" xmi:id="_MOEZYX2xEeWNuf1v1CSXIw" value="sucess"/>
+                <specification xmi:type="uml:LiteralString" xmi:id="_MOEZYX2xEeWNuf1v1CSXIw" value="success"/>
               </ownedRule>
               <effect xmi:type="uml:Activity" xmi:id="_MOEZYn2xEeWNuf1v1CSXIw" name="gotoReady"/>
             </transition>
@@ -3287,7 +3293,7 @@
             </transition>
             <transition xmi:type="uml:Transition" xmi:id="__3dCBX2wEeWNuf1v1CSXIw" name="  goBack()  " guard="__3dCBn2wEeWNuf1v1CSXIw" source="__3dCFn2wEeWNuf1v1CSXIw" target="__3dCEn2wEeWNuf1v1CSXIw">
               <ownedRule xmi:type="uml:Constraint" xmi:id="__3dCBn2wEeWNuf1v1CSXIw">
-                <specification xmi:type="uml:LiteralString" xmi:id="__3dCB32wEeWNuf1v1CSXIw" value="sucess"/>
+                <specification xmi:type="uml:LiteralString" xmi:id="__3dCB32wEeWNuf1v1CSXIw" value="success"/>
               </ownedRule>
               <effect xmi:type="uml:Activity" xmi:id="__3dCCH2wEeWNuf1v1CSXIw" name="gotoReady"/>
             </transition>
@@ -5081,21 +5087,21 @@
             </ownedRule>
             <effect xmi:type="uml:Activity" xmi:id="_suewhX2xEeWNuf1v1CSXIw" name="gotoReady"/>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_suewhn2xEeWNuf1v1CSXIw" name="processView()" guard="_suewh32xEeWNuf1v1CSXIw" source="_sufXsX2xEeWNuf1v1CSXIw" target="_sufXs32xEeWNuf1v1CSXIw">
+          <transition xmi:type="uml:Transition" xmi:id="_suewhn2xEeWNuf1v1CSXIw" name="processView() " guard="_suewh32xEeWNuf1v1CSXIw" source="_sufXsX2xEeWNuf1v1CSXIw" target="_sufXs32xEeWNuf1v1CSXIw">
             <ownedRule xmi:type="uml:Constraint" xmi:id="_suewh32xEeWNuf1v1CSXIw" name="success">
               <specification xmi:type="uml:LiteralString" xmi:id="_suewiH2xEeWNuf1v1CSXIw" value="success"/>
             </ownedRule>
             <effect xmi:type="uml:Activity" xmi:id="_suewiX2xEeWNuf1v1CSXIw" name="gotoProcessedView"/>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_suewin2xEeWNuf1v1CSXIw" name="generateApp()" guard="_suewi32xEeWNuf1v1CSXIw" source="_sufXs32xEeWNuf1v1CSXIw" target="_sufXtH2xEeWNuf1v1CSXIw">
+          <transition xmi:type="uml:Transition" xmi:id="_suewin2xEeWNuf1v1CSXIw" name="generateView()" guard="_suewi32xEeWNuf1v1CSXIw" source="_sufXs32xEeWNuf1v1CSXIw" target="_sufXtH2xEeWNuf1v1CSXIw">
             <ownedRule xmi:type="uml:Constraint" xmi:id="_suewi32xEeWNuf1v1CSXIw">
-              <specification xmi:type="uml:LiteralString" xmi:id="_suewjH2xEeWNuf1v1CSXIw" value="success"/>
+              <specification xmi:type="uml:LiteralString" xmi:id="_suewjH2xEeWNuf1v1CSXIw" value="isMobile"/>
             </ownedRule>
             <effect xmi:type="uml:Activity" xmi:id="_suewjX2xEeWNuf1v1CSXIw" name="gotoAppView"/>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_suewjn2xEeWNuf1v1CSXIw" name="generateWeb()" guard="_suewj32xEeWNuf1v1CSXIw" source="_sufXs32xEeWNuf1v1CSXIw" target="_sufXtX2xEeWNuf1v1CSXIw">
+          <transition xmi:type="uml:Transition" xmi:id="_suewjn2xEeWNuf1v1CSXIw" name="generateView() " guard="_suewj32xEeWNuf1v1CSXIw" source="_sufXs32xEeWNuf1v1CSXIw" target="_sufXtX2xEeWNuf1v1CSXIw">
             <ownedRule xmi:type="uml:Constraint" xmi:id="_suewj32xEeWNuf1v1CSXIw" name="success">
-              <specification xmi:type="uml:LiteralString" xmi:id="_suewkH2xEeWNuf1v1CSXIw" value="success"/>
+              <specification xmi:type="uml:LiteralString" xmi:id="_suewkH2xEeWNuf1v1CSXIw" value="!isMobile"/>
             </ownedRule>
             <effect xmi:type="uml:Activity" xmi:id="_suewkX2xEeWNuf1v1CSXIw" name="gotoWebView"/>
           </transition>
@@ -5105,7 +5111,7 @@
             </ownedRule>
             <effect xmi:type="uml:Activity" xmi:id="_suewlX2xEeWNuf1v1CSXIw" name="getLoggedIn"/>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_suewln2xEeWNuf1v1CSXIw" name="logIn(userName, password)" guard="_suewl32xEeWNuf1v1CSXIw" source="_sufXtX2xEeWNuf1v1CSXIw" target="_sufXtn2xEeWNuf1v1CSXIw">
+          <transition xmi:type="uml:Transition" xmi:id="_suewln2xEeWNuf1v1CSXIw" name="logIn(userName, password) " guard="_suewl32xEeWNuf1v1CSXIw" source="_sufXtX2xEeWNuf1v1CSXIw" target="_sufXtn2xEeWNuf1v1CSXIw">
             <ownedRule xmi:type="uml:Constraint" xmi:id="_suewl32xEeWNuf1v1CSXIw">
               <specification xmi:type="uml:LiteralString" xmi:id="_sufXkH2xEeWNuf1v1CSXIw" value="valid"/>
             </ownedRule>
@@ -5141,24 +5147,34 @@
             </ownedRule>
             <effect xmi:type="uml:Activity" xmi:id="_sufXpX2xEeWNuf1v1CSXIw" name="bdUpdated"/>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_sufXpn2xEeWNuf1v1CSXIw" name="goBack()" guard="_sufXp32xEeWNuf1v1CSXIw" source="_sufXuH2xEeWNuf1v1CSXIw" target="_sufXtn2xEeWNuf1v1CSXIw">
+          <transition xmi:type="uml:Transition" xmi:id="_sufXpn2xEeWNuf1v1CSXIw" name="goBack() " guard="_sufXp32xEeWNuf1v1CSXIw" source="_sufXuH2xEeWNuf1v1CSXIw" target="_sufXtn2xEeWNuf1v1CSXIw">
             <ownedRule xmi:type="uml:Constraint" xmi:id="_sufXp32xEeWNuf1v1CSXIw">
               <specification xmi:type="uml:LiteralString" xmi:id="_sufXqH2xEeWNuf1v1CSXIw" value="success"/>
             </ownedRule>
             <effect xmi:type="uml:Activity" xmi:id="_sufXqX2xEeWNuf1v1CSXIw" name="gotoHomepage"/>
           </transition>
-          <transition xmi:type="uml:Transition" xmi:id="_sufXqn2xEeWNuf1v1CSXIw" name="Search()" source="_sufXuH2xEeWNuf1v1CSXIw" target="_sufXuX2xEeWNuf1v1CSXIw"/>
-          <transition xmi:type="uml:Transition" xmi:id="_sufXq32xEeWNuf1v1CSXIw" name="Return()" source="_sufXuX2xEeWNuf1v1CSXIw" target="_sufXuH2xEeWNuf1v1CSXIw"/>
+          <transition xmi:type="uml:Transition" xmi:id="_sufXqn2xEeWNuf1v1CSXIw" name="Search()" guard="_tlNTMIDdEeWBubgn1-Zesg" source="_sufXuH2xEeWNuf1v1CSXIw" target="_sufXuX2xEeWNuf1v1CSXIw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_tlNTMIDdEeWBubgn1-Zesg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_tlNTMYDdEeWBubgn1-Zesg" value="success"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_vZabwIDdEeWBubgn1-Zesg" name="processData"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_sufXq32xEeWNuf1v1CSXIw" name="Return()" guard="_yaY5cIDdEeWBubgn1-Zesg" source="_sufXuX2xEeWNuf1v1CSXIw" target="_sufXuH2xEeWNuf1v1CSXIw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_yaY5cIDdEeWBubgn1-Zesg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_yaY5cYDdEeWBubgn1-Zesg" value="success"/>
+            </ownedRule>
+            <effect xmi:type="uml:Activity" xmi:id="_4i2sgIDdEeWBubgn1-Zesg" name="update"/>
+          </transition>
           <transition xmi:type="uml:Transition" xmi:id="_sufXrH2xEeWNuf1v1CSXIw" source="_sufXsn2xEeWNuf1v1CSXIw" target="_sufXsX2xEeWNuf1v1CSXIw"/>
-          <transition xmi:type="uml:Transition" xmi:id="_sufXrX2xEeWNuf1v1CSXIw" name="login(userName, password)" guard="_sufXrn2xEeWNuf1v1CSXIw" source="_sufXtH2xEeWNuf1v1CSXIw" target="_sufXtH2xEeWNuf1v1CSXIw">
+          <transition xmi:type="uml:Transition" xmi:id="_sufXrX2xEeWNuf1v1CSXIw" name="login(userName, password) " guard="_sufXrn2xEeWNuf1v1CSXIw" source="_sufXtH2xEeWNuf1v1CSXIw" target="_sufXtH2xEeWNuf1v1CSXIw">
             <ownedRule xmi:type="uml:Constraint" xmi:id="_sufXrn2xEeWNuf1v1CSXIw">
               <specification xmi:type="uml:LiteralString" xmi:id="_sufXr32xEeWNuf1v1CSXIw" value="!valid"/>
             </ownedRule>
             <effect xmi:type="uml:Activity" xmi:id="_sufXsH2xEeWNuf1v1CSXIw" name="gotoAppView"/>
           </transition>
           <subvertex xmi:type="uml:State" xmi:id="_sufXsX2xEeWNuf1v1CSXIw" name="ready"/>
-          <subvertex xmi:type="uml:Pseudostate" xmi:id="_sufXsn2xEeWNuf1v1CSXIw" name="Initial1"/>
-          <subvertex xmi:type="uml:State" xmi:id="_sufXs32xEeWNuf1v1CSXIw" name="Processed View"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_sufXsn2xEeWNuf1v1CSXIw" name=""/>
+          <subvertex xmi:type="uml:State" xmi:id="_sufXs32xEeWNuf1v1CSXIw" name="Processing View"/>
           <subvertex xmi:type="uml:State" xmi:id="_sufXtH2xEeWNuf1v1CSXIw" name="App View"/>
           <subvertex xmi:type="uml:State" xmi:id="_sufXtX2xEeWNuf1v1CSXIw" name="Web View"/>
           <subvertex xmi:type="uml:State" xmi:id="_sufXtn2xEeWNuf1v1CSXIw" name="Logged In"/>
@@ -5169,7 +5185,7 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_NimBYIDUEeWBubgn1-Zesg" name="Deployment">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBYYDUEeWBubgn1-Zesg" annotatedElement="_NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBYYDUEeWBubgn1-Zesg" annotatedElement="_NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg">
         <body>&lt;p>&#xD;
     &lt;strong>Processor:&lt;/strong> Intel Xeon Processor X5570, 2.93 GHz&#xD;
 &lt;/p>&#xD;
@@ -5186,7 +5202,7 @@
     &lt;br />&#xD;
 &lt;/p></body>
       </ownedComment>
-      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBYoDUEeWBubgn1-Zesg" annotatedElement="_NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBYoDUEeWBubgn1-Zesg" annotatedElement="_NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg">
         <body>&lt;p>&#xD;
     &lt;strong>Processor:&lt;/strong> 8 Core 1.4 Ghz UltraSPARC T2 Processor&#xD;
 &lt;/p>&#xD;
@@ -5200,7 +5216,7 @@
     &lt;strong>Internal Memory:&lt;/strong> 10 TB&lt;br />&#xD;
 &lt;/p></body>
       </ownedComment>
-      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBY4DUEeWBubgn1-Zesg" annotatedElement="_NimBaIDUEeWBubgn1-Zesg _NimBaIDUEeWBubgn1-Zesg _NimBaIDUEeWBubgn1-Zesg _NimBaIDUEeWBubgn1-Zesg">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBY4DUEeWBubgn1-Zesg" annotatedElement="_NimBaIDUEeWBubgn1-Zesg">
         <body>&lt;p>&#xD;
     &lt;strong>Processor:&lt;/strong> Quad core 1.5 GHz&#xD;
 &lt;/p>&#xD;
@@ -5211,7 +5227,7 @@
     &lt;strong>Internal Memory:&lt;/strong> 16 GB&lt;br />&#xD;
 &lt;/p></body>
       </ownedComment>
-      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBZIDUEeWBubgn1-Zesg" annotatedElement="_NimBa4DUEeWBubgn1-Zesg _NimBa4DUEeWBubgn1-Zesg _NimBa4DUEeWBubgn1-Zesg _NimBa4DUEeWBubgn1-Zesg">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBZIDUEeWBubgn1-Zesg" annotatedElement="_NimBa4DUEeWBubgn1-Zesg">
         <body>&lt;p>&#xD;
     &lt;strong>Processor:&lt;/strong> Intel core i7 5500 CPU, 2,4 GHz&#xD;
 &lt;/p>&#xD;
@@ -5258,9 +5274,9 @@
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBd4DUEeWBubgn1-Zesg" name="BloodDriveSchema" fileName="Artifact1.file"/>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBeIDUEeWBubgn1-Zesg" name="NotificationSchema" fileName="Artifact1.file"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBeYDUEeWBubgn1-Zesg" name="&lt;&lt;http>>" client="_NimBaoDUEeWBubgn1-Zesg _NimBaoDUEeWBubgn1-Zesg _NimBaoDUEeWBubgn1-Zesg _NimBaoDUEeWBubgn1-Zesg" supplier="_NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBeoDUEeWBubgn1-Zesg" name="&lt;&lt;http>>" client="_NimBbIDUEeWBubgn1-Zesg _NimBbIDUEeWBubgn1-Zesg _NimBbIDUEeWBubgn1-Zesg _NimBbIDUEeWBubgn1-Zesg" supplier="_NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBe4DUEeWBubgn1-Zesg" name="&lt;&lt;jdbc>>" client="_NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg" supplier="_NimBdYDUEeWBubgn1-Zesg _NimBdYDUEeWBubgn1-Zesg _NimBdYDUEeWBubgn1-Zesg _NimBdYDUEeWBubgn1-Zesg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBeYDUEeWBubgn1-Zesg" name="&lt;&lt;http>>" client="_NimBaoDUEeWBubgn1-Zesg" supplier="_NimBb4DUEeWBubgn1-Zesg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBeoDUEeWBubgn1-Zesg" name="&lt;&lt;http>>" client="_NimBbIDUEeWBubgn1-Zesg" supplier="_NimBb4DUEeWBubgn1-Zesg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBe4DUEeWBubgn1-Zesg" name="&lt;&lt;jdbc>>" client="_NimBb4DUEeWBubgn1-Zesg" supplier="_NimBdYDUEeWBubgn1-Zesg"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BzYywFgYEeWUot0KYiZx9Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BzeSUFgYEeWUot0KYiZx9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -5496,4 +5512,6 @@
   <PintArchitectureClass:Data xmi:id="_x2bH4H1HEeWTsOFe1ufovw" base_Class="_lmET4HXQEeWFjsR5Zis5xQ"/>
   <PintArchitectureClass:Data xmi:id="_ykNa8H1HEeWTsOFe1ufovw" base_Class="_lmGJEHXQEeWFjsR5Zis5xQ"/>
   <PintArchitectureClass:Data xmi:id="_05qPYH1HEeWTsOFe1ufovw" base_Class="_sngZgHXUEeWFjsR5Zis5xQ"/>
+  <css:ModelStyleSheets xmi:id="_JNtkcIDXEeWBubgn1-Zesg"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_OHYoIIDiEeWBubgn1-Zesg" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
 </xmi:XMI>
