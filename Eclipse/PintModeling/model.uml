@@ -5168,42 +5168,99 @@
         </region>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Model" xmi:id="_eNrh8HpuEeWon9iWk6toFw" name="Deployment">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_qcHeoHp3EeWBAtAlhmP3Vw">
-        <body>&lt;&lt;jdbc>>
-</body>
+    <packagedElement xmi:type="uml:Model" xmi:id="_NimBYIDUEeWBubgn1-Zesg" name="Deployment">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBYYDUEeWBubgn1-Zesg" annotatedElement="_NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBbYDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg">
+        <body>&lt;p>&#xD;
+    &lt;strong>Processor:&lt;/strong> Intel Xeon Processor X5570, 2.93 GHz&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>Cache:&lt;/strong> 8 MB&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>RAM:&lt;/strong> 64 GB&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>Internal memory:&lt;/strong> 10 TB&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;br />&#xD;
+&lt;/p></body>
       </ownedComment>
-      <ownedComment xmi:type="uml:Comment" xmi:id="_qcIFsHp3EeWBAtAlhmP3Vw">
-        <body>&lt;&lt;http>>
-</body>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBYoDUEeWBubgn1-Zesg" annotatedElement="_NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg _NimBboDUEeWBubgn1-Zesg _NimBc4DUEeWBubgn1-Zesg">
+        <body>&lt;p>&#xD;
+    &lt;strong>Processor:&lt;/strong> 8 Core 1.4 Ghz UltraSPARC T2 Processor&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>Cache:&lt;/strong> 4 MB&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>RAM:&lt;/strong> 64 GB&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>Internal Memory:&lt;/strong> 10 TB&lt;br />&#xD;
+&lt;/p></body>
       </ownedComment>
-      <packagedElement xmi:type="uml:Device" xmi:id="_qcIswXp3EeWBAtAlhmP3Vw" name="MobileClient : Nexus 5">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcIswnp3EeWBAtAlhmP3Vw" name="Pint.apk" fileName="Artifact1.file"/>
-        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qcIsw3p3EeWBAtAlhmP3Vw" name="Android"/>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBY4DUEeWBubgn1-Zesg" annotatedElement="_NimBaIDUEeWBubgn1-Zesg _NimBaIDUEeWBubgn1-Zesg _NimBaIDUEeWBubgn1-Zesg _NimBaIDUEeWBubgn1-Zesg">
+        <body>&lt;p>&#xD;
+    &lt;strong>Processor:&lt;/strong> Quad core 1.5 GHz&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>RAM:&lt;/strong> 2GB&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>Internal Memory:&lt;/strong> 16 GB&lt;br />&#xD;
+&lt;/p></body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBZIDUEeWBubgn1-Zesg" annotatedElement="_NimBa4DUEeWBubgn1-Zesg _NimBa4DUEeWBubgn1-Zesg _NimBa4DUEeWBubgn1-Zesg _NimBa4DUEeWBubgn1-Zesg">
+        <body>&lt;p>&#xD;
+    &lt;strong>Processor:&lt;/strong> Intel core i7 5500 CPU, 2,4 GHz&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>RAM:&lt;/strong> 8 GB&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>Cache:&lt;/strong> 4 MB&amp;nbsp;&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;strong>Internal Memory:&lt;/strong> 1 TB&lt;br />&#xD;
+&lt;/p></body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBZYDUEeWBubgn1-Zesg">
+        <body>Transfer Rate : 5 Mbit/sec&lt;br /></body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBZoDUEeWBubgn1-Zesg">
+        <body>Transfer Rate: 30 Mbit/sec&lt;br /></body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_NimBZ4DUEeWBubgn1-Zesg">
+        <body>Transfer Rate: 10 G bit/sec</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Device" xmi:id="_NimBaIDUEeWBubgn1-Zesg" name="MobileClient : Nexus 7">
+        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_NimBaYDUEeWBubgn1-Zesg" name="Android"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Device" xmi:id="_qcJT0Hp3EeWBAtAlhmP3Vw" name="WebClient : Windows PC">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcJT0Xp3EeWBAtAlhmP3Vw" name="GoogleChrome" fileName="Artifact1.file"/>
+      <packagedElement xmi:type="uml:Artifact" xmi:id="_NimBaoDUEeWBubgn1-Zesg" name="Pint.apk" fileName="Artifact1.file"/>
+      <packagedElement xmi:type="uml:Device" xmi:id="_NimBa4DUEeWBubgn1-Zesg" name="WebClient : Windows PC">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBbIDUEeWBubgn1-Zesg" name="Googl Chrome" fileName="Artifact1.file"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Device" xmi:id="_qcJ64Hp3EeWBAtAlhmP3Vw" name="WebServer : Sun Fire X4170 Server">
-        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qcJ64Xp3EeWBAtAlhmP3Vw" name="SUSE Linux Enterprise 12"/>
+      <packagedElement xmi:type="uml:Device" xmi:id="_NimBbYDUEeWBubgn1-Zesg" name="WebServer : Sun Fire X4170 Server">
+        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_NimBboDUEeWBubgn1-Zesg" name="SUSE Linux Enterprise 12">
+          <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_NimBb4DUEeWBubgn1-Zesg" name="Apace Tomcat 8.0">
+            <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBcIDUEeWBubgn1-Zesg" name="HTML Pages" fileName="Artifact1.file"/>
+            <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBcYDUEeWBubgn1-Zesg" name="Pint.war" fileName="Artifact1.file"/>
+            <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBcoDUEeWBubgn1-Zesg" name="googlemap.lib" fileName="Artifact1.file"/>
+          </nestedClassifier>
+        </nestedNode>
       </packagedElement>
-      <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_qcJ64np3EeWBAtAlhmP3Vw" name="Apache Tomcat 8.0">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcJ643p3EeWBAtAlhmP3Vw" name="Pint.war" fileName="Artifact1.file"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcJ65Hp3EeWBAtAlhmP3Vw" name="googlemap.lib" fileName="Artifact1.file"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_qcJ65Xp3EeWBAtAlhmP3Vw" name="HTML Pages" fileName="Artifact1.file"/>
+      <packagedElement xmi:type="uml:Device" xmi:id="_NimBc4DUEeWBubgn1-Zesg" name="DBServer : Sun SPARC Enterprise T5220 Server">
+        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_NimBdIDUEeWBubgn1-Zesg" name="SUSE Linux Enterprise 12"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_qcKh8Hp3EeWBAtAlhmP3Vw" client="_qcJ643p3EeWBAtAlhmP3Vw" supplier="_qcJ65Hp3EeWBAtAlhmP3Vw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_qcKh8Xp3EeWBAtAlhmP3Vw" client="_qcJ65Xp3EeWBAtAlhmP3Vw" supplier="_qcJ643p3EeWBAtAlhmP3Vw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_qcLJAXp3EeWBAtAlhmP3Vw" name="&lt;&lt;http>>" client="_qcJT0Xp3EeWBAtAlhmP3Vw" supplier="_qcJ64np3EeWBAtAlhmP3Vw"/>
-      <packagedElement xmi:type="uml:Device" xmi:id="_qcLwEHp3EeWBAtAlhmP3Vw" name="DBServer : Sun SPARC Server">
-        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qcLwEXp3EeWBAtAlhmP3Vw" name="SUSE Linux Enterprise 12"/>
-        <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_qcLwEnp3EeWBAtAlhmP3Vw" name="MySQL 5.6"/>
+      <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_NimBdYDUEeWBubgn1-Zesg" name="MySQL 5.6">
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBdoDUEeWBubgn1-Zesg" name="UserSchema" fileName="Artifact1.file"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBd4DUEeWBubgn1-Zesg" name="BloodDriveSchema" fileName="Artifact1.file"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBeIDUEeWBubgn1-Zesg" name="NotificationSchema" fileName="Artifact1.file"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Artifact" xmi:id="_qcLwE3p3EeWBAtAlhmP3Vw" name="UserSchema" fileName="Artifact1.file"/>
-      <packagedElement xmi:type="uml:Artifact" xmi:id="_qcMXIHp3EeWBAtAlhmP3Vw" name="BloodDriveSchema" fileName="Artifact1.file"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_qcMXIXp3EeWBAtAlhmP3Vw" name="&lt;&lt;JDBC>>" client="_qcJ64np3EeWBAtAlhmP3Vw" supplier="_qcLwEnp3EeWBAtAlhmP3Vw"/>
-      <packagedElement xmi:type="uml:Artifact" xmi:id="_qcM-MHp3EeWBAtAlhmP3Vw" name="NotificationSchema" fileName="Artifact1.file"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_F-_k0Hp4EeWBAtAlhmP3Vw" client="_qcIswnp3EeWBAtAlhmP3Vw" supplier="_qcJ64np3EeWBAtAlhmP3Vw"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBeYDUEeWBubgn1-Zesg" name="&lt;&lt;http>>" client="_NimBaoDUEeWBubgn1-Zesg _NimBaoDUEeWBubgn1-Zesg _NimBaoDUEeWBubgn1-Zesg _NimBaoDUEeWBubgn1-Zesg" supplier="_NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBeoDUEeWBubgn1-Zesg" name="&lt;&lt;http>>" client="_NimBbIDUEeWBubgn1-Zesg _NimBbIDUEeWBubgn1-Zesg _NimBbIDUEeWBubgn1-Zesg _NimBbIDUEeWBubgn1-Zesg" supplier="_NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBe4DUEeWBubgn1-Zesg" name="&lt;&lt;jdbc>>" client="_NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg _NimBb4DUEeWBubgn1-Zesg" supplier="_NimBdYDUEeWBubgn1-Zesg _NimBdYDUEeWBubgn1-Zesg _NimBdYDUEeWBubgn1-Zesg _NimBdYDUEeWBubgn1-Zesg"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BzYywFgYEeWUot0KYiZx9Q">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BzeSUFgYEeWUot0KYiZx9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
