@@ -3160,6 +3160,9 @@
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK3vUHpvEeWon9iWk6toFw" name="Presentation">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_HjcN8H1IEeWTsOFe1ufovw">
+          <body>Strategy design pattern</body>
+        </ownedComment>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK3vUXpvEeWon9iWk6toFw" name="ViewModels">
           <packagedElement xmi:type="uml:Class" xmi:id="_UVDYgHqFEeWBAtAlhmP3Vw" name="ViewModel"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_Ny89cHqFEeWBAtAlhmP3Vw" name="NotificationSummaryViewModel">
@@ -3246,9 +3249,6 @@
           <packagedElement xmi:type="uml:Dependency" xmi:id="_DWbc8HXfEeWnw8a1OBDdhw" client="_DgRAUHXdEeWnw8a1OBDdhw" supplier="_4Lw4IHXaEeWnw8a1OBDdhw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK3vU3pvEeWon9iWk6toFw" name="ViewStrategies">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_HjcN8H1IEeWTsOFe1ufovw">
-            <body>Strategy design pattern</body>
-          </ownedComment>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_FK3vVHpvEeWon9iWk6toFw" client="_FK3vU3pvEeWon9iWk6toFw" supplier="_FK3vUXpvEeWon9iWk6toFw"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_fuQyAHXbEeWnw8a1OBDdhw" name="ViewModelStrategy" isAbstract="true">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_8uYaoH0gEeWAeO7XtpU2zw" name="createViewModel" isAbstract="true">
