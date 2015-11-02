@@ -1,8 +1,11 @@
 package Presentation;
 
 import Presentation.ViewStrategies.ViewModelStrategy;
+
 import java.util.List;
+
 import Data.Models.User;
+import ECore.EJavaObject;
 
 public class RequestController {
 
@@ -10,21 +13,34 @@ public class RequestController {
 	 * 
 	 */
 	public List<ViewModelStrategy> viewModelStrategy;
-
+	/**
+	 * 
+	 */
+	public List<User> sessions;
 	/**
 	 * Getter of viewModelStrategy
 	 */
 	public List<ViewModelStrategy> getViewModelStrategy() {
 	 	 return viewModelStrategy; 
 	}
-
 	/**
 	 * Setter of viewModelStrategy
 	 */
 	public void setViewModelStrategy(List<ViewModelStrategy> viewModelStrategy) { 
 		 this.viewModelStrategy = viewModelStrategy; 
 	}
-
+	/**
+	 * Getter of sessions
+	 */
+	public List<User> getSessions() {
+	 	 return sessions; 
+	}
+	/**
+	 * Setter of sessions
+	 */
+	public void setSessions(List<User> sessions) { 
+		 this.sessions = sessions; 
+	}
 	/**
 	 * 
 	 * @param username 
@@ -35,7 +51,6 @@ public class RequestController {
 		// TODO Auto-generated method
 		return null;
 	 }
-
 	/**
 	 * 
 	 * @param data 
@@ -43,7 +58,6 @@ public class RequestController {
 	public void get(String data) { 
 		// TODO Auto-generated method
 	 }
-
 	/**
 	 * 
 	 * @param object 
@@ -51,15 +65,14 @@ public class RequestController {
 	public void serialize(EJavaObject object) { 
 		// TODO Auto-generated method
 	 }
-
 	/**
 	 * 
 	 * @param data 
+	 * @param success 
 	 */
-	public void post(String data) { 
+	public void post(String data, boolean success) { 
 		// TODO Auto-generated method
 	 }
-
 	/**
 	 * 
 	 * @param user 
@@ -67,7 +80,6 @@ public class RequestController {
 	public void verifyUserTimer(User user) { 
 		// TODO Auto-generated method
 	 }
-
 	/**
 	 * 
 	 * @param user 
@@ -75,7 +87,6 @@ public class RequestController {
 	public void logoutUser(User user) { 
 		// TODO Auto-generated method
 	 }
-
 	/**
 	 * 
 	 * @param user 
@@ -83,7 +94,6 @@ public class RequestController {
 	public void updateActiveTimer(User user) { 
 		// TODO Auto-generated method
 	 }
-
 	/**
 	 * 
 	 */

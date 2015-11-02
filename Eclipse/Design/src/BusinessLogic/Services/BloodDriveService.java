@@ -3,6 +3,7 @@ package BusinessLogic.Services;
 import BusinessLogic.Validators.Validator;
 import Data.Models.User;
 import Data.Models.BloodDrive;
+import java.util.List;
 import Data.Models.Employee;
 
 public class BloodDriveService {
@@ -68,12 +69,7 @@ public class BloodDriveService {
 		// TODO Auto-generated method
 	 }
 
-	/**
-	 * 
-	 * @param bd 
-	 * @param nurses 
-	 */
-	public void assignNurses(BloodDrive bd, Employee nurses) { 
+	public void assignNurses(BloodDrive bd, List<Employee> nurses, boolean success) { 
 		// TODO Auto-generated method
 	 }
 
@@ -89,9 +85,11 @@ public class BloodDriveService {
 	 * 
 	 * @param bd 
 	 * @param email 
+	 * @return 
 	 */
-	public void addDonor(BloodDrive bd, String email) { 
+	public boolean addDonor(BloodDrive bd, String email) { 
 		// TODO Auto-generated method
+		return false;
 	 } 
 
 }

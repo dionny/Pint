@@ -45,6 +45,14 @@ public class BloodDrive {
 	 */
 	public List<Employee> employee;
 	/**
+	 * 
+	 */
+	public String city;
+	/**
+	 * 
+	 */
+	public String state;
+	/**
 	 * Getter of title
 	 */
 	public String getTitle() {
@@ -163,6 +171,30 @@ public class BloodDrive {
 	 */
 	public void setEmployee(List<Employee> employee) { 
 		 this.employee = employee; 
+	}
+	/**
+	 * Getter of city
+	 */
+	public String getCity() {
+	 	 return city; 
+	}
+	/**
+	 * Setter of city
+	 */
+	public void setCity(String city) { 
+		 this.city = city; 
+	}
+	/**
+	 * Getter of state
+	 */
+	public String getState() {
+	 	 return state; 
+	}
+	/**
+	 * Setter of state
+	 */
+	public void setState(String state) { 
+		 this.state = state; 
 	}
 	/**
 	 * 

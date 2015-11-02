@@ -2,6 +2,7 @@ package BusinessLogic.Services;
 
 import BusinessLogic.Validators.Validator;
 import Data.Models.User;
+import ECore.EJavaObject;
 
 public class UserService {
 
@@ -26,7 +27,8 @@ public class UserService {
 
 	/**
 	 * 
-	 * @param email 
+	 * @param username 
+	 * @return 
 	 */
 	public User getUser(String username) { 
 		// TODO Auto-generated method
@@ -49,7 +51,11 @@ public class UserService {
 		// TODO Auto-generated method
 	 }
 
-	public void getUser(String email) { 
+	/**
+	 * 
+	 * @param email 
+	 */
+	public void getUserByEmail(String email) { 
 		// TODO Auto-generated method
 	 }
 

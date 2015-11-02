@@ -1,5 +1,7 @@
 package Presentation.ViewStrategies;
 
+import ECore.EJavaObject;
+
 public class BloodDriveSummaryStrategy extends ViewModelStrategy {
 
 	/**

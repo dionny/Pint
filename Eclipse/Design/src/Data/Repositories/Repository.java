@@ -1,5 +1,7 @@
 package Data.Repositories;
 
+import ECore.EJavaObject;
+
 public abstract class Repository {
 
 	/**

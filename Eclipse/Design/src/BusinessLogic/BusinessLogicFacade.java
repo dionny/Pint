@@ -4,6 +4,7 @@ import Data.Models.User;
 import Data.Models.BloodDrive;
 import Data.Models.Employee;
 import Data.Models.Notification;
+import ECore.EJavaObject;
 
 public class BusinessLogicFacade {
 
