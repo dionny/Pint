@@ -1,6 +1,5 @@
 package BusinessLogic.Services;
 
-import BusinessLogic.EJavaObject;
 import BusinessLogic.Validators.Validator;
 import Data.Models.User;
 
@@ -47,6 +46,10 @@ public class UserService {
 	 * @param data 
 	 */
 	public void createEmployee(EJavaObject data) { 
+		// TODO Auto-generated method
+	 }
+
+	public void getUser(String email) { 
 		// TODO Auto-generated method
 	 }
 

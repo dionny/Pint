@@ -21,6 +21,13 @@ public class HospitalService {
 	 */
 	public void setValidator(Validator validator) { 
 		 this.validator = validator; 
-	} 
+	}
+
+	/**
+	 * 
+	 */
+	public void getHospitals() { 
+		// TODO Auto-generated method
+	 } 
 
 }

@@ -1,14 +1,13 @@
 package Data.Repositories;
 
-import BusinessLogic.EJavaObject;
-
 public abstract class Repository {
 
 	/**
 	 * 
 	 * @param id 
+	 * @param object 
 	 */
-	public void get(int id) { 
+	public void get(int id, EJavaObject object) { 
 		// TODO Auto-generated method
 	 }
 
@@ -39,8 +38,9 @@ public abstract class Repository {
 	/**
 	 * 
 	 * @param id 
+	 * @param object 
 	 */
-	public void get(String id) { 
+	public void get(String id, EJavaObject object) { 
 		// TODO Auto-generated method
 	 } 
 

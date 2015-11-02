@@ -1,6 +1,7 @@
 package Data.Repositories;
 
 import Data.Models.Employee;
+import java.util.List;
 
 public class UserRepository extends Repository {
 
@@ -15,9 +16,11 @@ public class UserRepository extends Repository {
 	/**
 	 * 
 	 * @param hospital_id 
+	 * @return 
 	 */
-	public void getAllNurses(int hospital_id) { 
+	public List<Employee> getAllNurses(int hospital_id) { 
 		// TODO Auto-generated method
+		return null;
 	 } 
 
 }
