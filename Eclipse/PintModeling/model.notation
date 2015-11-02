@@ -19340,7 +19340,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j4r4JH07EeWAeO7XtpU2zw"/>
       </children>
       <element xmi:type="uml:Interaction" href="model.uml#_i5N_MH07EeWAeO7XtpU2zw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j4r4JX07EeWAeO7XtpU2zw" width="1268" height="748"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j4r4JX07EeWAeO7XtpU2zw" width="1268" height="749"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_j4r4Jn07EeWAeO7XtpU2zw" name="diagram_compatibility_version" stringValue="1.0.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_j4r4J307EeWAeO7XtpU2zw"/>

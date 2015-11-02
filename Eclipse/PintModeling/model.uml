@@ -5420,9 +5420,9 @@
         <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_NimBdIDUEeWBubgn1-Zesg" name="SUSE Linux Enterprise 12"/>
       </packagedElement>
       <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_NimBdYDUEeWBubgn1-Zesg" name="MySQL 5.6">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBdoDUEeWBubgn1-Zesg" name="UserSchema" fileName="Artifact1.file"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBd4DUEeWBubgn1-Zesg" name="BloodDriveSchema" fileName="Artifact1.file"/>
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBeIDUEeWBubgn1-Zesg" name="NotificationSchema" fileName="Artifact1.file"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBdoDUEeWBubgn1-Zesg" name="User.db" fileName="Artifact1.file"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBd4DUEeWBubgn1-Zesg" name="BloodDrive.db" fileName="Artifact1.file"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_NimBeIDUEeWBubgn1-Zesg" name="Notification.db" fileName="Artifact1.file"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBeYDUEeWBubgn1-Zesg" name="&lt;&lt;http>>" client="_NimBaoDUEeWBubgn1-Zesg" supplier="_NimBb4DUEeWBubgn1-Zesg"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_NimBeoDUEeWBubgn1-Zesg" name="&lt;&lt;http>> " client="_NimBbIDUEeWBubgn1-Zesg" supplier="_NimBb4DUEeWBubgn1-Zesg"/>
