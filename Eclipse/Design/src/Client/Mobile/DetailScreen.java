@@ -20,7 +20,7 @@ public class DetailScreen extends MobileScreen {
 
 	/**
 	 * Setter of bloodDrive.
-	 * @param The BloodDrive that is to be displayed in the DetailScreen.
+	 * @param bloodDrive The BloodDrive that is to be displayed in the DetailScreen.
 	 */
 	public void setBloodDrive(BloodDrive bloodDrive) { 
 		 this.bloodDrive = bloodDrive; 
@@ -31,7 +31,7 @@ public class DetailScreen extends MobileScreen {
 	 * this method will scroll to that same notification on the 
 	 * DetailScreen. It will also open the contents for the user to
 	 * read.
-	 * @param The notification to scroll to and open. 
+	 * @param note The notification to scroll to and open. 
 	 */
 	public void scrollToAndOpen(Notification note) { 
 		// TODO Auto-generated method
