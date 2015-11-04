@@ -2966,8 +2966,19 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_TWeJMHXLEeWFjsR5Zis5xQ" name="Design">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_ycXOoIK6EeWpIdfIHW2Jog">
+        <body>Third party library</body>
+      </ownedComment>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK4WYHpvEeWon9iWk6toFw" name="Client">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cegkIIKiEeWOC6N5hARdAQ">
+          <body>Client</body>
+        </ownedComment>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WYXpvEeWon9iWk6toFw" name="Mobile">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_0aEa0IKhEeWOC6N5hARdAQ">
+            <body>&lt;p>&#xD;
+    Client.Mobile&#xD;
+&lt;/p></body>
+          </ownedComment>
           <packagedElement xmi:type="uml:Class" xmi:id="_x6ZV0HXcEeWnw8a1OBDdhw" name="MobileLoginScreen">
             <generalization xmi:type="uml:Generalization" xmi:id="_JZNEEHqHEeWBAtAlhmP3Vw" general="_C_g-IHqHEeWBAtAlhmP3Vw"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_Folu4HxYEeWyWrjZsspKIQ" name="setValues"/>
@@ -2982,6 +2993,9 @@
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_zApzQHXcEeWnw8a1OBDdhw" name="HomeScreen">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_j7xNoIKnEeWpIdfIHW2Jog" name="OCL">
+              <specification xmi:type="uml:LiteralString" xmi:id="_j7xNoYKnEeWpIdfIHW2Jog" name="OCL" value="context HomeScreen inv:&#xD;&#xA;self.location &lt;> null&#xD;&#xA;self.user &lt;> null&#xD;&#xA;self.bloodDrives &lt;> null&#xD;&#xA;self.notifications &lt;> null&#xD;&#xA;&#xD;&#xA;context HomeScreen::viewBloodDrives()&#xD;&#xA;post: self.bloodDrives->forall(bd | bd.city = user.city)&#xD;&#xA;&#xD;&#xA;context HomeScreen::selectBloodDrive(bid: Integer) BloodDrive&#xD;&#xA;pre: bid &lt;> null&#xD;&#xA;post: result = BloodDrive&#xD;&#xA;&#xD;&#xA;context HomeScreen::viewNotifications()&#xD;&#xA;post: self.notifications->forall(n | n.id &lt;> null)&#xD;&#xA;&#xD;&#xA;context HomeScreen::selectNotification(bId: Integer, notificationId: Integer) BloodDrive&#xD;&#xA;pre: bid &lt;> null and notificationId &lt;> null&#xD;&#xA;post: result = BloodDrive"/>
+            </ownedRule>
             <generalization xmi:type="uml:Generalization" xmi:id="_IwEngHqHEeWBAtAlhmP3Vw" general="_C_g-IHqHEeWBAtAlhmP3Vw"/>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_nnqEwIDfEeWBubgn1-Zesg" name="user" type="_lmACcHXQEeWFjsR5Zis5xQ"/>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_o96GAIDfEeWBubgn1-Zesg" name="location">
@@ -3021,17 +3035,39 @@
           <packagedElement xmi:type="uml:Class" xmi:id="_C_g-IHqHEeWBAtAlhmP3Vw" name="MobileScreen"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WYnpvEeWon9iWk6toFw" name="Web">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hJny8IKjEeWOC6N5hARdAQ">
+            <body>Client.Web</body>
+          </ownedComment>
           <packagedElement xmi:type="uml:Class" xmi:id="_gEvQ8HXeEeWnw8a1OBDdhw" name="WebLoginScreen">
             <generalization xmi:type="uml:Generalization" xmi:id="_mCxFgHqHEeWBAtAlhmP3Vw" general="_euZgAHqHEeWBAtAlhmP3Vw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_ybh1EIKiEeWOC6N5hARdAQ" name="setValues">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_1JWtQIKiEeWOC6N5hARdAQ" name="username">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_3B90sIKiEeWOC6N5hARdAQ" name="password">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_6HLSIIKiEeWOC6N5hARdAQ" name="clickLogin"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_jtv_AHXeEeWnw8a1OBDdhw" name="EmployeeScreen">
             <generalization xmi:type="uml:Generalization" xmi:id="_llnPcHqHEeWBAtAlhmP3Vw" general="_euZgAHqHEeWBAtAlhmP3Vw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_PWB1gIKjEeWOC6N5hARdAQ" name="setValues">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_S2Pz8IKjEeWOC6N5hARdAQ" name="email">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_pgwfcHXeEeWnw8a1OBDdhw" name="BloodDriveDetailScreen">
             <generalization xmi:type="uml:Generalization" xmi:id="_kwC5YHqHEeWBAtAlhmP3Vw" general="_euZgAHqHEeWBAtAlhmP3Vw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_nLaLsIKiEeWOC6N5hARdAQ" name="expandNotifications"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_qovOMIKiEeWOC6N5hARdAQ" name="collapseNotifications"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_qf6PUHXeEeWnw8a1OBDdhw" name="BloodDriveSummaryScreen">
             <generalization xmi:type="uml:Generalization" xmi:id="_lJ15cHqHEeWBAtAlhmP3Vw" general="_euZgAHqHEeWBAtAlhmP3Vw"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_sXHbkIKiEeWOC6N5hARdAQ" name="selectBloodDrive">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_wdrBQIKiEeWOC6N5hARdAQ" name="bd" type="_lmET4HXQEeWFjsR5Zis5xQ"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_euZgAHqHEeWBAtAlhmP3Vw" name="WebScreen"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_eqMNQH0rEeWAeO7XtpU2zw" name="ManagerDashboard">
@@ -3161,9 +3197,18 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK3vUHpvEeWon9iWk6toFw" name="Presentation">
         <ownedComment xmi:type="uml:Comment" xmi:id="_HjcN8H1IEeWTsOFe1ufovw">
-          <body>Strategy design pattern</body>
+          <body>&lt;p>&#xD;
+    The &lt;strong>&lt;u>strategy design pattern&lt;/u>&lt;/strong> is used in order to encapsulate the family of view model creation&#xD;
+    algorithms in order for the specific algorithm details to vary independently from clients that use it.&#xD;
+&lt;/p></body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_w6N94IKjEeWOC6N5hARdAQ">
+          <body>Presentation</body>
         </ownedComment>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK3vUXpvEeWon9iWk6toFw" name="ViewModels">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DlRHwIKkEeWOC6N5hARdAQ">
+            <body>Presentation.ViewModels&lt;br /></body>
+          </ownedComment>
           <packagedElement xmi:type="uml:Class" xmi:id="_UVDYgHqFEeWBAtAlhmP3Vw" name="ViewModel"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_Ny89cHqFEeWBAtAlhmP3Vw" name="NotificationSummaryViewModel">
             <generalization xmi:type="uml:Generalization" xmi:id="_txSiUHqFEeWBAtAlhmP3Vw" general="_UVDYgHqFEeWBAtAlhmP3Vw"/>
@@ -3249,6 +3294,9 @@
           <packagedElement xmi:type="uml:Dependency" xmi:id="_DWbc8HXfEeWnw8a1OBDdhw" client="_DgRAUHXdEeWnw8a1OBDdhw" supplier="_4Lw4IHXaEeWnw8a1OBDdhw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK3vU3pvEeWon9iWk6toFw" name="ViewStrategies">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HRrSoIKlEeWOC6N5hARdAQ">
+            <body>Presentation.ViewStrategies</body>
+          </ownedComment>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_FK3vVHpvEeWon9iWk6toFw" client="_FK3vU3pvEeWon9iWk6toFw" supplier="_FK3vUXpvEeWon9iWk6toFw"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_fuQyAHXbEeWnw8a1OBDdhw" name="ViewModelStrategy" isAbstract="true">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_8uYaoH0gEeWAeO7XtpU2zw" name="createViewModel" isAbstract="true">
@@ -3305,6 +3353,9 @@
           <packagedElement xmi:type="uml:Dependency" xmi:id="_atvLEH21EeWNuf1v1CSXIw" client="_FK3vU3pvEeWon9iWk6toFw" supplier="_FK3vUXpvEeWon9iWk6toFw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_4Lw4IHXaEeWnw8a1OBDdhw" name="RequestController">
+          <ownedRule xmi:type="uml:Constraint" xmi:id="_uYJiYIKmEeWpIdfIHW2Jog" name="OCL">
+            <specification xmi:type="uml:LiteralString" xmi:id="_uYL-oIKmEeWpIdfIHW2Jog" name="OCL" value="context RequestController inv:&#xD;&#xA;self.sessions &lt;> null&#xD;&#xA;&#xD;&#xA;context RequestController::authenticate(username: String, password: String)  User&#xD;&#xA;pre: username &lt;> null and password &lt;> null&#xD;&#xA;post: result = User&#xD;&#xA;&#xD;&#xA;context RequestController::get(data: String) &#xD;&#xA;pre: data &lt;> null &#xD;&#xA;&#xD;&#xA;context RequestController::post(data: String) Boolean&#xD;&#xA;pre: data &lt;> null &#xD;&#xA;post: if success then &#xD;&#xA;                  result = true &#xD;&#xA;          else&#xD;&#xA;                  result = false&#xD;&#xA;&#xD;&#xA;context RequestController::logoutUser(user: User)  &#xD;&#xA;pre: user &lt;> null&#xD;&#xA;post: self.sessions->forall(u | u.id &lt;> user.id)"/>
+          </ownedRule>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_oImhEHXbEeWnw8a1OBDdhw" name="viewModelStrategy" type="_fuQyAHXbEeWnw8a1OBDdhw" association="_oInvMHXbEeWnw8a1OBDdhw">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oImhEXXbEeWnw8a1OBDdhw" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oImhEnXbEeWnw8a1OBDdhw" value="*"/>
@@ -3422,10 +3473,21 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZHpvEeWon9iWk6toFw" name="BusinessLogic">
         <ownedComment xmi:type="uml:Comment" xmi:id="_eUqYcH1HEeWTsOFe1ufovw">
-          <body>Facade design pattern</body>
+          <body>The &lt;strong>&lt;u>facade design pattern&lt;/u>&lt;/strong> is used in order to provide a&#xD;
+unified&amp;nbsp;interface&amp;nbsp;to&amp;nbsp;a&amp;nbsp;set&amp;nbsp;of&amp;nbsp; interfaces&amp;nbsp;&amp;nbsp; in the BusinessLogic subsystem, in turn&#xD;
+simplifying the interaction between the Presentation and BusinessLogic subsystems.</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_2VKxYIKoEeWpIdfIHW2Jog">
+          <body>BusinessLogic</body>
         </ownedComment>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZXpvEeWon9iWk6toFw" name="Services">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_WzQNUIKpEeWpIdfIHW2Jog">
+            <body>BusinessLogic.Services</body>
+          </ownedComment>
           <packagedElement xmi:type="uml:Class" xmi:id="_ms11EHXYEeWFjsR5Zis5xQ" name="BloodDriveService">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_bBKYMIKpEeWpIdfIHW2Jog" name="OCL">
+              <specification xmi:type="uml:LiteralString" xmi:id="_bBK_QIKpEeWpIdfIHW2Jog" name="OCL" value="context BloodDriveService:: getBloodDrives(user: User)  list&#xD;&#xA;pre: user &lt;> null&#xD;&#xA;post:  result->forall(bd | bd.city = user.city and bd.state = user.state)&#xD;&#xA;&#xD;&#xA;context BloodDriveService:: getBloodDriveDetails(bd: BloodDrive)  BloodDrive&#xD;&#xA;pre: bd &lt;> null&#xD;&#xA;post:  result = BloodDrive&#xD;&#xA;&#xD;&#xA;context BloodDriveService:: addDonor(bd: BloodDrive , email: String)  Boolean&#xD;&#xA;pre: bd &lt;> null and email &lt;> null&#xD;&#xA;post: bd.NumberOfDonors = @bd.NumberOfDonors + 1&#xD;&#xA;post:  if success then &#xD;&#xA;                  result=true &#xD;&#xA;          else&#xD;&#xA;                  result=false&#xD;&#xA;&#xD;&#xA;context BloodDriveService:: assignNurses(bd: BloodDrive , nurses: Sequence(Employee))  Boolean&#xD;&#xA;pre: bd &lt;> null and nurses &lt;> null&#xD;&#xA;post: nurses->forall(n | bd.Employees->exists(e.id = n.id))&#xD;&#xA;          if success then &#xD;&#xA;                  result=true &#xD;&#xA;          else&#xD;&#xA;                  result=false"/>
+            </ownedRule>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_Np7fUHXaEeWnw8a1OBDdhw" name="validator" type="_kc0dwHXZEeWnw8a1OBDdhw" association="_Np8GYHXaEeWnw8a1OBDdhw">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Np7fUXXaEeWnw8a1OBDdhw" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Np7fUnXaEeWnw8a1OBDdhw" value="1"/>
@@ -3567,7 +3629,12 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK4WZ3pvEeWon9iWk6toFw" name="Validators">
           <ownedComment xmi:type="uml:Comment" xmi:id="_P-yfEH1HEeWTsOFe1ufovw">
-            <body>Template Method Design Pattern</body>
+            <body>The &lt;strong>&lt;u>template method design pattern&lt;/u>&lt;/strong> is used in this subsystem in order to define the skeleton of a&#xD;
+validation algorithm within an operation (validate in this case), deferring some steps of the algorithm to subclasses. This&#xD;
+pattern allows subclasses to redefine certain steps of an algorithm without changing the structure of the algorithm.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5eC78IKqEeWpIdfIHW2Jog">
+            <body>BusinessLogic.Validators</body>
           </ownedComment>
           <packagedElement xmi:type="uml:Class" xmi:id="_kc0dwHXZEeWnw8a1OBDdhw" name="Validator" isAbstract="true">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_WB0_kH1HEeWTsOFe1ufovw" name="validate">
@@ -3720,17 +3787,35 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_FK49cHpvEeWon9iWk6toFw" name="Data">
         <ownedComment xmi:type="uml:Comment" xmi:id="_1iBP4H1HEeWTsOFe1ufovw">
-          <body>Facade design pattern</body>
+          <body>The &lt;strong>&lt;u>facade design pattern&lt;/u>&lt;/strong> is used in order to provide a&#xD;
+unified&amp;nbsp;interface&amp;nbsp;to&amp;nbsp;a&amp;nbsp;set&amp;nbsp;of&amp;nbsp; interfaces&amp;nbsp;&amp;nbsp; in the Data subsystem, in turn&#xD;
+simplifying the interaction between the BusinessLogic and&amp;nbsp;Data subsystems.</body>
         </ownedComment>
         <ownedComment xmi:type="uml:Comment" xmi:id="_7wXBcH1HEeWTsOFe1ufovw">
-          <body>Singleton design pattern</body>
+          <body>&lt;p>&#xD;
+    The &lt;strong>&lt;u>singleton design pattern&lt;/u>&lt;/strong> is used to ensure the DataFacade class has only one instance and&#xD;
+    to provide a global point of access to it. We want to make the DataFacade class a singleton since it has several&#xD;
+    dependencies and instantiating it is expensive.&#xD;
+&lt;/p></body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_rp1vwIKrEeWpIdfIHW2Jog">
+          <body>Data</body>
         </ownedComment>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK49cXpvEeWon9iWk6toFw" name="Repositories">
           <ownedComment xmi:type="uml:Comment" xmi:id="_4L-NUH1KEeWTsOFe1ufovw">
-            <body>Third party library</body>
+            <body>&lt;p>&#xD;
+    The JDBCDriver class represents a &lt;strong>&lt;u>third party library&lt;/u>&lt;/strong> allowing Pint to connect to an external&#xD;
+    Database Management system.&#xD;
+&lt;/p></body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CtHeIIKsEeWpIdfIHW2Jog">
+            <body>Data.Repositories</body>
           </ownedComment>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_FK49cnpvEeWon9iWk6toFw" client="_FK49cXpvEeWon9iWk6toFw" supplier="_FK49c3pvEeWon9iWk6toFw"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_HuOkoHXUEeWFjsR5Zis5xQ" name="BloodDriveRepository">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_F_iRIIKsEeWpIdfIHW2Jog" name="OCL">
+              <specification xmi:type="uml:LiteralString" xmi:id="_F_i4MIKsEeWpIdfIHW2Jog" name="OCL" value="context BloodDriveRepository:: getBloodDrivesByLocation(city: String, state: String)  list&#xD;&#xA;pre: city &lt;> null and state &lt;> null&#xD;&#xA;post:  result->forall(bd | bd.city = city and bd.state = state)"/>
+            </ownedRule>
             <generalization xmi:type="uml:Generalization" xmi:id="_uVDPkHxaEeWyWrjZsspKIQ" general="_p335oHxaEeWyWrjZsspKIQ"/>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_uRtidgQ2bVGfIbt9e8HBaL" name="getBloodDrivesByLocation">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_yy7z3nkwbtVq8xYazd6IuV" name="city">
@@ -3940,6 +4025,9 @@
           <packagedElement xmi:type="uml:Dependency" xmi:id="_3Tcp4H1KEeWTsOFe1ufovw" client="_p335oHxaEeWyWrjZsspKIQ" supplier="_iZVAYH1KEeWTsOFe1ufovw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_FK49c3pvEeWon9iWk6toFw" name="Models">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hs03kIKsEeWpIdfIHW2Jog">
+            <body>Data.Models</body>
+          </ownedComment>
           <packagedElement xmi:type="uml:Class" xmi:id="_lmACcHXQEeWFjsR5Zis5xQ" name="User">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_lmACcnXQEeWFjsR5Zis5xQ" name="sessionKey" visibility="public">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
