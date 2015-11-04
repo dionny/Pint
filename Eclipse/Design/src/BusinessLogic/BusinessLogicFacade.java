@@ -28,7 +28,7 @@ public class BusinessLogicFacade {
 	 }
 
 	/**
-	 * Retreives a list of blood drives based on the location of a user
+	 * Retrieves a list of blood drives based on the location of a user
 	 * @param user The user that will receive the list of blood drives
 	 */
 	public void getBloodDrives(User user) { 
