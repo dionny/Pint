@@ -6,17 +6,17 @@ import java.util.List;
 public class UserRepository extends Repository {
 
 	/**
-	 * 
-	 * @param employee 
+	 * Saves a new employee
+	 * @param employee The object containing information about the new employee
 	 */
 	public void createEmployee(Employee employee) { 
 		// TODO Auto-generated method
 	 }
 
 	/**
-	 * 
-	 * @param hospital_id 
-	 * @return 
+	 * Fetches a list of all nurses at a hospital
+	 * @param hospital_id The id of the relevant hospital
+	 * @return A list of employees
 	 */
 	public List<Employee> getAllNurses(int hospital_id) { 
 		// TODO Auto-generated method

@@ -42,60 +42,60 @@ public class RequestController {
 		 this.sessions = sessions; 
 	}
 	/**
-	 * 
-	 * @param username 
-	 * @param password 
-	 * @return 
+	 * Initiates the process of authneticating a user
+	 * @param username The user name of the user being authenticated
+	 * @param password The password of the user being authenticated
+	 * @return The user or null if authentication fails
 	 */
 	public User authenticate(String username, String password) { 
 		// TODO Auto-generated method
 		return null;
 	 }
 	/**
-	 * 
-	 * @param data 
+	 * Submit a GET request
+	 * @param data content of the GET request
 	 */
 	public void get(String data) { 
 		// TODO Auto-generated method
 	 }
 	/**
-	 * 
-	 * @param object 
+	 * Convert a Java object into JSON
+	 * @param object The objec that will be serialized
 	 */
 	public void serialize(EJavaObject object) { 
 		// TODO Auto-generated method
 	 }
 	/**
-	 * 
-	 * @param data 
-	 * @param success 
+	 * Submit a POST request
+	 * @param data The content of the POST request
+	 * @param success True if the request is successful, false otherwise
 	 */
 	public void post(String data, boolean success) { 
 		// TODO Auto-generated method
 	 }
 	/**
-	 * 
-	 * @param user 
+	 * Checks that the currently logged in user has not timed-out
+	 * @param user The user for which the time is being checked
 	 */
 	public void verifyUserTimer(User user) { 
 		// TODO Auto-generated method
 	 }
 	/**
-	 * 
-	 * @param user 
+	 * Logs a user out
+	 * @param user The user to be logged out
 	 */
 	public void logoutUser(User user) { 
 		// TODO Auto-generated method
 	 }
 	/**
-	 * 
-	 * @param user 
+	 * Update the time for a user
+	 * @param user The user for which the timer will be updated
 	 */
 	public void updateActiveTimer(User user) { 
 		// TODO Auto-generated method
 	 }
 	/**
-	 * 
+	 * Change the user view based on their platform
 	 */
 	public void changeView() { 
 		// TODO Auto-generated method

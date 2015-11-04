@@ -5,7 +5,7 @@ import ECore.EJavaObject;
 public abstract class Repository {
 
 	/**
-	 * 
+	 * Executes a read request
 	 * @param id 
 	 * @param object 
 	 */
@@ -14,7 +14,7 @@ public abstract class Repository {
 	 }
 
 	/**
-	 * 
+	 * Executes an update request
 	 * @param data 
 	 */
 	public void update(EJavaObject data) { 
@@ -22,7 +22,7 @@ public abstract class Repository {
 	 }
 
 	/**
-	 * 
+	 * Executes a delete request
 	 * @param data 
 	 */
 	public void delete(EJavaObject data) { 
@@ -30,7 +30,7 @@ public abstract class Repository {
 	 }
 
 	/**
-	 * 
+	 * Executes a write request
 	 * @param data 
 	 */
 	public void create(EJavaObject data) { 
@@ -38,7 +38,7 @@ public abstract class Repository {
 	 }
 
 	/**
-	 * 
+	 * Executes a read request
 	 * @param id 
 	 * @param object 
 	 */

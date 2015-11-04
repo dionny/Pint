@@ -6,8 +6,8 @@ import Data.Models.Hospital;
 public class HospitalRepository extends Repository {
 
 	/**
-	 * 
-	 * @return 
+	 * Fetches a list of all hospitals
+	 * @return A list of all hospitals in the application
 	 */
 	public List<Hospital> getHospitals() { 
 		// TODO Auto-generated method
