@@ -1,0 +1,11 @@
+BusinessLogic
+BusinessLogic.Services
+BusinessLogic.Validators
+Client.Mobile
+Client.Web
+Data
+Data.Models
+Data.Repositories
+Presentation
+Presentation.ViewModels
+Presentation.ViewStrategies

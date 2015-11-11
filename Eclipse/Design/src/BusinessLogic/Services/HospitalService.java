@@ -24,7 +24,7 @@ public class HospitalService {
 	}
 
 	/**
-	 * 
+	 * Fetches all the hospitals in the application
 	 */
 	public void getHospitals() { 
 		// TODO Auto-generated method

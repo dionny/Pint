@@ -5,8 +5,8 @@ import ECore.EJavaObject;
 public class NotificationSummaryStrategy extends ViewModelStrategy {
 
 	/**
-	 * 
-	 * @param model 
+	 * Creates a NotificationSummary View Model
+	 * @param model The data that will populate the model
 	 */
 	public void createViewModel(EJavaObject model) { 
 		// TODO Auto-generated method

@@ -27,34 +27,34 @@ public class NotificationService {
 	}
 
 	/**
-	 * 
-	 * @param user 
-	 * @param bd 
+	 * Fetches a list of notifications
+	 * @param user user The user requesting the list
+	 * @param bd The id of the relevant blood drive
 	 */
 	public void getNotifications(User user, BloodDrive bd) { 
 		// TODO Auto-generated method
 	 }
 
 	/**
-	 * 
-	 * @param user 
+	 * Fetches a list of notification information for a user
+	 * @param user the user requesting the list
 	 */
 	public void getUserNotifications(User user) { 
 		// TODO Auto-generated method
 	 }
 
 	/**
-	 * 
-	 * @param bd 
+	 * Get notifications associated with a single blood drive
+	 * @param bd The id of the relevant blood drive
 	 */
 	public void getNotifications(BloodDrive bd) { 
 		// TODO Auto-generated method
 	 }
 
 	/**
-	 * 
-	 * @param note 
-	 * @param user 
+	 * Marks a notification as seen by the user
+	 * @param note the notification to be marked
+	 * @param user The user that owns the notification
 	 */
 	public void markSeen(Notification note, User user) { 
 		// TODO Auto-generated method
