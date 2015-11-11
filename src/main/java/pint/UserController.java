@@ -12,8 +12,8 @@ public class UserController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/user")
-    public User user(@RequestParam(value="username", defaultValue="team4") String username, String email) {
+    public User user(@RequestParam(value="username", defaultValue="team4") String username, @RequestParam(value="email", defaultValue="clarke@fiu.edu") String email) {
         return new User(counter.incrementAndGet(),
-                            String.format(template, username), String.format(template, email));
+                            username, email);
     }
 }

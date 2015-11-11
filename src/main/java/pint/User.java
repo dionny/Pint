@@ -2,7 +2,7 @@ package pint;
 
 public class User {
 
-    private final int id;
+    private final long id;
     private final String username;
     private final String email;
 
