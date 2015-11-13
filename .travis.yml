@@ -1,4 +1,2 @@
 language: java
-env:
-  global:
-    - REPO="Web"
+before_install: cd Web
