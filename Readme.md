@@ -5,7 +5,7 @@ Navigate to the Web folder.
 Build the application:
 
 ```sh
-gradew build
+gradlew build
 ```
 
 Run the application:
