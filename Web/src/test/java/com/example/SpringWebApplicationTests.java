@@ -1,4 +1,4 @@
-package pint;
+package com.example;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,12 +7,13 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PintApplication.class)
+@SpringApplicationConfiguration(classes = SpringWebApplication.class)
 @WebAppConfiguration
-public class PintApplicationTests {
+public class SpringWebApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("Creating contextLoads");
 	}
 
 }
