@@ -1,4 +1,4 @@
-package com.example;
+package com.pint;
 
 import javax.transaction.Transactional;
 

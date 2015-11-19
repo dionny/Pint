@@ -1,4 +1,4 @@
-package com.example;
+package com.pint;
 
 import java.sql.Date;
 

@@ -1,4 +1,4 @@
-package com.example;
+package com.pint;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

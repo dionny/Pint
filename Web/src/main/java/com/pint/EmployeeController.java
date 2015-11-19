@@ -1,10 +1,10 @@
-package com.example;
+package com.pint;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class DonorController {
+public class EmployeeController {
 	@Autowired
-	private DonorDao donorDao;
+	private EmployeeDao employeeDao;
 }
