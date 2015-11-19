@@ -16,4 +16,17 @@ public class Hospital {
 	@NotNull
 	@Size(min = 3, max = 200)
 	private String hospitalName;
+	
+	public Hospital(String hospitalName){
+		this.hospitalName = hospitalName;
+	}
+	
+	public Hospital(long hospitalId, String hospitalName){
+		this.hospitalId = hospitalId;
+		this.hospitalName = hospitalName;
+	}
+	
+	public long getId(){
+		return hospitalId;
+	}
 }
