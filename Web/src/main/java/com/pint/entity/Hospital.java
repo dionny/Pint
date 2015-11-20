@@ -8,8 +8,10 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.pint.utils.Constants;
+
 @Entity
-@Table(name="hospital")
+@Table(name=Constants.HOSPITAL_TABLE_NAME)
 public class Hospital {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

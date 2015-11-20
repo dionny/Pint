@@ -8,11 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.NotBlank;
+
+import com.pint.utils.Constants;
 
 
 @Entity
-@Table(name="donor")
+@Table(name=Constants.DONOR_TABLE_NAME)
 public class Donor {
 	@Id
 	@NotNull

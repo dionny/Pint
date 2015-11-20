@@ -7,13 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.pint.utils.Constants;
+
 @Entity
-@Table(name="blooddrive")
+@Table(name=Constants.BLOODDRIVE_TABLE_NAME)
 public class BloodDrive {
 
 	@Id
@@ -30,34 +33,38 @@ public class BloodDrive {
 	
 	@NotNull
 	@Column(name = "startTime", insertable=true)
-	public  Date startTime;
+	public Date startTime;
 	
 	@NotNull
 	@Column(name = "endTime", insertable=true)
-	public  Date endTime;
+	public Date endTime;
 	
 	@NotNull
 	@Size(min = 1, max = 300)
-	public  String address;
+	public String address;
 	
 	@NotNull
 	public  int numberofDonors = 0;
 	
 	@NotNull
 	@Size(min = 1, max = 50)
-	public  String city;
+	public String city;
 	
 	@NotNull
 	@Size(min = 1, max = 50)
-	public  String state;
+	public String state;
 	
 	@NotNull
 	public int zip;
 	
 	@OneToOne(targetEntity=Hospital.class)
-	private long hospitalId;
+	@JoinColumn(name="hospital_id")
+	private Hospital hospital;
 	
 	
+	public BloodDrive(){
+		
+	}
 
 
 	public BloodDrive(long bloodDriveId, String title, String description,Date startTime, Date endTime,String address,int numberofDonors,String city,String state,int zip) {
@@ -73,6 +80,19 @@ public class BloodDrive {
 		this.zip = zip;
 	}
 
+	public BloodDrive(long bloodDriveId, String title, String description,Date startTime, Date endTime,String address,int numberofDonors,String city,String state,int zip, Hospital hospitalId) {
+		this.bloodDriveId = bloodDriveId;
+		this.title = title;
+		this.description = description;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.address = address;
+		this.numberofDonors = numberofDonors;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.hospital = hospitalId;
+	}
 
 
 
@@ -207,16 +227,12 @@ public class BloodDrive {
 	public void setState(int zip) { 
 		this.zip = zip; 
 	}
-	/**
-	 * 
-	 */
-	public void create() { 
-		// TODO Auto-generated method
+	
+	public Hospital getHospitalId(){
+		return hospital;
 	}
-	/**
-	 * 
-	 */
-	public void get() { 
-		// TODO Auto-generated method
+	
+	public void setHospitalId(Hospital hospitalId){
+		this.hospital = hospitalId;
 	}
 }

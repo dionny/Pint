@@ -9,9 +9,11 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.pint.utils.Constants;
+
 
 @Entity
-@Table(name="notification")
+@Table(name=Constants.NOTIFICATION_TABLE_NAME)
 public class Notification{
 
 	@Id

@@ -12,58 +12,50 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pint.entity.Hospital;
+import com.pint.entity.Employee;
 
 
 @Repository
 @Transactional
-public class HospitalRepository extends com.pint.entity.repository.Repository{
+public class UserRepository {
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
 
-	@Override
-	public void create(Object data) { 
+	public boolean createEmployee(Employee employee){
 		try{
 			HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
 			SessionFactory sessionFactory = emFactory.getSessionFactory();
 			Session currentSession = sessionFactory.getCurrentSession();
 
-			currentSession.save(data);
+			currentSession.save(employee);
+			
+			return true;
 		}
-		catch (Exception ex){
+		catch(Exception ex){
 			System.out.println(ex.getMessage());
+			return false;
 		}
 	}
 
-
-	public Hospital get(long hospitalId)  
-	{
-		HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
-		SessionFactory sessionFactory = emFactory.getSessionFactory();
-		Session currentSession = sessionFactory.getCurrentSession();  
-
-		Hospital hospital = (Hospital)currentSession.get(Hospital.class, hospitalId);
-
-		return hospital;
-	}
-
-	public List<Hospital> getHospitals(){
-		List<Hospital> hospitals = null;
+	public List<Employee> getAllNurses(Long hospitalId){
+		List<Employee> nurses = null;
 
 		try{
 			HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
 			SessionFactory sessionFactory = emFactory.getSessionFactory();
 			Session currentSession = sessionFactory.getCurrentSession();
 
-			SQLQuery query = currentSession.createSQLQuery(("SELECT * FROM hospital"));
-			query.addEntity(Hospital.class);
+			String sql = "SELECT * FROM EMPLOYEE WHERE hospital_id = :hospital_id";
+			SQLQuery query = currentSession.createSQLQuery(sql);
+			query.addEntity(Employee.class);			
+			query.setParameter("hospital_id", hospitalId);
 
-			hospitals = query.list();
+			nurses = query.list();
 		}
-		catch (Exception ex){
+		catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}
 
-		return hospitals;
+		return nurses;
 	}
 }
