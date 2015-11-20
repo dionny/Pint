@@ -19,6 +19,10 @@ public class Hospital {
 	@Size(min = 3, max = 200)
 	private String hospitalName;
 	
+	public Hospital(){
+		
+	}
+	
 	public Hospital(String hospitalName){
 		this.hospitalName = hospitalName;
 	}
@@ -30,5 +34,17 @@ public class Hospital {
 	
 	public long getId(){
 		return hospitalId;
+	}
+	
+	public void setId(long id){
+		this.hospitalId = id;
+	}
+	
+	public String getName(){
+		return hospitalName;
+	}
+	
+	public void setName(String name){
+		this.hospitalName = name;
 	}
 }

@@ -1,4 +1,4 @@
-package com.pint.entity.dao;
+package com.pint.entity.repository;
 
 import org.springframework.data.repository.CrudRepository;
 

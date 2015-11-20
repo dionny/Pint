@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pint.entity.User;
-import com.pint.entity.dao.UserDao;
+import com.pint.entity.repository.UserDao;
 
 @Controller
 public class UserController {
