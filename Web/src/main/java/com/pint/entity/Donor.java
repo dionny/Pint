@@ -1,4 +1,4 @@
-package com.pint;
+package com.pint.entity;
 
 import java.sql.Date;
 
@@ -56,6 +56,6 @@ public class Donor {
 	private int failCounter;
 	
 	@NotNull
-	@Column(name = "firstFaileTime", insertable=false)
+	@Column(name = "firstFailTime", insertable=false)
 	private Date firstFailTime;
 }

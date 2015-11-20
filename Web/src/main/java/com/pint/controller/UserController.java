@@ -1,4 +1,4 @@
-package com.pint;
+package com.pint.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.pint.entity.User;
+import com.pint.entity.dao.UserDao;
 
 @Controller
 public class UserController {
