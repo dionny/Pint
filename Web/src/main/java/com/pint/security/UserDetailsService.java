@@ -1,7 +1,6 @@
 package com.pint.security;
 
 import com.pint.entity.User;
-import com.pint.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

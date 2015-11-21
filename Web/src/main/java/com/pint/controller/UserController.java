@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.pint.repository.HospitalRepository;
-import com.pint.repository.UserRepository;
+import com.pint.security.UserRepository;
 import com.pint.security.UserAuthentication;
 import com.pint.security.UserRole;
 import com.pint.service.UserService;

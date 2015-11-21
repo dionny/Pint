@@ -15,18 +15,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "User", uniqueConstraints = @UniqueConstraint(columnNames = { "email" }))
+@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = { "username" }))
 public class User implements UserDetails {
 
   public User() {
   }
 
   public User(String username) {
-    this.email = username;
+    this.username = username;
   }
 
   public User(String username, Date expires) {
-    this.email = username;
+    this.username = username;
     this.expires = expires.getTime();
   }
 
@@ -36,7 +36,7 @@ public class User implements UserDetails {
 
   @NotNull
   @Size(min = 4, max = 30)
-  private String email;
+  private String username;
 
   @NotNull
   @Size(min = 4, max = 100)
@@ -72,10 +72,10 @@ public class User implements UserDetails {
   }
 
   @Override
-  public String getUsername() { return email; }
+  public String getUsername() { return username; }
 
   public void setUsername(String username) {
-    this.email = username;
+    this.username = username;
   }
 
   @Override
