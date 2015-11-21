@@ -1,38 +1,49 @@
-package com.pint.security;
+package com.pint.entity.repository;
 
 import java.util.List;
 
-import javax.persistence.EntityManagerFactory;
-
-import com.pint.entity.Employee;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.jpa.HibernateEntityManagerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
-@Service
-public class UserService {
-	@Autowired
-	private EntityManagerFactory entityManagerFactory;
+import com.pint.entity.Donor;
+import com.pint.entity.Employee;
+import com.pint.entity.User;
+import com.pint.utils.Constants;
 
-	public boolean createEmployee(Employee employee){
+
+@Repository
+@Transactional
+public class UserRepository extends com.pint.entity.repository.Repository{
+	public Donor get(String email){
+		Donor donor = null;
+		
 		try{
 			HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
 			SessionFactory sessionFactory = emFactory.getSessionFactory();
 			Session currentSession = sessionFactory.getCurrentSession();
 
-			currentSession.save(employee);
+			String sql = "SELECT * FROM " + Constants.DONOR_TABLE_NAME + " WHERE email_address = '" + email + "'";
+			SQLQuery query = currentSession.createSQLQuery(sql);
+			query.addEntity(Donor.class);
+
+			List<Donor> donors = query.list();
 			
-			return true;
+			if (donors != null && donors.size() > 0)
+				donor = donors.get(0);
 		}
 		catch(Exception ex){
 			System.out.println(ex.getMessage());
-			return false;
 		}
+		
+		return donor;
+	}
+
+	public void createEmployee(Employee employee){
+		create(employee);
 	}
 
 	public List<Employee> getAllNurses(Long hospitalId){

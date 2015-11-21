@@ -1,10 +1,10 @@
-package com.pint.repository;
+
+package com.pint.entity.repository;
 
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
 
-import com.pint.entity.BloodDrive;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,15 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pint.entity.BloodDrive;
+import com.pint.entity.Hospital;
 import com.pint.utils.Constants;
+
 
 @Repository
 @Transactional
-public class BloodDriveRepository {
-	@Autowired
-	private EntityManagerFactory entityManagerFactory;
-
-	public List<BloodDrive> getBloodDrivesByLocation(String city, String state)
+public class BloodDriveRepository extends com.pint.entity.repository.Repository{
+	public List<BloodDrive> getBloodDrivesByLocation(String city, String state)  
 	{
 		try{
 			HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
