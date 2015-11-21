@@ -1,4 +1,4 @@
-package com.pint;
+package com.pint.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,6 +9,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.EnumSet;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -57,12 +59,8 @@ public class User implements UserDetails {
   @Transient
   private String newPassword;
 
-//  @OneToMany(cascade=CascadeType.ALL)
-//  @JoinTable(name="user_authorities",
-//          joinColumns = {@JoinColumn(name="userauthority_authority", referencedColumnName="authority")},
-//          inverseJoinColumns = {@JoinColumn(name="user_id", referencedColumnName="id")}
-//  )
-//  private Set<UserAuthority> authorities;
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
+  private Set<UserAuthority> authorities;
 
   public Long getId() {
     return id;
@@ -103,42 +101,42 @@ public class User implements UserDetails {
   @Override
   @JsonIgnore
   public Set<UserAuthority> getAuthorities() {
-    return null;
+    return authorities;
   }
 
-//  // Use Roles as external API
-//  public Set<UserRole> getRoles() {
-//    Set<UserRole> roles = EnumSet.noneOf(UserRole.class);
-//    if (authorities != null) {
-//      for (UserAuthority authority : authorities) {
-//        roles.add(UserRole.valueOf(authority));
-//      }
-//    }
-//    return roles;
-//  }
-//
-//  public void setRoles(Set<UserRole> roles) {
-//    for (UserRole role : roles) {
-//      grantRole(role);
-//    }
-//  }
-//
-//  public void grantRole(UserRole role) {
-//    if (authorities == null) {
-//      authorities = new HashSet<UserAuthority>();
-//    }
-//    authorities.add(role.asAuthorityFor(this));
-//  }
-//
-//  public void revokeRole(UserRole role) {
-//    if (authorities != null) {
-//      authorities.remove(role.asAuthorityFor(this));
-//    }
-//  }
-//
-//  public boolean hasRole(UserRole role) {
-//    return authorities.contains(role.asAuthorityFor(this));
-//  }
+  // Use Roles as external API
+  public Set<UserRole> getRoles() {
+    Set<UserRole> roles = EnumSet.noneOf(UserRole.class);
+    if (authorities != null) {
+      for (UserAuthority authority : authorities) {
+        roles.add(UserRole.valueOf(authority));
+      }
+    }
+    return roles;
+  }
+
+  public void setRoles(Set<UserRole> roles) {
+    for (UserRole role : roles) {
+      grantRole(role);
+    }
+  }
+
+  public void grantRole(UserRole role) {
+    if (authorities == null) {
+      authorities = new HashSet<UserAuthority>();
+    }
+    authorities.add(role.asAuthorityFor(this));
+  }
+
+  public void revokeRole(UserRole role) {
+    if (authorities != null) {
+      authorities.remove(role.asAuthorityFor(this));
+    }
+  }
+
+  public boolean hasRole(UserRole role) {
+    return authorities.contains(role.asAuthorityFor(this));
+  }
 
   @Override
   @JsonIgnore

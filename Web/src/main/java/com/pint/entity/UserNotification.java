@@ -1,4 +1,4 @@
-package com.pint;
+package com.pint.entity;
 
 import com.pint.entity.Donor;
 import com.pint.entity.Notification;

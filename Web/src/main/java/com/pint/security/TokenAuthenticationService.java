@@ -1,6 +1,5 @@
 package com.pint.security;
 
-import com.pint.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;

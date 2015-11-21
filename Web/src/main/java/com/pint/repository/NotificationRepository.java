@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.pint.entity.BloodDrive;
 import com.pint.entity.Notification;
-import com.pint.User;
-import com.pint.UserNotification;
+import com.pint.security.User;
+import com.pint.entity.UserNotification;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

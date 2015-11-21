@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.pint.*;
 import com.pint.entity.Employee;
 import com.pint.entity.Hospital;
+import com.pint.security.User;
 import com.pint.security.UserAuthentication;
 import com.pint.security.UserRole;
 import com.pint.security.UserService;
@@ -149,7 +149,7 @@ public class UserController {
 			return new ResponseEntity<String>("invalid user id", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 
-//		user.grantRole(role);
+		user.grantRole(role);
 		userRepository.save(user);
 		return new ResponseEntity<String>("role granted", HttpStatus.OK);
 	}
@@ -160,7 +160,7 @@ public class UserController {
 			return new ResponseEntity<String>("invalid user id", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 
-//		user.revokeRole(role);
+		user.revokeRole(role);
 		userRepository.save(user);
 		return new ResponseEntity<String>("role revoked", HttpStatus.OK);
 	}

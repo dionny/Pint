@@ -1,6 +1,6 @@
 package com.pint.security;
 
-import com.pint.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
@@ -10,12 +10,11 @@ import javax.validation.constraints.NotNull;
 @IdClass(UserAuthority.class)
 public class UserAuthority implements GrantedAuthority {
 
-//	@OneToOne(cascade=CascadeType.ALL)
-//	@JoinTable(name="user_authorities",
-//			joinColumns = {@JoinColumn(name="user_id", referencedColumnName="id")},
-//			inverseJoinColumns = {@JoinColumn(name="userauthority_authority", referencedColumnName="authority")}
-//	)
-//	private User user;
+	@NotNull
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
+	@Id
+	private User user;
 
 	@NotNull
 	@Id
@@ -26,7 +25,7 @@ public class UserAuthority implements GrantedAuthority {
 	}
 
 	public void setUser(User user) {
-//		this.user = user;
+		this.user = user;
 	}
 
 	@Override

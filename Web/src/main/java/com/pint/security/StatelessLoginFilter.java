@@ -1,7 +1,6 @@
 package com.pint.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pint.User;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

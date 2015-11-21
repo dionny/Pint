@@ -1,6 +1,5 @@
 package com.pint.security;
 
-import com.pint.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 

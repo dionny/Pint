@@ -1,5 +1,7 @@
 package com.pint;
 
+import com.pint.security.User;
+import com.pint.security.UserRole;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -43,7 +45,7 @@ public class StatelessAuthentication {
 				User user = new User();
 				user.setUsername(username);
 				user.setPassword(new BCryptPasswordEncoder().encode(password));
-//				user.grantRole(username.equals("admin") ? UserRole.ADMIN : UserRole.USER);
+				user.grantRole(username.equals("admin") ? UserRole.ADMIN : UserRole.USER);
 				userRepository.save(user);
 			}
 		};
