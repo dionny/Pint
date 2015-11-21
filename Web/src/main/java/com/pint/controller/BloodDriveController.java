@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pint.entity.BloodDrive;
-import com.pint.entity.Hospital;
-import com.pint.entity.repository.BloodDriveRepository;
+import com.pint.repository.BloodDriveRepository;
 
 
 @Controller
@@ -23,7 +22,7 @@ public class BloodDriveController {
 		List<BloodDrive> blooddrive = null;
 		String blooddrives="";
 		try {
-			blooddrive = blooddriveRepository.getBloodDrivesByLocation(city,state);
+			blooddrive = bloodDriveRepository.getBloodDrivesByLocation(city,state);
 			for (Iterator<BloodDrive> iter = blooddrive.iterator(); iter.hasNext();)
 			{
 				BloodDrive bd=(BloodDrive) iter.next();
@@ -38,5 +37,5 @@ public class BloodDriveController {
 	}
 
 	@Autowired
-	private BloodDriveRepository blooddriveRepository;
+	private BloodDriveRepository bloodDriveRepository;
 }

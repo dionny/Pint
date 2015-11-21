@@ -1,13 +1,11 @@
-package com.pint.entity.repository;
-
-import org.hibernate.type.descriptor.java.EnumJavaTypeDescriptor;
+package com.pint.repository;
 
 public abstract class Repository {
 
 	/**
 	 * Executes a read request
 	 * @param id 
-	 * @param object 
+	 * @param data
 	 */
 	public void get(int id, Object data) { 
 		// TODO Auto-generated method

@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pint.entity.Employee;
-import com.pint.entity.repository.UserRepository;
+import com.pint.service.UserService;
 
 @Controller
 public class EmployeeController {
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 	
 	
 	@RequestMapping("/nurses")
@@ -21,7 +21,7 @@ public class EmployeeController {
 	public String getNurses(Long hospitalId) {
 		String nurses = "";
 		try {
-			List<Employee> nurseList = userRepository.getAllNurses(hospitalId);
+			List<Employee> nurseList = userService.getAllNurses(hospitalId);
 			if (nurseList != null){
 				for (int i = 0; i < nurseList.size(); i++){
 					nurses += " " + nurseList.get(i).getFirstName();

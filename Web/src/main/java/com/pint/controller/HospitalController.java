@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pint.entity.Hospital;
-import com.pint.entity.repository.HospitalRepository;
-import com.pint.entity.repository.Repository;
+import com.pint.repository.HospitalRepository;
+import com.pint.repository.Repository;
 
 
 @Controller

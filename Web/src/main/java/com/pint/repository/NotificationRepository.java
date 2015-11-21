@@ -1,4 +1,4 @@
-package com.pint.entity.repository;
+package com.pint.repository;
 
 import java.util.List;
 

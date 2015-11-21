@@ -1,63 +1,178 @@
 package com.pint.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.pint.security.UserAuthority;
+import com.pint.security.UserRole;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name="users")
-public class User {
+@Table(name = "User", uniqueConstraints = @UniqueConstraint(columnNames = { "email" }))
+public class User implements UserDetails {
+
+  public User() {
+  }
+
+  public User(String username) {
+    this.email = username;
+  }
+
+  public User(String username, Date expires) {
+    this.email = username;
+    this.expires = expires.getTime();
+  }
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
-  
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  private Long id;
+
   @NotNull
-  @Size(min = 3, max = 80)
+  @Size(min = 4, max = 30)
   private String email;
-  
+
   @NotNull
-  @Size(min = 2, max = 80)
-  private String name;
+  @Size(min = 4, max = 100)
+  private String password;
 
-  public User() { }
+  @Transient
+  private long expires;
 
-  public User(long id) { 
+  @NotNull
+  private boolean accountExpired;
+
+  @NotNull
+  private boolean accountLocked;
+
+  @NotNull
+  private boolean credentialsExpired;
+
+  @NotNull
+  private boolean accountEnabled;
+
+  @Transient
+  private String newPassword;
+
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
+  private Set<UserAuthority> authorities;
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
     this.id = id;
   }
 
-  public User(String email, String name) {
-    this.email = email;
-    this.name = name;
-  }
-  
-  public User(long id, String name, String email) {
-      this.id = id;
-      this.name = name;
-      this.email = email;
+  @Override
+  public String getUsername() { return email; }
+
+  public void setUsername(String username) {
+    this.email = username;
   }
 
-  public long getId(){
-	  return id;
-  } 
-  
-  public void setEmail(String email){
-	  this.email = email;
+  @Override
+  @JsonIgnore
+  public String getPassword() {
+    return password;
   }
-  
-  public String getEmail(){
-	  return this.email;
+
+  @JsonProperty
+  public void setPassword(String password) {
+    this.password = password;
   }
-  
-  public void setName(String name){
-	  this.name = name;
+
+  @JsonIgnore
+  public String getNewPassword() {
+    return newPassword;
   }
-  
-  public String getName(){
-	  return this.name;
+
+  @JsonProperty
+  public void setNewPassword(String newPassword) {
+    this.newPassword = newPassword;
+  }
+
+  @Override
+  @JsonIgnore
+  public Set<UserAuthority> getAuthorities() {
+    return authorities;
+  }
+
+  // Use Roles as external API
+  public Set<UserRole> getRoles() {
+    Set<UserRole> roles = EnumSet.noneOf(UserRole.class);
+    if (authorities != null) {
+      for (UserAuthority authority : authorities) {
+        roles.add(UserRole.valueOf(authority));
+      }
+    }
+    return roles;
+  }
+
+  public void setRoles(Set<UserRole> roles) {
+    for (UserRole role : roles) {
+      grantRole(role);
+    }
+  }
+
+  public void grantRole(UserRole role) {
+    if (authorities == null) {
+      authorities = new HashSet<UserAuthority>();
+    }
+    authorities.add(role.asAuthorityFor(this));
+  }
+
+  public void revokeRole(UserRole role) {
+    if (authorities != null) {
+      authorities.remove(role.asAuthorityFor(this));
+    }
+  }
+
+  public boolean hasRole(UserRole role) {
+    return authorities.contains(role.asAuthorityFor(this));
+  }
+
+  @Override
+  @JsonIgnore
+  public boolean isAccountNonExpired() {
+    return !accountExpired;
+  }
+
+  @Override
+  @JsonIgnore
+  public boolean isAccountNonLocked() {
+    return !accountLocked;
+  }
+
+  @Override
+  @JsonIgnore
+  public boolean isCredentialsNonExpired() {
+    return !credentialsExpired;
+  }
+
+  @Override
+  @JsonIgnore
+  public boolean isEnabled() {
+    return !accountEnabled;
+  }
+
+  public long getExpires() {
+    return expires;
+  }
+
+  public void setExpires(long expires) {
+    this.expires = expires;
+  }
+
+  @Override
+  public String toString() {
+    return getClass().getSimpleName() + ": " + getUsername();
   }
 }

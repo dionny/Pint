@@ -1,5 +1,5 @@
 
-package com.pint.entity.repository;
+package com.pint.repository;
 
 import java.util.List;
 
@@ -14,13 +14,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pint.entity.BloodDrive;
-import com.pint.entity.Hospital;
 import com.pint.utils.Constants;
-
 
 @Repository
 @Transactional
-public class BloodDriveRepository{
+public class BloodDriveRepository {
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
 

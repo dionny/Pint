@@ -1,47 +1,32 @@
 package com.pint.controller;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.pint.repository.HospitalRepository;
+import com.pint.repository.UserRepository;
+import com.pint.security.UserAuthentication;
+import com.pint.security.UserRole;
+import com.pint.service.UserService;
+import com.pint.utils.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.pint.entity.Employee;
 import com.pint.entity.Hospital;
 import com.pint.entity.User;
-import com.pint.entity.repository.HospitalRepository;
-import com.pint.entity.repository.UserDao;
-import com.pint.entity.repository.UserRepository;
 
 @Controller
 public class UserController {
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
-
-	@RequestMapping("/user")
-	public User user(@RequestParam(value="username", defaultValue="team4") String username, @RequestParam(value="email", defaultValue="clarke@fiu.edu") String email) {
-		return new User(counter.incrementAndGet(), username, email);
-	}
-
-	/**
-	 * GET /create  --> Create a new user and save it in the database.
-	 */
-	@RequestMapping("/create")
-	@ResponseBody
-	public String create(String email, String name) {
-		User user = null;
-		try {
-			user = new User(email, name);
-			userDao.save(user);
-		}
-		catch (Exception ex) {
-			return "Error creating the user: " + ex.toString();
-		}
-		return "User succesfully created! (id = " + user.getId() + ")";
-	}
 
 	@RequestMapping("/createemployee")
 	@ResponseBody
@@ -52,7 +37,7 @@ public class UserController {
 			Hospital hospital = hospitalRepository.get(hospitalId);
 			employee = new Employee(email, password, firstName, lastName, phoneNo, role, hospital);
 			System.out.println("\n\n\n\n\nCreating2\n\n\n\n");
-			userRepository.createEmployee(employee);
+			userService.createEmployee(employee);
 		}
 		catch (Exception ex) {
 			return "Error creating the user: " + ex.toString();
@@ -67,7 +52,7 @@ public class UserController {
 		
 		try
 		{
-			List<Employee> nurseList = userRepository.getAllNurses(hospitalId);
+			List<Employee> nurseList = userService.getAllNurses(hospitalId);
 			
 			for (int i = 0; i < nurseList.size(); i++){
 				nurses += "\n" + nurseList.get(i).getFirstName();
@@ -80,16 +65,15 @@ public class UserController {
 		return nurses;
 	}
 
-
 	/**
 	 * GET /delete  --> Delete the user having the passed id.
 	 */
 	@RequestMapping("/delete")
 	@ResponseBody
-	public String delete(long id) {
+	public String delete(String username) {
 		try {
-			User user = new User(id);
-			userDao.delete(user);
+			User user = new User(username);
+			userRepository.delete(user);
 		}
 		catch (Exception ex) {
 			return "Error deleting the user:" + ex.toString();
@@ -106,7 +90,7 @@ public class UserController {
 	public String getByEmail(String email) {
 		String userId;
 		try {
-			User user = userDao.findByEmail(email);
+			User user = userRepository.findByEmail(email);
 			userId = String.valueOf(user.getId());
 		}
 		catch (Exception ex) {
@@ -123,10 +107,9 @@ public class UserController {
 	@ResponseBody
 	public String updateUser(long id, String email, String name) {
 		try {
-			User user = userDao.findOne(id);
-			user.setEmail(email);
-			user.setName(name);
-			userDao.save(user);
+			User user = userRepository.findOne(id);
+			user.setUsername(email);
+			userRepository.save(user);
 		}
 		catch (Exception ex) {
 			return "Error updating the user: " + ex.toString();
@@ -134,15 +117,69 @@ public class UserController {
 		return "User succesfully updated!";
 	}
 
+	@RequestMapping(value = "/api/users/current", method = RequestMethod.GET)
+	public User getCurrent() {
+		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication instanceof UserAuthentication) {
+			return ((UserAuthentication) authentication).getDetails();
+		}
+		return new User(authentication.getName()); //anonymous user support
+	}
+
+	@RequestMapping(value = "/api/users/current", method = RequestMethod.PATCH)
+	public ResponseEntity<String> changePassword(@RequestBody final User user) {
+		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		final User currentUser = userRepository.findByEmail(authentication.getName());
+
+		if (user.getNewPassword() == null || user.getNewPassword().length() < 4) {
+			return new ResponseEntity<String>("new password to short", HttpStatus.UNPROCESSABLE_ENTITY);
+		}
+
+		final BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
+		if (!pwEncoder.matches(user.getPassword(), currentUser.getPassword())) {
+			return new ResponseEntity<String>("old password mismatch", HttpStatus.UNPROCESSABLE_ENTITY);
+		}
+
+		currentUser.setPassword(pwEncoder.encode(user.getNewPassword()));
+		userRepository.save(currentUser);
+		return new ResponseEntity<String>("password changed", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/admin/api/users/{user}/grant/role/{role}", method = RequestMethod.POST)
+	public ResponseEntity<String> grantRole(@PathVariable User user, @PathVariable UserRole role) {
+		if (user == null) {
+			return new ResponseEntity<String>("invalid user id", HttpStatus.UNPROCESSABLE_ENTITY);
+		}
+
+		user.grantRole(role);
+		userRepository.save(user);
+		return new ResponseEntity<String>("role granted", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/admin/api/users/{user}/revoke/role/{role}", method = RequestMethod.POST)
+	public ResponseEntity<String> revokeRole(@PathVariable User user, @PathVariable UserRole role) {
+		if (user == null) {
+			return new ResponseEntity<String>("invalid user id", HttpStatus.UNPROCESSABLE_ENTITY);
+		}
+
+		user.revokeRole(role);
+		userRepository.save(user);
+		return new ResponseEntity<String>("role revoked", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/admin/api/users", method = RequestMethod.GET)
+	public Collection<User> list() {
+		return CollectionUtils.iterableToCollection(userRepository.findAll());
+	}
+
 	// Private fields
 
-	@Autowired
-	private UserDao userDao;
-	
+    @Autowired
+    private UserService userService;
+
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Autowired
 	private HospitalRepository hospitalRepository;
-
 }

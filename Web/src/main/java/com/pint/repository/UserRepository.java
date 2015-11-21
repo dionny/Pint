@@ -1,4 +1,4 @@
-package com.pint.entity.repository;
+package com.pint.repository;
 
 import javax.transaction.Transactional;
 
@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.pint.entity.User;
 
 @Transactional
-public interface UserDao extends CrudRepository<User, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
   /**
    * This method will find an User instance in the database by its email.
