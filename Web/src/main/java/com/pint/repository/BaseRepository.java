@@ -1,4 +1,4 @@
-package com.pint.entity.repository;
+package com.pint.repository;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -10,14 +10,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @org.springframework.stereotype.Repository
 @Transactional
-public abstract class Repository extends JDBCDriver {
+public abstract class BaseRepository extends JDBCDriver {
 	@Autowired
 	protected EntityManagerFactory entityManagerFactory;
 
 	/**
 	 * Executes a read request
 	 * @param id 
-	 * @param object 
+	 * @param data
 	 */
 	public Object get(long id, Object data) {
 		Object returnedObject = null;

@@ -1,4 +1,4 @@
-package com.pint.utils;
+package com.pint.repository;
 
 public class JDBCDriver {
 

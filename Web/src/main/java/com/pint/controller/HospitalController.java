@@ -4,12 +4,11 @@ import java.util.List;
 
 import com.pint.entity.Hospital;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pint.repository.HospitalRepository;
+import com.pint.repository.HospitalBaseRepository;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -63,5 +62,5 @@ public class HospitalController{
     }
     
     @Autowired
-    private HospitalRepository hospitalRepository;
+    private HospitalBaseRepository hospitalRepository;
 }

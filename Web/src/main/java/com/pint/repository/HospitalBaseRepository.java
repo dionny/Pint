@@ -2,21 +2,18 @@ package com.pint.repository;
 
 import java.util.List;
 
-import javax.persistence.EntityManagerFactory;
-
 import com.pint.entity.Hospital;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.jpa.HibernateEntityManagerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 
-@Repository
+@org.springframework.stereotype.Repository
 @Transactional
-public class HospitalRepository extends com.pint.entity.Repository {
+public class HospitalBaseRepository extends BaseRepository {
+
 	public Hospital get(long hospitalId)
 	{
 		HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;

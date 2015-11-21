@@ -3,6 +3,10 @@ package com.pint.controller;
 import java.util.Iterator;
 import java.util.List;
 
+import com.pint.repository.BloodDriveRepository;
+import com.pint.repository.NotificationRepository;
+import com.pint.repository.UserRepository;
+import com.pint.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +17,6 @@ import com.pint.entity.BloodDrive;
 import com.pint.entity.Donor;
 import com.pint.entity.Notification;
 import com.pint.entity.UserNotification;
-import com.pint.entity.repository.BloodDriveRepository;
-import com.pint.entity.repository.NotificationRepository;
-import com.pint.entity.repository.UserRepository;
 
 @Controller
 public class NotificationController {
@@ -33,10 +34,9 @@ public class NotificationController {
 	public String getUserNotification(@RequestParam(value="email") String email,@RequestParam(value="id") long bloodDriveId){
 		String userNotification = "";
 		try {
-			Donor donor = userRepository.get(email);
+			User donor = userRepository.findByUsername(email);
 			BloodDrive bloodDrive = (BloodDrive)bloodDriveRepository.get(bloodDriveId, new BloodDrive());
-			
-			
+
 			if (donor == null) System.out.println("\n\n\nDonor not found \n\n\n");
 			else System.out.println("\n\n\nDonor found\n\n\n");
 			
@@ -63,7 +63,7 @@ public class NotificationController {
 	public String getUserNotification(@RequestParam(value="email") String email){
 		String userNotification = "";
 		try {
-			Donor donor = userRepository.get(email);
+			User donor = userRepository.findByUsername(email);
 			
 			if (donor == null) System.out.println("\n\n\nDonor not found \n\n\n");
 			else System.out.println("\n\n\nDonor found\n\n\n");

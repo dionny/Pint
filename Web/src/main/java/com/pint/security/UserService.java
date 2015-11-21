@@ -1,7 +1,8 @@
-package com.pint.entity.repository;
+package com.pint.security;
 
 import java.util.List;
 
+import com.pint.repository.BaseRepository;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,13 +12,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pint.entity.Donor;
 import com.pint.entity.Employee;
-import com.pint.entity.User;
 import com.pint.utils.Constants;
 
 
 @Repository
 @Transactional
-public class UserRepository extends com.pint.entity.repository.Repository{
+public class UserService extends BaseRepository {
 	public Donor get(String email){
 		Donor donor = null;
 		

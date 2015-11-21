@@ -18,7 +18,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import com.pint.repository.HospitalRepository;
+import com.pint.repository.HospitalBaseRepository;
 import com.pint.repository.UserRepository;
 
 @RestController
@@ -179,5 +179,5 @@ public class UserController {
 	private UserRepository userRepository;
 
 	@Autowired
-	private HospitalRepository hospitalRepository;
+	private HospitalBaseRepository hospitalRepository;
 }

@@ -1,5 +1,4 @@
-
-package com.pint.entity.repository;
+package com.pint.repository;
 
 import java.util.List;
 
@@ -17,10 +16,9 @@ import com.pint.entity.BloodDrive;
 import com.pint.entity.Hospital;
 import com.pint.utils.Constants;
 
-
 @Repository
 @Transactional
-public class BloodDriveRepository extends com.pint.entity.repository.Repository{
+public class BloodDriveRepository extends BaseRepository{
 	public List<BloodDrive> getBloodDrivesByLocation(String city, String state)  
 	{
 		try{

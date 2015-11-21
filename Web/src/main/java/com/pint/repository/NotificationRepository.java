@@ -1,7 +1,9 @@
-package com.pint.entity.repository;
+package com.pint.repository;
 
 import java.util.List;
 
+import com.pint.repository.BaseRepository;
+import com.pint.security.User;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,13 +14,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pint.entity.BloodDrive;
 import com.pint.entity.Donor;
 import com.pint.entity.Notification;
-import com.pint.entity.User;
 import com.pint.entity.UserNotification;
 import com.pint.utils.Constants;
 
 @Repository
 @Transactional
-public class NotificationRepository extends com.pint.entity.repository.Repository{
+public class NotificationRepository extends BaseRepository {
 
 	/**
 	 * Get notifications from a blood drive
@@ -26,7 +27,7 @@ public class NotificationRepository extends com.pint.entity.repository.Repositor
 	 * @param bd The blood drive that the user is viewing
 	 * @return A list notifications for the selected blood drive
 	 */
-	public List<Notification> getNotifications(User user, BloodDrive bd) { 
+	public List<Notification> getNotifications(User user, BloodDrive bd) {
 		// TODO Auto-generated method
 		return null;
 	 }
@@ -37,14 +38,14 @@ public class NotificationRepository extends com.pint.entity.repository.Repositor
 	 * @param bd The relevant blood drive
 	 * @return A list of user notifications
 	 */
-	public List<UserNotification> getUserNotifications(Donor user, BloodDrive bd) {
+	public List<UserNotification> getUserNotifications(User user, BloodDrive bd) {
 		List<UserNotification> userNotification = null;
 		try{
 			HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
 			SessionFactory sessionFactory = emFactory.getSessionFactory();
 			Session currentSession = sessionFactory.getCurrentSession();  
 
-			String email = user.getEmailAddress();
+			String email = user.getUsername();
 			long bloodDriveId = bd.getBloodDriveId();
 
 			String sql = "SELECT * FROM " + Constants.USERNOTIFICATION_TABLE_NAME + " un" +
@@ -69,17 +70,17 @@ public class NotificationRepository extends com.pint.entity.repository.Repositor
 
 	/**
 	 * Get all notifications for a user
-	 * @param user The user requesting the notifications
+	 * @param donor The user requesting the notifications
 	 * @return A list of user notifications
 	 */
-	public List<UserNotification> getUserNotifications(Donor donor) {
+	public List<UserNotification> getUserNotifications(User donor) {
 		List<UserNotification> userNotification = null;
 		try{
 			HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
 			SessionFactory sessionFactory = emFactory.getSessionFactory();
 			Session currentSession = sessionFactory.getCurrentSession();  
 
-			String email = donor.getEmailAddress();
+			String email = donor.getUsername();
 
 			String sql = "SELECT * FROM " + Constants.USERNOTIFICATION_TABLE_NAME + " un" +
 					" WHERE un.email_address='" + email + "' ";
