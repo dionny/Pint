@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -21,72 +22,73 @@ public class UserNotification {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long userNotificationId;
 	
+	public long getUserNotificationId() {
+		return userNotificationId;
+	}
+	
+	public void setUserNotificationId(long id){
+		this.userNotificationId = id;
+	}
+
+	
 	@NotNull
 	public boolean hasSeen;
+
+	public boolean getHasSeen() {
+		return hasSeen; 
+	}
+
+	public void setHasSeen(boolean hasSeen) { 
+		this.hasSeen = hasSeen; 
+	}
 	
 	@NotNull
 	@Column(name = "sentTime", insertable=false)
 	private Date sentTime;
 	
-	
-	@ManyToOne(targetEntity=Donor.class)
-	private String emailAddress;
-	
-	@ManyToOne(targetEntity=Notification.class)
-	private long notificationId;
-	
-	
-	/**
-	 * Getter of hasSeen
-	 */
-	public boolean getHasSeen() {
-		return hasSeen; 
-	}
-	/**
-	 * Setter of hasSeen
-	 */
-	public void setHasSeen(boolean hasSeen) { 
-		this.hasSeen = hasSeen; 
-	}
-	/**
-	 * Getter of sentTime
-	 */
 	public Date getSentTime() {
 		return sentTime; 
 	}
-	/**
-	 * Setter of sentTime
-	 */
+
 	public void setSentTime(Date sentTime) { 
 		this.sentTime = sentTime; 
 	}
 	
-	/**
-	 * 
-	 * @param bloodDriveId 
-	 * @param userId 
-	 */
-	public void get(String bloodDriveId, String userId) { 
-		// TODO Auto-generated method
+	
+	//@ManyToOne(targetEntity=Donor.class)
+	@ManyToOne(targetEntity=Donor.class)
+	@JoinColumn(name="email_address")
+	private Donor donor;
+	
+	public Donor getEmailAddress(){
+		return donor;
 	}
-	/**
-	 * 
-	 * @param id 
-	 */
-	public void get(String userId) { 
-		// TODO Auto-generated method
-	} 
+	
+	public void setEmailAddress(Donor donor){
+		this.donor = donor;
+	}
+	
+	//@ManyToOne(targetEntity=Notification.class)
+	@ManyToOne(targetEntity=Notification.class)
+	@JoinColumn(name="notification_id")
+	private Notification notification;
+	
+	public Notification getNotificationId() {
+		return notification;
+	}
+	
+	public void setNotificationId(Notification notification){
+		this.notification = notification;
+	}
+	
 
+	public UserNotification(){
+	}
 
 	public UserNotification(boolean hasSeen, Date sentTime) {
 		this.hasSeen = hasSeen;
 		this.sentTime = sentTime;
 
-	}
-
-
-	public long getId() {
-		return userNotificationId;
 	}
 
 	public String getContent()  {
@@ -101,7 +103,4 @@ public class UserNotification {
 
 		return	"id :=== " + userNotificationId + " hasSeen :" + hasSeen + " sentTime :" + sentTime  ;
 	}
-
-
-
 }

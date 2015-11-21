@@ -18,24 +18,6 @@ import com.pint.entity.Hospital;
 @Repository
 @Transactional
 public class HospitalRepository extends com.pint.entity.repository.Repository{
-	@Autowired
-	private EntityManagerFactory entityManagerFactory;
-
-	@Override
-	public void create(Object data) { 
-		try{
-			HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
-			SessionFactory sessionFactory = emFactory.getSessionFactory();
-			Session currentSession = sessionFactory.getCurrentSession();
-
-			currentSession.save(data);
-		}
-		catch (Exception ex){
-			System.out.println(ex.getMessage());
-		}
-	}
-
-
 	public Hospital get(long hospitalId)  
 	{
 		HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;

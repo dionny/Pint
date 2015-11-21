@@ -20,10 +20,7 @@ import com.pint.utils.Constants;
 
 @Repository
 @Transactional
-public class BloodDriveRepository{
-	@Autowired
-	private EntityManagerFactory entityManagerFactory;
-
+public class BloodDriveRepository extends com.pint.entity.repository.Repository{
 	public List<BloodDrive> getBloodDrivesByLocation(String city, String state)  
 	{
 		try{

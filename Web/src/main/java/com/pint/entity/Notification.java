@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -20,69 +22,72 @@ public class Notification{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long notificationId;
 	
+	public long getId() {
+		return notificationId;
+	}
+	
+	public void setId(long id){
+		this.notificationId = id;
+	}
+	
 	@NotNull
 	@Size(min = 1, max = 200)
 	public String title;
+	
+	public String getTitle() {
+		return title; 
+	}
+	
+	public void setTitle(String title) { 
+		this.title = title; 
+	}
 	
 	@NotNull
 	@Size(min = 1, max = 200)
 	public String shortDescription;
 	
+	public String getShortDescription() {
+		return shortDescription; 
+	}
+
+	public void setShortDescription(String shortDescription) { 
+		this.shortDescription = shortDescription; 
+	}
+	
 	@NotNull
 	@Size(min = 1, max = 500)
 	public String longDescription;
 	
+	public String getLongDescription() {
+		return longDescription; 
+	}
+	
+	public void setLongDescription(String longDescription) { 
+		this.longDescription = longDescription; 
+	}
+	
+	
 	@OneToOne(targetEntity=BloodDrive.class)
-	private long bloodDriveId;
+	@JoinColumn(name="blood_drive_id")
+	private BloodDrive bloodDrive;
+	
+	public BloodDrive getBloodDriveId() {
+		return bloodDrive;
+	}
+	
+	public void setBloodDriveId(BloodDrive bloodDrive){
+		this.bloodDrive = bloodDrive;
+	}
+	
 
+	public Notification(){
+	}
+	
 	public Notification(long id, String title, String shortDescription,String longDescription) {
 		this.notificationId = id;
 		this.title = title;
 		this.shortDescription = shortDescription;
 		this.longDescription= longDescription;
-	}
-
-	/**
-	 * Getter of title
-	 */
-	public String getTitle() {
-		return title; 
-	}
-	/**
-	 * Setter of title
-	 */
-	public void setTitle(String title) { 
-		this.title = title; 
-	}
-	/**
-	 * Getter of shortDescription
-	 */
-	public String getShortDescription() {
-		return shortDescription; 
-	}
-	/**
-	 * Setter of shortDescription
-	 */
-	public void setShortDescription(String shortDescription) { 
-		this.shortDescription = shortDescription; 
-	}
-	/**
-	 * Getter of longDescription
-	 */
-	public String getLongDescription() {
-		return longDescription; 
-	}
-	/**
-	 * Setter of longDescription
-	 */
-	public void setLongDescription(String longDescription) { 
-		this.longDescription = longDescription; 
-	}
-
-
-
-	public long getId() {
-		return notificationId;
 	}
 
 	public String getContent()  {
