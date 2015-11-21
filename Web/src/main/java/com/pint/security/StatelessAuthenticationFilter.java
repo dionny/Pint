@@ -1,4 +1,4 @@
-package com.pint;
+package com.pint.security;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;

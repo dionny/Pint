@@ -2,15 +2,13 @@ package com.pint;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javafx.beans.DefaultProperty;
+import com.pint.security.UserAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
-import java.util.EnumSet;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity

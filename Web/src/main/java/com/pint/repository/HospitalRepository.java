@@ -1,9 +1,10 @@
-package com.pint;
+package com.pint.repository;
 
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
 
+import com.pint.entity.Hospital;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public class HospitalRepository extends com.pint.Repository {
+public class HospitalRepository extends com.pint.entity.Repository {
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
 
@@ -34,7 +35,7 @@ public class HospitalRepository extends com.pint.Repository {
 	}
 
 
-	public Hospital get(long hospitalId)  
+	public Hospital get(long hospitalId)
 	{
 		HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;
 		SessionFactory sessionFactory = emFactory.getSessionFactory();

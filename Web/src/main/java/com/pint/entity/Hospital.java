@@ -1,4 +1,4 @@
-package com.pint;
+package com.pint.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

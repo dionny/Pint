@@ -1,9 +1,15 @@
-package com.pint;
+package com.pint.controller;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.pint.*;
+import com.pint.entity.Employee;
+import com.pint.entity.Hospital;
+import com.pint.security.UserAuthentication;
+import com.pint.security.UserRole;
+import com.pint.security.UserService;
 import com.pint.utils.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +17,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import com.pint.repository.HospitalRepository;
+import com.pint.repository.UserRepository;
 
 @RestController
 public class UserController {
@@ -160,7 +167,7 @@ public class UserController {
 
 	@RequestMapping(value = "/admin/api/users", method = RequestMethod.GET)
 	public Collection<User> list() {
-		return CollectionUtils.iterableToCollection(userRepository.findAll());
+        return CollectionUtils.iterableToCollection(userRepository.findAll());
 	}
 
 	// Private fields

@@ -1,18 +1,18 @@
-package com.pint;
+package com.pint.controller;
 
 import java.util.List;
 
+import com.pint.entity.Hospital;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pint.Hospital;
-import com.pint.HospitalRepository;
+import com.pint.repository.HospitalRepository;
+import org.springframework.web.bind.annotation.RestController;
 
-
-@Controller
+@RestController
 public class HospitalController{
     @RequestMapping("/createhospital")
     @ResponseBody

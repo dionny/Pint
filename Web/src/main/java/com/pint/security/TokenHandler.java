@@ -1,7 +1,8 @@
-package com.pint;
+package com.pint.security;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pint.User;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;

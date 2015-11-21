@@ -1,7 +1,8 @@
-package com.pint;
+package com.pint.repository;
 
 import javax.transaction.Transactional;
 
+import com.pint.User;
 import org.springframework.data.repository.CrudRepository;
 
 @Transactional

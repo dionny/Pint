@@ -1,7 +1,11 @@
-package com.pint;
+package com.pint.repository;
 
 import java.util.List;
 
+import com.pint.entity.BloodDrive;
+import com.pint.entity.Notification;
+import com.pint.User;
+import com.pint.UserNotification;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +19,7 @@ public class NotificationRepository {
 	 * @param bd The blood drive that the user is viewing
 	 * @return A list notifications for the selected blood drive
 	 */
-	public List<Notification> getNotifications(User user, BloodDrive bd) { 
+	public List<Notification> getNotifications(User user, BloodDrive bd) {
 		// TODO Auto-generated method
 		return null;
 	 }
@@ -26,7 +30,7 @@ public class NotificationRepository {
 	 * @param bd The relevant blood drive
 	 * @return A list of user notifications
 	 */
-	public List<UserNotification> getUserNotifications(User user, BloodDrive bd) { 
+	public List<UserNotification> getUserNotifications(User user, BloodDrive bd) {
 		// TODO Auto-generated method
 		return null;
 	 }

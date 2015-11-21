@@ -1,4 +1,6 @@
-package com.pint;
+package com.pint.security;
+
+import com.pint.User;
 
 public enum UserRole {
 	USER, ADMIN;

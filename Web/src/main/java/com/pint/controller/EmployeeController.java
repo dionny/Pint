@@ -1,4 +1,4 @@
-package com.pint;
+package com.pint.controller;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pint.Employee;
-import com.pint.UserService;
+import com.pint.entity.Employee;
+import com.pint.security.UserService;
 
 @Controller
 public class EmployeeController {

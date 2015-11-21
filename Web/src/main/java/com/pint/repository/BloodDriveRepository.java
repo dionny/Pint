@@ -1,10 +1,10 @@
-
-package com.pint;
+package com.pint.repository;
 
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
 
+import com.pint.entity.BloodDrive;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -21,7 +21,7 @@ public class BloodDriveRepository {
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
 
-	public List<BloodDrive> getBloodDrivesByLocation(String city, String state)  
+	public List<BloodDrive> getBloodDrivesByLocation(String city, String state)
 	{
 		try{
 			HibernateEntityManagerFactory emFactory = (HibernateEntityManagerFactory)entityManagerFactory;

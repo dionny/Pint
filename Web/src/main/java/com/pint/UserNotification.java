@@ -1,5 +1,8 @@
 package com.pint;
 
+import com.pint.entity.Donor;
+import com.pint.entity.Notification;
+
 import java.sql.Date;
 
 import javax.persistence.Column;

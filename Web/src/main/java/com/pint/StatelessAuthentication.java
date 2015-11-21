@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import com.pint.repository.UserRepository;
 
 import javax.servlet.Filter;
 

@@ -1,9 +1,10 @@
-package com.pint;
+package com.pint.security;
 
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
 
+import com.pint.entity.Employee;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

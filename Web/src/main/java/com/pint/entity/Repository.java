@@ -1,4 +1,4 @@
-package com.pint;
+package com.pint.entity;
 
 public abstract class Repository {
 
