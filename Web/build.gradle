@@ -14,16 +14,10 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
-apply plugin: 'war'
 
 jar {
     baseName = 'Pint'
     version = '0.0.1-SNAPSHOT'
-}
-
-war {
-    baseName = 'Pint'
-    version =  '0.0.1-SNAPSHOT'
 }
 
 sourceCompatibility = 1.8
@@ -44,7 +38,6 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     runtime('mysql:mysql-connector-java')
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
 
 

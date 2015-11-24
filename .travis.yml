@@ -6,8 +6,3 @@ jdk:
 before_install:
  - cd Web
  - chmod +x gradlew
- 
-deploy:  
-  provider: azure_web_apps
-  verbose: true
-  on: master
