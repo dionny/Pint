@@ -1,11 +1,12 @@
 package com.pint;
 
-import com.pint.entity.Employee;
-import com.pint.entity.Hospital;
-import com.pint.repository.EmployeeRepository;
-import com.pint.repository.HospitalRepository;
-import com.pint.security.User;
-import com.pint.security.UserRole;
+import com.pint.BusinessLogic.Security.UserRole;
+import com.pint.BusinessLogic.Services.BloodDriveService;
+import com.pint.BusinessLogic.Services.HospitalService;
+import com.pint.BusinessLogic.Services.UserService;
+import com.pint.BusinessLogic.Utilities.Utils;
+import com.pint.Data.Models.Employee;
+import com.pint.Data.Models.Hospital;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -13,10 +14,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import com.pint.repository.UserRepository;
-import sun.security.krb5.internal.HostAddress;
 
 import javax.servlet.Filter;
 
@@ -32,66 +30,95 @@ public class StatelessAuthentication {
     @Bean
     public InitializingBean insertDefaultUsers() {
         return new InitializingBean() {
-            @Autowired
-            private UserRepository userRepository;
 
             @Autowired
-            private EmployeeRepository employeeRepository;
+            HospitalService hospitalService;
 
             @Autowired
-            private HospitalRepository hospitalRepository;
+            UserService userService;
+
+            @Autowired
+            BloodDriveService bloodDriveService;
 
             @Override
             public void afterPropertiesSet() {
                 Hospital hospital = addHospital();
                 addEmployee(hospital, "manager", "manager", "Dionny", "Santiago", "555-555-5551", UserRole.MANAGER);
-                addEmployee(hospital, "coordinator", "coordinator", "Gregory", "Jean-Baptiste", "555-555-5551", UserRole.COORDINATOR);
+                Employee coordinator =
+                        addEmployee(hospital, "coordinator", "coordinator", "Gregory", "Jean-Baptiste", "555-555-5551", UserRole.COORDINATOR);
                 addEmployee(hospital, "nurse", "nurse", "Anjli", "Chhatwani", "555-555-5551", UserRole.NURSE);
                 addUser("donor", "donor", UserRole.DONOR);
+
+                if (coordinator != null) {
+                    bloodDriveService.createBloodDrive(
+                            hospital,
+                            "FIU Blood Drive", "1234 FIU Way",
+                            "We need blood due to the high frequency of accidents in the area.",
+                            "Miami",
+                            "FL",
+                            Utils.parseDate("2015-12-02"),
+                            Utils.parseDate("2015-12-05"),
+                            coordinator);
+
+                    bloodDriveService.createBloodDrive(
+                            hospital,
+                            "FIU-MMC Blood Drive", "1234 Maidique Way",
+                            "We're all about the pizza.",
+                            "Miami",
+                            "FL",
+                            Utils.parseDate("2015-12-05"),
+                            Utils.parseDate("2015-12-08"),
+                            coordinator);
+
+                    bloodDriveService.createBloodDrive(
+                            hospital,
+                            "Red Cross Blood Drive", "1234 Red Way",
+                            "We need blood due to the high frequency of accidents in the area.",
+                            "Miami",
+                            "FL",
+                            Utils.parseDate("2015-12-02"),
+                            Utils.parseDate("2015-12-05"),
+                            coordinator);
+
+                    bloodDriveService.createBloodDrive(
+                            hospital,
+                            "Miami Children's Blood Drive", "1234 Infinite Way",
+                            "We need donations for children patients.",
+                            "Miami",
+                            "FL",
+                            Utils.parseDate("2015-12-05"),
+                            Utils.parseDate("2015-12-08"),
+                            coordinator);
+                }
             }
 
             private Hospital addHospital() {
-                Hospital hospital = new Hospital("FIU Hospital");
-                hospitalRepository.create(hospital);
-                return hospital;
+                return hospitalService.createHospital("FIU Hospital");
             }
 
-            private void addEmployee(Hospital hospital,
-                                     String username,
-                                     String password,
-                                     String firstName,
-                                     String lastName,
-                                     String phoneNumber,
-                                     UserRole role) {
+            private Employee addEmployee(Hospital hospital,
+                                         String username,
+                                         String password,
+                                         String firstName,
+                                         String lastName,
+                                         String phoneNumber,
+                                         UserRole role) {
 
-                if (userRepository.findByUsername(username) != null) {
-                    return;
+                if (userService.getUserByEmail(username) != null) {
+                    return null;
                 }
 
-                User user = new User();
-                user.setUsername(username);
-                user.setPassword(new BCryptPasswordEncoder().encode(password));
-                user.grantRole(role);
-
-                userRepository.save(user);
-
-                Employee employee = new Employee(firstName, lastName, phoneNumber, hospital);
-                employee.setUserId(user.getId());
-
-                employeeRepository.save(employee);
+                return userService.createEmployee(username, password, firstName, lastName,
+                        phoneNumber, role, hospital.getId());
             }
 
             private void addUser(String username, String password, UserRole role) {
-                // Don't add if user already exists.
-                if (userRepository.findByUsername(username) != null) {
+
+                if (userService.getUserByEmail(username) != null) {
                     return;
                 }
 
-                User user = new User();
-                user.setUsername(username);
-                user.setPassword(new BCryptPasswordEncoder().encode(password));
-                user.grantRole(role);
-                userRepository.save(user);
+                userService.createUser(username, password, role);
             }
         };
     }

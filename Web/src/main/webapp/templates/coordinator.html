@@ -1,4 +1,4 @@
-<section class="wrapper">
+<section class="wrapper" ng-controller="CoordinatorCtrl">
 
     <div class="row">
         <div class="col-lg-12">
@@ -21,61 +21,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><a href="blooddrive_details.html">FIU-MMC Blood Drive</a></td>
-                                <td class="hidden-phone">1234 fiu way</td>
-                                <td>We need blood due to the high frequency of accidents in the area.</td>
-                                <td>Thu Dec 02, 2015</td>
-                                <td>Thu Dec 03, 2015</td>
+                            <tr ng-repeat="drive in bloodDrives">
+                                <td><a href="">{{ drive.title }}</a></td>
+                                <td class="hidden-phone">{{ drive.address }}</td>
+                                <td>{{ drive.description }}</td>
+                                <td>{{ drive.startTime }}</td>
+                                <td>{{ drive.endTime }}</td>
                                 <td>
-                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#popup-div"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#popup-div">
+                                        <i class="fa fa-pencil"></i></button>
 
                                 </td>
                             </tr>
-                            <tr>
-                                <td><a href="blooddrive_details.html">Kendal Blood Drive</a></td>
-                                <td class="hidden-phone">1234 kendal way</td>
-                                <td>We need blood due to the high frequency of accidents in the area.</td>
-                                <td>Thu Dec 02, 2015</td>
-                                <td>Thu Dec 03, 2015</td>
-                                <td>
-                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#popup-div"><i class="fa fa-pencil"></i></button>
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="blooddrive_details.html">FIU-BBC Blood Drive</a></td>
-                                <td class="hidden-phone">1234 bbc way</td>
-                                <td>We need blood due to the high frequency of accidents in the area.</td>
-                                <td>Thu Dec 02, 2015</td>
-                                <td>Thu Dec 03, 2015</td>
-                                <td>
-                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#popup-div"><i class="fa fa-pencil"></i></button>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="blooddrive_details.html">Sweetwater Blood Drive</a></td>
-                                <td class="hidden-phone">1234 sweetwater way</td>
-                                <td>We need blood due to the high frequency of accidents in the area.</td>
-                                <td>Thu Dec 02, 2015</td>
-                                <td>Thu Dec 03, 2015</td>
-                                <td>
-                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#popup-div"><i class="fa fa-pencil"></i></button>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="blooddrive_details.html">Doral Blood Drive</a></td>
-                                <td class="hidden-phone">1234 doral way</td>
-                                <td>We need blood due to the high frequency of accidents in the area.</td>
-                                <td>Thu Dec 02, 2015</td>
-                                <td>Thu Dec 03, 2015</td>
-                                <td>
-                                    <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#popup-div"><i class="fa fa-pencil"></i></button>
-
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                     </div><!-- /content-panel -->
@@ -83,8 +41,8 @@
             </div><!-- /row -->
 
 
-
         </div><!-- /col-lg-9 END SECTION MIDDLE -->
 
-    </div><! --/row -->
+    </div>
+    <! --/row -->
 </section>

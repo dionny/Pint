@@ -1,4 +1,4 @@
-var app = angular.module('statelessApp', []).factory('TokenStorage', function() {
+var app = angular.module('statelessApp', ['ngResource']).factory('TokenStorage', function() {
 	var storageKey = 'auth_token';
 	return {		
 		store : function(token) {

@@ -23,7 +23,9 @@
     <script src="assets/js/jquery-1.8.3.min.js"></script>
     <script src="assets/js/chart-master/Chart.js"></script>
     <script src="resources/js/angular.js"></script>
+    <script src="resources/js/angular-resource.js"></script>
     <script src="resources/js/authController.js"></script>
+    <script src="resources/js/coordinatorController.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -34,7 +36,7 @@
 
 <body>
 
-<section id="container" ng-controller="AuthCtrl" ng-init="init()">
+<section id="container" ng-controller="AuthCtrl" ng-init="init()" ng-cloak>
 
     <div id="authContent" ng-hide="authenticated">
         <div class="container form-signin">
@@ -97,7 +99,7 @@
                     <h5 class="centered">{{ user.hospitalId.name }}</h5>
 
                     <li class="mt">
-                        <a class="active" href="index.html">
+                        <a class="active" href="">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -123,7 +125,7 @@
         <footer class="site-footer">
             <div class="text-center">
                 2015 Pint Software
-                <a href="index.html#" class="go-top">
+                <a href="" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
             </div>
