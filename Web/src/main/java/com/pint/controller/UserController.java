@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import com.pint.entity.Employee;
 import com.pint.entity.Hospital;
+import com.pint.repository.EmployeeRepository;
 import com.pint.security.User;
 import com.pint.security.UserAuthentication;
 import com.pint.security.UserRole;
@@ -18,7 +19,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import com.pint.repository.HospitalBaseRepository;
+import com.pint.repository.HospitalRepository;
 import com.pint.repository.UserRepository;
 
 @RestController
@@ -30,17 +31,22 @@ public class UserController {
 	@ResponseBody
 	public String create(String email, String password, String firstName, String lastName, String phoneNo, String role, long hospitalId) {
 		Employee employee = null;
+        User user = null;
 		System.out.println("\n\n\n\n\nCreating1\n\n\n\n");
 		try {
 			Hospital hospital = hospitalRepository.get(hospitalId);
-			employee = new Employee(email, password, firstName, lastName, phoneNo, role, hospital);
+
+            //TODO: Need to create a user principal first.
+            user = new User();
+			employee = new Employee(firstName, lastName, phoneNo, hospital);
+
 			System.out.println("\n\n\n\n\nCreating2\n\n\n\n");
 			userService.createEmployee(employee);
 		}
 		catch (Exception ex) {
 			return "Error creating the user: " + ex.toString();
 		}
-		return "User succesfully created! (id = " + employee.getEmailAddress() + ")";
+		return "User succesfully created! (id = " + user.getUsername() + ")";
 	}
 	
 	@RequestMapping("/getnurses")
@@ -116,10 +122,14 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/api/users/current", method = RequestMethod.GET)
-	public User getCurrent() {
+	public Object getCurrent() {
 		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (authentication instanceof UserAuthentication) {
-			return ((UserAuthentication) authentication).getDetails();
+			User user = ((UserAuthentication) authentication).getDetails();
+            if(user.isEmployee()) {
+                Employee employee = employeeRepository.findOne(user.getId());
+                return employee;
+            }
 		}
 		return new User(authentication.getName()); //anonymous user support
 	}
@@ -179,5 +189,8 @@ public class UserController {
 	private UserRepository userRepository;
 
 	@Autowired
-	private HospitalBaseRepository hospitalRepository;
+	private HospitalRepository hospitalRepository;
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
 }

@@ -33,33 +33,63 @@ var app = angular.module('statelessApp', []).factory('TokenStorage', function() 
 
 app.controller('AuthCtrl', function ($scope, $http, TokenStorage) {
 	$scope.authenticated = false;
-	$scope.token; // For display purposes only
-	
+	$scope.token;
+
+	function processLogin() {
+		$scope.role = $scope.token.roles[0];
+
+		if($scope.role.toLowerCase() == "donor") {
+			$scope.logout();
+			return;
+		}
+
+		$scope.authenticated = true;
+		$scope.displayName = $scope.user.firstName + " " + $scope.user.lastName;
+
+		switch($scope.role.toLowerCase()) {
+			case "coordinator":
+				$scope.roleTemplate = "templates/coordinator.html";
+				break;
+
+			case "manager":
+				$scope.roleTemplate = "templates/manager.html";
+				break;
+
+			case "nurse":
+				$scope.roleTemplate = "templates/nurse.html";
+				break;
+
+			default:
+				$scope.roleTemplate = "templates/coordinator.html";
+		}
+	};
+
 	$scope.init = function () {
 		$http.get('/api/users/current').success(function (user) {
 			if(user.username !== 'anonymousUser'){
-				$scope.authenticated = true;
-				$scope.username = user.username;
-				
-				// For display purposes only
 				$scope.token = JSON.parse(atob(TokenStorage.retrieve().split('.')[0]));
+				$scope.user = user;
+				processLogin();
 			}
 		});
 	};
 
 	$scope.login = function () {
 		$http.post('/api/login', { username: $scope.username, password: $scope.password }).success(function (result, status, headers) {
-			$scope.authenticated = true;
 			TokenStorage.store(headers('X-AUTH-TOKEN'));
-			
-			// For display purposes only
-			$scope.token = JSON.parse(atob(TokenStorage.retrieve().split('.')[0]));
+			$scope.init();
 		});  
 	};
 
 	$scope.logout = function () {
 		// Just clear the local storage
-		TokenStorage.clear();	
+		TokenStorage.clear();
+		$scope.username = "";
+		$scope.password = "";
 		$scope.authenticated = false;
+		$scope.user = null;
+		$scope.token = null;
+		$scope.displayName = null;
+		$scope.roleTemplate = null;
 	};
 });

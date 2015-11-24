@@ -1,6 +1,7 @@
 package com.pint.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pint.security.UserAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -154,6 +155,16 @@ public class User implements UserDetails {
   @JsonIgnore
   public boolean isCredentialsNonExpired() {
     return !credentialsExpired;
+  }
+
+  @JsonIgnore
+  public boolean isEmployee() {
+    return !hasRole(UserRole.DONOR);
+  }
+
+  @JsonIgnore
+  public boolean isDonor() {
+    return hasRole(UserRole.DONOR);
   }
 
   @Override

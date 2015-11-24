@@ -38,7 +38,7 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 				.authorizeRequests()
 
 				//allow anonymous resource requests
-				.antMatchers("/").permitAll()
+				.antMatchers("/**").permitAll()
 				.antMatchers("/favicon.ico").permitAll()
 				.antMatchers("/resources/**").permitAll()
 

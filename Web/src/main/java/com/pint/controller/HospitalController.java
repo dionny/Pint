@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pint.repository.HospitalBaseRepository;
+import com.pint.repository.HospitalRepository;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -62,5 +62,5 @@ public class HospitalController{
     }
     
     @Autowired
-    private HospitalBaseRepository hospitalRepository;
+    private HospitalRepository hospitalRepository;
 }

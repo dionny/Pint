@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @org.springframework.stereotype.Repository
 @Transactional
-public class HospitalBaseRepository extends BaseRepository {
+public class HospitalRepository extends BaseRepository {
 
 	public Hospital get(long hospitalId)
 	{
