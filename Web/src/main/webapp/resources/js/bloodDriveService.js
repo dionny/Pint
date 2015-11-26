@@ -2,7 +2,7 @@
  * Created by Dionny on 11/26/2015.
  */
 angular.module('statelessApp')
-    .factory('BloodDrive', function ($resource, Authentication) {
+    .factory('BloodDrive', function ($resource, $http, $q, Authentication) {
         return {
             getBloodDrives: function () {
                 var BloodDrive = $resource('/api/' + Authentication.getRole()
@@ -27,6 +27,11 @@ angular.module('statelessApp')
                     {bdId: '@id'});
 
                 return UAN.query({bdId: id});
+            },
+            assignNurses: function (id, nurses) {
+                return $http.post('/api/' + Authentication.getRole() + '/assignNurses/' + id, {
+                    nurses: nurses
+                });
             }
         }
     });

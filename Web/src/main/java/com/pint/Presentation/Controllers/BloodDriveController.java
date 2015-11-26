@@ -9,6 +9,8 @@ import com.pint.Data.Models.Hospital;
 import com.pint.Presentation.ViewStrategies.BloodDriveDetailViewStrategy;
 import com.pint.Presentation.ViewStrategies.BloodDriveSummaryViewStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -100,6 +102,26 @@ public class BloodDriveController {
         }
 
         return nurses;
+    }
+
+    @RequestMapping(value="/api/coordinator/assignNurses/{bdId}", method=RequestMethod.POST)
+    @ResponseBody
+    public Object assignNurses(@PathVariable("bdId") Long bdId, List<Long> nurses) {
+//        List<Employee> nurses = null;
+//        try {
+//            User user = Session.getUser();
+//            if (user.isEmployee()) {
+//                nurses = bloodDriveService.getUnassignedNurses(bdId, user);
+//            } else {
+//                throw new Exception("Forbidden.");
+//            }
+//        } catch (Exception ex) {
+//            return "Error retrieving blood drives: " + ex.toString();
+//        }
+//
+//        return nurses;
+
+        return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }
 
     @Autowired

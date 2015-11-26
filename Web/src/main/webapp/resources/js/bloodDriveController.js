@@ -6,18 +6,18 @@ angular.module('statelessApp')
     .controller('NurseAssignmentCtrl', function ($scope, $resource, $routeParams, $uibModalInstance, nurses) {
         $scope.nurses = nurses;
 
-        $scope.rowClick = function(nurse) {
+        $scope.rowClick = function (nurse) {
             console.log(nurse);
             nurse.selected = !nurse.selected;
             console.log('test');
         };
 
-        $scope.toggleObjSelection = function($event) {
+        $scope.toggleObjSelection = function ($event) {
             $event.stopPropagation();
         };
 
         $scope.ok = function () {
-            $uibModalInstance.close($scope.selectedNurses);
+            $uibModalInstance.close(_.where($scope.nurses, {'selected': true}));
         };
 
         $scope.cancel = function () {
@@ -63,15 +63,27 @@ angular.module('statelessApp')
                 size: 'lg',
                 resolve: {
                     nurses: function () {
+                        _.forEach($scope.unassignedNurses, function (nurse) {
+                            nurse.selected = false;
+                        });
                         return $scope.unassignedNurses;
                     }
                 }
             });
 
             modalInstance.result.then(function (selectedNurses) {
-                $log.info(selectedNurses);
+                var selected = _.pluck(selectedNurses, 'userId');
+                console.log(selected);
+                BloodDrive.assignNurses($scope.bloodDriveId, selected)
+                    .then(function () {
+                            swal("Success!", "Nurses were successfully assigned.", "success")
+                        },
+                        function () {
+                            swal("Oops...", "Something went wrong!", "error");
+                        });
+
             }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
+                //$log.info('Modal dismissed at: ' + new Date());
             });
         };
 
