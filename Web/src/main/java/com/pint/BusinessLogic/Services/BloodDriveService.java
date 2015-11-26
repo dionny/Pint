@@ -115,7 +115,6 @@ public class BloodDriveService {
         return null;
     }
 
-
     public List<Employee> getNursesForBloodDrive(Long bdId, User user) {
         List<Employee> output = new ArrayList<>();
         BloodDrive bd = dataFacade.getBloodDrivesById(bdId);
@@ -125,6 +124,7 @@ public class BloodDriveService {
                     employees) {
                 User eeUser = userService.getUserById(ee.getUserId());
                 if (eeUser.hasRole(UserRole.NURSE)) {
+                    ee.setEmail(eeUser.getUsername());
                     output.add(ee);
                 }
             }

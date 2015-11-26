@@ -38,7 +38,7 @@ public class BloodDrive {
     public String address;
 
     @NotNull
-    public int numberofDonors = 0;
+    public int numberOfDonors = 0;
 
     @NotNull
     @Size(min = 1, max = 50)
@@ -75,7 +75,7 @@ public class BloodDrive {
         this.startTime = startTime;
         this.endTime = endTime;
         this.address = address;
-        this.numberofDonors = numberofDonors;
+        this.numberOfDonors = numberofDonors;
         this.city = city;
         this.state = state;
         this.zip = zip;
@@ -88,7 +88,7 @@ public class BloodDrive {
         this.startTime = startTime;
         this.endTime = endTime;
         this.address = address;
-        this.numberofDonors = numberofDonors;
+        this.numberOfDonors = numberofDonors;
         this.city = city;
         this.state = state;
         this.zip = zip;
@@ -175,14 +175,14 @@ public class BloodDrive {
      * Getter of numberOfDonors
      */
     public int getNumberOfDonors() {
-        return numberofDonors;
+        return numberOfDonors;
     }
 
     /**
      * Setter of numberOfDonors
      */
     public void setNumberOfDonors(int numberOfDonors) {
-        this.numberofDonors = numberOfDonors;
+        this.numberOfDonors = numberOfDonors;
     }
 
     /**

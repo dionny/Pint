@@ -38,6 +38,7 @@ public class HospitalService {
                 employees) {
             User eeUser = userService.getUserById(employee.getUserId());
             if (eeUser.hasRole(UserRole.NURSE)) {
+                employee.setEmail(eeUser.getUsername());
                 output.add(employee);
             }
         }

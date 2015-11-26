@@ -26,6 +26,9 @@ public class Employee implements Comparable {
     @Size(min = 1, max = 15)
     private String phoneNumber;
 
+    @Transient
+    private String email;
+
     @OneToOne(targetEntity = Hospital.class)
     @JoinColumn(name = "hospital_id")
     private Hospital hospital;
@@ -103,6 +106,21 @@ public class Employee implements Comparable {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    /**
+     * Getter of email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Setter of firstName
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     @Override
     public int compareTo(Object o) {

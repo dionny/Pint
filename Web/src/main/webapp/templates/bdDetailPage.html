@@ -52,9 +52,9 @@
                     <div class="content-panel">
                         <table class="table table-striped table-advance table-hover">
                             <h4></i>Nurses Assigned to this Blood Drive
-                                <button class="btn btn-theme" data-toggle="modal" data-target="#popup-div"
-                                        id="create-employee-button" type="button"
-                                        style="float:right; margin-right:5px;"><i class="fa fa-cog"></i> Add Nurse
+                                <button class="btn btn-theme" ng-click="open()" id="add-nurse-button" type="button"
+                                        style="float:right; margin-right:15px; padding-bottom: 5px;"><i
+                                        class="fa fa-cog"></i> Add Nurse
                                 </button>
                             </h4>
                             <hr>
@@ -79,94 +79,6 @@
                     </div><!-- /content-panel -->
                 </div><!-- /col-md-12 -->
             </div><!-- /row -->
-
-            <div id='popup-div' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-
-                <form method="get">
-                    <table class="table table-striped table-advance table-hover">
-                        <h4></i>Unassigned Nurses
-                        </h4>
-                        <hr>
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th><i class="fa fa-bookmark"></i> First Name</th>
-                            <th><i class="fa fa-bookmark"></i> Last Name</th>
-                            <th><i class="fa fa-bookmark"></i> Email</th>
-                            <th><i class="fa fa-bullhorn"></i> Phone</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <div class="task-checkbox"><input type="checkbox" class="list-child" id="checkbox"
-                                                                  value=""/></div>
-                            </td>
-                            <td>Penny</td>
-                            <td>Albritton</td>
-                            <td>penny@gmail.com</td>
-                            <td>7775551234</td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="task-checkbox"><input type="checkbox" class="list-child" id="checkbox"
-                                                                  value=""/></div>
-                            </td>
-                            <td>Lisa</td>
-                            <td>Resnick</td>
-                            <td>lisa@gmail.com</td>
-                            <td>7775551235</td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="task-checkbox"><input type="checkbox" class="list-child" id="checkbox"
-                                                                  value=""/></div>
-                            </td>
-                            <td>Brittany</td>
-                            <td>Lancaster</td>
-                            <td>brittany@gmail.com</td>
-                            <td>7775551236</td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="task-checkbox"><input type="checkbox" class="list-child" id="checkbox"
-                                                                  value=""/></div>
-                            </td>
-                            <td>Audie</td>
-                            <td>Coleman</td>
-                            <td>audie@gmail.com</td>
-                            <td>7775551237</td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="task-checkbox"><input type="checkbox" class="list-child" id="checkbox"
-                                                                  value=""/></div>
-                            </td>
-                            <td>Justin</td>
-                            <td>Allison</td>
-                            <td>justin@gmail.com</td>
-                            <td>7775551238</td>
-
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <div class=" add-task-row">
-                        <button class="btn btn-success" id="send" value="Send" type="button">Add</button>
-                        <button class="btn btn-danger" id="cancel" value="Cancel" type="button" data-dismiss="modal">
-                            Cancel
-                        </button>
-                    </div>
-
-                </form>
-            </div>
-
 
         </div><!-- /col-lg-9 END SECTION MIDDLE -->
     </div>

@@ -6,6 +6,7 @@ import com.pint.BusinessLogic.Services.UserService;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
+import com.pint.Presentation.ViewStrategies.BloodDriveDetailViewStrategy;
 import com.pint.Presentation.ViewStrategies.BloodDriveSummaryViewStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -62,7 +63,7 @@ public class BloodDriveController {
             return "Error retrieving blood drives: " + ex.toString();
         }
 
-        return bd;
+        return detailViewStrategy.CreateViewModel(bd);
     }
 
     @RequestMapping("/api/coordinator/getNursesForBloodDrive/{id}")
@@ -109,4 +110,7 @@ public class BloodDriveController {
 
     @Autowired
     private BloodDriveSummaryViewStrategy summaryViewStrategy;
+
+    @Autowired
+    private BloodDriveDetailViewStrategy detailViewStrategy;
 }
