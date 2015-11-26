@@ -2,10 +2,12 @@ package com.pint.BusinessLogic.Services;
 
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
+import com.pint.BusinessLogic.Validators.NurseAssignmentValidator;
 import com.pint.Data.DataFacade;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
+import com.pint.Presentation.Controllers.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -157,6 +159,24 @@ public class BloodDriveService {
             throw new Exception("Cannot assign duplicate nurse.");
         }
         drive.getEmployees().add(nurse);
+        dataFacade.createOrUpdateBloodDrive(drive);
+    }
+
+    public void assignNurses(User user, Long bdId, List<Long> nurses) throws Exception {
+        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        List<Employee> allNurses = hospitalService.getNurses(drive.getHospitalId().getId());
+        Employee coordinator = getCoordinator(drive);
+
+        NurseAssignmentValidator validator = new
+                NurseAssignmentValidator(
+                user, drive, coordinator, nurses, allNurses);
+
+        if(!validator.Validate()){
+            throw new Exception("Invalid request.");
+        }
+
+        List<Employee> nursesToAssign = validator.getValidatedObjects();
+        drive.getEmployees().addAll(nursesToAssign);
         dataFacade.createOrUpdateBloodDrive(drive);
     }
 }

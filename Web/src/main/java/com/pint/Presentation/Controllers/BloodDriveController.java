@@ -3,6 +3,7 @@ package com.pint.Presentation.Controllers;
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Services.BloodDriveService;
 import com.pint.BusinessLogic.Services.UserService;
+import com.pint.BusinessLogic.Utilities.Utils;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
@@ -13,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 @RestController
@@ -25,7 +28,7 @@ public class BloodDriveController {
         try {
             bloodDrives = bloodDriveService.getBloodDrivesByLocation(city, state);
         } catch (Exception ex) {
-            return "Error retrieving blood drives: " + ex.toString();
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
         return bloodDrives;
@@ -41,10 +44,10 @@ public class BloodDriveController {
                 Hospital hospital = userService.getEmployeeByUserId(user.getId()).getHospitalId();
                 bloodDrives = bloodDriveService.getBloodDrivesForCoordinator(hospital, user);
             } else {
-                throw new Exception("Forbidden.");
+                return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
             }
         } catch (Exception ex) {
-            return "Error retrieving blood drives: " + ex.toString();
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
         return summaryViewStrategy.CreateViewModel(bloodDrives);
@@ -59,10 +62,10 @@ public class BloodDriveController {
             if (user.isEmployee()) {
                 bd = bloodDriveService.getBloodDrive(bdId, user);
             } else {
-                throw new Exception("Forbidden.");
+                return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
             }
         } catch (Exception ex) {
-            return "Error retrieving blood drives: " + ex.toString();
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
         return detailViewStrategy.CreateViewModel(bd);
@@ -77,10 +80,10 @@ public class BloodDriveController {
             if (user.isEmployee()) {
                 nurses = bloodDriveService.getNursesForBloodDrive(bdId, user);
             } else {
-                throw new Exception("Forbidden.");
+                return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
             }
         } catch (Exception ex) {
-            return "Error retrieving blood drives: " + ex.toString();
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
         return nurses;
@@ -95,33 +98,34 @@ public class BloodDriveController {
             if (user.isEmployee()) {
                 nurses = bloodDriveService.getUnassignedNurses(bdId, user);
             } else {
-                throw new Exception("Forbidden.");
+                return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
             }
         } catch (Exception ex) {
-            return "Error retrieving blood drives: " + ex.toString();
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
         return nurses;
     }
 
-    @RequestMapping(value="/api/coordinator/assignNurses/{bdId}", method=RequestMethod.POST)
+    @RequestMapping(value = "/api/coordinator/assignNurses/{bdId}", method = RequestMethod.POST)
     @ResponseBody
-    public Object assignNurses(@PathVariable("bdId") Long bdId, List<Long> nurses) {
-//        List<Employee> nurses = null;
-//        try {
-//            User user = Session.getUser();
-//            if (user.isEmployee()) {
-//                nurses = bloodDriveService.getUnassignedNurses(bdId, user);
-//            } else {
-//                throw new Exception("Forbidden.");
-//            }
-//        } catch (Exception ex) {
-//            return "Error retrieving blood drives: " + ex.toString();
-//        }
-//
-//        return nurses;
+    public Object assignNurses(@PathVariable("bdId") Long bdId, @RequestBody Object nurses) {
+        try {
+            User user = Session.getUser();
+            if (user.isEmployee()) {
+                LinkedHashMap<String, ArrayList<Integer>> map =
+                        (LinkedHashMap<String, ArrayList<Integer>>) nurses;
 
-        return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+                bloodDriveService.assignNurses(user, bdId,
+                        Utils.toLongs(map.get("nurses")));
+            } else {
+                return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
+            }
+        } catch (Exception ex) {
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+        }
+
+        return bdId;
     }
 
     @Autowired

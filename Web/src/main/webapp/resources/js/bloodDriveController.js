@@ -73,10 +73,13 @@ angular.module('statelessApp')
 
             modalInstance.result.then(function (selectedNurses) {
                 var selected = _.pluck(selectedNurses, 'userId');
-                console.log(selected);
+                if (!selected || selected.length == 0) {
+                    return;
+                }
                 BloodDrive.assignNurses($scope.bloodDriveId, selected)
                     .then(function () {
                             swal("Success!", "Nurses were successfully assigned.", "success")
+                            $scope.load();
                         },
                         function () {
                             swal("Oops...", "Something went wrong!", "error");

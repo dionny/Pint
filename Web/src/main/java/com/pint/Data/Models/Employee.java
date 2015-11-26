@@ -36,6 +36,10 @@ public class Employee implements Comparable {
     public Employee() {
     }
 
+    public Employee(Long userId) {
+        this.userId = userId;
+    }
+
     public Employee(String firstName, String lastName, String phoneNo, Hospital hospital) {
         this.firstName = firstName;
         this.lastName = lastName;
