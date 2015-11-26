@@ -86,7 +86,7 @@ public class DataFacade {
         return bloodDriveRepository.findAll();
     }
 
-    public void createBloodDrive(BloodDrive bloodDrive) {
+    public void createOrUpdateBloodDrive(BloodDrive bloodDrive) {
         bloodDriveRepository.save(bloodDrive);
     }
 

@@ -45,6 +45,10 @@ public class UserService {
         return employee;
     }
 
+    public User getUserById(Long id) {
+        return dataFacade.getUserById(id);
+    }
+
     public User getUserByEmail(String email) {
         return dataFacade.getUserByEmail(email);
     }

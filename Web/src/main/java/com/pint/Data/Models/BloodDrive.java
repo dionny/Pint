@@ -1,15 +1,10 @@
 package com.pint.Data.Models;
 
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -57,10 +52,18 @@ public class BloodDrive {
     @NotNull
     public int zip;
 
-    @NotNull
-    @OneToOne(targetEntity = Employee.class)
-    @JoinColumn(name = "employee_id")
-    public Employee employee;
+//    @OneToMany(targetEntity = Employee.class)
+//    @JoinColumn(name = "employee_id")
+//    @OneToMany(cascade = CascadeType.ALL, targetEntity = Employee.class, fetch = FetchType.EAGER, mappedBy = "userId", orphanRemoval = true)
+
+    @ManyToMany
+    @JoinTable
+    (
+            name = "blooddrive_employee",
+            joinColumns = {@JoinColumn(name = "bloodDriveId", referencedColumnName = "bloodDriveId")},
+            inverseJoinColumns = {@JoinColumn(name = "userId", referencedColumnName = "userId")}
+    )
+    public Set<Employee> employees;
 
     @OneToOne(targetEntity = Hospital.class)
     @JoinColumn(name = "hospital_id")
@@ -68,7 +71,7 @@ public class BloodDrive {
 
 
     public BloodDrive() {
-
+        employees = new HashSet<Employee>();
     }
 
     public BloodDrive(long bloodDriveId, String title, String description, Date startTime, Date endTime, String address, int numberofDonors, String city, String state, int zip) {
@@ -113,16 +116,12 @@ public class BloodDrive {
         return " title :" + title + " description :" + description + " startTime :" + startTime + " endTime :" + endTime + " address :" + address + " numberofDonors :" + numberofDonors + "city :" + city + "state :" + state;
     }
 
-    public Employee getCoordinator() {
-        return employee;
-    }
-
-    public void setCoordinator(Employee coordinator) {
-        this.employee = coordinator;
-    }
-
     public String getTitle() {
         return title;
+    }
+
+    public Set<Employee> getEmployees() {
+        return employees;
     }
 
     /**

@@ -40,17 +40,13 @@ public class BloodDriveController {
     public Object getBloodDrives() {
         List<BloodDrive> bloodDrives = null;
         try {
-            final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            if (authentication instanceof UserAuthentication) {
-                User user = ((UserAuthentication) authentication).getDetails();
-                if (user.isEmployee()) {
-                    Hospital hospital = userService.getEmployeeByUserId(user.getId()).getHospitalId();
-                    bloodDrives = bloodDriveService.getBloodDrivesForCoordinator(hospital, user);
-                } else {
-                    throw new Exception("Forbidden.");
-                }
+            User user = Session.getUser();
+            if (user.isEmployee()) {
+                Hospital hospital = userService.getEmployeeByUserId(user.getId()).getHospitalId();
+                bloodDrives = bloodDriveService.getBloodDrivesForCoordinator(hospital, user);
+            } else {
+                throw new Exception("Forbidden.");
             }
-
         } catch (Exception ex) {
             return "Error retrieving blood drives: " + ex.toString();
         }
@@ -58,75 +54,61 @@ public class BloodDriveController {
         return bloodDrives;
     }
 
-    
+
     @RequestMapping("/api/coordinator/getBloodDriveById/{id}")
     @ResponseBody
     public Object getBloodDriveById(@PathVariable("id") long bdId) {
-        BloodDrive bd = null;
+        BloodDrive bd;
         try {
-            final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            if (authentication instanceof UserAuthentication) {
-                User user = ((UserAuthentication) authentication).getDetails();
-                if (user.isEmployee()) {
-                  
-                    bd = bloodDriveService.getBloodDrive(bdId, user);
-                } else {
-                    throw new Exception("Forbidden.");
-                }
+            User user = Session.getUser();
+            if (user.isEmployee()) {
+                bd = bloodDriveService.getBloodDrive(bdId, user);
+            } else {
+                throw new Exception("Forbidden.");
             }
-
         } catch (Exception ex) {
             return "Error retrieving blood drives: " + ex.toString();
         }
 
         return bd;
     }
-    
+
     @RequestMapping("/api/coordinator/getNursesForBloodDrive")
     @ResponseBody
     public Object getNursesForBloodDrive(@PathVariable("bd") BloodDrive bd) {
-    	List<Employee> nurses = null;
+        List<Employee> nurses = null;
         try {
-            final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            if (authentication instanceof UserAuthentication) {
-                User user = ((UserAuthentication) authentication).getDetails();
-                if (user.isEmployee()) {
-                  
-                    nurses = bloodDriveService.getNursesForBloodDrive(bd, user);
-                } else {
-                    throw new Exception("Forbidden.");
-                }
+            User user = Session.getUser();
+            if (user.isEmployee()) {
+                nurses = bloodDriveService.getNursesForBloodDrive(bd, user);
+            } else {
+                throw new Exception("Forbidden.");
             }
-
         } catch (Exception ex) {
             return "Error retrieving blood drives: " + ex.toString();
         }
 
         return nurses;
     }
-    
-    @RequestMapping("/api/coordinator/getNursesForBloodDrive")
+
+    @RequestMapping("/api/coordinator/getUnassignedNursesForBloodDrive")
     @ResponseBody
     public Object getUnassignedNurses(@PathVariable("bd") BloodDrive bd) {
-    	List<Employee> nurses = null;
+        List<Employee> nurses = null;
         try {
-            final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            if (authentication instanceof UserAuthentication) {
-                User user = ((UserAuthentication) authentication).getDetails();
-                if (user.isEmployee()) {
-                  
-                    nurses = bloodDriveService.getUnassignedNurses( bd,user);
-                } else {
-                    throw new Exception("Forbidden.");
-                }
+            User user = Session.getUser();
+            if (user.isEmployee()) {
+                nurses = bloodDriveService.getUnassignedNurses(bd, user);
+            } else {
+                throw new Exception("Forbidden.");
             }
-
         } catch (Exception ex) {
             return "Error retrieving blood drives: " + ex.toString();
         }
 
         return nurses;
     }
+
     @Autowired
     private BloodDriveService bloodDriveService;
 
