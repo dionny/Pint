@@ -35,26 +35,26 @@ app.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
         when('/coordinator', {
-            templateUrl: 'templates/coordinator.html',
-            controller: 'CoordinatorCtrl'
+            templateUrl: 'templates/bdSummaryPage.html',
+            controller: 'BloodDriveCtrl'
         }).
-        when('/phones/:phoneId', {
-            templateUrl: 'partials/phone-detail.html',
-            controller: 'PhoneDetailCtrl'
+        when('/coordinator/:bloodDriveId', {
+            templateUrl: 'templates/bdDetailPage.html',
+            controller: 'BloodDriveCtrl'
         }).
         otherwise({
-            redirectTo: '/phones'
+            redirectTo: '/'
         });
     }]);
 
-app.controller('AuthCtrl', function ($scope, $http, TokenStorage) {
+app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location) {
     $scope.authenticated = false;
     $scope.token;
 
     function processLogin() {
-        $scope.role = $scope.token.roles[0];
+        $scope.role = $scope.token.roles[0].toLowerCase();
 
-        if ($scope.role.toLowerCase() == "donor") {
+        if ($scope.role == "donor") {
             $scope.logout();
             return;
         }
@@ -62,21 +62,16 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage) {
         $scope.authenticated = true;
         $scope.displayName = $scope.user.firstName + " " + $scope.user.lastName;
 
-        switch ($scope.role.toLowerCase()) {
+        switch ($scope.role) {
             case "coordinator":
-                $scope.roleTemplate = "templates/coordinator.html";
+                $location.url('/coordinator');
                 break;
 
             case "manager":
-                $scope.roleTemplate = "templates/manager.html";
                 break;
 
             case "nurse":
-                $scope.roleTemplate = "templates/nurse.html";
                 break;
-
-            default:
-                $scope.roleTemplate = "templates/coordinator.html";
         }
     };
 
@@ -85,7 +80,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage) {
             if (user.username !== 'anonymousUser') {
                 $scope.token = JSON.parse(atob(TokenStorage.retrieve().split('.')[0]));
                 $scope.user = user;
-                console.log($scope.user);
+                //console.log($scope.user);
                 processLogin();
             }
         });
@@ -111,5 +106,6 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage) {
         $scope.token = null;
         $scope.displayName = null;
         $scope.roleTemplate = null;
+        $location.url('/');
     };
 });

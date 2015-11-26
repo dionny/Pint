@@ -2,95 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="015b66e7-f59e-4b05-8e14-31540fbc9bfd" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/templates/coordinator.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/coordinatorController.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/bloodDriveController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/StatelessAuthenticationFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/StatelessAuthenticationFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/StatelessAuthenticationSecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/StatelessAuthenticationSecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/StatelessLoginFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/StatelessLoginFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/TokenAuthenticationService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/TokenAuthenticationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/TokenHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/TokenHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserAuthentication.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserAuthentication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserAuthority.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserAuthority.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserDetailsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserDetailsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserRole.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Security/UserRole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/BloodDriveService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/BloodDriveService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/HospitalService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/HospitalService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Utilities/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Utilities/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/DataFacade.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/DataFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/BloodDrive.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/BloodDrive.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/Donor.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/Donor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/Employee.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/Hospital.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/Hospital.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/Notification.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/Notification.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/UserNotification.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Models/UserNotification.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/BaseRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/BaseRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/BloodDriveBaseRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/BloodDriveBaseRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/DonorRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/DonorRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/EmployeeRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/EmployeeRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/HospitalRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/HospitalRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/JDBCDriver.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/JDBCDriver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/NotificationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/NotificationRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/BloodDriveController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/BloodDriveController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/DonorController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/DonorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/EmployeeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/HospitalController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/HospitalController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/NotificationController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/NotificationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pint/StatelessAuthentication.java" afterPath="$PROJECT_DIR$/src/main/java/com/pint/StatelessAuthentication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/style-responsive.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/style-responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/table-responsive.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/table-responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/to-do.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/to-do.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/zabuto_calendar.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/zabuto_calendar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/bootstrap-switch.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/bootstrap-switch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/calendar-conf-events.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/calendar-conf-events.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/chart-master/Chart.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/chart-master/Chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/chartjs-conf.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/chartjs-conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/common-scripts.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/common-scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/easy-pie-chart.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/easy-pie-chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/fancybox/jquery.fancybox.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/fancybox/jquery.fancybox.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/fancybox/jquery.fancybox.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/fancybox/jquery.fancybox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/form-component.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/form-component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/fullcalendar/bootstrap-fullcalendar.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/fullcalendar/bootstrap-fullcalendar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/fullcalendar/fullcalendar.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/fullcalendar/fullcalendar.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gritter-conf.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gritter-conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gritter/css/jquery.gritter.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gritter/css/jquery.gritter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gritter/css/jquery.gritter0.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gritter/css/jquery.gritter0.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/gritter/js/jquery.gritter.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/gritter/js/jquery.gritter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery-1.8.3.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery-easy-pie-chart/jquery.easy-pie-chart.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery-easy-pie-chart/jquery.easy-pie-chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery-ui-1.9.2.custom.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery-ui-1.9.2.custom.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.backstretch.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.backstretch.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.dcjqaccordion.2.7.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.dcjqaccordion.2.7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.mobile-1.4.5.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.mobile-1.4.5.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.nicescroll.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.nicescroll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.scrollTo.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.scrollTo.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.sparkline.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.sparkline.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.tagsinput.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.tagsinput.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.ui.touch-punch.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery.ui.touch-punch.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/morris-conf.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/morris-conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/sparkline-chart.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/sparkline-chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/tasks.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/tasks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/zabuto_calendar.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/zabuto_calendar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/lineicons/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/assets/lineicons/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/lineicons/lte-ie7.js" afterPath="$PROJECT_DIR$/src/main/webapp/assets/lineicons/lte-ie7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/assets/lineicons/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/assets/lineicons/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/angular-resource.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/angular-resource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/angular.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/angular.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/authController.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/authController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/coordinatorController.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/coordinatorController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/templates/bdDetailPage.html" afterPath="$PROJECT_DIR$/src/main/webapp/templates/bdDetailPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/templates/bdSummaryPage.html" afterPath="$PROJECT_DIR$/src/main/webapp/templates/bdSummaryPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/templates/coordinator.html" afterPath="$PROJECT_DIR$/src/main/webapp/templates/coordinator.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -193,8 +110,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462">
-              <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+            <state vertical-scroll-proportion="-22.884615">
+              <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -204,31 +121,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/authController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/UserService.java">
+      <file leaf-file-name="bloodDriveController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/bloodDriveController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding>
-                <element signature="e#2237#2238#0" expanded="true" />
-                <element signature="e#2292#2293#0" expanded="true" />
-                <element signature="method#createUser#0;class#UserService#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coordinator.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/coordinator.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769">
-              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.6040609">
+              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -302,11 +205,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bdSummaryPage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bdSummaryPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/bdSummaryPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -764,8 +667,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/pint/BloodDriveRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pint/HospitalController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/controller/HospitalController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/security/UserAuthority.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/repository/Repository.java" />
@@ -796,8 +697,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pint/Data/Repositories/BloodDriveRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Utilities/CollectionUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Utilities/Utils.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/coordinatorController.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/templates/coordinator.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/SessionHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/Session.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
@@ -813,8 +712,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/HospitalService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/BusinessLogic/Services/BloodDriveService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/coordinator.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/coordinatorController.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/templates/bdSummaryPage.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/authController.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/bloodDriveController.js" />
       </list>
     </option>
   </component>
@@ -1715,12 +1618,12 @@
       <updated>1448066299032</updated>
       <workItem from="1448066308732" duration="7749000" />
       <workItem from="1448074371217" duration="33829000" />
-      <workItem from="1448551451064" duration="8523000" />
+      <workItem from="1448551451064" duration="10553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50101000" />
+    <option name="totallyTimeSpent" value="52131000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1747,7 +1650,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18550107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17857143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1981,14 +1884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/coordinatorController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pint/Presentation/Controllers/DonorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2182,8 +2077,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
-            <element signature="e#2237#2238#0" expanded="true" />
-            <element signature="e#2292#2293#0" expanded="true" />
+            <element signature="e#2237#2238#0" expanded="false" />
+            <element signature="e#2292#2293#0" expanded="false" />
             <element signature="method#createUser#0;class#UserService#0" expanded="false" />
           </folding>
         </state>
@@ -2239,30 +2134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/authController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/coordinator.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/bdDetailPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
@@ -2273,8 +2144,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/bdSummaryPage.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.884615">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/authController.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/bloodDriveController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6040609">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding />
         </state>
       </provider>

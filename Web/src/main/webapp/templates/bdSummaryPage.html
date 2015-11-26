@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="drive in bloodDrives">
-                            <td><a ng-click="chooseBloodDrive(drive.bloodDriveId)" href="">{{ drive.title }}</a></td>
+                            <td><a href="#/coordinator/{{drive.bloodDriveId}}">{{ drive.title }}</a></td>
                             <td class="hidden-phone">{{ drive.address }}</td>
                             <td>{{ drive.description }}</td>
                             <td>{{ drive.startTime }}</td>
