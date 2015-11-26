@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Utilities.Constants;
 
 @Entity
@@ -93,5 +94,7 @@ public class Employee {
 	 */
 	public void setPhoneNumber(String phoneNumber) { 
 		 this.phoneNumber = phoneNumber; 
-	} 
+	}
+
+	
 }

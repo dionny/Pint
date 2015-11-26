@@ -69,6 +69,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage) {
 			if(user.username !== 'anonymousUser'){
 				$scope.token = JSON.parse(atob(TokenStorage.retrieve().split('.')[0]));
 				$scope.user = user;
+				console.log($scope.user);
 				processLogin();
 			}
 		});

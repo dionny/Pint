@@ -38,7 +38,8 @@ public class DataFacade {
     public List<Employee> getNurses(long hospitalId) {
         return userHelper.getAllNurses(hospitalId);
     }
-
+    
+    
     public void deleteUser(String username) {
         userRepository.delete(userRepository.findByUsername(username));
     }
@@ -88,4 +89,12 @@ public class DataFacade {
     public void createBloodDrive(BloodDrive bloodDrive) {
         bloodDriveRepository.save(bloodDrive);
     }
+
+	public BloodDrive getBloodDrivesById(long bdId) {
+		
+		return bloodDriveRepository.findOne(bdId);
+		
+	}
+	
+	
 }

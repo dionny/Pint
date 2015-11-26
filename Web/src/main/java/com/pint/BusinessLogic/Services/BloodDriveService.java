@@ -29,12 +29,12 @@ public class BloodDriveService {
         List<BloodDrive> output = new ArrayList<>();
         Iterable<BloodDrive> bloodDrives = dataFacade.getBloodDrives();
         for (BloodDrive bloodDrive :
-                bloodDrives) {
+                bloodDrives) {	 
             if (bloodDrive.getHospitalId().getId() == hospital.getId() &&
                     bloodDrive.getCoordinator().getUserId() == user.getId()) {
                 output.add(bloodDrive);
             }
-        }
+        } 
 
         return output;
     }
@@ -64,4 +64,63 @@ public class BloodDriveService {
 
         return bloodDrive;
     }
+
+	public BloodDrive getBloodDrive(long bdId, User user) {
+		// TODO Auto-generated method stub
+	
+		BloodDrive bd=dataFacade.getBloodDrivesById(bdId);
+		if(bd.getCoordinator().getUserId()==user.getId())
+		{
+			return bd;
+			
+		}
+		
+		return null;
+		
+	}
+	
+	
+	public List<Employee> getNursesForBloodDrive(BloodDrive bd, User user) {
+		// TODO Auto-generated method stub
+	
+		 List<Employee> output = new ArrayList<>();
+		 long hospitalid=bd.getHospitalId().getId() ;
+		 if(bd.getCoordinator().getUserId() == user.getId())
+		 {
+			 Iterable<Employee> nurses=dataFacade.getNurses(hospitalid);
+			 for (Employee nurse : nurses)
+	                 {	 
+	            if (nurse.getbloodDriveId()==bd.bloodDriveId())
+	            		{
+	                output.add(nurse);
+	            }
+	        }
+		 }
+		 
+		 return output;
+		 
+		 
+		
+			
+	}
+	
+	public List<Employee> getUnassignedNurses(BloodDrive bd, User user) {
+		// TODO Auto-generated method stub
+	
+		List<Employee> output = new ArrayList<>();
+		 long hospitalid=bd.getHospitalId().getId() ;
+		 if(bd.getCoordinator().getUserId() == user.getId())
+		 {
+			 Iterable<Employee> nurses=dataFacade.getNurses(hospitalid);
+			 for (Employee nurse : nurses)
+	        {	 
+	            if (nurse.getBloodDriveId()==null)
+	            {
+	                output.add(nurse);
+	            }
+	        }
+		 }
+		 
+		 return output;
+	
 }
