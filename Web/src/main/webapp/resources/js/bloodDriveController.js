@@ -3,24 +3,32 @@
  */
 
 angular.module('statelessApp')
-    .controller('BloodDriveCtrl', function ($scope, $resource, $routeParams, Authentication) {
-        var BloodDrive = $resource('/api/' + Authentication.getRole() + '/getBloodDrives');
-        var BD = $resource('/api/' + Authentication.getRole() + '/getBloodDriveById/:bdId', {bdId: '@id'});
+    .controller('BloodDriveCtrl', function ($scope, $resource, $routeParams, BloodDrive, Authentication) {
+        console.log('bloodDriveCtrl: load');
+        $scope.load = function() {
+            if(!Authentication.getRole()) {
+                return;
+            }
 
-        $scope.bloodDriveId = $routeParams.bloodDriveId;
+            console.log(Authentication.getRole());
 
-        if ($scope.bloodDriveId) {
-            $scope.bloodDrive = BD.get({bdId: $scope.bloodDriveId}, function () {
-                //console.log($scope.bloodDrive);
-            });
+            $scope.bloodDriveId = $routeParams.bloodDriveId;
+
+            if ($scope.bloodDriveId) {
+                console.log('bloodDriveCtrl: getting details');
+                $scope.bloodDrive = BloodDrive.getBloodDrive($scope.bloodDriveId);
+                $scope.assignedNurses = BloodDrive.getAssignedNurses($scope.bloodDriveId);
+                $scope.unassignedNurses = BloodDrive.getUnassignedNurses($scope.bloodDriveId);
+            }
+
+            if (!$scope.bloodDriveId) {
+                console.log('bloodDriveCtrl: getting all');
+                $scope.bloodDrives = BloodDrive.getBloodDrives();
+                console.log($scope.bloodDrives);
+            }
         }
 
-        if(Authentication.getRole() && !$scope.bloodDriveId) {
-            $scope.bloodDrives = BloodDrive.query(function () {
-                //console.log($scope.bloodDrives);
-            });
-        }
+        $scope.$watch(function() {
+            return Authentication.getRole();
+        }, $scope.load, true);
     });
-    
-    
-   

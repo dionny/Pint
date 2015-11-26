@@ -1,4 +1,4 @@
-<section class="wrapper">
+<section class="wrapper" ng-cloak ng-init="load()">
 
     <div class="row">
         <div class="col-lg-9 main-chart">
@@ -10,10 +10,10 @@
                                 <p>{{ bloodDrive.title }}</p>
                             </div>
                             <div class="col-sm-6 col-xs-6 goleft">
-                                <p class="small">1234 fiu way</p>
+                                <p class="small">{{ bloodDrive.address }}</p>
                             </div>
                             <div class="col-sm-6 col-xs-6 goright">
-                                <p class="small">Thu Dec 02, 2015</p>
+                                <p class="small">{{ bloodDrive.startTime }}</p>
                             </div>
                         </div>
                     </div><!-- /weather-2 header -->
@@ -22,7 +22,7 @@
                     </div>
                     <div class="row data">
                         <div class="row centered">
-                            <p>We need blood due to the high frequency of accidents in the area.</p>
+                            <p>{{ bloodDrive.description }}</p>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                                     style="display: inline-block; width: 342px; height: 75px; vertical-align: top;"></canvas>
                         </div>
                     </div>
-                    <p class="mt"><b>551</b><br>Total Donation</p>
+                    <p class="mt"><b>{{ bloodDrive.numberOfDonors }}</b><br>Total Donations</p>
                 </div>
             </div>
 
@@ -68,40 +68,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Penny</td>
-                                <td>Albritton</td>
-                                <td>penny@gmail.com</td>
-                                <td>7775551234</td>
-
-                            </tr>
-                            <tr>
-                                <td>Lisa</td>
-                                <td>Resnick</td>
-                                <td>lisa@gmail.com</td>
-                                <td>7775551235</td>
-
-                            </tr>
-                            <tr>
-                                <td>Brittany</td>
-                                <td>Lancaster</td>
-                                <td>brittany@gmail.com</td>
-                                <td>7775551236</td>
-
-                            </tr>
-                            <tr>
-                                <td>Audie</td>
-                                <td>Coleman</td>
-                                <td>audie@gmail.com</td>
-                                <td>7775551237</td>
-
-                            </tr>
-                            <tr>
-                                <td>Justin</td>
-                                <td>Allison</td>
-                                <td>justin@gmail.com</td>
-                                <td>7775551238</td>
-
+                            <tr ng-repeat="nurse in assignedNurses">
+                                <td>{{ nurse.firstName }}</td>
+                                <td>{{ nurse.lastName }}</td>
+                                <td>{{ nurse.email }}</td>
+                                <td>{{ nurse.phoneNumber }}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -198,3 +169,5 @@
 
 
         </div><!-- /col-lg-9 END SECTION MIDDLE -->
+    </div>
+</section>

@@ -11,19 +11,21 @@ var app = angular.module('statelessApp', ['ngResource', 'ngRoute']).factory('Tok
             return localStorage.removeItem(storageKey);
         }
     };
-}).factory('TokenAuthInterceptor', function ($q, TokenStorage) {
+}).factory('TokenAuthInterceptor', function ($q, $location, TokenStorage) {
     return {
         request: function (config) {
             var authToken = TokenStorage.retrieve();
             if (authToken) {
                 config.headers['X-AUTH-TOKEN'] = authToken;
+            } else {
+                $location.path("/");
             }
             return config;
         },
         responseError: function (error) {
-            if (error.status === 401 || error.status === 403) {
-                TokenStorage.clear();
-            }
+            //if (error.status === 401 || error.status === 403) {
+            //    TokenStorage.clear();
+            //}
             return $q.reject(error);
         }
     };
@@ -47,7 +49,7 @@ app.config(['$routeProvider',
         });
     }]);
 
-app.factory('Authentication', function() {
+app.factory('Authentication', function () {
     var data = {
         firstName: '',
         lastName: '',
@@ -67,10 +69,10 @@ app.factory('Authentication', function() {
         setLastName: function (lastName) {
             data.lastName = lastName;
         },
-        getRole: function() {
+        getRole: function () {
             return data.role;
         },
-        setRole: function(role) {
+        setRole: function (role) {
             data.role = role;
         }
     };
@@ -79,6 +81,8 @@ app.factory('Authentication', function() {
 app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location, Authentication) {
     $scope.authenticated = false;
     $scope.token;
+
+    console.log('authCtrl: load');
 
     function processLogin() {
         $scope.role = $scope.token.roles[0].toLowerCase();
@@ -93,8 +97,13 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
 
         switch ($scope.role) {
             case "coordinator":
-                $location.url('/coordinator');
                 Authentication.setRole('coordinator');
+
+                if ($location.absUrl().indexOf('/coordinator/') === -1) {
+                    console.log('authCtrl: changing url to /coordinator');
+                    $location.url('/coordinator');
+                }
+                console.log('authCtrl: setting role to coordinator');
                 break;
 
             case "manager":
@@ -106,6 +115,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
     };
 
     $scope.init = function () {
+        console.log('authCtrl: init');
         $http.get('/api/users/current').success(function (user) {
             if (user.username !== 'anonymousUser') {
                 $scope.token = JSON.parse(atob(TokenStorage.retrieve().split('.')[0]));
@@ -116,6 +126,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
     };
 
     $scope.login = function () {
+        console.log('authCtrl: login');
         $http.post('/api/login', {
             username: $scope.username,
             password: $scope.password

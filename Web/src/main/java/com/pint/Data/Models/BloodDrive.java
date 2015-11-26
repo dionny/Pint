@@ -95,21 +95,6 @@ public class BloodDrive {
         this.hospital = hospitalId;
     }
 
-
-    public String getContent() {
-
-		/*JSONObject User = new JSONObject();  
-
-	  	User.put("id", 1);
-	  	User.put("emailAddress", "anjlichhatwani"); 
-	  	User.put("state", "achha004@fiu.edu"); 
-	  	return User;
-		 */
-
-
-        return " title :" + title + " description :" + description + " startTime :" + startTime + " endTime :" + endTime + " address :" + address + " numberofDonors :" + numberofDonors + "city :" + city + "state :" + state;
-    }
-
     public String getTitle() {
         return title;
     }

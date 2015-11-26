@@ -49,7 +49,6 @@ public class UserController {
         return "User succesfully deleted!";
     }
 
-
     @RequestMapping("/api/coordinator/getNurses")
     @ResponseBody
     public Object getNurses(long hospitalId) {
@@ -95,7 +94,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/api/users/current", method = RequestMethod.GET)
-    public Object getCurrent() {
+    public Object getCurrent() throws InterruptedException {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication instanceof UserAuthentication) {
             User user = ((UserAuthentication) authentication).getDetails();

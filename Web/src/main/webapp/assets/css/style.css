@@ -420,12 +420,16 @@ ul.sidebar-menu li a.active i {
 
 .wrapper {
     display: inline-block;
-    margin-top: 60px;
+    margin-top: 40px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
     padding-top: 0px;
     width: 100%;
+}
+
+.wrapper-more-height {
+    margin-top: 30px !important;
 }
 
 a.logo {
