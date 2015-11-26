@@ -3,13 +3,12 @@ package com.pint.BusinessLogic.Services;
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
 import com.pint.Data.DataFacade;
+import com.pint.Data.Models.Donor;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by Dionny on 11/24/2015.
@@ -45,16 +44,34 @@ public class UserService {
         return employee;
     }
 
+    public Donor createDonor(String username,
+                             String password,
+                             String country,
+                             String city,
+                             String state,
+                             int zip) {
+
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(new BCryptPasswordEncoder().encode(password));
+        user.grantRole(UserRole.DONOR);
+
+        dataFacade.createOrUpdateUser(user);
+
+        Donor donor = new Donor(country, city, state, zip);
+        donor.setUserId(user.getId());
+
+        dataFacade.createDonor(donor);
+
+        return donor;
+    }
+
     public User getUserById(Long id) {
         return dataFacade.getUserById(id);
     }
 
     public User getUserByEmail(String email) {
         return dataFacade.getUserByEmail(email);
-    }
-
-    public List<Employee> getNurses(long hospitalId) {
-        return dataFacade.getNurses(hospitalId);
     }
 
     public void deleteUser(String username) {

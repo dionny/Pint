@@ -1,11 +1,11 @@
 package com.pint.Data.Repositories;
 
-import javax.transaction.Transactional;
-
 import com.pint.Data.Models.Employee;
 import org.springframework.data.repository.CrudRepository;
 
+import javax.transaction.Transactional;
+
 @Transactional
-public interface EmployeeRepository extends CrudRepository<Employee, Long>{
+public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 
 }

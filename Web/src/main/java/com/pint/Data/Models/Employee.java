@@ -1,11 +1,10 @@
 package com.pint.Data.Models;
 
+import com.pint.BusinessLogic.Utilities.Constants;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import com.pint.BusinessLogic.Security.User;
-import com.pint.BusinessLogic.Utilities.Constants;
 
 @Entity
 @Table(name = Constants.EMPLOYEE_TABLE_NAME)
@@ -108,5 +107,10 @@ public class Employee implements Comparable {
     @Override
     public int compareTo(Object o) {
         return userId.compareTo(((Employee) o).getUserId());
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return userId.equals(((Employee) other).userId);
     }
 }

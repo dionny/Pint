@@ -357,7 +357,7 @@ $.fn.zabuto_calendar = function (options) {
                 return false;
             }
 
-            var data = { year: year, month: (month + 1)};
+            var data = {year: year, month: (month + 1)};
 
             $.ajax({
                 type: 'GET',
@@ -365,13 +365,13 @@ $.fn.zabuto_calendar = function (options) {
                 data: data,
                 dataType: 'json'
             }).done(function (response) {
-                    var events = [];
-                    $.each(response, function (k, v) {
-                        events.push(response[k]);
-                    });
-                    $calendarElement.data('events', events);
-                    drawEvents($calendarElement);
+                var events = [];
+                $.each(response, function (k, v) {
+                    events.push(response[k]);
                 });
+                $calendarElement.data('events', events);
+                drawEvents($calendarElement);
+            });
         }
 
         function drawEvents($calendarElement) {

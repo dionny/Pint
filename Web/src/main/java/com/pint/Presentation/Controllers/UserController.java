@@ -1,15 +1,12 @@
 package com.pint.Presentation.Controllers;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
-
-import com.pint.BusinessLogic.Services.UserService;
-import com.pint.Data.Models.Employee;
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserAuthentication;
 import com.pint.BusinessLogic.Security.UserRole;
+import com.pint.BusinessLogic.Services.HospitalService;
+import com.pint.BusinessLogic.Services.UserService;
 import com.pint.BusinessLogic.Utilities.Utils;
+import com.pint.Data.Models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +14,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class UserController {
@@ -55,7 +56,7 @@ public class UserController {
         List<Employee> nurses = null;
 
         try {
-            nurses = userService.getNurses(hospitalId);
+            nurses = hospitalService.getNurses(hospitalId);
         } catch (Exception ex) {
             return "Error getting nurses\n";
         }
@@ -155,4 +156,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private HospitalService hospitalService;
 }

@@ -5,6 +5,7 @@ import com.pint.BusinessLogic.Services.BloodDriveService;
 import com.pint.BusinessLogic.Services.HospitalService;
 import com.pint.BusinessLogic.Services.UserService;
 import com.pint.BusinessLogic.Utilities.Utils;
+import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
 import org.springframework.beans.factory.InitializingBean;
@@ -41,16 +42,19 @@ public class StatelessAuthentication {
             BloodDriveService bloodDriveService;
 
             @Override
-            public void afterPropertiesSet() {
-                Hospital hospital = addHospital();
+            public void afterPropertiesSet() throws Exception {
+                // Let's build out a hospital.
+                Hospital hospital = addHospital("FIU Hospital");
                 addEmployee(hospital, "manager", "manager", "Dionny", "Santiago", "555-555-5551", UserRole.MANAGER);
                 Employee coordinator =
                         addEmployee(hospital, "coordinator", "coordinator", "Gregory", "Jean-Baptiste", "555-555-5551", UserRole.COORDINATOR);
-                addEmployee(hospital, "nurse", "nurse", "Anjli", "Chhatwani", "555-555-5551", UserRole.NURSE);
-                addUser("donor", "donor", UserRole.DONOR);
+                Employee nurse = addEmployee(hospital, "nurse", "nurse", "Anjli", "Chhatwani", "555-555-5551", UserRole.NURSE);
+                addEmployee(hospital, "nurse", "nurse", "Xuejiao", "Liu", "555-555-5551", UserRole.NURSE);
+                addEmployee(hospital, "nurse2", "nurse2", "Dweep", "Patel", "555-555-5551", UserRole.NURSE);
+                addEmployee(hospital, "nurse3", "nurse3", "Azizul", "Hakim", "555-555-5551", UserRole.NURSE);
 
                 if (coordinator != null) {
-                    bloodDriveService.createBloodDrive(
+                    BloodDrive drive = bloodDriveService.createBloodDrive(
                             hospital,
                             "FIU Blood Drive", "1234 FIU Way",
                             "We need blood due to the high frequency of accidents in the area.",
@@ -59,6 +63,8 @@ public class StatelessAuthentication {
                             Utils.parseDate("2015-12-02"),
                             Utils.parseDate("2015-12-05"),
                             coordinator);
+
+                    bloodDriveService.assignNurse(drive.getBloodDriveId(), nurse);
 
                     bloodDriveService.createBloodDrive(
                             hospital,
@@ -90,10 +96,18 @@ public class StatelessAuthentication {
                             Utils.parseDate("2015-12-08"),
                             coordinator);
                 }
+
+                // Let's start building out a second hospital.
+                Hospital hospital2 = addHospital("Baptist Hospital");
+                addEmployee(hospital2, "h2nurse1", "h2nurse1", "Sajib", "Talukder", "555-555-5551", UserRole.NURSE);
+                addEmployee(hospital2, "h2nurse2", "h2nurse2", "Peter", "Clarke", "555-555-5551", UserRole.NURSE);
+
+                addDonor("donor", "donor", "USA", "Miami", "FL", 33165);
+                addDonor("donor2", "donor2", "USA", "Homestead", "FL", 33135);
             }
 
-            private Hospital addHospital() {
-                return hospitalService.createHospital("FIU Hospital");
+            private Hospital addHospital(String name) {
+                return hospitalService.createHospital(name);
             }
 
             private Employee addEmployee(Hospital hospital,
@@ -112,13 +126,13 @@ public class StatelessAuthentication {
                         phoneNumber, role, hospital.getId());
             }
 
-            private void addUser(String username, String password, UserRole role) {
+            private void addDonor(String username, String password, String country, String city, String state, int zip) {
 
                 if (userService.getUserByEmail(username) != null) {
                     return;
                 }
 
-                userService.createUser(username, password, role);
+                userService.createDonor(username, password, country, city, state, zip);
             }
         };
     }

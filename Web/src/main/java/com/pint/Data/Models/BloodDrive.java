@@ -1,14 +1,13 @@
 package com.pint.Data.Models;
 
-import java.sql.Date;
-import java.util.HashSet;
-import java.util.Set;
+import com.pint.BusinessLogic.Utilities.Constants;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import com.pint.BusinessLogic.Utilities.Constants;
+import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = Constants.BLOODDRIVE_TABLE_NAME)
@@ -52,23 +51,18 @@ public class BloodDrive {
     @NotNull
     public int zip;
 
-//    @OneToMany(targetEntity = Employee.class)
-//    @JoinColumn(name = "employee_id")
-//    @OneToMany(cascade = CascadeType.ALL, targetEntity = Employee.class, fetch = FetchType.EAGER, mappedBy = "userId", orphanRemoval = true)
-
     @ManyToMany
     @JoinTable
-    (
-            name = "blooddrive_employee",
-            joinColumns = {@JoinColumn(name = "bloodDriveId", referencedColumnName = "bloodDriveId")},
-            inverseJoinColumns = {@JoinColumn(name = "userId", referencedColumnName = "userId")}
-    )
+            (
+                    name = "blooddrive_employee",
+                    joinColumns = {@JoinColumn(name = "bloodDriveId", referencedColumnName = "bloodDriveId")},
+                    inverseJoinColumns = {@JoinColumn(name = "userId", referencedColumnName = "userId")}
+            )
     public Set<Employee> employees;
 
     @OneToOne(targetEntity = Hospital.class)
     @JoinColumn(name = "hospital_id")
     private Hospital hospital;
-
 
     public BloodDrive() {
         employees = new HashSet<Employee>();

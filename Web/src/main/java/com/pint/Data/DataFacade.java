@@ -3,6 +3,7 @@ package com.pint.Data;
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserHelper;
 import com.pint.Data.Models.BloodDrive;
+import com.pint.Data.Models.Donor;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
 import com.pint.Data.Repositories.*;
@@ -35,11 +36,9 @@ public class DataFacade {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public List<Employee> getNurses(long hospitalId) {
-        return userHelper.getAllNurses(hospitalId);
-    }
-    
-    
+    @Autowired
+    private DonorRepository donorRepository;
+
     public void deleteUser(String username) {
         userRepository.delete(userRepository.findByUsername(username));
     }
@@ -90,11 +89,15 @@ public class DataFacade {
         bloodDriveRepository.save(bloodDrive);
     }
 
-	public BloodDrive getBloodDrivesById(long bdId) {
-		
-		return bloodDriveRepository.findOne(bdId);
-		
-	}
-	
-	
+    public BloodDrive getBloodDrivesById(long bdId) {
+        return bloodDriveRepository.findOne(bdId);
+    }
+
+    public void createDonor(Donor donor) {
+        donorRepository.save(donor);
+    }
+
+    public Iterable<Employee> getHospitalEmployees(Long id) {
+        return userHelper.getAllEmployees(id);
+    }
 }

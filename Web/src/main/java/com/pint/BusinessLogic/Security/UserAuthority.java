@@ -10,49 +10,49 @@ import javax.validation.constraints.NotNull;
 @IdClass(UserAuthority.class)
 public class UserAuthority implements GrantedAuthority {
 
-	@NotNull
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnore
-	@Id
-	private User user;
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @Id
+    private User user;
 
-	@NotNull
-	@Id
-	private String authority;
+    @NotNull
+    @Id
+    private String authority;
 
-	public User getUser() {
-		return null;
-	}
+    public User getUser() {
+        return null;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	@Override
-	public String getAuthority() {
-		return authority;
-	}
+    @Override
+    public String getAuthority() {
+        return authority;
+    }
 
-	public void setAuthority(String authority) {
-		this.authority = authority;
-	}
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (!(obj instanceof UserAuthority))
-			return false;
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof UserAuthority))
+            return false;
 
-		UserAuthority ua = (UserAuthority) obj;
-		return ua.getAuthority() == this.getAuthority() || ua.getAuthority().equals(this.getAuthority());
-	}
+        UserAuthority ua = (UserAuthority) obj;
+        return ua.getAuthority() == this.getAuthority() || ua.getAuthority().equals(this.getAuthority());
+    }
 
-	@Override
-	public int hashCode() {
-		return getAuthority() == null ? 0 : getAuthority().hashCode();
-	}
+    @Override
+    public int hashCode() {
+        return getAuthority() == null ? 0 : getAuthority().hashCode();
+    }
 
-	@Override
-	public String toString() {
-		return getClass().getSimpleName() + ": " + getAuthority();
-	}
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + ": " + getAuthority();
+    }
 }

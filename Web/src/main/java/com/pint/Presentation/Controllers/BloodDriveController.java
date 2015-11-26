@@ -1,23 +1,15 @@
 package com.pint.Presentation.Controllers;
 
-import java.util.List;
-
 import com.pint.BusinessLogic.Security.User;
-import com.pint.BusinessLogic.Security.UserAuthentication;
 import com.pint.BusinessLogic.Services.BloodDriveService;
 import com.pint.BusinessLogic.Services.UserService;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class BloodDriveController {
@@ -73,14 +65,14 @@ public class BloodDriveController {
         return bd;
     }
 
-    @RequestMapping("/api/coordinator/getNursesForBloodDrive")
+    @RequestMapping("/api/coordinator/getNursesForBloodDrive/{id}")
     @ResponseBody
-    public Object getNursesForBloodDrive(@PathVariable("bd") BloodDrive bd) {
+    public Object getNursesForBloodDrive(@PathVariable("id") Long bdId) {
         List<Employee> nurses = null;
         try {
             User user = Session.getUser();
             if (user.isEmployee()) {
-                nurses = bloodDriveService.getNursesForBloodDrive(bd, user);
+                nurses = bloodDriveService.getNursesForBloodDrive(bdId, user);
             } else {
                 throw new Exception("Forbidden.");
             }
@@ -91,14 +83,14 @@ public class BloodDriveController {
         return nurses;
     }
 
-    @RequestMapping("/api/coordinator/getUnassignedNursesForBloodDrive")
+    @RequestMapping("/api/coordinator/getUnassignedNursesForBloodDrive/{id}")
     @ResponseBody
-    public Object getUnassignedNurses(@PathVariable("bd") BloodDrive bd) {
+    public Object getUnassignedNurses(@PathVariable("id") Long bdId) {
         List<Employee> nurses = null;
         try {
             User user = Session.getUser();
             if (user.isEmployee()) {
-                nurses = bloodDriveService.getUnassignedNurses(bd, user);
+                nurses = bloodDriveService.getUnassignedNurses(bdId, user);
             } else {
                 throw new Exception("Forbidden.");
             }

@@ -18,69 +18,69 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Order(1)
 public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private UserDetailsService userDetailsService;
+    @Autowired
+    private UserDetailsService userDetailsService;
 
-	@Autowired
-	private TokenAuthenticationService tokenAuthenticationService;
+    @Autowired
+    private TokenAuthenticationService tokenAuthenticationService;
 
-	public StatelessAuthenticationSecurityConfig() {
-		super(true);
-	}
+    public StatelessAuthenticationSecurityConfig() {
+        super(true);
+    }
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-				.exceptionHandling().and()
-				.anonymous().and()
-				.servletApi().and()
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .exceptionHandling().and()
+                .anonymous().and()
+                .servletApi().and()
 
-				.authorizeRequests()
+                .authorizeRequests()
 
-				//allow anonymous resource requests
-				.antMatchers("/").permitAll()
-				.antMatchers("/assets/**").permitAll()
-				.antMatchers("/templates/**").permitAll()
-				.antMatchers("/favicon.ico").permitAll()
-				.antMatchers("/resources/**").permitAll()
+                //allow anonymous resource requests
+                .antMatchers("/").permitAll()
+                .antMatchers("/assets/**").permitAll()
+                .antMatchers("/templates/**").permitAll()
+                .antMatchers("/favicon.ico").permitAll()
+                .antMatchers("/resources/**").permitAll()
 
-				//allow anonymous POSTs to login
-				.antMatchers(HttpMethod.POST, "/api/login").permitAll()
+                //allow anonymous POSTs to login
+                .antMatchers(HttpMethod.POST, "/api/login").permitAll()
 
-				//allow anonymous GETs to API
+                //allow anonymous GETs to API
 //				.antMatchers(HttpMethod.GET, "/api/**").permitAll()
 
-				.antMatchers("/api/manager/**").hasRole("MANAGER")
-				.antMatchers("/api/coordinator/**").hasRole("COORDINATOR")
-				.antMatchers("/api/nurse/**").hasRole("NURSE")
-				.antMatchers("/api/donor/**").hasRole("DONOR")
+                .antMatchers("/api/manager/**").hasRole("MANAGER")
+                .antMatchers("/api/coordinator/**").hasRole("COORDINATOR")
+                .antMatchers("/api/nurse/**").hasRole("NURSE")
+                .antMatchers("/api/donor/**").hasRole("DONOR")
 
-				.antMatchers("/api/users/current").permitAll()
+                .antMatchers("/api/users/current").permitAll()
 
-				//all other request need to be authenticated
-				.anyRequest().hasRole("USER").and()
+                //all other request need to be authenticated
+                .anyRequest().hasRole("USER").and()
 
-				// custom JSON based authentication by POST of {"username":"<name>","password":"<password>"} which sets the token header upon authentication
-				.addFilterBefore(new StatelessLoginFilter("/api/login", tokenAuthenticationService, userDetailsService, authenticationManager()), UsernamePasswordAuthenticationFilter.class)
+                // custom JSON based authentication by POST of {"username":"<name>","password":"<password>"} which sets the token header upon authentication
+                .addFilterBefore(new StatelessLoginFilter("/api/login", tokenAuthenticationService, userDetailsService, authenticationManager()), UsernamePasswordAuthenticationFilter.class)
 
-				// custom Token based authentication based on the header previously given to the client
-				.addFilterBefore(new StatelessAuthenticationFilter(tokenAuthenticationService), UsernamePasswordAuthenticationFilter.class)
-				.headers().cacheControl();
-	}
+                // custom Token based authentication based on the header previously given to the client
+                .addFilterBefore(new StatelessAuthenticationFilter(tokenAuthenticationService), UsernamePasswordAuthenticationFilter.class)
+                .headers().cacheControl();
+    }
 
-	@Bean
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
-	}
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
+    }
 
-	@Override
-	protected UserDetailsService userDetailsService() {
-		return userDetailsService;
-	}
+    @Override
+    protected UserDetailsService userDetailsService() {
+        return userDetailsService;
+    }
 }

@@ -9,7 +9,10 @@ import com.pint.Data.Models.Hospital;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Dionny on 11/24/2015.
@@ -19,6 +22,9 @@ public class BloodDriveService {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private HospitalService hospitalService;
 
     @Autowired
     private DataFacade dataFacade;
@@ -110,8 +116,9 @@ public class BloodDriveService {
     }
 
 
-    public List<Employee> getNursesForBloodDrive(BloodDrive bd, User user) {
+    public List<Employee> getNursesForBloodDrive(Long bdId, User user) {
         List<Employee> output = new ArrayList<>();
+        BloodDrive bd = dataFacade.getBloodDrivesById(bdId);
         if (getCoordinator(bd).getUserId() == user.getId()) {
             Set<Employee> employees = bd.getEmployees();
             for (Employee ee :
@@ -126,8 +133,9 @@ public class BloodDriveService {
         return output;
     }
 
-    public List<Employee> getUnassignedNurses(BloodDrive bd, User user) {
-        List<Employee> allNurses = userService.getNurses(bd.getHospitalId().getId());
+    public List<Employee> getUnassignedNurses(Long bdId, User user) {
+        BloodDrive bd = dataFacade.getBloodDrivesById(bdId);
+        List<Employee> allNurses = hospitalService.getNurses(bd.getHospitalId().getId());
         if (getCoordinator(bd).getUserId() == user.getId()) {
             Set<Employee> employees = bd.getEmployees();
             for (Employee ee :
@@ -140,5 +148,15 @@ public class BloodDriveService {
         }
 
         return allNurses;
+    }
+
+    public void assignNurse(Long bdId, Employee nurse) throws Exception {
+        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        Set<Employee> employees = drive.getEmployees();
+        if (employees.contains(nurse)) {
+            throw new Exception("Cannot assign duplicate nurse.");
+        }
+        drive.getEmployees().add(nurse);
+        dataFacade.createOrUpdateBloodDrive(drive);
     }
 }

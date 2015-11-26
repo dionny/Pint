@@ -1,12 +1,12 @@
 package com.pint.Data.Repositories;
 
-import javax.persistence.EntityManagerFactory;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.jpa.HibernateEntityManagerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManagerFactory;
 
 @org.springframework.stereotype.Repository
 @Transactional
