@@ -47,7 +47,36 @@ app.config(['$routeProvider',
         });
     }]);
 
-app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location) {
+app.factory('Authentication', function() {
+    var data = {
+        firstName: '',
+        lastName: '',
+        role: ''
+    };
+
+    return {
+        getFirstName: function () {
+            return data.firstName;
+        },
+        setFirstName: function (firstName) {
+            data.firstName = firstName;
+        },
+        getLastName: function () {
+            return data.lastName;
+        },
+        setLastName: function (lastName) {
+            data.lastName = lastName;
+        },
+        getRole: function() {
+            return data.role;
+        },
+        setRole: function(role) {
+            data.role = role;
+        }
+    };
+});
+
+app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location, Authentication) {
     $scope.authenticated = false;
     $scope.token;
 
@@ -65,6 +94,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
         switch ($scope.role) {
             case "coordinator":
                 $location.url('/coordinator');
+                Authentication.setRole('coordinator');
                 break;
 
             case "manager":
@@ -80,7 +110,6 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
             if (user.username !== 'anonymousUser') {
                 $scope.token = JSON.parse(atob(TokenStorage.retrieve().split('.')[0]));
                 $scope.user = user;
-                //console.log($scope.user);
                 processLogin();
             }
         });

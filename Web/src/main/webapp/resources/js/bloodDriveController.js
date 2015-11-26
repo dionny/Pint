@@ -3,10 +3,9 @@
  */
 
 angular.module('statelessApp')
-    .controller('BloodDriveCtrl', function ($rootScope, $scope, $resource, $routeParams) {
-
-        var BloodDrive = $resource('/api/coordinator/getBloodDrives');
-        var BD = $resource('/api/coordinator/getBloodDriveById/:bdId', {bdId: '@id'});
+    .controller('BloodDriveCtrl', function ($scope, $resource, $routeParams, Authentication) {
+        var BloodDrive = $resource('/api/' + Authentication.getRole() + '/getBloodDrives');
+        var BD = $resource('/api/' + Authentication.getRole() + '/getBloodDriveById/:bdId', {bdId: '@id'});
 
         $scope.bloodDriveId = $routeParams.bloodDriveId;
 
@@ -16,9 +15,11 @@ angular.module('statelessApp')
             });
         }
 
-        $scope.bloodDrives = BloodDrive.query(function () {
-            //console.log($scope.bloodDrives);
-        });
+        if(Authentication.getRole() && !$scope.bloodDriveId) {
+            $scope.bloodDrives = BloodDrive.query(function () {
+                //console.log($scope.bloodDrives);
+            });
+        }
     });
     
     
