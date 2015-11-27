@@ -12,8 +12,16 @@ angular.module('statelessApp')
             Logger.log('test');
         };
 
-        $scope.toggleObjSelection = function ($event) {
+        $scope.toggleObjSelection = function ($event, nurse) {
+            $scope.rowClick(nurse);
             $event.stopPropagation();
+        };
+
+        $scope.selectedNurses = function () {
+            if (!$scope.nurses) {
+                return 0;
+            }
+            return _.where($scope.nurses, {'selected': true}).length;
         };
 
         $scope.ok = function () {
@@ -42,7 +50,7 @@ angular.module('statelessApp')
 
             if ($scope.bloodDriveId) {
                 Logger.log('bloodDriveCtrl: getting details');
-                BloodDrive.getBloodDrive($scope.bloodDriveId).then(function(data){
+                BloodDrive.getBloodDrive($scope.bloodDriveId).then(function (data) {
                     $scope.bloodDrive = data;
                     Logger.log($scope.bloodDrive);
                     $scope.contentReady = true;
@@ -51,7 +59,7 @@ angular.module('statelessApp')
 
             if (!$scope.bloodDriveId) {
                 Logger.log('bloodDriveCtrl: getting all');
-                BloodDrive.getBloodDrives().then(function(data){
+                BloodDrive.getBloodDrives().then(function (data) {
                     $scope.bloodDrives = data;
                     $scope.contentReady = true;
                 });
@@ -62,18 +70,19 @@ angular.module('statelessApp')
                 nurse.selected = !nurse.selected;
             };
 
-            $scope.toggleObjSelection = function ($event) {
+            $scope.toggleObjSelection = function ($event, nurse) {
+                $scope.rowClick(nurse);
                 $event.stopPropagation();
             };
 
-            $scope.selectedNurses = function() {
-                if(!$scope.bloodDrive) {
+            $scope.selectedNurses = function () {
+                if (!$scope.bloodDrive) {
                     return 0;
                 }
                 return _.where($scope.bloodDrive.assignedNurses, {'selected': true}).length;
             };
 
-            $scope.removeNurses = function() {
+            $scope.removeNurses = function () {
                 var selectedNurses = _.where($scope.bloodDrive.assignedNurses, {'selected': true});
                 var selected = _.pluck(selectedNurses, 'userId');
                 if (!selected || selected.length == 0) {

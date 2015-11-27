@@ -18,6 +18,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.servlet.Filter;
+import java.util.ArrayList;
+import java.util.List;
 
 @EnableAutoConfiguration
 @Configuration
@@ -64,7 +66,10 @@ public class StatelessAuthentication {
                             Utils.parseDate("2015-12-05"),
                             coordinator);
 
-                    bloodDriveService.assignNurse(drive.getBloodDriveId(), nurse);
+                    List<Long> nurses = new ArrayList<>();
+                    nurses.add(nurse.getUserId());
+
+                    bloodDriveService.assignNurses(userService.getUserById(coordinator.getUserId()), drive.getBloodDriveId(), nurses);
 
                     bloodDriveService.createBloodDrive(
                             hospital,

@@ -51,7 +51,7 @@
                                     <input type="checkbox" class="list-child" id="checkbox" ng-model="selectedNurses"
                                            value="{{nurse}}"
                                            ng-checked="nurse.selected"
-                                           ng-click="toggleObjSelection($event)"/>
+                                           ng-click="toggleObjSelection($event, nurse)"/>
                                 </td>
                                 <td>{{ nurse.firstName }}</td>
                                 <td>{{ nurse.lastName }}</td>

@@ -2,6 +2,7 @@ package com.pint.BusinessLogic.Validators;
 
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
+import com.pint.BusinessLogic.Services.BloodDriveService;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
@@ -19,16 +20,18 @@ public class NurseAssignmentValidator extends Validator {
     private List<Long> nurses;
     private List<Employee> validatedNurses;
     private List<Employee> allNurses;
+    private List<BloodDrive> allBds;
 
     public NurseAssignmentValidator(
             User user, BloodDrive bd, Employee coordinator,
             List<Long> nurses,
-            List<Employee> allNurses) {
+            List<Employee> allNurses, List<BloodDrive> allBds) {
         this.user = user;
         this.bd = bd;
         this.coordinator = coordinator;
         this.nurses = nurses;
         this.allNurses = allNurses;
+        this.allBds = allBds;
         this.validatedNurses = new ArrayList<>();
     }
 
@@ -51,7 +54,7 @@ public class NurseAssignmentValidator extends Validator {
                 return false;
             }
 
-            if(!bd.getEmployees().contains(new Employee(nurseId))) {
+            if(!BloodDriveService.bloodDrivesContainEmployee(allBds, new Employee(nurseId))) {
                 validatedNurses.add(allNurses.get(nurseIndex));
             }
         }

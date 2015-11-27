@@ -21,7 +21,7 @@
                     <input type="checkbox" class="list-child" id="checkbox" ng-model="selectedNurses"
                            value="{{nurse}}"
                            ng-checked="nurse.selected"
-                           ng-click="toggleObjSelection($event)"/>
+                           ng-click="toggleObjSelection($event, nurse)"/>
                 </td>
                 <td>{{ nurse.firstName }}</td>
                 <td>{{ nurse.lastName }}</td>
@@ -34,6 +34,6 @@
     </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="ok()">Assign</button>
+    <button class="btn btn-primary" type="button" ng-click="ok()" ng-disabled="selectedNurses() == 0">Assign</button>
     <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
 </div>

@@ -8,7 +8,6 @@ import com.pint.Data.DataFacade;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
-import com.pint.Presentation.Controllers.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -63,6 +62,18 @@ public class BloodDriveService {
 
         // Then add the new coordinator.
         employees.add(coordinator);
+    }
+
+    public List<BloodDrive> getBloodDrivesByHospital(long hospitalId) {
+        List<BloodDrive> output = new ArrayList<>();
+        Iterable<BloodDrive> allBds = dataFacade.getBloodDrives();
+        for (BloodDrive bd :
+                allBds) {
+            if (bd.getHospitalId().getId() == hospitalId) {
+                output.add(bd);
+            }
+        }
+        return output;
     }
 
     public List<BloodDrive> getBloodDrivesByLocation(String city, String state) {
@@ -137,43 +148,46 @@ public class BloodDriveService {
         return output;
     }
 
+    public static boolean bloodDrivesContainEmployee(List<BloodDrive> bloodDrives, Employee employee) {
+        for (BloodDrive drive :
+                bloodDrives) {
+            if (drive.getEmployees().contains(employee)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public List<Employee> getUnassignedNurses(Long bdId, User user) {
         BloodDrive bd = dataFacade.getBloodDrivesById(bdId);
+        List<BloodDrive> allBds = getBloodDrivesByHospital(bd.getHospitalId().getId());
         List<Employee> allNurses = hospitalService.getNurses(bd.getHospitalId().getId());
+        List<Employee> output = new ArrayList<>();
+
         if (getCoordinator(bd).getUserId() == user.getId()) {
-            Set<Employee> employees = bd.getEmployees();
             for (Employee ee :
-                    employees) {
+                    allNurses) {
                 User eeUser = userService.getUserById(ee.getUserId());
-                if (eeUser.hasRole(UserRole.NURSE)) {
-                    allNurses.remove(ee);
+                if (eeUser.hasRole(UserRole.NURSE) && !bloodDrivesContainEmployee(allBds, ee)) {
+                    output.add(ee);
                 }
             }
         }
 
-        return allNurses;
-    }
-
-    public void assignNurse(Long bdId, Employee nurse) throws Exception {
-        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
-        Set<Employee> employees = drive.getEmployees();
-        if (employees.contains(nurse)) {
-            throw new Exception("Cannot assign duplicate nurse.");
-        }
-        drive.getEmployees().add(nurse);
-        dataFacade.createOrUpdateBloodDrive(drive);
+        return output;
     }
 
     public void assignNurses(User user, Long bdId, List<Long> nurses) throws Exception {
         BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        List<BloodDrive> allBds = getBloodDrivesByHospital(drive.getHospitalId().getId());
         List<Employee> allNurses = hospitalService.getNurses(drive.getHospitalId().getId());
         Employee coordinator = getCoordinator(drive);
 
         NurseAssignmentValidator validator = new
                 NurseAssignmentValidator(
-                user, drive, coordinator, nurses, allNurses);
+                user, drive, coordinator, nurses, allNurses, allBds);
 
-        if(!validator.Validate()){
+        if (!validator.Validate()) {
             throw new Exception("Invalid request.");
         }
 
@@ -190,7 +204,7 @@ public class BloodDriveService {
                 NurseUnassignmentValidator(
                 user, coordinator, nurses);
 
-        if(!validator.Validate()){
+        if (!validator.Validate()) {
             throw new Exception("Invalid request.");
         }
 
