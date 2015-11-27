@@ -3,6 +3,7 @@ package com.pint.BusinessLogic.Services;
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
 import com.pint.BusinessLogic.Validators.NurseAssignmentValidator;
+import com.pint.BusinessLogic.Validators.NurseUnassignmentValidator;
 import com.pint.Data.DataFacade;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
@@ -74,6 +75,7 @@ public class BloodDriveService {
         for (BloodDrive bloodDrive :
                 bloodDrives) {
             if (bloodDrive.getHospitalId().getId() == hospital.getId() &&
+                    getCoordinator(bloodDrive) != null &&
                     getCoordinator(bloodDrive).getUserId() == user.getId()) {
                 output.add(bloodDrive);
             }
@@ -177,6 +179,23 @@ public class BloodDriveService {
 
         List<Employee> nursesToAssign = validator.getValidatedObjects();
         drive.getEmployees().addAll(nursesToAssign);
+        dataFacade.createOrUpdateBloodDrive(drive);
+    }
+
+    public void unassignNurses(User user, Long bdId, List<Long> nurses) throws Exception {
+        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        Employee coordinator = getCoordinator(drive);
+
+        NurseUnassignmentValidator validator = new
+                NurseUnassignmentValidator(
+                user, coordinator, nurses);
+
+        if(!validator.Validate()){
+            throw new Exception("Invalid request.");
+        }
+
+        ArrayList<Employee> nursesToUnassign = validator.getValidatedObjects();
+        drive.getEmployees().removeAll(nursesToUnassign);
         dataFacade.createOrUpdateBloodDrive(drive);
     }
 }

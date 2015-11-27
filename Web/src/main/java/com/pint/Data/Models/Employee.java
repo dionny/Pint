@@ -135,4 +135,9 @@ public class Employee implements Comparable {
     public boolean equals(Object other) {
         return userId.equals(((Employee) other).userId);
     }
+
+    @Override
+    public int hashCode() {
+        return userId.hashCode();
+    }
 }

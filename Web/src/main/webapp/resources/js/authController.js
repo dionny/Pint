@@ -78,11 +78,11 @@ app.factory('Authentication', function () {
     };
 });
 
-app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location, Authentication) {
+app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location, Authentication, Logger) {
     $scope.authenticated = false;
     $scope.token;
 
-    console.log('authCtrl: load');
+    Logger.log('authCtrl: load');
 
     function processLogin() {
         $scope.role = $scope.token.roles[0].toLowerCase();
@@ -100,10 +100,10 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
                 Authentication.setRole('coordinator');
 
                 if ($location.absUrl().indexOf('/coordinator/') === -1) {
-                    console.log('authCtrl: changing url to /coordinator');
+                    Logger.log('authCtrl: changing url to /coordinator');
                     $location.url('/coordinator');
                 }
-                console.log('authCtrl: setting role to coordinator');
+                Logger.log('authCtrl: setting role to coordinator');
                 break;
 
             case "manager":
@@ -115,7 +115,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
     };
 
     $scope.init = function () {
-        console.log('authCtrl: init');
+        Logger.log('authCtrl: init');
         $http.get('/api/users/current').success(function (user) {
             if (user.username !== 'anonymousUser') {
                 $scope.token = JSON.parse(atob(TokenStorage.retrieve().split('.')[0]));
@@ -126,7 +126,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
     };
 
     $scope.login = function () {
-        console.log('authCtrl: login');
+        Logger.log('authCtrl: login');
         $http.post('/api/login', {
             username: $scope.username,
             password: $scope.password

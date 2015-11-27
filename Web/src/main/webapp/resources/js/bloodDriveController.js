@@ -3,13 +3,13 @@
  */
 
 angular.module('statelessApp')
-    .controller('NurseAssignmentCtrl', function ($scope, $resource, $routeParams, $uibModalInstance, nurses) {
+    .controller('NurseAssignmentCtrl', function ($scope, $resource, $routeParams, $uibModalInstance, nurses, Logger) {
         $scope.nurses = nurses;
 
         $scope.rowClick = function (nurse) {
-            console.log(nurse);
+            Logger.log(nurse);
             nurse.selected = !nurse.selected;
-            console.log('test');
+            Logger.log('test');
         };
 
         $scope.toggleObjSelection = function ($event) {
@@ -26,33 +26,69 @@ angular.module('statelessApp')
     });
 
 angular.module('statelessApp')
-    .controller('BloodDriveCtrl', function ($scope, $resource, $routeParams, $uibModal, $log,
-                                            BloodDrive, Authentication) {
-        console.log('bloodDriveCtrl: load');
+    .controller('BloodDriveCtrl', function ($scope, $resource, $routeParams, $uibModal,
+                                            BloodDrive, Authentication, Logger) {
+        Logger.log('bloodDriveCtrl: load');
         $scope.load = function () {
+            $scope.contentReady = false;
+
             if (!Authentication.getRole()) {
                 return;
             }
 
-            console.log(Authentication.getRole());
+            Logger.log(Authentication.getRole());
 
             $scope.bloodDriveId = $routeParams.bloodDriveId;
 
             if ($scope.bloodDriveId) {
-                console.log('bloodDriveCtrl: getting details');
-                $scope.bloodDrive = BloodDrive.getBloodDrive($scope.bloodDriveId);
-                $scope.assignedNurses = BloodDrive.getAssignedNurses($scope.bloodDriveId);
-                $scope.unassignedNurses = BloodDrive.getUnassignedNurses($scope.bloodDriveId);
-                console.log('bloodDrive = ', $scope.bloodDrive);
-                console.log('assignedNurses = ', $scope.assignedNurses);
-                console.log('unassignedNurses = ', $scope.unassignedNurses);
+                Logger.log('bloodDriveCtrl: getting details');
+                BloodDrive.getBloodDrive($scope.bloodDriveId).then(function(data){
+                    $scope.bloodDrive = data;
+                    Logger.log($scope.bloodDrive);
+                    $scope.contentReady = true;
+                });
             }
 
             if (!$scope.bloodDriveId) {
-                console.log('bloodDriveCtrl: getting all');
-                $scope.bloodDrives = BloodDrive.getBloodDrives();
-                console.log($scope.bloodDrives);
+                Logger.log('bloodDriveCtrl: getting all');
+                BloodDrive.getBloodDrives().then(function(data){
+                    $scope.bloodDrives = data;
+                    $scope.contentReady = true;
+                });
+                Logger.log($scope.bloodDrives);
             }
+
+            $scope.rowClick = function (nurse) {
+                nurse.selected = !nurse.selected;
+            };
+
+            $scope.toggleObjSelection = function ($event) {
+                $event.stopPropagation();
+            };
+
+            $scope.selectedNurses = function() {
+                if(!$scope.bloodDrive) {
+                    return 0;
+                }
+                return _.where($scope.bloodDrive.assignedNurses, {'selected': true}).length;
+            };
+
+            $scope.removeNurses = function() {
+                var selectedNurses = _.where($scope.bloodDrive.assignedNurses, {'selected': true});
+                var selected = _.pluck(selectedNurses, 'userId');
+                if (!selected || selected.length == 0) {
+                    return;
+                }
+
+                BloodDrive.unassignNurses($scope.bloodDriveId, selected)
+                    .then(function () {
+                            swal("Success!", "Nurses were successfully unassigned.", "success")
+                            $scope.load();
+                        },
+                        function () {
+                            swal("Oops...", "Something went wrong!", "error");
+                        });
+            };
         };
 
         $scope.open = function () {
@@ -63,10 +99,10 @@ angular.module('statelessApp')
                 size: 'lg',
                 resolve: {
                     nurses: function () {
-                        _.forEach($scope.unassignedNurses, function (nurse) {
+                        _.forEach($scope.bloodDrive.unassignedNurses, function (nurse) {
                             nurse.selected = false;
                         });
-                        return $scope.unassignedNurses;
+                        return $scope.bloodDrive.unassignedNurses;
                     }
                 }
             });
@@ -89,7 +125,6 @@ angular.module('statelessApp')
                 //$log.info('Modal dismissed at: ' + new Date());
             });
         };
-
         $scope.$watch(function () {
             return Authentication.getRole();
         }, $scope.load, true);
