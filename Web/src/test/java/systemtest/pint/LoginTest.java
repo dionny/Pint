@@ -3,6 +3,9 @@ package systemtest.pint;
 import org.junit.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import systemtest.pint.PageObjects.PintApplication;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -11,18 +14,16 @@ import java.util.concurrent.TimeUnit;
  * Created by Dionny on 11/28/2015.
  */
 public class LoginTest {
-    static ChromeDriver driver;
+    static PintApplication pint = new PintApplication();
 
     @BeforeClass
     public static void fixtureSetUp() throws Exception {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.navigate().to("http://localhost:8080/");
+        pint.launch();
     }
 
     @AfterClass
     public static void fixtureTearDown() throws Exception {
-        driver.quit();
+        pint.quit();
     }
 
     @Before
@@ -34,6 +35,14 @@ public class LoginTest {
     }
 
     @Test
-    public void testGetCoordinator() throws Exception {
+    public void testLogin() throws Exception {
+        pint.loginPage()
+                .setUserName("coordinator")
+                .setPassword("coordinator")
+                .clickSignIn();
+
+        assertEquals("coordinator",
+                pint.coordinatorDashboard()
+                        .getRoleLabel());
     }
 }

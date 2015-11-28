@@ -22,9 +22,9 @@ import java.util.List;
 @RestController
 public class BloodDriveController {
 
-    @RequestMapping("/api/donor/getBloodDrivesByLocation")
+    @RequestMapping("/api/donor/getBloodDrivesByLocation/{city}/{state}")
     @ResponseBody
-    public Object getBloodDrivesByLocation(@RequestParam(value = "city", defaultValue = "miami") String city, @RequestParam(value = "state", defaultValue = "florida") String state) {
+    public Object getBloodDrivesByLocation(@PathVariable("city") String city, @PathVariable("state") String state) {
         List<BloodDrive> bloodDrives = null;
         try {
             bloodDrives = bloodDriveService.getBloodDrivesByLocation(city, state);
@@ -32,7 +32,7 @@ public class BloodDriveController {
             return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
-        return bloodDrives;
+        return summaryViewStrategy.CreateViewModel(bloodDrives);
     }
 
     @RequestMapping("/api/coordinator/getBloodDrives")

@@ -78,7 +78,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="#/{{role}}" class="logo"><b>{{ role }}</b></a>
+            <a href="#/{{role}}" id="roleLabel" class="logo"><b>{{ role }}</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -93,7 +93,7 @@
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
                     <li>
-                        <button class="btn logout" ng-click="logout()">Logout</button>
+                        <button id="logoutBtn" class="btn logout" ng-click="logout()">Logout</button>
                     </li>
                 </ul>
             </div>
@@ -110,11 +110,11 @@
                 <ul class="sidebar-menu" id="nav-accordion">
 
                     <p class="centered"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></p>
-                    <h5 class="centered">{{ displayName }}</h5>
-                    <h5 class="centered">{{ user.hospitalId.name }}</h5>
+                    <h5 class="centered" id="displayName">{{ displayName }}</h5>
+                    <h5 class="centered" id="hospitalName">{{ user.hospitalId.name }}</h5>
 
                     <li class="mt">
-                        <a class="active" href="#/{{role}}">
+                        <a id="dashboardLink" class="active" href="#/{{role}}">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>

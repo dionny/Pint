@@ -1,5 +1,6 @@
 package com.pint.Data.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pint.BusinessLogic.Utilities.Constants;
 
 import javax.persistence.*;
@@ -26,12 +27,15 @@ public class Employee implements Comparable {
     @Size(min = 1, max = 15)
     private String phoneNumber;
 
+    @JsonIgnore
     @Transient
     private String email;
 
+    @JsonIgnore
     @Transient
     private String role;
 
+    @JsonIgnore
     @Transient
     private String password;
 
