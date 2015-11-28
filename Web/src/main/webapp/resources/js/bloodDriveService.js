@@ -31,6 +31,9 @@ angular.module('statelessApp')
             },
             unassignNurses: function (id, nurses) {
                 return $http.post('/api/' + Authentication.getRole() + '/unassignNurses/' + id, nurses);
-            }
+            },
+            inputDonor: function (id, email) {
+                return $http.post('/api/' + Authentication.getRole() + '/inputDonor/' + id, email);
+            },
         }
     });

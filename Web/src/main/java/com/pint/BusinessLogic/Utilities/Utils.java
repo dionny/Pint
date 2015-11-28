@@ -22,13 +22,16 @@ public class Utils {
     public static List<Long> toLongs(List<Integer> ints) {
         int nInts = ints.size();
         List<Long> longs = new ArrayList<Long>(nInts);
-        for (int i=0;i<nInts;++i) {
+        for (int i = 0; i < nInts; ++i) {
             longs.add(ints.get(i).longValue());
         }
         return longs;
     }
 
     public static String toTitleCase(String input) {
+        if (input == null) {
+            return "";
+        }
         StringBuilder titleCase = new StringBuilder();
         boolean nextTitleCase = true;
 
@@ -55,7 +58,7 @@ public class Utils {
     }
 
     public static UserRole mapRole(String role) {
-        switch (role.toLowerCase()){
+        switch (role.toLowerCase()) {
             case "manager":
                 return UserRole.MANAGER;
 

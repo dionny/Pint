@@ -41,7 +41,15 @@ app.config(['$routeProvider',
             controller: 'BloodDriveCtrl'
         }).
         when('/coordinator/:bloodDriveId', {
-            templateUrl: 'templates/bdDetailPage.html',
+            templateUrl: 'templates/bdDetailPageCoordinator.html',
+            controller: 'BloodDriveCtrl'
+        }).
+        when('/nurse', {
+            templateUrl: 'templates/bdSummaryPage.html',
+            controller: 'BloodDriveCtrl'
+        }).
+        when('/nurse/:bloodDriveId', {
+            templateUrl: 'templates/bdDetailPageNurse.html',
             controller: 'BloodDriveCtrl'
         }).
         when('/manager', {
@@ -99,29 +107,12 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
         $scope.authenticated = true;
         $scope.displayName = $scope.user.firstName + " " + $scope.user.lastName;
 
-        switch ($scope.role) {
-            case "coordinator":
-                Logger.log('authCtrl: setting role to coordinator');
-                Authentication.setRole('coordinator');
+        Logger.log('authCtrl: setting role to ' + $scope.role);
+        Authentication.setRole($scope.role);
 
-                if ($location.absUrl().indexOf('/coordinator/') === -1) {
-                    Logger.log('authCtrl: changing url to /coordinator');
-                    $location.url('/coordinator');
-                }
-                break;
-
-            case "manager":
-                Logger.log('authCtrl: setting role to manager');
-                Authentication.setRole('manager');
-
-                if ($location.absUrl().indexOf('/manager/') === -1) {
-                    Logger.log('authCtrl: changing url to /manager');
-                    $location.url('/manager');
-                }
-                break;
-
-            case "nurse":
-                break;
+        if ($location.absUrl().indexOf('/' + $scope.role + '/') === -1) {
+            Logger.log('authCtrl: changing url to /' + $scope.role);
+            $location.url('/' + $scope.role);
         }
     };
 

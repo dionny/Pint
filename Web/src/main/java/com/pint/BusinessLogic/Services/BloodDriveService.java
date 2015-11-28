@@ -2,8 +2,7 @@ package com.pint.BusinessLogic.Services;
 
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
-import com.pint.BusinessLogic.Validators.NurseAssignmentValidator;
-import com.pint.BusinessLogic.Validators.NurseUnassignmentValidator;
+import com.pint.BusinessLogic.Validators.*;
 import com.pint.Data.DataFacade;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
@@ -122,7 +121,7 @@ public class BloodDriveService {
         return bloodDrive;
     }
 
-    public BloodDrive getBloodDrive(long bdId, User user) {
+    public BloodDrive getBloodDriveByCoordinator(long bdId, User user) {
         BloodDrive bd = dataFacade.getBloodDrivesById(bdId);
         if (getCoordinator(bd).getUserId() == user.getId()) {
             return bd;
@@ -211,5 +210,42 @@ public class BloodDriveService {
         ArrayList<Employee> nursesToUnassign = validator.getValidatedObjects();
         drive.getEmployees().removeAll(nursesToUnassign);
         dataFacade.createOrUpdateBloodDrive(drive);
+    }
+
+    public List<BloodDrive> getBloodDrivesForNurse(Hospital hospital, User user) {
+        List<BloodDrive> output = new ArrayList<>();
+        Iterable<BloodDrive> bloodDrives = dataFacade.getBloodDrives();
+        for (BloodDrive bloodDrive :
+                bloodDrives) {
+            if (bloodDrive.getHospitalId().getId() == hospital.getId()) {
+                Set<Employee> employees = bloodDrive.getEmployees();
+                if (employees.contains(new Employee(user.getId()))) {
+                    output.add(bloodDrive);
+                }
+            }
+        }
+
+        return output;
+    }
+
+    public BloodDrive getBloodDriveByNurse(long bdId, User user) {
+        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        Set<Employee> employees = drive.getEmployees();
+        if (employees.contains(new Employee(user.getId()))) {
+            return drive;
+        }
+
+        return null;
+    }
+
+    public void inputDonor(User user, Long bdId, String email) throws ValidationException {
+        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        Validator validator = new InputDonorValidator(user, userService, email, drive);
+        if (validator.Validate()) {
+            drive.numberOfDonors++;
+            dataFacade.createOrUpdateBloodDrive(drive);
+        } else {
+            throw new ValidationException(validator.getError());
+        }
     }
 }

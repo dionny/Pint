@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                 <tr ng-repeat="drive in bloodDrives">
-                    <td><a href="#/coordinator/{{drive.bloodDriveId}}">{{ drive.title }}</a></td>
+                    <td><a href="#/{{role}}/{{drive.bloodDriveId}}">{{ drive.title }}</a></td>
                     <td class="hidden-phone">{{ drive.address }}</td>
                     <td>{{ drive.description }}</td>
                     <td>{{ drive.startTime }}</td>

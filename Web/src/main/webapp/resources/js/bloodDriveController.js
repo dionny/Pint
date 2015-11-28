@@ -33,6 +33,30 @@ angular.module('statelessApp')
     });
 
 angular.module('statelessApp')
+    .controller('InputDonorCtrl', function ($scope, $resource, $routeParams, $uibModalInstance, bloodDriveId,
+                                            BloodDrive, Logger) {
+        $scope.bloodDriveId = bloodDriveId;
+
+        $scope.ok = function () {
+            BloodDrive.inputDonor($scope.bloodDriveId, $scope.email)
+                .then(function () {
+                        $uibModalInstance.close(true);
+                    },
+                    function (error) {
+                        if (!error.data) {
+                            swal("Oops...", "Something went wrong!", "error");
+                        } else {
+                            $scope.error = error.data;
+                        }
+                    });
+        };
+
+        $scope.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+    });
+
+angular.module('statelessApp')
     .controller('BloodDriveCtrl', function ($scope, $resource, $routeParams, $uibModal,
                                             BloodDrive, Authentication, Logger) {
         Logger.log('bloodDriveCtrl: load');
@@ -45,6 +69,7 @@ angular.module('statelessApp')
 
             Logger.log(Authentication.getRole());
 
+            $scope.role = Authentication.getRole();
             $scope.bloodDriveId = $routeParams.bloodDriveId;
 
             if ($scope.bloodDriveId) {
@@ -100,38 +125,60 @@ angular.module('statelessApp')
         };
 
         $scope.open = function () {
-            var modalInstance = $uibModal.open({
-                animation: true,
-                templateUrl: 'templates/nurseAssignModal.html',
-                controller: 'NurseAssignmentCtrl',
-                size: 'lg',
-                resolve: {
-                    nurses: function () {
-                        _.forEach($scope.bloodDrive.unassignedNurses, function (nurse) {
-                            nurse.selected = false;
-                        });
-                        return $scope.bloodDrive.unassignedNurses;
+            if ($scope.role == 'coordinator') {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'templates/nurseAssignModal.html',
+                    controller: 'NurseAssignmentCtrl',
+                    size: 'lg',
+                    resolve: {
+                        nurses: function () {
+                            _.forEach($scope.bloodDrive.unassignedNurses, function (nurse) {
+                                nurse.selected = false;
+                            });
+                            return $scope.bloodDrive.unassignedNurses;
+                        }
                     }
-                }
-            });
+                });
 
-            modalInstance.result.then(function (selectedNurses) {
-                var selected = _.pluck(selectedNurses, 'userId');
-                if (!selected || selected.length == 0) {
-                    return;
-                }
-                BloodDrive.assignNurses($scope.bloodDriveId, selected)
-                    .then(function () {
-                            swal("Success!", "Nurses were successfully assigned.", "success")
-                            $scope.load();
-                        },
-                        function () {
-                            swal("Oops...", "Something went wrong!", "error");
-                        });
+                modalInstance.result.then(function (selectedNurses) {
+                    var selected = _.pluck(selectedNurses, 'userId');
+                    if (!selected || selected.length == 0) {
+                        return;
+                    }
+                    BloodDrive.assignNurses($scope.bloodDriveId, selected)
+                        .then(function () {
+                                swal("Success!", "Nurses were successfully assigned.", "success")
+                                $scope.load();
+                            },
+                            function () {
+                                swal("Oops...", "Something went wrong!", "error");
+                            });
 
-            }, function () {
-                //$log.info('Modal dismissed at: ' + new Date());
-            });
+                }, function () {
+                    //$log.info('Modal dismissed at: ' + new Date());
+                });
+            } else if ($scope.role == 'nurse') {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'templates/inputDonorModal.html',
+                    controller: 'InputDonorCtrl',
+                    resolve: {
+                        bloodDriveId: function () {
+                            return $scope.bloodDriveId;
+                        }
+                    }
+                });
+
+                modalInstance.result.then(function (result) {
+                    if (result) {
+                        swal("Success!", "The donor was successfully recorded.", "success")
+                        $scope.load();
+                    }
+                }, function () {
+                    //$log.info('Modal dismissed at: ' + new Date());
+                });
+            }
         };
         $scope.$watch(function () {
             return Authentication.getRole();
