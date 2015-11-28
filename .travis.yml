@@ -6,6 +6,7 @@ before_install:
 - chmod +x gradlew
 
 after_success:
+- echo $RSA > awskey.pem
 - chmod 0400 awskey.pem
 - ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "sudo pkill
   -f java"
