@@ -7,7 +7,7 @@ before_install:
  - cd Web
  - chmod +x gradlew
  
-deploy:
+after_success:
  - ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "sudo pkill -f java"
  - ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "mysql -u root -proot -e 'DROP DATABASE IF EXISTS pintdb; CREATE DATABASE pintdb;'"
  - ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "cd ~/pint && sudo ./gradlew build"
