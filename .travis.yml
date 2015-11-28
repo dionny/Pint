@@ -13,11 +13,10 @@ after_success:
 - ssh -q -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "sudo pkill
   -f java"
 - ssh -q -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "sudo rm -rf ~/pint"
-- ssh -q -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "sudo mkdir ~/pint"
 - rm -rf build
 - scp -q -oStrictHostKeyChecking=no -i awskey.pem -r . $user@$instance:~/pint
 - ssh -q -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "mysql -u
-  root -proot -e 'DROP DATABASE IF EXISTS pintdb; CREATE DATABASE pintdb;'"
+  $mysqluser -p$mysqlpass -e 'DROP DATABASE IF EXISTS pintdb; CREATE DATABASE pintdb;'"
 - ssh -q -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "cd ~/pint
   && sudo ./gradlew build"
 - ssh -q -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -f "cd ~/pint
