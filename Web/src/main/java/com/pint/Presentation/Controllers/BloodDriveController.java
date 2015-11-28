@@ -40,7 +40,7 @@ public class BloodDriveController {
         List<BloodDrive> bloodDrives = null;
         try {
             User user = Session.getUser();
-            if (user.isEmployee()) {
+            if (user.isCoordinator()) {
                 Hospital hospital = userService.getEmployeeByUserId(user.getId()).getHospitalId();
                 bloodDrives = bloodDriveService.getBloodDrivesForCoordinator(hospital, user);
             } else {
@@ -61,7 +61,7 @@ public class BloodDriveController {
         List<Employee> unassignedNurses;
         try {
             User user = Session.getUser();
-            if (user.isEmployee()) {
+            if (user.isCoordinator()) {
                 bd = bloodDriveService.getBloodDrive(bdId, user);
                 assignedNurses = bloodDriveService.getNursesForBloodDrive(bdId, user);
                 unassignedNurses = bloodDriveService.getUnassignedNurses(bdId, user);
@@ -80,7 +80,7 @@ public class BloodDriveController {
     public Object assignNurses(@PathVariable("bdId") Long bdId, @RequestBody ArrayList<Integer> nurses) {
         try {
             User user = Session.getUser();
-            if (user.isEmployee()) {
+            if (user.isCoordinator()) {
                 bloodDriveService.assignNurses(user, bdId,
                         Utils.toLongs(nurses));
             } else {
@@ -98,7 +98,7 @@ public class BloodDriveController {
     public Object unassignNurses(@PathVariable("bdId") Long bdId, @RequestBody ArrayList<Integer> nurses) {
         try {
             User user = Session.getUser();
-            if (user.isEmployee()) {
+            if (user.isCoordinator()) {
                 bloodDriveService.unassignNurses(user, bdId,
                         Utils.toLongs(nurses));
             } else {

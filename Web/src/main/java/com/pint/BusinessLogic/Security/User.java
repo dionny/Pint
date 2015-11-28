@@ -163,6 +163,21 @@ public class User implements UserDetails {
     }
 
     @JsonIgnore
+    public boolean isCoordinator() {
+        return hasRole(UserRole.COORDINATOR);
+    }
+
+    @JsonIgnore
+    public boolean isManager() {
+        return hasRole(UserRole.MANAGER);
+    }
+
+    @JsonIgnore
+    public boolean isNurse() {
+        return hasRole(UserRole.NURSE);
+    }
+
+    @JsonIgnore
     public boolean isDonor() {
         return hasRole(UserRole.DONOR);
     }

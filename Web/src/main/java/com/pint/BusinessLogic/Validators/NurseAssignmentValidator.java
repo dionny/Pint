@@ -51,6 +51,7 @@ public class NurseAssignmentValidator extends Validator {
                 nurses) {
             int nurseIndex = allNurses.indexOf(new Employee(nurseId));
             if(nurseIndex == -1) {
+                error = "Nurse not found in system.";
                 return false;
             }
 

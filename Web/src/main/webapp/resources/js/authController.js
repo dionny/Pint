@@ -44,6 +44,10 @@ app.config(['$routeProvider',
             templateUrl: 'templates/bdDetailPage.html',
             controller: 'BloodDriveCtrl'
         }).
+        when('/manager', {
+            templateUrl: 'templates/employees.html',
+            controller: 'EmployeeCtrl'
+        }).
         otherwise({
             redirectTo: '/'
         });
@@ -97,16 +101,23 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
 
         switch ($scope.role) {
             case "coordinator":
+                Logger.log('authCtrl: setting role to coordinator');
                 Authentication.setRole('coordinator');
 
                 if ($location.absUrl().indexOf('/coordinator/') === -1) {
                     Logger.log('authCtrl: changing url to /coordinator');
                     $location.url('/coordinator');
                 }
-                Logger.log('authCtrl: setting role to coordinator');
                 break;
 
             case "manager":
+                Logger.log('authCtrl: setting role to manager');
+                Authentication.setRole('manager');
+
+                if ($location.absUrl().indexOf('/manager/') === -1) {
+                    Logger.log('authCtrl: changing url to /manager');
+                    $location.url('/manager');
+                }
                 break;
 
             case "nurse":

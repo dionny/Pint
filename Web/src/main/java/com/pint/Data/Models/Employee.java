@@ -29,6 +29,12 @@ public class Employee implements Comparable {
     @Transient
     private String email;
 
+    @Transient
+    private String role;
+
+    @Transient
+    private String password;
+
     @OneToOne(targetEntity = Hospital.class)
     @JoinColumn(name = "hospital_id")
     private Hospital hospital;
@@ -97,6 +103,22 @@ public class Employee implements Comparable {
         this.hospital = hospital;
     }
 
+
+    /**
+     * Getter of password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Setter of password
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
     /**
      * Getter of phoneNumber
      */
@@ -116,6 +138,20 @@ public class Employee implements Comparable {
      */
     public String getEmail() {
         return email;
+    }
+
+    /**
+     * Setter of role
+     */
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    /**
+     * Getter of role
+     */
+    public String getRole() {
+        return role;
     }
 
     /**

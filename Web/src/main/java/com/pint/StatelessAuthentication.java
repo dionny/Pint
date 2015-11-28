@@ -121,7 +121,7 @@ public class StatelessAuthentication {
                                          String firstName,
                                          String lastName,
                                          String phoneNumber,
-                                         UserRole role) {
+                                         UserRole role) throws Exception {
 
                 if (userService.getUserByEmail(username) != null) {
                     return null;

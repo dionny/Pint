@@ -12,6 +12,15 @@ Premium: http://www.gridgum.com
     text-align: center;
 }
 
+.form-group label {
+    font-weight: 700;
+}
+
+.error {
+    color: red;
+    font-weight: 700;
+}
+
 @media screen and (min-width: 768px) {
     .modal:before {
         display: inline-block;
@@ -31,6 +40,7 @@ Premium: http://www.gridgum.com
     text-align: left;
     vertical-align: middle;
     margin-top: -100px;
+    margin-left: 125px;
 }
 
 /* BASIC THEME CONFIGURATION */

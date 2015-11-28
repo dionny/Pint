@@ -9,7 +9,6 @@ angular.module('statelessApp')
         $scope.rowClick = function (nurse) {
             Logger.log(nurse);
             nurse.selected = !nurse.selected;
-            Logger.log('test');
         };
 
         $scope.toggleObjSelection = function ($event, nurse) {

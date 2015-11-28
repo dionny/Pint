@@ -2,6 +2,8 @@ package com.pint.BusinessLogic.Services;
 
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
+import com.pint.BusinessLogic.Validators.CreateEmployeeValidator;
+import com.pint.BusinessLogic.Validators.Validator;
 import com.pint.Data.DataFacade;
 import com.pint.Data.Models.Donor;
 import com.pint.Data.Models.Employee;
@@ -25,20 +27,26 @@ public class UserService {
                                    String lastName,
                                    String phoneNo,
                                    UserRole role,
-                                   Long hospitalId) {
+                                   Long hospitalId) throws Exception {
 
         User user = new User();
         user.setUsername(email);
-        user.setPassword(new BCryptPasswordEncoder().encode(password));
-        user.grantRole(role);
-
-        dataFacade.createOrUpdateUser(user);
 
         Hospital hospital = dataFacade.getHospitalById(hospitalId);
-
         Employee employee = new Employee(firstName, lastName, phoneNo, hospital);
-        employee.setUserId(user.getId());
+        employee.setPassword(password);
 
+        Iterable<User> users = getAllUsers();
+
+        Validator validator = new CreateEmployeeValidator(users, user, employee);
+        if (!validator.Validate()) {
+            throw new Exception(validator.getError());
+        }
+
+        user.setPassword(new BCryptPasswordEncoder().encode(password));
+        user.grantRole(role);
+        dataFacade.createOrUpdateUser(user);
+        employee.setUserId(user.getId());
         dataFacade.createEmployee(employee);
 
         return employee;

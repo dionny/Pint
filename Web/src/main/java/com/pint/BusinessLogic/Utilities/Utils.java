@@ -1,5 +1,7 @@
 package com.pint.BusinessLogic.Utilities;
 
+import com.pint.BusinessLogic.Security.UserRole;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,11 +28,44 @@ public class Utils {
         return longs;
     }
 
+    public static String toTitleCase(String input) {
+        StringBuilder titleCase = new StringBuilder();
+        boolean nextTitleCase = true;
+
+        for (char c : input.toLowerCase().toCharArray()) {
+            if (Character.isSpaceChar(c)) {
+                nextTitleCase = true;
+            } else if (nextTitleCase) {
+                c = Character.toTitleCase(c);
+                nextTitleCase = false;
+            }
+
+            titleCase.append(c);
+        }
+
+        return titleCase.toString();
+    }
+
     public static Date parseDate(String date) {
         try {
             return new SimpleDateFormat("yyyy-mm-dd").parse(date);
         } catch (ParseException e) {
             return null;
         }
+    }
+
+    public static UserRole mapRole(String role) {
+        switch (role.toLowerCase()){
+            case "manager":
+                return UserRole.MANAGER;
+
+            case "coordinator":
+                return UserRole.COORDINATOR;
+
+            case "nurse":
+                return UserRole.NURSE;
+        }
+
+        return null;
     }
 }
