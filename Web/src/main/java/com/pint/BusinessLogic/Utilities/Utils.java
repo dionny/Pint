@@ -15,7 +15,9 @@ import java.util.List;
 public class Utils {
     public static <T> Collection<T> iterableToCollection(Iterable<T> iterable) {
         Collection<T> collection = new ArrayList<>();
-        iterable.forEach(collection::add);
+        for (T obj : iterable) {
+            collection.add(obj);
+        }
         return collection;
     }
 
