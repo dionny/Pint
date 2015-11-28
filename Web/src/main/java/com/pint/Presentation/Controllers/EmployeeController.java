@@ -5,6 +5,7 @@ import com.pint.BusinessLogic.Security.UserHelper;
 import com.pint.BusinessLogic.Services.EmployeeService;
 import com.pint.BusinessLogic.Services.UserService;
 import com.pint.BusinessLogic.Utilities.Utils;
+import com.pint.BusinessLogic.Validators.ValidationException;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
 import com.pint.Presentation.ViewStrategies.EmployeeSummaryViewStrategy;
@@ -68,9 +69,12 @@ public class EmployeeController {
             } else {
                 return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
             }
-        } catch (Exception ex) {
+        } catch (ValidationException ex) {
             return new ResponseEntity<String>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+        } catch (Exception ex) {
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
+
 
         return new ResponseEntity<String>(HttpStatus.OK);
     }

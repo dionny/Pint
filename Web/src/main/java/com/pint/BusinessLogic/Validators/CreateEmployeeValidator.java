@@ -1,6 +1,7 @@
 package com.pint.BusinessLogic.Validators;
 
 import com.pint.BusinessLogic.Security.User;
+import com.pint.BusinessLogic.Security.UserRole;
 import com.pint.Data.Models.Employee;
 import com.pint.Presentation.Controllers.Session;
 
@@ -11,18 +12,44 @@ public class CreateEmployeeValidator extends Validator {
     private final Iterable<User> users;
     private final User user;
     private final Employee employee;
+    private UserRole role;
 
-    public CreateEmployeeValidator(Iterable<User> users, User user, Employee employee) {
+    public CreateEmployeeValidator(Iterable<User> users, User user, Employee employee, UserRole role) {
         this.users = users;
         this.user = user;
         this.employee = employee;
+        this.role = role;
     }
 
     @Override
     protected boolean validObject() {
-        // The password must be at least length 5.
-        if (employee.getPassword().length() < 5) {
-            error = "The password must have at least 5 characters.";
+        if (user.getUsername().length() < 4 || user.getUsername().length() > 30) {
+            error = "The username must be between 4-30 characters long.";
+            return false;
+        }
+
+        if (employee.getPassword().length() < 4 || employee.getPassword().length() > 100) {
+            error = "The password must be between 4-100 characters long.";
+            return false;
+        }
+
+        if (employee.getFirstName().length() < 1 || employee.getFirstName().length() > 50) {
+            error = "The first name must be between 1-50 characters long.";
+            return false;
+        }
+
+        if (employee.getLastName().length() < 1 || employee.getLastName().length() > 50) {
+            error = "The last name must be between 1-50 characters long.";
+            return false;
+        }
+
+        if (employee.getPhoneNumber().length() < 1 || employee.getPhoneNumber().length() > 50) {
+            error = "The phone number must be between 1-15 characters long.";
+            return false;
+        }
+
+        if(role == null){
+            error = "Invalid role.";
             return false;
         }
 

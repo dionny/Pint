@@ -5,6 +5,7 @@
     <div class="modal-body">
         <div class="form-horizontal">
             <label id="error" ng-show="error" class="error">{{ error }} </label>
+
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="username">Username</label>
 
@@ -64,7 +65,9 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-primary" type="submit" ng-click="employeeForm.$valid && ok()" ng-disabled="!employeeForm.$valid">Add</button>
+        <button class="btn btn-primary" type="submit" ng-click="employeeForm.$valid && ok()"
+                ng-disabled="!employeeForm.$valid">Add
+        </button>
         <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
     </div>
 </form>

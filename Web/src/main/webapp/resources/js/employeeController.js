@@ -27,7 +27,11 @@ angular.module('statelessApp')
                         $uibModalInstance.close(true);
                     },
                     function (error) {
-                        $scope.error = error.data;
+                        if(!error.data){
+                            swal("Oops...", "Something went wrong!", "error");
+                        } else {
+                            $scope.error = error.data;
+                        }
                     });
         };
 

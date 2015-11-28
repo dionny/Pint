@@ -3,6 +3,7 @@ package com.pint.BusinessLogic.Services;
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
 import com.pint.BusinessLogic.Validators.CreateEmployeeValidator;
+import com.pint.BusinessLogic.Validators.ValidationException;
 import com.pint.BusinessLogic.Validators.Validator;
 import com.pint.Data.DataFacade;
 import com.pint.Data.Models.Donor;
@@ -38,9 +39,9 @@ public class UserService {
 
         Iterable<User> users = getAllUsers();
 
-        Validator validator = new CreateEmployeeValidator(users, user, employee);
+        Validator validator = new CreateEmployeeValidator(users, user, employee, role);
         if (!validator.Validate()) {
-            throw new Exception(validator.getError());
+            throw new ValidationException(validator.getError());
         }
 
         user.setPassword(new BCryptPasswordEncoder().encode(password));
