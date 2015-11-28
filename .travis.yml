@@ -3,17 +3,17 @@ jdk:
 - oraclejdk8
 before_install:
 - cd Web
+- openssl aes-256-cbc -K $encrypted_2a738054bc80_key -iv $encrypted_2a738054bc80_iv
+  -in awskey.pem.enc -out awskey.pem -d
 - chmod +x gradlew
-- openssl aes-256-cbc -K $encrypted_0a07912baa09_key -iv $encrypted_0a07912baa09_iv -in awskey.pem.enc -out awskey.pem -d
 
 after_success:
 - chmod 0400 awskey.pem
-- ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "sudo pkill
+- ssh -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "sudo pkill
   -f java"
-- ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "mysql -u
+- ssh -oStrictHostKeyChecking=no -i awskey.pem $user@instance -t "mysql -u
   root -proot -e 'DROP DATABASE IF EXISTS pintdb; CREATE DATABASE pintdb;'"
-- ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "cd ~/pint
+- ssh -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "cd ~/pint
   && sudo ./gradlew build"
-- ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -f "cd ~/pint
+- ssh -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -f "cd ~/pint
   && sudo ./startapp"
-
