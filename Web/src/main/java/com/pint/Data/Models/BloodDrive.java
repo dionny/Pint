@@ -103,6 +103,10 @@ public class BloodDrive {
         return employees;
     }
 
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
+    }
+
     /**
      * Setter of title
      */

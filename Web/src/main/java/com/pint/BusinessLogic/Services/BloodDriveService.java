@@ -30,6 +30,14 @@ public class BloodDriveService {
     @Autowired
     private DataFacade dataFacade;
 
+    public BloodDriveService(){
+    }
+
+    public BloodDriveService(UserService userService, HospitalService hospitalService) {
+        this.userService = userService;
+        this.hospitalService = hospitalService;
+    }
+
     public Employee getCoordinator(BloodDrive bd) {
         Set<Employee> employees = bd.getEmployees();
         for (Employee ee :
