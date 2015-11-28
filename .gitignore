@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/gradle,java,eclipse,android
 
+*/awskey.pem
+
 ### IDEA ###
 */.idea/workspace.xml
 
