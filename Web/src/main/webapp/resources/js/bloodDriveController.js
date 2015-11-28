@@ -130,7 +130,7 @@ angular.module('statelessApp')
                     animation: true,
                     templateUrl: 'templates/nurseAssignModal.html',
                     controller: 'NurseAssignmentCtrl',
-                    size: 'lg',
+                    size: $scope.bloodDrive.unassignedNurses.length === 0 ? '' : 'lg',
                     resolve: {
                         nurses: function () {
                             _.forEach($scope.bloodDrive.unassignedNurses, function (nurse) {

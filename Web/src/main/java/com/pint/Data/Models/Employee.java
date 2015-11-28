@@ -27,15 +27,12 @@ public class Employee implements Comparable {
     @Size(min = 1, max = 15)
     private String phoneNumber;
 
-    @JsonIgnore
     @Transient
     private String email;
 
-    @JsonIgnore
     @Transient
     private String role;
 
-    @JsonIgnore
     @Transient
     private String password;
 
