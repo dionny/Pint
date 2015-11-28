@@ -1,14 +1,18 @@
 language: java
-
 jdk:
-  - oraclejdk8
-  
+- oraclejdk8
 before_install:
- - cd Web
- - chmod +x gradlew
- 
+- cd Web
+- chmod +x gradlew
+
 after_success:
- - ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "sudo pkill -f java"
- - ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "mysql -u root -proot -e 'DROP DATABASE IF EXISTS pintdb; CREATE DATABASE pintdb;'"
- - ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "cd ~/pint && sudo ./gradlew build"
- - ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -f "cd ~/pint && sudo ./startapp"
+- chmod 0400 awskey.pem
+- ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "sudo pkill
+  -f java"
+- ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "mysql -u
+  root -proot -e 'DROP DATABASE IF EXISTS pintdb; CREATE DATABASE pintdb;'"
+- ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -t "cd ~/pint
+  && sudo ./gradlew build"
+- ssh -oStrictHostKeyChecking=no -i awskey.pem ec2-user@52.70.113.152 -f "cd ~/pint
+  && sudo ./startapp"
+
