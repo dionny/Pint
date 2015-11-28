@@ -43,6 +43,12 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
                 .antMatchers("/templates/**").permitAll()
                 .antMatchers("/favicon.ico").permitAll()
                 .antMatchers("/resources/**").permitAll()
+                .antMatchers("/swagger-ui.html").permitAll()
+                .antMatchers("/webjars/**").permitAll()
+                .antMatchers("/configuration/ui").permitAll()
+                .antMatchers("/swagger-resources/**").permitAll()
+                .antMatchers("/configuration/security").permitAll()
+                .antMatchers("/v2/api-docs").permitAll()
 
                 //allow anonymous POSTs to login
                 .antMatchers(HttpMethod.POST, "/api/login").permitAll()
