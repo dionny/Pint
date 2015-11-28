@@ -1,14 +1,15 @@
 package com.pint;
 
 import com.fasterxml.classmate.TypeResolver;
+import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
 import com.pint.BusinessLogic.Services.BloodDriveService;
 import com.pint.BusinessLogic.Services.HospitalService;
+import com.pint.BusinessLogic.Services.NotificationService;
 import com.pint.BusinessLogic.Services.UserService;
 import com.pint.BusinessLogic.Utilities.Utils;
-import com.pint.Data.Models.BloodDrive;
-import com.pint.Data.Models.Employee;
-import com.pint.Data.Models.Hospital;
+import com.pint.Data.Models.*;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -30,6 +31,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.servlet.Filter;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +78,9 @@ public class StatelessAuthentication {
             @Autowired
             BloodDriveService bloodDriveService;
 
+            @Autowired
+            NotificationService notificationService;
+
             @Override
             public void afterPropertiesSet() throws Exception {
                 // Let's build out a hospital.
@@ -95,8 +100,8 @@ public class StatelessAuthentication {
                             "We need blood due to the high frequency of accidents in the area.",
                             "Miami",
                             "FL",
-                            Utils.parseDate("2015-12-02"),
-                            Utils.parseDate("2015-12-05"),
+                            Utils.sqlDate(DateTime.now().minusDays(10)),
+                            Utils.sqlDate(DateTime.now().plusDays(10)),
                             coordinator);
 
                     List<Long> nurses = new ArrayList<>();
@@ -104,14 +109,14 @@ public class StatelessAuthentication {
 
                     bloodDriveService.assignNurses(userService.getUserById(coordinator.getUserId()), drive.getBloodDriveId(), nurses);
 
-                    bloodDriveService.createBloodDrive(
+                    BloodDrive drive2 = bloodDriveService.createBloodDrive(
                             hospital,
                             "FIU-MMC Blood Drive", "1234 Maidique Way",
                             "We're all about the pizza.",
                             "Miami",
                             "FL",
-                            Utils.parseDate("2015-12-05"),
-                            Utils.parseDate("2015-12-08"),
+                            Utils.sqlDate(DateTime.now().minusDays(5)),
+                            Utils.sqlDate(DateTime.now().plusDays(15)),
                             coordinator);
 
                     bloodDriveService.createBloodDrive(
@@ -120,8 +125,8 @@ public class StatelessAuthentication {
                             "We need blood due to the high frequency of accidents in the area.",
                             "Miami",
                             "FL",
-                            Utils.parseDate("2015-12-02"),
-                            Utils.parseDate("2015-12-05"),
+                            Utils.sqlDate(DateTime.now().plusDays(7)),
+                            Utils.sqlDate(DateTime.now().plusDays(25)),
                             coordinator);
 
                     bloodDriveService.createBloodDrive(
@@ -130,18 +135,81 @@ public class StatelessAuthentication {
                             "We need donations for children patients.",
                             "Miami",
                             "FL",
-                            Utils.parseDate("2015-12-05"),
-                            Utils.parseDate("2015-12-08"),
+                            Utils.sqlDate(DateTime.now().plusDays(25)),
+                            Utils.sqlDate(DateTime.now().plusDays(45)),
                             coordinator);
+
+                    BloodDrive homesteadBloodDrive = bloodDriveService.createBloodDrive(
+                            hospital,
+                            "Homestead Blood Drive", "1234 Homestead Way",
+                            "We are at the heart of homestead.",
+                            "Homestead",
+                            "FL",
+                            Utils.sqlDate(DateTime.now().minusDays(25)),
+                            Utils.sqlDate(DateTime.now().plusDays(3)),
+                            coordinator);
+
+                    // Create a few notifications.
+                    Notification notification =
+                            addNotification(drive,
+                                    Utils.sqlDate(DateTime.now().minusDays(1)),
+                                    "FIU Hospital Notification", "The pizza is here.", "We've got some pineapple pizza.");
+
+                    Notification notification2 = addNotification(drive,
+                            Utils.sqlDate(DateTime.now().minusDays(1).plusMinutes(30)),
+                            "FIU Hospital Notification", "The pizza is half gone.", "We've got a little bit of pineapple pizza.");
+
+                    Notification notification3 = addNotification(drive,
+                            Utils.sqlDate(DateTime.now().minusDays(1).plusMinutes(60)),
+                            "FIU Hospital Notification", "The pizza is completely gone.", "But we still need blood.");
+
+                    // Create a few notifications.
+                    Notification notificationDrive2 =
+                            addNotification(drive2,
+                                    Utils.sqlDate(DateTime.now().minusDays(2)),
+                                    "Red Cross Notification", "We need a lot more blood.", "We required a lot more blood than originally anticipated.");
+
+                    Notification notification2Drive2 =
+                            addNotification(drive2,
+                                    Utils.sqlDate(DateTime.now().minusDays(1).plusMinutes(30)),
+                                    "Red Cross Notification",
+                                    "Thank you very much for your donations.",
+                                    "We are very thankful that we met our donation goals yesterday. Now let's keep going strong.");
+
+                    Notification homesteadNotification =
+                            addNotification(homesteadBloodDrive,
+                                    Utils.sqlDate(DateTime.now().minusDays(1)),
+                                    "Homestead Notification", "We are running out of time!", "Let's get more blood donations.");
+
+                    Donor donor = addDonor("donor", "donor", "USA", "Miami", "FL", 33165);
+                    Donor donor2 = addDonor("donor2", "donor2", "USA", "Homestead", "FL", 33135);
+
+                    addUserNotification(notification, donor);
+                    addUserNotification(notification2, donor);
+                    addUserNotification(notification3, donor);
+
+                    addUserNotification(notificationDrive2, donor);
+                    addUserNotification(notification2Drive2, donor);
+
+                    addUserNotification(homesteadNotification, donor2);
                 }
 
                 // Let's start building out a second hospital.
                 Hospital hospital2 = addHospital("Baptist Hospital");
                 addEmployee(hospital2, "h2nurse1", "h2nurse1", "Sajib", "Talukder", "555-555-5551", UserRole.NURSE);
                 addEmployee(hospital2, "h2nurse2", "h2nurse2", "Peter", "Clarke", "555-555-5551", UserRole.NURSE);
+            }
 
-                addDonor("donor", "donor", "USA", "Miami", "FL", 33165);
-                addDonor("donor2", "donor2", "USA", "Homestead", "FL", 33135);
+            private Notification addNotification(BloodDrive drive,
+                                                 Date sentTime,
+                                                 String title,
+                                                 String shortDescription,
+                                                 String longDescription) {
+                return notificationService.createNotification(drive, sentTime, title, shortDescription, longDescription);
+            }
+
+            private UserNotification addUserNotification(Notification notification, Donor user) {
+                return notificationService.createUserNotification(notification, user);
             }
 
             private Hospital addHospital(String name) {
@@ -164,13 +232,13 @@ public class StatelessAuthentication {
                         phoneNumber, role, hospital.getId());
             }
 
-            private void addDonor(String username, String password, String country, String city, String state, int zip) {
+            private Donor addDonor(String username, String password, String country, String city, String state, int zip) {
 
                 if (userService.getUserByEmail(username) != null) {
-                    return;
+                    return null;
                 }
 
-                userService.createDonor(username, password, country, city, state, zip);
+                return userService.createDonor(username, password, country, city, state, zip);
             }
         };
     }

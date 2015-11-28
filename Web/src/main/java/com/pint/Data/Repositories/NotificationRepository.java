@@ -79,10 +79,10 @@ public class NotificationRepository extends BaseRepository {
             SessionFactory sessionFactory = emFactory.getSessionFactory();
             Session currentSession = sessionFactory.getCurrentSession();
 
-            String email = donor.getUsername();
+            Long id = donor.getId();
 
             String sql = "SELECT * FROM " + Constants.USERNOTIFICATION_TABLE_NAME + " un" +
-                    " WHERE un.email_address='" + email + "' ";
+                    " WHERE un.user_id='" + id + "' ";
 
             System.out.println(sql);
 

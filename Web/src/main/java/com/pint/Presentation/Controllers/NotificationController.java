@@ -1,88 +1,62 @@
 package com.pint.Presentation.Controllers;
 
 import com.pint.BusinessLogic.Security.User;
+import com.pint.BusinessLogic.Services.BloodDriveService;
+import com.pint.BusinessLogic.Services.NotificationService;
+import com.pint.BusinessLogic.Services.UserService;
 import com.pint.Data.Models.BloodDrive;
-import com.pint.Data.Models.Notification;
+import com.pint.Data.Models.Donor;
 import com.pint.Data.Models.UserNotification;
-import com.pint.Data.Repositories.BloodDriveBaseRepository;
-import com.pint.Data.Repositories.NotificationRepository;
-import com.pint.Data.Repositories.UserRepository;
+import com.pint.Presentation.ViewStrategies.NotificationDetailViewStrategy;
+import com.pint.Presentation.ViewStrategies.NotificationSummaryViewStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Iterator;
 import java.util.List;
 
 @RestController
 public class NotificationController {
-    @Autowired
-    private NotificationRepository notificatiionRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private NotificationService notificationService;
 
-    @Autowired
-    private BloodDriveBaseRepository bloodDriveBaseRepository;
-
-//    @RequestMapping("/api/donor/")
-//    @ResponseBody
-//    public String getUserNotification(@RequestParam(value = "email") String email, @RequestParam(value = "id") long bloodDriveId) {
-//        String userNotification = "";
-//        try {
-//            User donor = userRepository.findByUsername(email);
-//            BloodDrive bloodDrive = (BloodDrive) bloodDriveBaseRepository.get(bloodDriveId, new BloodDrive());
-//
-//            if (donor == null) System.out.println("\n\n\nDonor not found \n\n\n");
-//            else System.out.println("\n\n\nDonor found\n\n\n");
-//
-//            if (bloodDrive == null) System.out.println("\n\n\n BD not found \n\n\n");
-//            else System.out.println("\n\n\n BD found\n\n\n");
-//
-//            List<UserNotification> userNotificationList = notificatiionRepository.getUserNotifications(donor, bloodDrive);
-//
-//            for (Iterator<UserNotification> iter = userNotificationList.iterator(); iter.hasNext(); ) {
-//                UserNotification notification = (UserNotification) iter.next();
-//                userNotification += notification.getContent() + "\n\n";
-//            }
-//        } catch (Exception ex) {
-//            return "Error creating the user: " + ex.toString();
-//        }
-//
-//        return userNotification;
-//    }
-
-    @RequestMapping("/api/donor/getUserNotifications/{id}")
+    @RequestMapping("/api/donor/getUserNotifications")
     @ResponseBody
-    public Object getUserNotification(@PathVariable("id") Long id) {
+    public Object getUserNotification() {
         List<UserNotification> userNotifications;
+
         try {
-            User donor = userRepository.findOne(id);
-
-            if (donor == null) System.out.println("\n\n\nDonor not found \n\n\n");
-            else System.out.println("\n\n\nDonor found\n\n\n");
-
-            userNotifications = notificatiionRepository.getUserNotifications(donor);
-
+            User user = Session.getUser();
+            if (user.isDonor()) {
+                userNotifications = notificationService.getUserNotifications(user);
+            } else {
+                return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
+            }
         } catch (Exception ex) {
-            return "Error getting notifications: " + ex.toString();
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
-        return userNotifications;
+        return new NotificationSummaryViewStrategy().CreateViewModel(userNotifications);
     }
 
     @RequestMapping("/api/donor/getBloodDriveUserNotifications/{id}")
     @ResponseBody
     public Object getUserNotifications(@PathVariable("id") Long id) {
-        List<Notification> notifications;
-        try {
-            BloodDrive bloodDrive = (BloodDrive) bloodDriveBaseRepository.get(id, new BloodDrive());
-            notifications = notificatiionRepository.getNotifications(bloodDrive);
+        List<UserNotification> userNotifications;
 
+        try {
+            User user = Session.getUser();
+            if (user.isDonor()) {
+                userNotifications = notificationService.getUserNotifications(user, id);
+            } else {
+                return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
+            }
         } catch (Exception ex) {
-            return "Error getting notifications: " + ex.toString();
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
-        return notifications;
+        return new NotificationDetailViewStrategy().CreateViewModel(userNotifications);
     }
 }

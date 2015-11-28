@@ -2,10 +2,7 @@ package com.pint.Data;
 
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserHelper;
-import com.pint.Data.Models.BloodDrive;
-import com.pint.Data.Models.Donor;
-import com.pint.Data.Models.Employee;
-import com.pint.Data.Models.Hospital;
+import com.pint.Data.Models.*;
 import com.pint.Data.Repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +33,9 @@ public class DataFacade {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    private NotificationRepository notificationRepository;
 
     @Autowired
     private DonorRepository donorRepository;
@@ -100,5 +100,21 @@ public class DataFacade {
 
     public Iterable<Employee> getHospitalEmployees(Long id) {
         return userHelper.getAllEmployees(id);
+    }
+
+    public void createNotification(Notification notification) {
+        notificationRepository.create(notification);
+    }
+
+    public void createUserNotification(UserNotification userNotification) {
+        notificationRepository.create(userNotification);
+    }
+
+    public List<UserNotification> getUserNotifications(User user) {
+        return notificationRepository.getUserNotifications(user);
+    }
+
+    public Donor getDonorById(Long id) {
+        return donorRepository.findOne(id);
     }
 }

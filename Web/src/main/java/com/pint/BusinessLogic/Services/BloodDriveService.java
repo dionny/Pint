@@ -5,13 +5,14 @@ import com.pint.BusinessLogic.Security.UserRole;
 import com.pint.BusinessLogic.Validators.*;
 import com.pint.Data.DataFacade;
 import com.pint.Data.Models.BloodDrive;
+import com.pint.Data.Models.Donor;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 

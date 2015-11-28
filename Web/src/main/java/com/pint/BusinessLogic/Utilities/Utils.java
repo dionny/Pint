@@ -1,6 +1,7 @@
 package com.pint.BusinessLogic.Utilities;
 
 import com.pint.BusinessLogic.Security.UserRole;
+import org.joda.time.DateTime;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,9 +52,9 @@ public class Utils {
         return titleCase.toString();
     }
 
-    public static Date parseDate(String date) {
+    public static java.sql.Date parseDate(String date) {
         try {
-            return new SimpleDateFormat("yyyy-mm-dd").parse(date);
+            return new java.sql.Date(new SimpleDateFormat("yyyy-mm-dd").parse(date).getTime());
         } catch (ParseException e) {
             return null;
         }
@@ -72,5 +73,9 @@ public class Utils {
         }
 
         return null;
+    }
+
+    public static java.sql.Date sqlDate(DateTime dateTime) {
+        return new java.sql.Date(dateTime.toDate().getTime());
     }
 }

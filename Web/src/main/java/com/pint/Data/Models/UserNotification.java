@@ -5,12 +5,23 @@ import javax.validation.constraints.NotNull;
 import java.sql.Date;
 
 @Entity
-@Table(name = "usernotification")
+@Table(name = "user_notification")
 public class UserNotification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long userNotificationId;
+
+    @NotNull
+    public boolean hasSeen;
+
+    @OneToOne(targetEntity = Donor.class)
+    @JoinColumn(name = "user_id")
+    private Donor donor;
+
+    @OneToOne(targetEntity = Notification.class)
+    @JoinColumn(name = "notification_id")
+    private Notification notification;
 
     public long getUserNotificationId() {
         return userNotificationId;
@@ -20,10 +31,6 @@ public class UserNotification {
         this.userNotificationId = id;
     }
 
-
-    @NotNull
-    public boolean hasSeen;
-
     public boolean getHasSeen() {
         return hasSeen;
     }
@@ -32,65 +39,22 @@ public class UserNotification {
         this.hasSeen = hasSeen;
     }
 
-    @NotNull
-    @Column(name = "sentTime", insertable = false)
-    private Date sentTime;
-
-    public Date getSentTime() {
-        return sentTime;
-    }
-
-    public void setSentTime(Date sentTime) {
-        this.sentTime = sentTime;
-    }
-
-
-    //@ManyToOne(targetEntity=Donor.class)
-    @ManyToOne(targetEntity = Donor.class)
-    @JoinColumn(name = "email_address")
-    private Donor donor;
-
-    public Donor getEmailAddress() {
+    public Donor getDonor() {
         return donor;
     }
 
-    public void setEmailAddress(Donor donor) {
+    public void setDonor(Donor donor) {
         this.donor = donor;
     }
 
-    //@ManyToOne(targetEntity=Notification.class)
-    @ManyToOne(targetEntity = Notification.class)
-    @JoinColumn(name = "notification_id")
-    private Notification notification;
-
-    public Notification getNotificationId() {
+    public Notification getNotification() {
         return notification;
     }
 
-    public void setNotificationId(Notification notification) {
+    public void setNotification(Notification notification) {
         this.notification = notification;
     }
 
-
     public UserNotification() {
-    }
-
-    public UserNotification(boolean hasSeen, Date sentTime) {
-        this.hasSeen = hasSeen;
-        this.sentTime = sentTime;
-
-    }
-
-    public String getContent() {
-
-		/*JSONObject User = new JSONObject();  
-
-    	User.put("id", 1);
-    	User.put("emailAddress", "anjlichhatwani"); 
-    	User.put("state", "achha004@fiu.edu"); 
-    	return User;
-		 */
-
-        return "id :=== " + userNotificationId + " hasSeen :" + hasSeen + " sentTime :" + sentTime;
     }
 }

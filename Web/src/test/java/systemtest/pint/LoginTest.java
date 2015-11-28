@@ -1,14 +1,9 @@
 package systemtest.pint;
 
 import org.junit.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import systemtest.pint.PageObjects.PintApplication;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Dionny on 11/28/2015.

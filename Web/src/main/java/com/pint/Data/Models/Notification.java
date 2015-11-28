@@ -5,6 +5,8 @@ import com.pint.BusinessLogic.Utilities.Constants;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = Constants.NOTIFICATION_TABLE_NAME)
@@ -14,6 +16,26 @@ public class Notification {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long notificationId;
 
+    @NotNull
+    @Size(min = 1, max = 200)
+    public String title;
+
+    @NotNull
+    @Size(min = 1, max = 200)
+    public String shortDescription;
+
+    @NotNull
+    @Size(min = 1, max = 500)
+    public String longDescription;
+
+    @OneToOne(targetEntity = BloodDrive.class)
+    @JoinColumn(name = "blood_drive_id")
+    private BloodDrive bloodDrive;
+
+    @NotNull
+    @Column(name = "sentTime")
+    private Timestamp sentTime;
+
     public long getId() {
         return notificationId;
     }
@@ -21,10 +43,6 @@ public class Notification {
     public void setId(long id) {
         this.notificationId = id;
     }
-
-    @NotNull
-    @Size(min = 1, max = 200)
-    public String title;
 
     public String getTitle() {
         return title;
@@ -34,10 +52,6 @@ public class Notification {
         this.title = title;
     }
 
-    @NotNull
-    @Size(min = 1, max = 200)
-    public String shortDescription;
-
     public String getShortDescription() {
         return shortDescription;
     }
@@ -45,10 +59,6 @@ public class Notification {
     public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
     }
-
-    @NotNull
-    @Size(min = 1, max = 500)
-    public String longDescription;
 
     public String getLongDescription() {
         return longDescription;
@@ -58,19 +68,21 @@ public class Notification {
         this.longDescription = longDescription;
     }
 
-
-    @OneToOne(targetEntity = BloodDrive.class)
-    @JoinColumn(name = "blood_drive_id")
-    private BloodDrive bloodDrive;
-
-    public BloodDrive getBloodDriveId() {
+    public BloodDrive getBloodDrive() {
         return bloodDrive;
     }
 
-    public void setBloodDriveId(BloodDrive bloodDrive) {
+    public void setBloodDrive(BloodDrive bloodDrive) {
         this.bloodDrive = bloodDrive;
     }
 
+    public Timestamp getSentTime() {
+        return sentTime;
+    }
+
+    public void setSentTime(Timestamp sentTime) {
+        this.sentTime = sentTime;
+    }
 
     public Notification() {
     }
@@ -80,18 +92,5 @@ public class Notification {
         this.title = title;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
-    }
-
-    public String getContent() {
-
-		/*JSONObject User = new JSONObject();  
-
-		User.put("id", 1);
-		User.put("emailAddress", "anjlichhatwani"); 
-		User.put("state", "achha004@fiu.edu"); 
-		return User;
-			 */
-
-        return "title= " + title + " shortDescription :" + shortDescription + " longDescription :" + longDescription;
     }
 }

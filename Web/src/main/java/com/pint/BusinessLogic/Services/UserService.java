@@ -98,6 +98,10 @@ public class UserService {
         return dataFacade.getEmployeeById(id);
     }
 
+    public Donor getDonorByUserId(Long id) {
+        return dataFacade.getDonorById(id);
+    }
+
     public void updateUser(User currentUser) {
         dataFacade.createOrUpdateUser(currentUser);
     }
