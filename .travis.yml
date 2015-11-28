@@ -11,7 +11,7 @@ after_success:
 - chmod 0400 awskey.pem
 - ssh -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "sudo pkill
   -f java"
-- ssh -oStrictHostKeyChecking=no -i awskey.pem $user@instance -t "mysql -u
+- ssh -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "mysql -u
   root -proot -e 'DROP DATABASE IF EXISTS pintdb; CREATE DATABASE pintdb;'"
 - ssh -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "cd ~/pint
   && sudo ./gradlew build"
