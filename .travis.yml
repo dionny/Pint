@@ -10,6 +10,8 @@ before_install:
 
 after_success:
 - chmod 0400 awskey.pem
+- rm src/main/resources/application.properties
+- mv src/main/resources/application.properties.prod src/main/resources/application.properties
 - ssh -q -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "sudo pkill
   -f java"
 - ssh -q -oStrictHostKeyChecking=no -i awskey.pem $user@$instance -t "sudo rm -rf ~/pint"
