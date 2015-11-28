@@ -67,10 +67,6 @@ public class CreateEmployeeValidator extends Validator {
 
     @Override
     protected boolean validPermissions() {
-        try {
-            return Session.getUser().isManager();
-        } catch (Exception e) {
-            return false;
-        }
+        return true;
     }
 }

@@ -51,7 +51,7 @@ public class UserHelper extends BaseRepository {
             SessionFactory sessionFactory = emFactory.getSessionFactory();
             Session currentSession = sessionFactory.getCurrentSession();
 
-            String sql = "SELECT * FROM EMPLOYEE WHERE hospital_id = :hospital_id";
+            String sql = "SELECT * FROM employee WHERE hospital_id = :hospital_id";
             SQLQuery query = currentSession.createSQLQuery(sql);
             query.addEntity(Employee.class);
             query.setParameter("hospital_id", hospitalId);
