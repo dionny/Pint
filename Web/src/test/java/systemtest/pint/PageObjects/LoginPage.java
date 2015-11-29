@@ -1,13 +1,13 @@
 package systemtest.pint.PageObjects;
 
+import javafx.print.PageOrientation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
-    private WebDriver driver;
+public class LoginPage extends PageObject {
 
     public LoginPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
     public LoginPage setUserName(String username){

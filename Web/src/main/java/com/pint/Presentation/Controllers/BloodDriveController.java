@@ -35,6 +35,19 @@ public class BloodDriveController {
         return summaryViewStrategy.CreateViewModel(bloodDrives);
     }
 
+    @RequestMapping("/api/donor/getBloodDrive/{id}")
+    @ResponseBody
+    public Object getBloodDriveById(@PathVariable("id") Long id) {
+        BloodDrive bloodDrive = null;
+        try {
+            bloodDrive = bloodDriveService.getBloodDriveById(id);
+        } catch (Exception ex) {
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+        }
+
+        return new BloodDriveDetailViewStrategy().CreateViewModel(bloodDrive);
+    }
+
     @RequestMapping("/api/coordinator/getBloodDrives")
     @ResponseBody
     public Object getBloodDrives() throws InterruptedException {

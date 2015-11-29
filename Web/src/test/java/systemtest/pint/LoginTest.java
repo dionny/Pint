@@ -5,9 +5,6 @@ import systemtest.pint.PageObjects.PintApplication;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by Dionny on 11/28/2015.
- */
 public class LoginTest {
     static PintApplication pint = new PintApplication();
 
@@ -21,14 +18,6 @@ public class LoginTest {
         pint.quit();
     }
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
     public void testLogin() throws Exception {
         pint.loginPage()
@@ -36,8 +25,7 @@ public class LoginTest {
                 .setPassword("coordinator")
                 .clickSignIn();
 
-        assertEquals("coordinator",
-                pint.coordinatorDashboard()
-                        .getRoleLabel());
+        pint.coordinatorDashboard()
+                .verifyRoleLabel("COORDINATOR");
     }
 }

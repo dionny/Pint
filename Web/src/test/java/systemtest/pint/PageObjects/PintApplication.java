@@ -2,7 +2,9 @@ package systemtest.pint.PageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import systemtest.pint.Infrastructure.DbHelper;
 
+import java.io.FileNotFoundException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -15,13 +17,19 @@ public class PintApplication {
     public PintApplication() {
     }
 
-    public void launch() {
+    public void launch() throws FileNotFoundException {
+        // Restore the database.
+        new DbHelper().executeScript();
+
         driver = new ChromeDriver();
         driver.navigate().to("http://localhost:8080");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    public void quit() {
+    public void quit() throws FileNotFoundException {
+        // Restore the database.
+        new DbHelper().executeScript();
+
         driver.quit();
     }
 
@@ -33,3 +41,4 @@ public class PintApplication {
         return new CoordinatorDashboard(driver);
     }
 }
+

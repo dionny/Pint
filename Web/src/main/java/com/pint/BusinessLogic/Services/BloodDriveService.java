@@ -257,4 +257,8 @@ public class BloodDriveService {
             throw new ValidationException(validator.getError());
         }
     }
+
+    public BloodDrive getBloodDriveById(Long id) {
+        return dataFacade.getBloodDrivesById(id);
+    }
 }

@@ -36,12 +36,12 @@ var app = angular.module('statelessApp', ['ngResource', 'ngRoute', 'ui.bootstrap
 }).config(['KeepaliveProvider', 'IdleProvider', function (KeepaliveProvider, IdleProvider) {
 
     // Production values.
-    //IdleProvider.idle(1140);
-    //IdleProvider.timeout(60);
+    IdleProvider.idle(1140);
+    IdleProvider.timeout(60);
 
     // Test values.
-    IdleProvider.idle(5);
-    IdleProvider.timeout(5);
+    //IdleProvider.idle(5);
+    //IdleProvider.timeout(5);
 
 }]);
 
@@ -147,7 +147,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
             $scope.error = false;
             TokenStorage.store(result.headers('X-AUTH-TOKEN'));
             $scope.init();
-        }, function(result){
+        }, function (result) {
             $scope.error = result.data.message;
         });
     };
@@ -175,8 +175,8 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
         }
     }
 
-    $scope.$on('IdleStart', function() {
-        if(!$scope.authenticated) {
+    $scope.$on('IdleStart', function () {
+        if (!$scope.authenticated) {
             return;
         }
 
@@ -188,11 +188,11 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
         });
     });
 
-    $scope.$on('IdleEnd', function() {
+    $scope.$on('IdleEnd', function () {
         closeModals();
     });
 
-    $scope.$on('IdleTimeout', function() {
+    $scope.$on('IdleTimeout', function () {
         closeModals();
         $uibModalStack.dismissAll();
         $scope.logout();
