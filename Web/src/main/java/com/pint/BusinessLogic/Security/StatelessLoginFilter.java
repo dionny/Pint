@@ -63,6 +63,7 @@ public abstract class StatelessLoginFilter extends AbstractAuthenticationProcess
                     // Unlock the account.
                     realUser.unlockAccount();
                     realUser.setFailCounter(0);
+                    userService.updateUser(realUser);
                 } else {
                     throw new BadCredentialsException("Incorrect credentials.");
                 }
