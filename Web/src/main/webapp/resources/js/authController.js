@@ -35,8 +35,13 @@ var app = angular.module('statelessApp', ['ngResource', 'ngRoute', 'ui.bootstrap
 
 }).config(['KeepaliveProvider', 'IdleProvider', function (KeepaliveProvider, IdleProvider) {
 
-    IdleProvider.idle(1140);
-    IdleProvider.timeout(60);
+    // Production values.
+    //IdleProvider.idle(1140);
+    //IdleProvider.timeout(60);
+
+    // Test values.
+    IdleProvider.idle(5);
+    IdleProvider.timeout(5);
 
 }]);
 
@@ -106,11 +111,6 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
     function processLogin() {
         $scope.role = $scope.token.roles[0].toLowerCase();
 
-        if ($scope.role == "donor") {
-            $scope.logout();
-            return;
-        }
-
         $scope.authenticated = true;
         $scope.displayName = $scope.user.firstName + " " + $scope.user.lastName;
 
@@ -142,9 +142,12 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
         $http.post('/api/login', {
             username: $scope.username,
             password: $scope.password
-        }).success(function (result, status, headers) {
-            TokenStorage.store(headers('X-AUTH-TOKEN'));
+        }).then(function (result) {
+            $scope.error = false;
+            TokenStorage.store(result.headers('X-AUTH-TOKEN'));
             $scope.init();
+        }, function(result){
+            $scope.error = result.data.message;
         });
     };
 

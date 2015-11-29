@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.EnumSet;
 import java.util.HashSet;
@@ -151,6 +152,10 @@ public class User implements UserDetails {
         return !accountLocked;
     }
 
+    public void lockAccount() {
+        accountLocked = true;
+    }
+
     @Override
     @JsonIgnore
     public boolean isCredentialsNonExpired() {
@@ -220,14 +225,18 @@ public class User implements UserDetails {
         return failCounter;
     }
 
-    @Column(name = "firstFailTime", insertable = false)
-    private java.sql.Date firstFailTime;
+    @Column(name = "firstFailTime")
+    private Timestamp firstFailTime;
 
-    public void setFirstFailTime(java.sql.Date firstFailTime) {
+    public void setFirstFailTime(Timestamp firstFailTime) {
         this.firstFailTime = firstFailTime;
     }
 
-    public java.sql.Date getFirstFailTime() {
+    public Timestamp getFirstFailTime() {
         return firstFailTime;
+    }
+
+    public void unlockAccount() {
+        accountLocked = false;
     }
 }

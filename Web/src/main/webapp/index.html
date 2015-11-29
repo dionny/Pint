@@ -53,6 +53,9 @@
     <div id="authContent" ng-hide="authenticated">
         <div class="container form-signin">
             <h2 class="form-signin-heading">Please sign in</h2>
+
+            <label id="error" ng-show="error" class="error">{{ error }} </label>
+
             <label for="inputEmail" class="sr-only">Email address</label>
             <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus
                    ng-model="username">

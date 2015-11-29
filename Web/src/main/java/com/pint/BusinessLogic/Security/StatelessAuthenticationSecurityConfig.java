@@ -1,5 +1,6 @@
 package com.pint.BusinessLogic.Security;
 
+import com.pint.BusinessLogic.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +21,9 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 
     @Autowired
     private UserDetailsService userDetailsService;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private TokenAuthenticationService tokenAuthenticationService;
@@ -52,6 +56,7 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 
                 //allow anonymous POSTs to login
                 .antMatchers(HttpMethod.POST, "/api/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/m/login").permitAll()
 
                 //allow anonymous GETs to API
 //				.antMatchers(HttpMethod.GET, "/api/**").permitAll()
@@ -67,7 +72,8 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
                 .anyRequest().hasRole("USER").and()
 
                 // custom JSON based authentication by POST of {"username":"<name>","password":"<password>"} which sets the token header upon authentication
-                .addFilterBefore(new StatelessLoginFilter("/api/login", tokenAuthenticationService, userDetailsService, authenticationManager()), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new StatelessLoginFilterWeb("/api/login", tokenAuthenticationService, userDetailsService, userService, authenticationManager()), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new StatelessLoginFilterMobile("/api/m/login", tokenAuthenticationService, userDetailsService, userService, authenticationManager()), UsernamePasswordAuthenticationFilter.class)
 
                 // custom Token based authentication based on the header previously given to the client
                 .addFilterBefore(new StatelessAuthenticationFilter(tokenAuthenticationService), UsernamePasswordAuthenticationFilter.class)
