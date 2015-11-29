@@ -47,7 +47,7 @@ public class InputDonorValidator extends Validator {
     @Override
     protected boolean validPermissions() {
         try {
-            return Session.getUser().isNurse();
+            return new Session().getUser().isNurse();
         } catch (Exception e) {
             return false;
         }

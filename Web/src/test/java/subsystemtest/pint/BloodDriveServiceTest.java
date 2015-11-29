@@ -1,4 +1,4 @@
-package subsystemtest.pint.Services;
+package subsystemtest.pint;
 
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
@@ -17,7 +17,6 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.HashSet;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;

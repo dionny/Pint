@@ -1,11 +1,7 @@
 package com.pint.Presentation.Controllers;
 
 import com.pint.BusinessLogic.Security.User;
-import com.pint.BusinessLogic.Services.BloodDriveService;
 import com.pint.BusinessLogic.Services.NotificationService;
-import com.pint.BusinessLogic.Services.UserService;
-import com.pint.Data.Models.BloodDrive;
-import com.pint.Data.Models.Donor;
 import com.pint.Data.Models.UserNotification;
 import com.pint.Presentation.ViewStrategies.NotificationDetailViewStrategy;
 import com.pint.Presentation.ViewStrategies.NotificationSummaryViewStrategy;
@@ -21,6 +17,11 @@ public class NotificationController {
 
     @Autowired
     private NotificationService notificationService;
+    private Session session;
+
+    public NotificationController() {
+        this.session = new Session();
+    }
 
     @RequestMapping("/api/donor/getUserNotifications")
     @ResponseBody
@@ -28,7 +29,7 @@ public class NotificationController {
         List<UserNotification> userNotifications;
 
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isDonor()) {
                 userNotifications = notificationService.getUserNotifications(user);
             } else {
@@ -47,7 +48,7 @@ public class NotificationController {
         List<UserNotification> userNotifications;
 
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isDonor()) {
                 userNotifications = notificationService.getUserNotifications(user, id);
             } else {

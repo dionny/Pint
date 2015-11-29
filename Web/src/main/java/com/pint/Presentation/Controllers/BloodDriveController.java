@@ -22,6 +22,24 @@ import java.util.List;
 @RestController
 public class BloodDriveController {
 
+    @Autowired
+    private BloodDriveService bloodDriveService;
+
+    @Autowired
+    private UserService userService;
+
+    private UserProvider session;
+
+    public BloodDriveController() {
+        this.session = new Session();
+    }
+
+    public BloodDriveController(BloodDriveService bloodDriveService, UserService userService, UserProvider provider) {
+        this.bloodDriveService = bloodDriveService;
+        this.userService = userService;
+        this.session = provider;
+    }
+
     @RequestMapping("/api/donor/getBloodDrivesByLocation/{city}/{state}")
     @ResponseBody
     public Object getBloodDrivesByLocation(@PathVariable("city") String city, @PathVariable("state") String state) {
@@ -32,12 +50,12 @@ public class BloodDriveController {
             return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
-        return summaryViewStrategy.CreateViewModel(bloodDrives);
+        return new BloodDriveSummaryViewStrategy().CreateViewModel(bloodDrives);
     }
 
     @RequestMapping("/api/donor/getBloodDrive/{id}")
     @ResponseBody
-    public Object getBloodDriveById(@PathVariable("id") Long id) {
+    public Object getBloodDriveByIdForDonor(@PathVariable("id") Long id) {
         BloodDrive bloodDrive = null;
         try {
             bloodDrive = bloodDriveService.getBloodDriveById(id);
@@ -53,7 +71,7 @@ public class BloodDriveController {
     public Object getBloodDrives() throws InterruptedException {
         List<BloodDrive> bloodDrives = null;
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isCoordinator()) {
                 Hospital hospital = userService.getEmployeeByUserId(user.getId()).getHospitalId();
                 bloodDrives = bloodDriveService.getBloodDrivesForCoordinator(hospital, user);
@@ -64,7 +82,7 @@ public class BloodDriveController {
             return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
-        return summaryViewStrategy.CreateViewModel(bloodDrives);
+        return new BloodDriveSummaryViewStrategy().CreateViewModel(bloodDrives);
     }
 
     @RequestMapping("/api/nurse/getBloodDrives")
@@ -72,7 +90,7 @@ public class BloodDriveController {
     public Object getBloodDrivesForNurse() throws InterruptedException {
         List<BloodDrive> bloodDrives = null;
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isNurse()) {
                 Hospital hospital = userService.getEmployeeByUserId(user.getId()).getHospitalId();
                 bloodDrives = bloodDriveService.getBloodDrivesForNurse(hospital, user);
@@ -83,17 +101,17 @@ public class BloodDriveController {
             return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
 
-        return summaryViewStrategy.CreateViewModel(bloodDrives);
+        return new BloodDriveSummaryViewStrategy().CreateViewModel(bloodDrives);
     }
 
     @RequestMapping("/api/coordinator/getBloodDriveById/{id}")
     @ResponseBody
-    public Object getBloodDriveById(@PathVariable("id") long bdId) throws InterruptedException {
+    public Object getBloodDriveByIdForCoordinator(@PathVariable("id") Long bdId) throws InterruptedException {
         BloodDrive bd;
         List<Employee> assignedNurses;
         List<Employee> unassignedNurses;
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isCoordinator()) {
                 bd = bloodDriveService.getBloodDriveByCoordinator(bdId, user);
                 assignedNurses = bloodDriveService.getNursesForBloodDrive(bdId, user);
@@ -114,7 +132,7 @@ public class BloodDriveController {
         BloodDrive bd;
         Employee coordinator;
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isNurse()) {
                 bd = bloodDriveService.getBloodDriveByNurse(bdId, user);
                 coordinator = bloodDriveService.getCoordinator(bd);
@@ -134,7 +152,7 @@ public class BloodDriveController {
     @ResponseBody
     public Object inputDonor(@PathVariable("bdId") Long bdId, @RequestBody String email) {
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isNurse()) {
                 bloodDriveService.inputDonor(user, bdId, email);
             } else {
@@ -153,7 +171,7 @@ public class BloodDriveController {
     @ResponseBody
     public Object assignNurses(@PathVariable("bdId") Long bdId, @RequestBody ArrayList<Integer> nurses) {
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isCoordinator()) {
                 bloodDriveService.assignNurses(user, bdId,
                         Utils.toLongs(nurses));
@@ -171,7 +189,7 @@ public class BloodDriveController {
     @ResponseBody
     public Object unassignNurses(@PathVariable("bdId") Long bdId, @RequestBody ArrayList<Integer> nurses) {
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isCoordinator()) {
                 bloodDriveService.unassignNurses(user, bdId,
                         Utils.toLongs(nurses));
@@ -184,13 +202,4 @@ public class BloodDriveController {
 
         return bdId;
     }
-
-    @Autowired
-    private BloodDriveService bloodDriveService;
-
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private BloodDriveSummaryViewStrategy summaryViewStrategy;
 }

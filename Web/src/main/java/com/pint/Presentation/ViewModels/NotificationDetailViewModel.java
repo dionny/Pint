@@ -12,14 +12,15 @@ public class NotificationDetailViewModel extends NotificationSummaryViewModel {
     public NotificationDetailViewModel() {
     }
 
-    public NotificationDetailViewModel(boolean hasSeen,
+    public NotificationDetailViewModel(Long notificationId,
+                                       boolean hasSeen,
                                        Timestamp sentTime,
                                        String title,
                                        String shortDescription,
                                        Long bloodDriveId,
                                        String bloodDriveTitle,
                                        String longDescription) {
-        super(hasSeen, sentTime, title, shortDescription, bloodDriveId, bloodDriveTitle);
+        super(notificationId, hasSeen, sentTime, title, shortDescription, bloodDriveId, bloodDriveTitle);
         this.longDescription = longDescription;
     }
 }

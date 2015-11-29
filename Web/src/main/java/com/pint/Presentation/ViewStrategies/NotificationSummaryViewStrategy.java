@@ -12,6 +12,7 @@ public class NotificationSummaryViewStrategy extends ViewStrategy<UserNotificati
     @Override
     protected ViewModel mapObject(UserNotification model) {
         return new NotificationSummaryViewModel(
+                model.getUserNotificationId(),
                 model.getHasSeen(),
                 model.getNotification().getSentTime(),
                 model.getNotification().getTitle(),

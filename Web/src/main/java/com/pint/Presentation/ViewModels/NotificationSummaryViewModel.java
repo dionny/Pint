@@ -18,10 +18,13 @@ public class NotificationSummaryViewModel extends ViewModel {
     public Long bloodDriveId;
     public String bloodDriveTitle;
 
+    public Long notificationId;
+
     public NotificationSummaryViewModel() {
     }
 
-    public NotificationSummaryViewModel(boolean hasSeen,
+    public NotificationSummaryViewModel(Long notificationId,
+                                        boolean hasSeen,
                                         Timestamp sentTime,
                                         String title,
                                         String shortDescription,
@@ -34,5 +37,6 @@ public class NotificationSummaryViewModel extends ViewModel {
         this.shortDescription = shortDescription;
         this.bloodDriveId = bloodDriveId;
         this.bloodDriveTitle = bloodDriveTitle;
+        this.notificationId = notificationId;
     }
 }

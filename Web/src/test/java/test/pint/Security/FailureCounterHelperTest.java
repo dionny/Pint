@@ -1,4 +1,4 @@
-package test.pint.BusinessLogic.Security;
+package test.pint.Security;
 
 import com.pint.BusinessLogic.Security.FailureCounterHelper;
 import com.pint.BusinessLogic.Utilities.Utils;

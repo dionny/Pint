@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class EmployeeController {
+
+    private final Session session;
+
     @Autowired
     private UserHelper userHelper;
 
@@ -32,12 +35,16 @@ public class EmployeeController {
     @Autowired
     private EmployeeSummaryViewStrategy viewStrategy;
 
+    public EmployeeController() {
+        this.session = new Session();
+    }
+
     @RequestMapping("/api/manager/getEmployees")
     @ResponseBody
     public Object getEmployees() throws InterruptedException {
         Iterable<Employee> employees = null;
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isManager()) {
                 Hospital hospital = userService.getEmployeeByUserId(user.getId()).getHospitalId();
                 employees = employeeService.getEmployees(user, hospital);
@@ -55,7 +62,7 @@ public class EmployeeController {
     @ResponseBody
     public Object createEmployee(@RequestBody Employee newEmployee) {
         try {
-            User user = Session.getUser();
+            User user = session.getUser();
             if (user.isManager()) {
                 Hospital hospital = userService.getEmployeeByUserId(user.getId()).getHospitalId();
                 userService.createEmployee(

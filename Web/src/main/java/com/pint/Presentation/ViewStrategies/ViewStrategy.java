@@ -13,7 +13,7 @@ public abstract class ViewStrategy<T> {
         return performMapping(model);
     }
 
-    public Iterable<ViewModel> CreateViewModel(Iterable<T> models) {
+    public List<ViewModel> CreateViewModel(Iterable<T> models) {
         List<ViewModel> out = new ArrayList<ViewModel>();
         for (T model :
                 models) {
