@@ -64,6 +64,9 @@ angular.module('statelessApp')
             $scope.contentReady = false;
 
             if (!Authentication.getRole()) {
+
+
+
                 return;
             }
 

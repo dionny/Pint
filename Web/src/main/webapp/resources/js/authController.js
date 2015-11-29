@@ -102,7 +102,8 @@ app.factory('Authentication', function () {
     };
 });
 
-app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location, Authentication, Logger, Idle, $uibModal) {
+app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location, Authentication, Logger, Idle,
+                                     $uibModal, $uibModalStack) {
     $scope.authenticated = false;
     $scope.token;
 
@@ -162,6 +163,9 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
         $scope.displayName = null;
         $scope.roleTemplate = null;
         $location.url('/');
+
+        // Start the session timeout.
+        Idle.unwatch();
     };
 
     function closeModals() {
@@ -172,6 +176,10 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
     }
 
     $scope.$on('IdleStart', function() {
+        if(!$scope.authenticated) {
+            return;
+        }
+
         closeModals();
 
         $scope.warning = $uibModal.open({
@@ -186,6 +194,7 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
 
     $scope.$on('IdleTimeout', function() {
         closeModals();
+        $uibModalStack.dismissAll();
         $scope.logout();
     });
 });
