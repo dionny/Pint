@@ -38,6 +38,7 @@ public class BloodDriveDetailViewStrategy extends ViewStrategy<BloodDrive> {
                     drive.getDescription(),
                     drive.getStartTime(),
                     drive.getEndTime(),
+                    drive.getHospitalId().getName(),
                     drive.getAddress(),
                     drive.getNumberOfDonors(),
                     viewModel);

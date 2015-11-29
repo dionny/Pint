@@ -4,6 +4,7 @@ import com.pint.BusinessLogic.Services.BloodDriveService;
 import com.pint.BusinessLogic.Services.UserService;
 import com.pint.BusinessLogic.Utilities.Utils;
 import com.pint.Data.Models.BloodDrive;
+import com.pint.Data.Models.Hospital;
 import com.pint.Presentation.Controllers.BloodDriveController;
 import com.pint.Presentation.Controllers.UserProvider;
 import com.pint.Presentation.ViewModels.BloodDriveDetailNurseViewModel;
@@ -34,6 +35,7 @@ public class BloodDriveControllerTest {
     private BloodDriveService bloodDriveService;
     private UserProvider userProvider;
 
+    private Hospital testHospital;
     private BloodDrive testDrive1;
     private BloodDrive testDrive2;
     private java.sql.Date testDate;
@@ -48,11 +50,13 @@ public class BloodDriveControllerTest {
 
         testDate = Utils.sqlDate(DateTime.now());
 
+        testHospital = new Hospital("Test Hospital");
+
         testDrive1 = new BloodDrive(
-                1, "Test Drive 1", "Description 1", testDate, testDate, "Address 1", 0, "City 1", "State 1", 1);
+                1, "Test Drive 1", "Description 1", testDate, testDate, "Address 1", 0, "City 1", "State 1", 1, testHospital);
 
         testDrive2 = new BloodDrive(
-                2, "Test Drive 2", "Description 2", testDate, testDate, "Address 2", 0, "City 2", "State 2", 1);
+                2, "Test Drive 2", "Description 2", testDate, testDate, "Address 2", 0, "City 2", "State 2", 1, testHospital);
     }
 
     @Test
