@@ -31,6 +31,8 @@ public class PageObject {
             } catch (Exception e) {
                 lastCaught = e;
             }
+
+            Thread.sleep(100);
         }
 
         throw lastCaught;

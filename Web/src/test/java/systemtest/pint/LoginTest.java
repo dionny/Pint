@@ -21,8 +21,8 @@ public class LoginTest {
     @Test
     public void testLogin() throws Exception {
         pint.loginPage()
-                .setUserName("coordinator")
-                .setPassword("coordinator")
+                .setUserName("Greg001@pint.edu")
+                .setPassword("Greg123456")
                 .clickSignIn();
 
         pint.coordinatorDashboard()
