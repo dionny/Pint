@@ -36,7 +36,7 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class BloodDriveControllerTest {
 
-    private BloodDriveController bloodDriveController;
+    private BloodDriveController bloodDriveController = new BloodDriveController();
 
     private UserService userService;
     private BloodDriveService bloodDriveService;
@@ -420,7 +420,7 @@ public class BloodDriveControllerTest {
     }
 
     @Test
-    public void testGetBloodDriveByIdForCoordinators_returnsUnauthorizedForDonor() throws Exception {
+    public void testGetBloodDriveByIdForCoordinator_returnsUnauthorizedForDonor() throws Exception {
         // Arrange.
         testUser.grantRole(UserRole.DONOR);
 
@@ -432,7 +432,7 @@ public class BloodDriveControllerTest {
     }
 
     @Test
-    public void testGetBloodDriveByIdForCoordinators_returnsBadRequestOnError() throws Exception {
+    public void testGetBloodDriveByIdForCoordinator_returnsBadRequestOnError() throws Exception {
 
         // Arrange.
         testUser.grantRole(UserRole.COORDINATOR);
@@ -449,16 +449,90 @@ public class BloodDriveControllerTest {
 
 
     @Test
+    public void testGetBloodDriveByIdForNurse_returnsBloodDriveOnSuccess() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.NURSE);
+
+        when(bloodDriveService.getBloodDriveByNurse(1L, testUser))
+                .thenReturn(testDrive1);
+
+        // Act.
+        BloodDriveDetailNurseViewModel output =
+                (BloodDriveDetailNurseViewModel)
+                        bloodDriveController.getBloodDriveByIdForNurse(1L);
+
+        // Assert.
+        assertEquals("Test Drive 1", output.title);
+        assertEquals("Description 1", output.description);
+        assertEquals(testDate, output.startTime);
+        assertEquals(testDate, output.endTime);
+        assertEquals("Address 1", output.address);
+        assertEquals(1, output.bloodDriveId);
+    }
+
+    @Test
+    public void testGetBloodDriveByIdForNurse_returnsUnauthorizedForCoordinator() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.COORDINATOR);
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.getBloodDriveByIdForNurse(1L);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testGetBloodDriveByIdForNurse_returnsUnauthorizedForManager() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.MANAGER);
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.getBloodDriveByIdForNurse(1L);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testGetBloodDriveByIdForNurse_returnsUnauthorizedForDonor() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.DONOR);
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.getBloodDriveByIdForNurse(1L);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testGetBloodDriveByIdForNurse_returnsBadRequestOnError() throws Exception {
+
+        // Arrange.
+        testUser.grantRole(UserRole.NURSE);
+        when(bloodDriveService.getBloodDriveByNurse(anyLong(), any(User.class)))
+                .thenThrow(new RuntimeException());
+
+        // Act.
+        ResponseEntity response = (ResponseEntity) bloodDriveController.getBloodDriveByIdForNurse(1L);
+
+        // Assert.
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+        assertNull(response.getBody());
+    }
+
+    @Test
     public void testInputDonor_delegatesToBloodDriveServiceWhenAuthorized() throws Exception {
         // Arrange.
         testUser.grantRole(UserRole.NURSE);
 
         // Act.
-        Long id = (Long)bloodDriveController.inputDonor(1L, "test@pint.edu");
+        Long id = (Long) bloodDriveController.inputDonor(1L, "test@pint.edu");
 
         // Assert.
         verify(bloodDriveService).inputDonor(testUser, 1L, "test@pint.edu");
-        assertEquals(1, (long)id);
+        assertEquals(1, (long) id);
     }
 
     @Test
@@ -523,6 +597,152 @@ public class BloodDriveControllerTest {
 
         // Act.
         ResponseEntity output = (ResponseEntity) bloodDriveController.inputDonor(1L, "test@pint.edu");
+
+        // Assert.
+        assertEquals(HttpStatus.BAD_REQUEST, output.getStatusCode());
+        assertNull(output.getBody());
+    }
+
+
+    @Test
+    public void testAssignNurses_delegatesToBloodDriveServiceWhenAuthorized() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.COORDINATOR);
+        ArrayList<Integer> nurses = new ArrayList<>();
+        List<Long> longs = Utils.toLongs(nurses);
+
+        // Act.
+        Long id = (Long) bloodDriveController.assignNurses(1L, nurses);
+
+        // Assert.
+        verify(bloodDriveService).assignNurses(testUser, 1L, longs);
+        assertEquals(1, (long) id);
+    }
+
+    @Test
+    public void testAssignNurses_returnsUnauthorizedForNurse() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.NURSE);
+        ArrayList<Integer> nurses = new ArrayList<>();
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.assignNurses(1L, nurses);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testAssignNurses_returnsUnauthorizedForManager() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.MANAGER);
+        ArrayList<Integer> nurses = new ArrayList<>();
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.assignNurses(1L, nurses);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testAssignNurses_returnsUnauthorizedForDonor() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.DONOR);
+        ArrayList<Integer> nurses = new ArrayList<>();
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.assignNurses(1L, nurses);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testAssignNurses_returnsBadRequestOnError() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.COORDINATOR);
+        List<Long> longs = new ArrayList<>();
+        ArrayList<Integer> nurses = new ArrayList<>();
+
+        Mockito.doThrow(new RuntimeException("Test Validation Error"))
+                .when(bloodDriveService).assignNurses(testUser, 1L, longs);
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.assignNurses(1L, nurses);
+
+        // Assert.
+        assertEquals(HttpStatus.BAD_REQUEST, output.getStatusCode());
+        assertNull(output.getBody());
+    }
+
+
+    @Test
+    public void testUnassignNurses_delegatesToBloodDriveServiceWhenAuthorized() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.COORDINATOR);
+        ArrayList<Integer> nurses = new ArrayList<>();
+        List<Long> longs = Utils.toLongs(nurses);
+
+        // Act.
+        Long id = (Long) bloodDriveController.unassignNurses(1L, nurses);
+
+        // Assert.
+        verify(bloodDriveService).unassignNurses(testUser, 1L, longs);
+        assertEquals(1, (long) id);
+    }
+
+    @Test
+    public void testUnassignNurses_returnsUnauthorizedForNurse() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.NURSE);
+        ArrayList<Integer> nurses = new ArrayList<>();
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.unassignNurses(1L, nurses);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testUnassignNurses_returnsUnauthorizedForManager() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.MANAGER);
+        ArrayList<Integer> nurses = new ArrayList<>();
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.unassignNurses(1L, nurses);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testUnassignNurses_returnsUnauthorizedForDonor() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.DONOR);
+        ArrayList<Integer> nurses = new ArrayList<>();
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.unassignNurses(1L, nurses);
+
+        // Assert.
+        assertEquals(HttpStatus.UNAUTHORIZED, output.getStatusCode());
+    }
+
+    @Test
+    public void testUnassignNurses_returnsBadRequestOnError() throws Exception {
+        // Arrange.
+        testUser.grantRole(UserRole.COORDINATOR);
+        List<Long> longs = new ArrayList<>();
+        ArrayList<Integer> nurses = new ArrayList<>();
+
+        Mockito.doThrow(new RuntimeException("Test Validation Error"))
+                .when(bloodDriveService).unassignNurses(testUser, 1L, longs);
+
+        // Act.
+        ResponseEntity output = (ResponseEntity) bloodDriveController.unassignNurses(1L, nurses);
 
         // Assert.
         assertEquals(HttpStatus.BAD_REQUEST, output.getStatusCode());
