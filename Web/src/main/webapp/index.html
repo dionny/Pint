@@ -7,7 +7,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Coordinator Dashboard</title>
+    <title>Pint</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -30,6 +30,7 @@
     <script src="resources/js/lib/ui-bootstrap-tpls-0.14.3.js"></script>
     <script src="resources/js/lib/angular-route.js"></script>
     <script src="resources/js/lib/angular-resource.js"></script>
+    <script src="resources/js/lib/idle.js"></script>
     <script src="resources/js/authController.js"></script>
     <script src="resources/js/featureToggles.js"></script>
     <script src="resources/js/logger.js"></script>
@@ -69,10 +70,22 @@
     </div>
 
     <div id="siteContent" ng-show="authenticated">
-        <!-- **********************************************************************************************************************************************************
+
+        <script type="text/ng-template" id="warning-dialog.html">
+            <div class="modal-header">
+                <h3 class="modal-title">You've become idle.</h3>
+            </div>
+            <div idle-countdown="countdown" ng-init="countdown=5" class="modal-body">
+                <progressbar max="5" value="5" animate="false" class="progress-striped active">You'll be logged out in
+                    {{countdown}} second(s).
+                </progressbar>
+            </div>
+        </script>
+
+                <!-- **********************************************************************************************************************************************************
     TOP BAR CONTENT & NOTIFICATIONS
     *********************************************************************************************************************************************************** -->
-        <!--header start-->
+                <!--header start-->
         <header class="header black-bg">
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>

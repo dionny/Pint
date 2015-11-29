@@ -1,4 +1,4 @@
-var app = angular.module('statelessApp', ['ngResource', 'ngRoute', 'ui.bootstrap']).factory('TokenStorage', function () {
+var app = angular.module('statelessApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ngIdle']).factory('TokenStorage', function () {
     var storageKey = 'auth_token';
     return {
         store: function (token) {
@@ -30,8 +30,15 @@ var app = angular.module('statelessApp', ['ngResource', 'ngRoute', 'ui.bootstrap
         }
     };
 }).config(function ($httpProvider) {
+
     $httpProvider.interceptors.push('TokenAuthInterceptor');
-});
+
+}).config(['KeepaliveProvider', 'IdleProvider', function (KeepaliveProvider, IdleProvider) {
+
+    IdleProvider.idle(1140);
+    IdleProvider.timeout(60);
+
+}]);
 
 app.config(['$routeProvider',
     function ($routeProvider) {
@@ -90,7 +97,7 @@ app.factory('Authentication', function () {
     };
 });
 
-app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location, Authentication, Logger) {
+app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $location, Authentication, Logger, Idle, $uibModal) {
     $scope.authenticated = false;
     $scope.token;
 
@@ -114,7 +121,10 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
             Logger.log('authCtrl: changing url to /' + $scope.role);
             $location.url('/' + $scope.role);
         }
-    };
+
+        // Start the session timeout.
+        Idle.watch();
+    }
 
     $scope.init = function () {
         Logger.log('authCtrl: init');
@@ -150,4 +160,29 @@ app.controller('AuthCtrl', function ($scope, $http, TokenStorage, $window, $loca
         $scope.roleTemplate = null;
         $location.url('/');
     };
+
+    function closeModals() {
+        if ($scope.warning) {
+            $scope.warning.close();
+            $scope.warning = null;
+        }
+    }
+
+    $scope.$on('IdleStart', function() {
+        closeModals();
+
+        $scope.warning = $uibModal.open({
+            templateUrl: 'warning-dialog.html',
+            windowClass: 'modal-danger'
+        });
+    });
+
+    $scope.$on('IdleEnd', function() {
+        closeModals();
+    });
+
+    $scope.$on('IdleTimeout', function() {
+        closeModals();
+        $scope.logout();
+    });
 });
