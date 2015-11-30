@@ -32,6 +32,6 @@ public class AssignNursesToBloodDriveTest {
                 .clickSignIn();
 
         pint.coordinatorDashboard().clickBloodDrive("FIU-MMC Blood Drive")
-                .clickAddNurses().verifyUnassignedNurseListEntry(expected, 3, 0, 1);
+                .clickAddNurses().verifyUnassignedNurseListEntry(expected, 3, 0, 1).selectNurse(1).selectNurse(2).clickAssign();
     }
 }
