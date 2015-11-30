@@ -19,6 +19,11 @@ public abstract class Dashboard<T> extends PageObject {
         return (T)this;
     }
 
+    public T clickCreateEmployee() {
+        driver.findElement(By.id("add-employee-button")).click();
+        return (T)this;
+    }
+
     public T clickLogoutButton() {
         driver.findElement(By.id("logoutBtn")).click();
         return (T)this;

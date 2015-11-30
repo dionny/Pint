@@ -20,21 +20,14 @@ public class LoginTest {
 
     @Test
     public void testLogin() throws Exception {
-
         pint.loginPage()
-                .setIdleTimeout(1, 1)
                 .setUserName("mhaki005@pint.edu")
                 .setPassword("Pintpass123")
                 .clickSignIn();
 
-        Thread.sleep(3000);
-
-        pint.loginPage()
-                .verifyUserNameTextBoxExists();
-
-//        pint.managerDashboard()
-//                .verifyRoleLabel("MANAGER")
-//                .verifyEmployeeExists("Greg");
+        pint.managerDashboard()
+                .verifyRoleLabel("MANAGER")
+                .verifyEmployeeExists("Greg");
 
     }
 }
