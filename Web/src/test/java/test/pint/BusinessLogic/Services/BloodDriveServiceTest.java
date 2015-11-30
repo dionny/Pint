@@ -530,33 +530,6 @@ public class BloodDriveServiceTest {
         // Assert.
         assertEquals(0, output.size());
     }
-//
-//
-//    @Test
-//    public void testGetUnassignedNurses_nonNurseEmployees() throws Exception {
-//
-//        // Arrange.
-//        List<Employee> allNurses = new ArrayList<>();
-//        allNurses.add(testAssignedNurse);
-//        allNurses.add(testAnotherNurse);
-//        allNurses.add(testUnassignedNurse);
-//
-//        when(hospitalService.getNurses(testHospital1.getId()))
-//                .thenReturn(allNurses);
-//
-//        testDrive1.getEmployees().add(testAssignedNurse);
-//        testDrive1.getEmployees().add(testAssignedNurse);
-//        testDrive2.getEmployees().add(testUnassignedNurse);
-//
-//        // Act.
-//        List<Employee> output = bloodDriveService.getUnassignedNurses(
-//                testDrive1.getBloodDriveId(),
-//                userService.getUserById(testCoordinator.getUserId()));
-//
-//        // Assert.
-//        assertEquals(0, output.size());
-//    }
-
 
     @Test
     public void testAssignNurses_correctlyAssignsNursesOnValid() throws Exception {

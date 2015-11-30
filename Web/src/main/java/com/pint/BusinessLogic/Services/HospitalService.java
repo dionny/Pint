@@ -23,6 +23,14 @@ public class HospitalService {
     @Autowired
     private UserService userService;
 
+    public HospitalService() {
+    }
+
+    public HospitalService(DataFacade dataFacade, UserService userService) {
+        this.dataFacade = dataFacade;
+        this.userService = userService;
+    }
+
     public Hospital createHospital(String hospital) {
         return dataFacade.createHospital(hospital);
     }

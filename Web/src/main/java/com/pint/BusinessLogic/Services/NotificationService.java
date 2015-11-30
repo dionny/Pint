@@ -22,6 +22,13 @@ public class NotificationService {
     @Autowired
     private DataFacade dataFacade;
 
+    public NotificationService() {
+    }
+
+    public NotificationService(DataFacade dataFacade) {
+        this.dataFacade = dataFacade;
+    }
+
     public Notification createNotification(BloodDrive drive,
                                            Date sentTime,
                                            String title,
