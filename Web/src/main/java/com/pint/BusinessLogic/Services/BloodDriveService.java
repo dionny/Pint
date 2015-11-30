@@ -113,22 +113,6 @@ public class BloodDriveService {
 
     private void setCoordinator(BloodDrive bd, Employee coordinator) {
         Set<Employee> employees = bd.getEmployees();
-
-        // First remove the existing coordinator.
-        Employee existing = null;
-        for (Employee ee :
-                employees) {
-            User user = userService.getUserById(ee.getUserId());
-            if (user.hasRole(UserRole.COORDINATOR)) {
-                existing = ee;
-            }
-        }
-
-        if (existing != null) {
-            employees.remove(existing);
-        }
-
-        // Then add the new coordinator.
         employees.add(coordinator);
     }
 
@@ -180,8 +164,7 @@ public class BloodDriveService {
         if (coordinator != null && coordinator.getUserId() == user.getId()) {
             for (Employee ee :
                     allNurses) {
-                User eeUser = userService.getUserById(ee.getUserId());
-                if (eeUser.hasRole(UserRole.NURSE) && !bloodDrivesContainEmployee(allBds, ee)) {
+                if (!bloodDrivesContainEmployee(allBds, ee)) {
                     output.add(ee);
                 }
             }

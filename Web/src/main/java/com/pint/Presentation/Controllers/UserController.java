@@ -85,9 +85,9 @@ public class UserController {
      */
     @RequestMapping("/api/manager/updateUser")
     @ResponseBody
-    public Object updateUser(long id, String email, String name) {
+    public Object updateUser(long id, String email) {
         try {
-            return userService.updateUser(id, email, name);
+            return userService.updateUser(id, email);
         } catch (Exception ex) {
             return "Error updating the user: " + ex.toString();
         }

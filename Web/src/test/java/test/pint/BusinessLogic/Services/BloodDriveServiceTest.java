@@ -53,9 +53,9 @@ public class BloodDriveServiceTest {
     private User testUser;
     private Employee testEmployee;
 
-    private BloodDrive createMockBloodDrive(long bloodDriveId, String title, String description, Date startTime, Date endTime, String address, int numberofDonors, String city, String state, int zip, Hospital hospitalId) {
+    protected BloodDrive createMockBloodDrive(long bloodDriveId, String title, String description, Date startTime, Date endTime, String address, int numberofDonors, String city, String state, int zip, Hospital hospitalId) {
         BloodDrive drive = new BloodDrive(
-                1, "Test Drive 1", "Description 1", testDate, testDate, "Address 1", 0, "City 1", "State 1", 1, hospitalId);
+                bloodDriveId, title, description, startTime, endTime, address, numberofDonors, city, state, zip, hospitalId);
 
         when(dataFacade.getBloodDriveById(bloodDriveId))
                 .thenReturn(drive);
@@ -216,6 +216,20 @@ public class BloodDriveServiceTest {
     }
 
     @Test
+    public void testGetBloodDrivesForCoordinator_returnsEmptyOnNonCoordinatorMatch() throws Exception {
+
+        testDrive1.getEmployees().add(testCoordinator);
+
+        // Act.
+        List<BloodDrive> output = bloodDriveService.getBloodDrivesForCoordinator(
+                testHospital1,
+                userService.getUserById(testAssignedNurse.getUserId()));
+
+        // Assert.
+        assertEquals(0, output.size());
+    }
+
+    @Test
     public void testGetBloodDrivesForCoordinator_returnsEmptyOnNonMatch() throws Exception {
 
         // Arrange.
@@ -276,6 +290,21 @@ public class BloodDriveServiceTest {
     }
 
     @Test
+    public void testGetBloodDriveByCoordinator_returnsNullOnNonCoordinatorMatch() throws Exception {
+
+        // Arrange.
+        testDrive1.getEmployees().add(testCoordinator);
+
+        // Act.
+        BloodDrive output = bloodDriveService.getBloodDriveByCoordinator(
+                testDrive1.getBloodDriveId(),
+                userService.getUserById(testAssignedNurse.getUserId()));
+
+        // Assert.
+        assertNull(output);
+    }
+
+    @Test
     public void testGetBloodDriveByCoordinator_returnsNullOnNoMatch() throws Exception {
 
         // Act.
@@ -312,6 +341,29 @@ public class BloodDriveServiceTest {
         assertEquals("TestNurse1@pint.edu", output.get(0).getEmail());
         assertEquals(testUnassignedNurse, output.get(1));
         assertEquals("TestNurse2@pint.edu", output.get(1).getEmail());
+    }
+
+    @Test
+    public void testGetNursesForBloodDrive_returnsEmptyOnNonCoordinatorMatch() throws Exception {
+
+        // Arrange.
+        testDrive1.getEmployees().add(testAssignedNurse);
+        testDrive1.getEmployees().add(testUnassignedNurse);
+        testDrive1.getEmployees().add(testCoordinator);
+
+        userService.getUserById(testAssignedNurse.getUserId())
+                .setUsername("TestNurse1@pint.edu");
+
+        userService.getUserById(testUnassignedNurse.getUserId())
+                .setUsername("TestNurse2@pint.edu");
+
+        // Act.
+        List<Employee> output = bloodDriveService.getNursesForBloodDrive(
+                testDrive1.getBloodDriveId(),
+                userService.getUserById(testAssignedNurse.getUserId()));
+
+        // Assert.
+        assertEquals(0, output.size());
     }
 
     @Test
@@ -419,6 +471,37 @@ public class BloodDriveServiceTest {
     }
 
     @Test
+    public void testGetUnassignedNurses_returnsEmptyOnNonCoordinatorMatch() throws Exception {
+
+        // Arrange.
+        List<Employee> allNurses = new ArrayList<>();
+        allNurses.add(testAssignedNurse);
+        allNurses.add(testAnotherNurse);
+        allNurses.add(testUnassignedNurse);
+
+        List<Employee> allNursesOtherHospital = new ArrayList<>();
+        allNursesOtherHospital.add(testOtherHospitalNurse);
+
+        when(hospitalService.getNurses(testHospital1.getId()))
+                .thenReturn(allNurses);
+
+        when(hospitalService.getNurses(testHospital2.getId()))
+                .thenReturn(allNursesOtherHospital);
+
+        testDrive1.getEmployees().add(testAssignedNurse);
+        testDrive1.getEmployees().add(testCoordinator);
+        testDrive2.getEmployees().add(testUnassignedNurse);
+
+        // Act.
+        List<Employee> output = bloodDriveService.getUnassignedNurses(
+                testDrive1.getBloodDriveId(),
+                userService.getUserById(testAssignedNurse.getUserId()));
+
+        // Assert.
+        assertEquals(0, output.size());
+    }
+
+    @Test
     public void testGetUnassignedNurses_returnsEmptyOnNonCoordinator() throws Exception {
 
         // Arrange.
@@ -447,6 +530,33 @@ public class BloodDriveServiceTest {
         // Assert.
         assertEquals(0, output.size());
     }
+//
+//
+//    @Test
+//    public void testGetUnassignedNurses_nonNurseEmployees() throws Exception {
+//
+//        // Arrange.
+//        List<Employee> allNurses = new ArrayList<>();
+//        allNurses.add(testAssignedNurse);
+//        allNurses.add(testAnotherNurse);
+//        allNurses.add(testUnassignedNurse);
+//
+//        when(hospitalService.getNurses(testHospital1.getId()))
+//                .thenReturn(allNurses);
+//
+//        testDrive1.getEmployees().add(testAssignedNurse);
+//        testDrive1.getEmployees().add(testAssignedNurse);
+//        testDrive2.getEmployees().add(testUnassignedNurse);
+//
+//        // Act.
+//        List<Employee> output = bloodDriveService.getUnassignedNurses(
+//                testDrive1.getBloodDriveId(),
+//                userService.getUserById(testCoordinator.getUserId()));
+//
+//        // Assert.
+//        assertEquals(0, output.size());
+//    }
+
 
     @Test
     public void testAssignNurses_correctlyAssignsNursesOnValid() throws Exception {
@@ -539,6 +649,30 @@ public class BloodDriveServiceTest {
         verify(dataFacade).createOrUpdateBloodDrive(testDrive1);
     }
 
+    @Test(expected = Exception.class)
+    public void testUnassignNurses_throwsExceptionOnInvalid() throws Exception {
+
+        // Arrange.
+        List<Employee> allNurses = new ArrayList<>();
+        allNurses.add(testAssignedNurse);
+        allNurses.add(testAnotherNurse);
+        allNurses.add(testUnassignedNurse);
+
+        when(hospitalService.getNurses(testHospital1.getId()))
+                .thenReturn(allNurses);
+
+        testDrive1.getEmployees().add(testCoordinator);
+        testDrive1.getEmployees().add(testAssignedNurse);
+
+        List<Long> nursesToUnassign = new ArrayList<>();
+        nursesToUnassign.add(testAssignedNurse.getUserId());
+
+        // Act.
+        bloodDriveService.unassignNurses(
+                userService.getUserById(testAssignedNurse.getUserId()),
+                testDrive1.getBloodDriveId(),
+                nursesToUnassign);
+    }
 
     @Test
     public void testGetBloodDrivesForNurse_returnsBloodDrivesOnMatch() throws Exception {

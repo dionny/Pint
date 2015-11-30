@@ -22,6 +22,7 @@ public class PintApplication {
         new DbHelper().executeScript();
 
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.navigate().to("http://localhost:8080");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -45,8 +46,13 @@ public class PintApplication {
         return new ManagerDashboard(driver);
     }
 
-    public NurseDashboard nurseDashboard(){
+    public NurseDashboard nurseDashboard() {
         return new NurseDashboard(driver);
+    }
+
+
+    public CreateEmployeePage createEmployeePage() {
+        return new CreateEmployeePage(driver);
     }
 }
 

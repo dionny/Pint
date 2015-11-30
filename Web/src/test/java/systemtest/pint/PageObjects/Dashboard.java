@@ -14,13 +14,18 @@ public abstract class Dashboard<T> extends PageObject {
         return (T)this;
     }
 
-    public T clickDashboardLink() {
-        driver.findElement(By.id("dashboardLink")).click();
+    public T clickDashboardLink() throws Exception {
+        clickElement(By.id("dashboardLink"));
         return (T)this;
     }
 
-    public T clickLogoutButton() {
-        driver.findElement(By.id("logoutBtn")).click();
+    public T clickCreateEmployee() throws Exception {
+        clickElement(By.id("add-employee-button"));
+        return (T)this;
+    }
+
+    public T clickLogoutButton() throws Exception {
+        clickElement(By.id("logoutBtn"));
         return (T)this;
     }
 

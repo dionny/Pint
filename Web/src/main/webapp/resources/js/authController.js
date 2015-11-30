@@ -36,6 +36,8 @@ var app = angular.module('statelessApp', ['ngResource', 'ngRoute', 'ui.bootstrap
 }).config(['KeepaliveProvider', 'IdleProvider', function (KeepaliveProvider, IdleProvider) {
 
     // Production values.
+    window.IdleProvider = IdleProvider;
+
     IdleProvider.idle(1140);
     IdleProvider.timeout(60);
 

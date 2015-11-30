@@ -21,7 +21,15 @@ public class EmployeeService {
     @Autowired
     private UserService userService;
 
-    public Iterable<Employee> getEmployees(User user, Hospital hospital) {
+    public EmployeeService() {
+    }
+
+    public EmployeeService(UserService service, DataFacade dataFacade) {
+        userService = service;
+        this.dataFacade = dataFacade;
+    }
+
+    public List<Employee> getEmployees(User user, Hospital hospital) {
         List<Employee> output = new ArrayList<>();
         Iterable<Employee> employees = dataFacade.getHospitalEmployees(hospital.getId());
 

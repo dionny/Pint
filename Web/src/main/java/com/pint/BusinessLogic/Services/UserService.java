@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Dionny on 11/24/2015.
  */
@@ -21,6 +23,13 @@ public class UserService {
 
     @Autowired
     private DataFacade dataFacade;
+
+    public UserService() {
+    }
+
+    public UserService(DataFacade dataFacade) {
+        this.dataFacade = dataFacade;
+    }
 
     public Employee createEmployee(String email,
                                    String password,
@@ -87,7 +96,7 @@ public class UserService {
         dataFacade.deleteUser(username);
     }
 
-    public User updateUser(long id, String email, String name) {
+    public User updateUser(long id, String email) {
         User user = dataFacade.getUserById(id);
         user.setUsername(email);
         dataFacade.createOrUpdateUser(user);
@@ -98,23 +107,11 @@ public class UserService {
         return dataFacade.getEmployeeById(id);
     }
 
-    public Donor getDonorByUserId(Long id) {
-        return dataFacade.getDonorById(id);
-    }
-
     public void updateUser(User currentUser) {
         dataFacade.createOrUpdateUser(currentUser);
     }
 
     public Iterable<User> getAllUsers() {
         return dataFacade.getAllUsers();
-    }
-
-    public void createUser(String username, String password, UserRole role) {
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(new BCryptPasswordEncoder().encode(password));
-        user.grantRole(role);
-        dataFacade.createOrUpdateUser(user);
     }
 }

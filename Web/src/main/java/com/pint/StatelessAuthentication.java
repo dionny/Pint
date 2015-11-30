@@ -105,7 +105,7 @@ public class StatelessAuthentication {
                 Donor cora = addDonor("cora337@fiu.edu", "corPINT#671", "USA", "Atlanta", "GA", 55487); // No blood drive
                 Donor jan = addDonor("jan008@fiu.edu", "janPINT#444", "USA", "Atlanta", "GA", 33328);
 
-                Donor xuejiao = addDonor("Xuejiao@gmail.com", "Xuejiao12345", "USA", "Index", "WA", 12348);
+                Donor xuejiao = addDonor("Xuejiao@gmail.com", "Xuejiao12345", "USA", "Index", "WA", 12348); // Index blood drive
                 Donor azizul = addDonor("Azizul@gmail.com", "Azizul12345", "USA", "Index", "WA", 12348);
                 Donor xliu = addDonor("xliu002@fiu.edu", "helloworld", "USA", "Index", "WA", 12348);
 
@@ -153,8 +153,8 @@ public class StatelessAuthentication {
                 BloodDrive fiuBbcDrive = createBloodDrive(fiuBbc, "FIU-BBC Blood Drive", "1234 FIU Way",
                         "We need blood and we need it now.",
                         "Miami", "FL",
-                        Utils.sqlDate(new DateTime(2015, 9, 23, 0, 0)),
-                        Utils.sqlDate(new DateTime(2015, 12, 23, 0, 0)),
+                        Utils.sqlDate(new DateTime(2015, 11, 01, 0, 0)),
+                        Utils.sqlDate(new DateTime(2015, 11, 30, 0, 0)),
                         ravi);
 
                 BloodDrive redcrossDrive = createBloodDrive(redcross, "Red Cross Blood Drive", "Red Cross Way",
@@ -176,6 +176,10 @@ public class StatelessAuthentication {
                 nurses.add(clarke.getUserId());
                 nurses.add(maritza.getUserId());
                 bloodDriveService.assignNurses(userService.getUserById(gregory.getUserId()), fiuMmcDrive.getBloodDriveId(), nurses);
+
+                List<Long> newNurses = new ArrayList<>();
+                newNurses.add(linda.getUserId());
+                bloodDriveService.assignNurses(userService.getUserById(ravi.getUserId()), fiuBbcDrive.getBloodDriveId(), newNurses);
 
                 // No notifications.
                 BloodDrive miamiChildrensDrive = bloodDriveService.createBloodDrive(

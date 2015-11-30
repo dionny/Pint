@@ -23,11 +23,19 @@ public class HospitalService {
     @Autowired
     private UserService userService;
 
+    public HospitalService() {
+    }
+
+    public HospitalService(DataFacade dataFacade, UserService userService) {
+        this.dataFacade = dataFacade;
+        this.userService = userService;
+    }
+
     public Hospital createHospital(String hospital) {
         return dataFacade.createHospital(hospital);
     }
 
-    public Iterable<Employee> getEmployees(Long id) {
+    public List<Employee> getEmployees(Long id) {
         return dataFacade.getHospitalEmployees(id);
     }
 
