@@ -73,6 +73,7 @@ public class BaseIntegrationTest {
     protected Donor createMockDonor(Long id, String email) {
         User user = new User();
         user.setId(id);
+        user.setUsername(email);
         user.grantRole(UserRole.DONOR);
         Donor donor = new Donor();
         donor.setUserId(id);
@@ -82,6 +83,8 @@ public class BaseIntegrationTest {
 
         when(dataFacade.getUserByEmail(email))
                 .thenReturn(user);
+
+        testUser = user;
 
         return donor;
     }
@@ -144,6 +147,9 @@ public class BaseIntegrationTest {
 
         when(dataFacade.getHospitalEmployees(2L)).thenReturn(hospital2Employees);
 
-        when(dataFacade.getAllUsers()).thenReturn(new ArrayList<User>());
+        List<User> users = new ArrayList<User>();
+        users.add(testUser);
+
+        when(dataFacade.getAllUsers()).thenReturn(users);
     }
 }

@@ -3,30 +3,17 @@ package subsystemtest.pint.BusinessLogic;
 import com.pint.BusinessLogic.Security.User;
 import com.pint.BusinessLogic.Security.UserRole;
 import com.pint.BusinessLogic.Utilities.Utils;
-import com.pint.BusinessLogic.Validators.ValidationException;
-import com.pint.Data.Models.*;
-import org.joda.time.DateTime;
-import org.junit.Assert;
+import com.pint.Data.Models.Donor;
+import com.pint.Data.Models.Employee;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 /**
@@ -109,9 +96,81 @@ public class UserServiceTest extends BaseIntegrationTest {
         assertEquals("test@pint.edu", user.getUsername());
         assertNotEquals("password", user.getPassword());
         assertTrue(user.hasRole(UserRole.DONOR));
-//        assertEquals("first", output.getFirstName());
-//        assertEquals("last", output.getLastName());
-//        assertEquals("3335558888", output.getPhoneNumber());
-//        verify(dataFacade).createDonor(output);
+        assertEquals("USA", output.getCountry());
+        assertEquals("Miami", output.getCity());
+        assertEquals("FL", output.getState());
+        assertEquals(33165, output.getZip());
+    }
+
+    @Test
+    public void testGetUserById() throws Exception {
+
+        // Act.
+        User user = userService.getUserById(testUser.getId());
+
+        // Assert.
+        assertEquals(user, testUser);
+    }
+
+    @Test
+    public void testGetUserByEmail() throws Exception {
+
+        // Act.
+        User user = userService.getUserByEmail(testUser.getUsername());
+
+        // Assert.
+        assertEquals(testUser, user);
+    }
+
+    @Test
+    public void testDeleteUser() throws Exception {
+
+        // Act.
+        userService.deleteUser(testUser.getUsername());
+
+        // Assert.
+        verify(dataFacade).deleteUser(testUser.getUsername());
+    }
+
+    @Test
+    public void testUpdateUser() throws Exception {
+
+        // Act.
+        User output = userService.updateUser(testUser.getId(), "newEmail@pint.edu");
+
+        // Assert.
+        verify(dataFacade).createOrUpdateUser(output);
+        assertEquals("newEmail@pint.edu", output.getUsername());
+    }
+
+    @Test
+    public void testGetEmployeeByUserId() throws Exception {
+
+        // Act.
+        Employee output = userService.getEmployeeByUserId(testEmployee.getUserId());
+
+        // Assert.
+        assertEquals(testEmployee, output);
+    }
+
+    @Test
+    public void testUpdateUser_ByUserObject() throws Exception {
+
+        // Act.
+        userService.updateUser(testUser);
+
+        // Assert.
+        verify(dataFacade).createOrUpdateUser(testUser);
+    }
+
+    @Test
+    public void testGetAllUsers() throws Exception {
+
+        // Act.
+        Collection<User> users = Utils.iterableToCollection(userService.getAllUsers());
+
+        // Assert.
+        assertEquals(1, users.size());
+        assertTrue(users.contains(testUser));
     }
 }
