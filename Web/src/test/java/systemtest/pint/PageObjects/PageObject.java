@@ -4,7 +4,6 @@ import com.google.common.base.Stopwatch;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -70,6 +69,24 @@ public class PageObject {
         while (watch.elapsed(TimeUnit.MILLISECONDS) < 15000) {
             try {
                 driver.findElement(selector);
+
+                return;
+            } catch (Exception e) {
+                lastCaught = e;
+            }
+
+            Thread.sleep(100);
+        }
+
+        throw lastCaught;
+    }
+
+    protected void clickElement(By selector) throws Exception {
+        Exception lastCaught = null;
+        Stopwatch watch = Stopwatch.createStarted();
+        while (watch.elapsed(TimeUnit.MILLISECONDS) < 15000) {
+            try {
+                driver.findElement(selector).click();
 
                 return;
             } catch (Exception e) {
