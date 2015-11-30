@@ -143,5 +143,7 @@ public class BaseIntegrationTest {
         hospital2Employees.add(testOtherHospitalNurse);
 
         when(dataFacade.getHospitalEmployees(2L)).thenReturn(hospital2Employees);
+
+        when(dataFacade.getAllUsers()).thenReturn(new ArrayList<User>());
     }
 }
