@@ -105,7 +105,7 @@ public class StatelessAuthentication {
                 Donor cora = addDonor("cora337@fiu.edu", "corPINT#671", "USA", "Atlanta", "GA", 55487); // No blood drive
                 Donor jan = addDonor("jan008@fiu.edu", "janPINT#444", "USA", "Atlanta", "GA", 33328);
 
-                Donor xuejiao = addDonor("Xuejiao@gmail.com", "Xuejiao12345", "USA", "Index", "WA", 12348);
+                Donor xuejiao = addDonor("Xuejiao@gmail.com", "Xuejiao12345", "USA", "Index", "WA", 12348); // Index blood drive
                 Donor azizul = addDonor("Azizul@gmail.com", "Azizul12345", "USA", "Index", "WA", 12348);
                 Donor xliu = addDonor("xliu002@fiu.edu", "helloworld", "USA", "Index", "WA", 12348);
 
@@ -176,6 +176,10 @@ public class StatelessAuthentication {
                 nurses.add(clarke.getUserId());
                 nurses.add(maritza.getUserId());
                 bloodDriveService.assignNurses(userService.getUserById(gregory.getUserId()), fiuMmcDrive.getBloodDriveId(), nurses);
+
+                List<Long> newNurses = new ArrayList<>();
+                newNurses.add(linda.getUserId());
+                bloodDriveService.assignNurses(userService.getUserById(ravi.getUserId()), fiuBbcDrive.getBloodDriveId(), newNurses);
 
                 // No notifications.
                 BloodDrive miamiChildrensDrive = bloodDriveService.createBloodDrive(

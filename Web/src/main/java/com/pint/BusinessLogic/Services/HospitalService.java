@@ -35,7 +35,7 @@ public class HospitalService {
         return dataFacade.createHospital(hospital);
     }
 
-    public Iterable<Employee> getEmployees(Long id) {
+    public List<Employee> getEmployees(Long id) {
         return dataFacade.getHospitalEmployees(id);
     }
 

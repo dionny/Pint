@@ -46,7 +46,7 @@ public class BaseIntegrationTest {
 
     protected BloodDrive createMockBloodDrive(long bloodDriveId, String title, String description, Date startTime, Date endTime, String address, int numberofDonors, String city, String state, int zip, Hospital hospitalId) {
         BloodDrive drive = new BloodDrive(
-                1, "Test Drive 1", "Description 1", testDate, testDate, "Address 1", 0, "City 1", "State 1", 1, hospitalId);
+                bloodDriveId, title, description, startTime, endTime, address, numberofDonors, city, state, zip, hospitalId);
 
         when(dataFacade.getBloodDriveById(bloodDriveId))
                 .thenReturn(drive);

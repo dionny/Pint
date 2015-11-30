@@ -98,7 +98,7 @@ public class DataFacade {
         donorRepository.save(donor);
     }
 
-    public Iterable<Employee> getHospitalEmployees(Long id) {
+    public List<Employee> getHospitalEmployees(Long id) {
         return userHelper.getAllEmployees(id);
     }
 
