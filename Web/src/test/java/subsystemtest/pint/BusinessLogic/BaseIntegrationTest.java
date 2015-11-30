@@ -129,5 +129,19 @@ public class BaseIntegrationTest {
         testUnassignedNurse = createMockEmployee(6L, UserRole.NURSE, testHospital1);
         testAnotherNurse = createMockEmployee(7L, UserRole.NURSE, testHospital1);
         testOtherHospitalNurse = createMockEmployee(8L, UserRole.NURSE, testHospital2);
+
+        List<Employee> hospital1Employees = new ArrayList<>();
+        hospital1Employees.add(testEmployee);
+        hospital1Employees.add(testCoordinator);
+        hospital1Employees.add(testAssignedNurse);
+        hospital1Employees.add(testUnassignedNurse);
+        hospital1Employees.add(testAnotherNurse);
+
+        when(dataFacade.getHospitalEmployees(1L)).thenReturn(hospital1Employees);
+
+        List<Employee> hospital2Employees = new ArrayList<>();
+        hospital2Employees.add(testOtherHospitalNurse);
+
+        when(dataFacade.getHospitalEmployees(2L)).thenReturn(hospital2Employees);
     }
 }

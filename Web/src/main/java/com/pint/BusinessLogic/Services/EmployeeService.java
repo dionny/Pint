@@ -29,7 +29,7 @@ public class EmployeeService {
         this.dataFacade = dataFacade;
     }
 
-    public Iterable<Employee> getEmployees(User user, Hospital hospital) {
+    public List<Employee> getEmployees(User user, Hospital hospital) {
         List<Employee> output = new ArrayList<>();
         Iterable<Employee> employees = dataFacade.getHospitalEmployees(hospital.getId());
 
