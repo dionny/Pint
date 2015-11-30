@@ -44,5 +44,9 @@ public class PintApplication {
     public ManagerDashboard managerDashboard() {
         return new ManagerDashboard(driver);
     }
+
+    public NurseDashboard nurseDashboard(){
+        return new NurseDashboard(driver);
+    }
 }
 
