@@ -2,6 +2,9 @@ package systemtest.pint.PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public abstract class Dashboard<T> extends PageObject {
 
@@ -64,6 +67,37 @@ public abstract class Dashboard<T> extends PageObject {
             }
         }
 
+        return (T)this;
+    }
+
+    public T verifyDonorCount(String expected) throws Exception{
+        String cssSelector = "h4[class*=ng-binding]";
+        String current = driver.findElement(By.cssSelector(cssSelector)).getText();
+
+        if (!current.equals(expected))
+            throw new Exception();
+
+        return (T)this;
+    }
+
+    public T verifyText(String expected, String cssSelector) throws Exception{
+        String current = driver.findElement(By.cssSelector(cssSelector)).getText();
+
+        if (!current.equals(expected)) throw new Exception();
+
+        return (T)this;
+    }
+
+    public T verifyRowCount(int expected, String cssSelector) throws Exception{
+        List<WebElement> list = driver.findElements(By.cssSelector(cssSelector));
+
+        if (list == null || list.size() == expected) return (T)this;
+        else
+         throw new Exception();
+    }
+
+    public T logout() throws Exception{
+        clickElement(By.id("logoutBtn"));
         return (T)this;
     }
 }

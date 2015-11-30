@@ -24,6 +24,24 @@ public class CoordinatorDashboard extends Dashboard<CoordinatorDashboard> {
         return this;
     }
 
+    public CoordinatorDashboard clickCancel() throws Exception{
+        clickElement(By.cssSelector("button[class*=warning]"));
+
+        return this;
+    }
+
+    public CoordinatorDashboard clickButton(String str) throws Exception{
+        clickElement(By.cssSelector(str));
+
+        return this;
+    }
+
+    public CoordinatorDashboard clickConfirm() throws Exception{
+        clickElement(By.cssSelector("button[class*=confirm]"));
+
+        return this;
+    }
+
     public CoordinatorDashboard selectNurse(int row) throws Exception{
         clickElement(By.cssSelector("div.modal-content table tbody tr:nth-child(" + row + ") td:nth-child(1) input"));
 
