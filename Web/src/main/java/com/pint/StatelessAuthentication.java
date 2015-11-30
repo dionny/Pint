@@ -153,8 +153,8 @@ public class StatelessAuthentication {
                 BloodDrive fiuBbcDrive = createBloodDrive(fiuBbc, "FIU-BBC Blood Drive", "1234 FIU Way",
                         "We need blood and we need it now.",
                         "Miami", "FL",
-                        Utils.sqlDate(new DateTime(2015, 9, 23, 0, 0)),
-                        Utils.sqlDate(new DateTime(2015, 12, 23, 0, 0)),
+                        Utils.sqlDate(new DateTime(2015, 11, 01, 0, 0)),
+                        Utils.sqlDate(new DateTime(2015, 11, 30, 0, 0)),
                         ravi);
 
                 BloodDrive redcrossDrive = createBloodDrive(redcross, "Red Cross Blood Drive", "Red Cross Way",
