@@ -33,11 +33,11 @@ public class BloodDriveServiceTest {
     @InjectMocks
     private HospitalService hospitalService = new HospitalService();
 
-    @InjectMocks
-    private BloodDriveService bloodDriveService = new BloodDriveService(userService, hospitalService);
-
     @Mock
     private DataFacade dataFacade;
+
+    @InjectMocks
+    private BloodDriveService bloodDriveService = new BloodDriveService(userService, hospitalService, dataFacade);
 
     private BloodDrive bloodDrive;
 

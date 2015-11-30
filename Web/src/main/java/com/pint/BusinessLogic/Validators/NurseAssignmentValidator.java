@@ -58,6 +58,9 @@ public class NurseAssignmentValidator extends Validator {
             if(!BloodDriveService.bloodDrivesContainEmployee(allBds, new Employee(nurseId))) {
                 validatedNurses.add(allNurses.get(nurseIndex));
             }
+            else {
+                return false;
+            }
         }
 
         return true;

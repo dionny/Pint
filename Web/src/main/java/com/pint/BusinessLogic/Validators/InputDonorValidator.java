@@ -5,6 +5,7 @@ import com.pint.BusinessLogic.Services.UserService;
 import com.pint.Data.Models.BloodDrive;
 import com.pint.Data.Models.Employee;
 import com.pint.Presentation.Controllers.Session;
+import com.pint.Presentation.Controllers.UserProvider;
 
 /**
  * Created by Dionny on 11/28/2015.
@@ -47,7 +48,7 @@ public class InputDonorValidator extends Validator {
     @Override
     protected boolean validPermissions() {
         try {
-            return new Session().getUser().isNurse();
+            return user.isNurse();
         } catch (Exception e) {
             return false;
         }

@@ -21,11 +21,13 @@ public class LoginTest {
     @Test
     public void testLogin() throws Exception {
         pint.loginPage()
-                .setUserName("Greg001@pint.edu")
-                .setPassword("Greg123456")
+                .setUserName("mhaki005@pint.edu")
+                .setPassword("Pintpass123")
                 .clickSignIn();
 
-        pint.coordinatorDashboard()
-                .verifyRoleLabel("COORDINATOR");
+        pint.managerDashboard()
+                .verifyRoleLabel("MANAGER")
+                .verifyEmployeeExists("Greg");
+
     }
 }

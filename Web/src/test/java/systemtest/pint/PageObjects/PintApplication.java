@@ -40,5 +40,9 @@ public class PintApplication {
     public CoordinatorDashboard coordinatorDashboard() {
         return new CoordinatorDashboard(driver);
     }
+
+    public ManagerDashboard managerDashboard() {
+        return new ManagerDashboard(driver);
+    }
 }
 

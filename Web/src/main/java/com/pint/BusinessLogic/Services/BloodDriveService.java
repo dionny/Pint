@@ -5,7 +5,6 @@ import com.pint.BusinessLogic.Security.UserRole;
 import com.pint.BusinessLogic.Validators.*;
 import com.pint.Data.DataFacade;
 import com.pint.Data.Models.BloodDrive;
-import com.pint.Data.Models.Donor;
 import com.pint.Data.Models.Employee;
 import com.pint.Data.Models.Hospital;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +33,12 @@ public class BloodDriveService {
     public BloodDriveService(){
     }
 
-    public BloodDriveService(UserService userService, HospitalService hospitalService) {
+    public BloodDriveService(UserService userService,
+                             HospitalService hospitalService,
+                             DataFacade dataFacade) {
         this.userService = userService;
         this.hospitalService = hospitalService;
+        this.dataFacade = dataFacade;
     }
 
     public Employee getCoordinator(BloodDrive bd) {
@@ -49,27 +51,6 @@ public class BloodDriveService {
             }
         }
         return null;
-    }
-
-    private void setCoordinator(BloodDrive bd, Employee coordinator) {
-        Set<Employee> employees = bd.getEmployees();
-
-        // First remove the existing coordinator.
-        Employee existing = null;
-        for (Employee ee :
-                employees) {
-            User user = userService.getUserById(ee.getUserId());
-            if (user.hasRole(UserRole.COORDINATOR)) {
-                existing = ee;
-            }
-        }
-
-        if (existing != null) {
-            employees.remove(existing);
-        }
-
-        // Then add the new coordinator.
-        employees.add(coordinator);
     }
 
     public List<BloodDrive> getBloodDrivesByHospital(long hospitalId) {
@@ -130,9 +111,31 @@ public class BloodDriveService {
         return bloodDrive;
     }
 
+    private void setCoordinator(BloodDrive bd, Employee coordinator) {
+        Set<Employee> employees = bd.getEmployees();
+
+        // First remove the existing coordinator.
+        Employee existing = null;
+        for (Employee ee :
+                employees) {
+            User user = userService.getUserById(ee.getUserId());
+            if (user.hasRole(UserRole.COORDINATOR)) {
+                existing = ee;
+            }
+        }
+
+        if (existing != null) {
+            employees.remove(existing);
+        }
+
+        // Then add the new coordinator.
+        employees.add(coordinator);
+    }
+
     public BloodDrive getBloodDriveByCoordinator(long bdId, User user) {
-        BloodDrive bd = dataFacade.getBloodDrivesById(bdId);
-        if (getCoordinator(bd).getUserId() == user.getId()) {
+        BloodDrive bd = dataFacade.getBloodDriveById(bdId);
+        Employee coordinator = getCoordinator(bd);
+        if (coordinator != null && coordinator.getUserId() == user.getId()) {
             return bd;
         }
         return null;
@@ -140,8 +143,9 @@ public class BloodDriveService {
 
     public List<Employee> getNursesForBloodDrive(Long bdId, User user) {
         List<Employee> output = new ArrayList<>();
-        BloodDrive bd = dataFacade.getBloodDrivesById(bdId);
-        if (getCoordinator(bd).getUserId() == user.getId()) {
+        BloodDrive bd = dataFacade.getBloodDriveById(bdId);
+        Employee coordinator = getCoordinator(bd);
+        if (coordinator != null && coordinator.getUserId() == user.getId()) {
             Set<Employee> employees = bd.getEmployees();
             for (Employee ee :
                     employees) {
@@ -167,12 +171,13 @@ public class BloodDriveService {
     }
 
     public List<Employee> getUnassignedNurses(Long bdId, User user) {
-        BloodDrive bd = dataFacade.getBloodDrivesById(bdId);
+        BloodDrive bd = dataFacade.getBloodDriveById(bdId);
         List<BloodDrive> allBds = getBloodDrivesByHospital(bd.getHospitalId().getId());
         List<Employee> allNurses = hospitalService.getNurses(bd.getHospitalId().getId());
         List<Employee> output = new ArrayList<>();
 
-        if (getCoordinator(bd).getUserId() == user.getId()) {
+        Employee coordinator = getCoordinator(bd);
+        if (coordinator != null && coordinator.getUserId() == user.getId()) {
             for (Employee ee :
                     allNurses) {
                 User eeUser = userService.getUserById(ee.getUserId());
@@ -186,7 +191,7 @@ public class BloodDriveService {
     }
 
     public void assignNurses(User user, Long bdId, List<Long> nurses) throws Exception {
-        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        BloodDrive drive = dataFacade.getBloodDriveById(bdId);
         List<BloodDrive> allBds = getBloodDrivesByHospital(drive.getHospitalId().getId());
         List<Employee> allNurses = hospitalService.getNurses(drive.getHospitalId().getId());
         Employee coordinator = getCoordinator(drive);
@@ -205,7 +210,7 @@ public class BloodDriveService {
     }
 
     public void unassignNurses(User user, Long bdId, List<Long> nurses) throws Exception {
-        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        BloodDrive drive = dataFacade.getBloodDriveById(bdId);
         Employee coordinator = getCoordinator(drive);
 
         NurseUnassignmentValidator validator = new
@@ -238,7 +243,7 @@ public class BloodDriveService {
     }
 
     public BloodDrive getBloodDriveByNurse(long bdId, User user) {
-        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        BloodDrive drive = dataFacade.getBloodDriveById(bdId);
         Set<Employee> employees = drive.getEmployees();
         if (employees.contains(new Employee(user.getId()))) {
             return drive;
@@ -248,7 +253,7 @@ public class BloodDriveService {
     }
 
     public void inputDonor(User user, Long bdId, String email) throws ValidationException {
-        BloodDrive drive = dataFacade.getBloodDrivesById(bdId);
+        BloodDrive drive = dataFacade.getBloodDriveById(bdId);
         Validator validator = new InputDonorValidator(user, userService, email, drive);
         if (validator.Validate()) {
             drive.numberOfDonors++;
@@ -259,6 +264,6 @@ public class BloodDriveService {
     }
 
     public BloodDrive getBloodDriveById(Long id) {
-        return dataFacade.getBloodDrivesById(id);
+        return dataFacade.getBloodDriveById(id);
     }
 }

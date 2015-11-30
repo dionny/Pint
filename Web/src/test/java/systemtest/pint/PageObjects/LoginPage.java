@@ -1,6 +1,5 @@
 package systemtest.pint.PageObjects;
 
-import javafx.print.PageOrientation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

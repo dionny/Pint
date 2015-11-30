@@ -90,7 +90,7 @@ public class DataFacade {
         bloodDriveRepository.save(bloodDrive);
     }
 
-    public BloodDrive getBloodDrivesById(long bdId) {
+    public BloodDrive getBloodDriveById(long bdId) {
         return bloodDriveRepository.findOne(bdId);
     }
 
