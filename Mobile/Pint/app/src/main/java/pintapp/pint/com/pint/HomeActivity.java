@@ -41,7 +41,7 @@ import pintapp.pint.com.pint.PintNetworking.JSONAdapter;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private ITokenProvider tokenProvider;
+    private ITokenProvider tokenProvider = null;
     private LocationListener mLocationListener = null;
     private double latitude;
     private double longitude;
@@ -53,12 +53,6 @@ public class HomeActivity extends AppCompatActivity {
 
     public HomeActivity() {
         super();
-    }
-
-    public HomeActivity(ITokenProvider tokenProvider, LocationListener locationListener) {
-        super();
-        this.tokenProvider = tokenProvider;
-        this.mLocationListener = locationListener;
     }
 
     @Override
@@ -204,6 +198,8 @@ public class HomeActivity extends AppCompatActivity {
         JSONAdapter jsonAdapter;
         IPintAPI pintAPI;
         int pintType;
+        static String my_city = "Miami";
+        static String my_state = "FL";
 
         public ListFragment() {
             super();
@@ -220,13 +216,21 @@ public class HomeActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater,
                                  ViewGroup container, Bundle savedInstanceState) {
 
-            View rootView = inflater.inflate(
-                    R.layout.tab_home, container, false);
-
-            pintList = (ListView) rootView.findViewById(R.id.homeListViewList);
-            pintObjects = new ArrayList<JSONObject>();
             Bundle args = getArguments();
             pintType = args.getInt("pintType", PintType.BLOODDRIVE);
+            View rootView = null;
+
+            if(pintType == PintType.BLOODDRIVE) {
+                rootView = inflater.inflate(
+                        R.layout.tab_home, container, false);
+                pintList = (ListView) rootView.findViewById(R.id.homeListViewList);
+            } else {
+                rootView = inflater.inflate(
+                        R.layout.tab_home2, container, false);
+                pintList = (ListView) rootView.findViewById(R.id.homeListViewList2);
+            }
+
+            pintObjects = new ArrayList<JSONObject>();
             jsonAdapter = new JSONAdapter(getContext(), pintObjects, pintType);
             pintList.setAdapter(jsonAdapter);
 
@@ -238,7 +242,7 @@ public class HomeActivity extends AppCompatActivity {
 
                     if(pintType == PintType.USERNOTIFICATION) {
                         try {
-                            intent.putExtra("notification", pintObjects.get(position).getLong("sentTime"));
+                            intent.putExtra("notification", pintObjects.get(position).getLong("notificationId"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -258,7 +262,7 @@ public class HomeActivity extends AppCompatActivity {
             String email = defaultTokenProvider.getEmail(getContext());
 
             if(pintType == PintType.BLOODDRIVE) {
-                pintAPI.GetBloodDrivesByLocation(jsonAdapter, defaultTokenProvider, "Miami", "FL");
+                pintAPI.GetBloodDrivesByLocation(jsonAdapter, defaultTokenProvider, my_city, my_state);
             } else {
                 pintAPI.GetUserNotifications(jsonAdapter, defaultTokenProvider);
             }

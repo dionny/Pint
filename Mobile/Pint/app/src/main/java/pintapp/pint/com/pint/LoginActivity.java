@@ -72,6 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(nextActivity);
         } catch (JSONException e) {
             e.printStackTrace();
+            Toast.makeText(this, "Login Email/Password is incorrect", Toast.LENGTH_LONG).show();
         }
     }
 }

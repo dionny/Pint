@@ -93,8 +93,8 @@ public class DetailedActivity extends AppCompatActivity {
                         int real = position - detailedView.length;
                         JSONObject jsonObject = jsonObjects.get(real);
                         try {
-                            long sent = jsonObject.getLong("sentTime");
-                            notif_id = sent;
+                            long notid = jsonObject.getLong("notificationId");
+                            notif_id = notid;
                             detailAdapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -204,9 +204,9 @@ public class DetailedActivity extends AppCompatActivity {
                         title.setTextColor(Color.RED);
                     }
 
-                    long sent = jsonObject.getLong("sentTime");
+                    long notid = jsonObject.getLong("notificationId");
 
-                    if(sent == notif_id) {
+                    if(notid == notif_id) {
                         TextView full = (TextView) rowView.findViewById(R.id.bdunText);
                         full.setText(jsonObject.getString("longDescription"));
                         hint.setText("Opened");
