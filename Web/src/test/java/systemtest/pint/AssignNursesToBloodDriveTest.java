@@ -35,7 +35,6 @@ public class AssignNursesToBloodDriveTest {
         pint.coordinatorDashboard()
                 .clickBloodDrive("FIU-MMC Blood Drive")
                 .clickAddNurses()
-                .verifyUnassignedNurseListEntry(expected, 1, 0, 1)
                 .selectNurse(1)
                 .clickCancel();
 
