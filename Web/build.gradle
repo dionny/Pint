@@ -52,7 +52,7 @@ configurations {
 }
 
 cobertura {
-    coverageExcludes = ['.*systemtests.*']
+    coverageExcludes = ['test.pint.*']
 }
 
 dependencies {
