@@ -78,6 +78,7 @@ public class HomeEspressoTest extends ActivityInstrumentationTestCase2 {
     public void testHomeSFUser() {
         HomeActivity.ListFragment.my_city = "San Francisco";
         HomeActivity.ListFragment.my_state = "CA";
+        //lol
 
         onView(withId(R.id.loginTextEmail)).perform(typeText("calvin121@fiu.edu"), closeSoftKeyboard());
         onView(withId(R.id.loginTextPassword)).perform(typeText("calPINT#231"), closeSoftKeyboard());
