@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dionnysantiago/Pint.svg?branch=master)](https://travis-ci.org/dionnysantiago/Pint)
+[![Build Status](https://travis-ci.org/dionny/Pint.svg?branch=master)](https://travis-ci.org/dionnysantiago/Pint)
 
 ## Running PintWeb Locally
 Navigate to the Web folder.
